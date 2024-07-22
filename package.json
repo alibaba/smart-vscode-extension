@@ -214,7 +214,8 @@
     "reflect-metadata": "^0.1.13",
     "remark": "^14.0.2",
     "strip-markdown": "^5.0.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "axios": ">=0.28.0"
   },
   "resolutions": {
     "clone-deep": "^4.0.1"
