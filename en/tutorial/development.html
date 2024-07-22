@@ -1,0 +1,180 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to develop &mdash; Smart-Vscode  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c9484b72" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Supported Tasks" href="tasks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" > 
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Smart-Vscode
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div> <!-- language_selector.html -->
+<div class="language-selector">
+    <a href="../../en/tutorial/development.html">English</a></li> |
+    <a href="../../zh_CN/tutorial/development.html">中文</a></li>
+</div> 
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Smart-Vscode Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Supported Tasks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-the-extension-frontend-from-source-code">Install the extension frontend from source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-your-own-backend-service-from-a-container">Start your own backend service from a container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-frontend-to-communicate-with-backend">Configure Frontend to Communicate with Backend</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Smart-Vscode</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">How to develop</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorial/development.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-develop">
+<span id="development-en"></span><h1>How to develop<a class="headerlink" href="#how-to-develop" title="Link to this heading"></a></h1>
+<p>This extension project is divided into two parts:</p>
+<ul class="simple">
+<li><p><strong>Frontend</strong> is responsible for the user interaction interface, communication with the backend service, and executing the API calls returned by the backend service.</p></li>
+<li><p><strong>Backend</strong> utilizes large language models (LLMs) to orchestrate the optimal API calls to fulfill user requirements based on <a class="reference external" href="https://github.com/alibaba/app-controller">App-Controller</a> framework.</p></li>
+</ul>
+<p>When you only need to develop the frontend of the extension, you can install the frontend from source code and start your own backend service from a container for testing and development.</p>
+<section id="install-the-extension-frontend-from-source-code">
+<h2>Install the extension frontend from source code<a class="headerlink" href="#install-the-extension-frontend-from-source-code" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Before you start, ensure that you have <code class="docutils literal notranslate"><span class="pre">Node.js</span></code> and <code class="docutils literal notranslate"><span class="pre">npm</span></code> installed on your system.</p></li>
+<li><p>Clone the <a class="reference external" href="https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html#vscode-plugin">repository</a> to your local machine</p></li>
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">Yarn</span></code> package manager by running <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">--global</span> <span class="pre">yarn</span></code></p></li>
+<li><p>On the root directory, run <code class="docutils literal notranslate"><span class="pre">yarn</span></code> command to install the dependencies listed in <code class="docutils literal notranslate"><span class="pre">package.json</span></code></p></li>
+<li><p>Within VS Code - run the project by simply hitting <code class="docutils literal notranslate"><span class="pre">F5</span></code></p></li>
+</ul>
+</section>
+<section id="start-your-own-backend-service-from-a-container">
+<h2>Start your own backend service from a container<a class="headerlink" href="#start-your-own-backend-service-from-a-container" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Download the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> from the link by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://raw.githubusercontent.com/alibaba/pilotscope/master/Dockerfile
+</pre></div>
+</div>
+</li>
+<li><p>Build a Docker image named <code class="docutils literal notranslate"><span class="pre">llm4api</span></code> locally by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>llm4api:latest<span class="w"> </span><span class="se">\</span>
+--build-arg<span class="w"> </span><span class="nv">OPENAI_BASE_URL</span><span class="o">=</span><span class="s1">&#39;https://api.openai.com&#39;</span><span class="w"> </span><span class="se">\</span>
+--build-arg<span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s1">&#39;your_api_key&#39;</span><span class="w"> </span><span class="se">\</span>
+--build-arg<span class="w"> </span><span class="nv">SERVER_PORT</span><span class="o">=</span><span class="s1">&#39;your_server_port_number_in_contain&#39;</span><span class="w"> </span><span class="se">\</span>
+.
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">your_api_key</span></code> and <code class="docutils literal notranslate"><span class="pre">your-server-port-number-in-contain</span></code> with your own settings.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OPENAI_BASE_URL</span></code> is the base URL for the OpenAI API. It specifies the endpoint for API calls. The default value is <code class="docutils literal notranslate"><span class="pre">'https://api.openai.com'</span></code>. Modify it only if you are using a different endpoint. If you customize it, please make sure you have the same format. e.g. starts with <code class="docutils literal notranslate"><span class="pre">https://</span></code> without a trailing slash. The completions endpoint suffix is added internally, e.g. for reference: <code class="docutils literal notranslate"><span class="pre">${apiBaseUrl}/v1/completions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OPENAI_API_KEY</span></code> is your unique API key for authenticating requests to the OpenAI API. Replace <code class="docutils literal notranslate"><span class="pre">your_api_key</span></code> with your actual API key obtained from <a class="reference external" href="https://beta.openai.com/account/api-keys">OpenAI</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SERVER_PORT</span></code> (optional) specifies the port number inside the container where the service will start. The default setting is 5000. You can modify it based on your preference or requirements.</p></li>
+</ul>
+</li>
+<li><p>Start a Docker container by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w">  </span>--name<span class="w"> </span>llm4api_test<span class="w">  </span>--shm-size<span class="w"> </span>5gb<span class="w">  </span>--cap-add<span class="w"> </span>sys_ptrace<span class="w">  </span>-p<span class="w"> </span>your_server_port_number_in_host:your_server_port_number_in_contain<span class="w"> </span>-p<span class="w"> </span><span class="m">5022</span>:22<span class="w"> </span>-d<span class="w"> </span>llm4api<span class="w"> </span>/bin/bash
+</pre></div>
+</div>
+<p>This command boots up a container named <code class="docutils literal notranslate"><span class="pre">llm4api_test</span></code>. <code class="docutils literal notranslate"><span class="pre">your_server_port_number_in_host</span></code> and <code class="docutils literal notranslate"><span class="pre">your_server_port_number_in_contain</span></code> should be replaced with your own settings. Port mappings are configured as follows:</p>
+<ul class="simple">
+<li><p>The container’s port <code class="docutils literal notranslate"><span class="pre">your_server_port_number_in_contain</span></code> is mapped to host machine’s port <code class="docutils literal notranslate"><span class="pre">your_server_port_number_in_host</span></code> (5000 is recommended), allowing starting the backend service via host port <code class="docutils literal notranslate"><span class="pre">your_server_port_number_in_host</span></code>.</p></li>
+<li><p>(Recommended) The container’s port 22 (SSH) is mapped to host machine’s port 5022, enabling SSH access to the container from the host via port 5022.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="configure-frontend-to-communicate-with-backend">
+<h2>Configure Frontend to Communicate with Backend<a class="headerlink" href="#configure-frontend-to-communicate-with-backend" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Ensure that the frontend can correctly access the backend service. Modify <code class="docutils literal notranslate"><span class="pre">llm4apisServiceBaseUrl</span></code> in the <code class="docutils literal notranslate"><span class="pre">src/Common/Config.ts</span></code> file of the frontend project to set the backend service URL. Ensure that the <code class="docutils literal notranslate"><span class="pre">IP</span> <span class="pre">address</span></code> and the <code class="docutils literal notranslate"><span class="pre">port</span> <span class="pre">number</span></code> correspond to the <strong>host machine</strong> where the service is deployed.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tasks.html" class="btn btn-neutral float-left" title="Supported Tasks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Alibaba Tongyi Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
