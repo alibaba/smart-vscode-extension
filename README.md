@@ -139,7 +139,7 @@ Here we provide an overview of the tasks supported by SmartVscode.
 | Install               | Install the extension named "python"            |
 
 ## Documentation
-[Documentation] provides the comprehensive information on the supported tasks and how to develop SmartVscode. You can refer to these documentations for an improved experience with SmartVscode.
+[Documentation](https://alibaba.github.io/smart-vscode-extension) provides the comprehensive information on how to develop SmartVscode. You can refer to these documentations for an improved experience with SmartVscode.
 
 ## License
 SmartVscode is released under Apache License 2.0.
