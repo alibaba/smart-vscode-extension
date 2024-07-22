@@ -1,19 +1,12 @@
-<h3 align="center"><img src="https://github.com/alibaba/pilotscope/blob/appWielder/smartvscodeAssets/ai-logo.png?raw=true.png" height="64"><br>SmartVscode: Controlling anything of Vscode by natural language</h3>
+<h3 align="center"><img src="https://github.com/alibaba/smart-vscode-extension/blob/main/images/ai-logo.png?raw=true" height="64"><br>SmartVscode: Controlling anything of Vscode by natural language</h3>
 
-<p align="center">
-    <a>
-        <img src="https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?color=orange&label=VS%20Code" />
-    </a>
-    <a>
-        <img src="https://img.shields.io/badge/license-Apache--2.0-black" />
-    </a>
-    <a>
-        <img src="https://img.shields.io/badge/Contribute-Welcome-green" />
-    <!-- </a>
-        <a alt="Github star count">
-        <img src="https://img.shields.io/github/stars/modelscope/agentscope?color=blue&label=Github%20" />
-    </a> -->
-</p>
+<div align="center">
+
+![](https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?color=orange&label=VS%20Code)
+![](https://img.shields.io/badge/license-Apache--2.0-black")
+[![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://alibaba.github.io/app-controller/en/index.html)
+
+</div>
 
 
 
@@ -35,23 +28,23 @@
 ### Tic-tac-toe Game
 
 <!-- https://github.com/alibaba/pilotscope/assets/31238100/eef9765a-8cda-4654-a147-475ed1a13c58 -->
-![game](https://github.com/alibaba/pilotscope/blob/appWielder/smartvscodeAssets/game8x.gif?raw=true)
+![game](https://github.com/alibaba/smart-vscode-extension/blob/main/images/game8x.gif?raw=true)
 
 ### Style Changing
 
 <!-- https://github.com/alibaba/pilotscope/assets/31238100/18480837-b90f-44d6-8c28-d5f17a4552da -->
-![style](https://github.com/alibaba/pilotscope/blob/appWielder/smartvscodeAssets/fontsize2x.gif?raw=true)
+![style](https://github.com/alibaba/smart-vscode-extension/blob/main/images/fontsize2x.gif?raw=true)
 
 ### Theme Changing
 
 <!-- https://github.com/alibaba/pilotscope/assets/31238100/2a8cd2fd-22df-4ba0-a564-90cad6c708bb -->
-![Theme Changing](https://github.com/alibaba/pilotscope/blob/appWielder/smartvscodeAssets/theme1_8x.gif?raw=true)
+![Theme Changing](https://github.com/alibaba/smart-vscode-extension/blob/main/images/theme1_8x.gif?raw=true)
 
 
 ### Enable auto saving
 
 <!-- https://github.com/alibaba/pilotscope/assets/31238100/77548e8a-2832-4770-8924-ea479646e3a8 -->
-![Auto Saving](https://github.com/alibaba/pilotscope/blob/appWielder/smartvscodeAssets/autosave2x.gif?raw=true)
+![Auto Saving](https://github.com/alibaba/smart-vscode-extension/blob/main/images/autosave2x.gif?raw=true)
 
 
 ## Roadmap
@@ -67,15 +60,15 @@ To begin utilizing this extension, follow these steps:
 ### Add Model Config
 Once the extension is installed:
 - Locate the chat window titled "SmartVscode" in your left sidebar, which should resemble the following:
-<p align="center"><img src="https://github.com/alibaba/pilotscope/blob/appWielder/smartvscodeAssets/image.png?raw=true" alt="alt text" width="200"/></p>
+<p align="center"><img src="https://github.com/alibaba/smart-vscode-extension/blob/main/images/image.png?raw=true" alt="alt text" width="200"/></p>
 
 - Configure your model settings within the extension:
    - Access the our settings by clicking "Settings" button:
    - For using OpenAI, input your API key and select your preferred chat and embedding models
-<p align="center"><img src="https://github.com/alibaba/pilotscope/blob/appWielder/smartvscodeAssets/image-2.png?raw=true" alt="alt text" width="400"/></p> 
+<p align="center"><img src="https://github.com/alibaba/smart-vscode-extension/blob/main/images/image-2.png?raw=true" alt="alt text" width="400"/></p> 
 
    - For other AI models, like qwen, you should add the model configuration directly to your settings.json file, accessible via the "Edit in settings.json" button:
-     - ![alt text](https://github.com/alibaba/pilotscope/blob/appWielder/smartvscodeAssets/image-3.png?raw=true)
+     - ![alt text](https://github.com/alibaba/smart-vscode-extension/blob/main/images/image-3.png?raw=true)
      -  All format for model config need to obey the [format](https://modelscope.github.io/agentscope/en/tutorial/203-model.html).
      - A example on using setting file to configure openAI model.
      - ```json
@@ -113,13 +106,13 @@ This extension project is divided into two parts:
 
 - **Frontend** is responsible for the user interaction interface, communication with the backend service, and executing the API calls returned by the backend service.
 
-- **Backend** utilizes large language models (LLMs) to orchestrate the optimal API calls to fulfill user requirements based on [App-Controller](https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html#vscode-plugin) framework.
+- **Backend** utilizes large language models (LLMs) to orchestrate the optimal API calls to fulfill user requirements based on [App-Controller](https://github.com/alibaba/app-controller) framework.
 
 When you only need to develop the frontend of the extension, you can install the frontend from source code and start your own backend service from a container for testing and development.
 
 ### Install the extension frontend from source code
 - Before you start, ensure that you have `Node.js` and `npm` installed on your system.
-- Clone the [repository](https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html#vscode-plugin) to your local machine
+- Clone the [repository](https://github.com/alibaba/smart-vscode-extension.git) to your local machine
 - Install the `Yarn` package manager by running `npm install --global yarn`
 - On the root directory, run `yarn` command to install the dependencies listed in `package.json`
 - Within VS Code - run the project by simply hitting `F5`

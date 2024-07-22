@@ -9,7 +9,7 @@
   "preview": true,
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
-    "url": "https://github.com/alibaba/smart-vscode-extension"
+    "url": "https://github.com/alibaba/smart-vscode-extension.git"
   },
   "bugs": {
     "url": "https://github.com/alibaba/smart-vscode-extension/issues"
