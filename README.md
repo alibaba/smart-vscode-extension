@@ -26,17 +26,18 @@
 ## Feature Video
 
 ### Tic-tac-toe Game
-![game](images/game8x.gif)
+<img src="images/game8x.gif">
+
 
 ### Style Changing
-![style](images/fontsize2x.gif)
+<img src="images/fontsize2x.gif">
 
 ### Theme Changing
-![Theme Changing](images/theme1_8x.gif)
+<img src="images/theme1_8x.gif">
 
 
 ### Enable auto saving
-![Auto Saving](images/autosave2x.gif)
+<img src="images/autosave2x.gif">
 
 
 ## Roadmap
