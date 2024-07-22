@@ -3,99 +3,73 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as vscode from 'vscode';
-import ExtensionApis from './Api/extensionCtrl';
-import ThemeApis from './Api/themeCtrl';
-import Config from './config';
-import Api from './Api/api';
-import ApiScheduler from './Api/ApiScheduler';
+import Api from "./Apis/Api";
+import ApiScheduler from './Apis/ApiScheduler';
+import BreakpointApis from "./Apis/BreakpointApis";
+import CommandApis from "./Apis/CommandApis";
+import ConnectApis from './Apis/ConnectApis';
+import ExecuteApis from './Apis/ExecuteApis';
+import ExtensionApis from './Apis/ExtensionApis';
+import FileApis from './Apis/FileApis';
+import FindAndReplaceApis from './Apis/FindAndReplaceApis';
+import KeybindingApis from './Apis/KeybindingApis';
+import SettingApis from './Apis/SettingApis';
+import ThemeApis from './Apis/ThemeApis';
+import WindowApis from './Apis/windowApis';
 import ChatPipeline from './ChatPipeline';
-import SettingApis from './Api/settingCtrl';
-import WindowApis from './Api/windowCtrl';
-import FsApis from './Api/fsApis';
-import ExecuteApis from './Api/executeApis';
-import ConnectApis from './Api/connectApis';
-import KeybindingApis from './Api/keybindingApis';
-import CommandApis from './Api/commandApis';
-import FindAndReplaceApis from './Api/findAndReplaceApis';
-import ViewProvider from './ViewProvider/ViewProvider2';
-import SmartVscodeViewProvider from './ViewProvider/ViewProvider2';
+import Config from './Common/Config';
+import { startTestServer } from './Common/HttpServerForTest';
+import CommandsCollector from "./Metadata/CommandCollector";
+import SettingsCollector from "./Metadata/SettingCollector";
+import SmartVscodeViewProvider, { Chat } from './ViewProvider';
 
 
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
-	console.log('Congratulations, your extension "smart-vscode" is now active!');
+export async function activate(context: vscode.ExtensionContext) {
 	const config = new Config();
-	const apiScheduler = new ApiScheduler();
+	const apiScheduler = ApiScheduler.getInstance();
+	const userId: string = "placeholder";
 
-	registerAllApis(apiScheduler, config);
+	const pipeline = new ChatPipeline(config, apiScheduler, userId);
+	await pipeline.init();
 
-	const pipeline = new ChatPipeline(config, apiScheduler);
 	const themeApis = new ThemeApis(config);
 	const settingApis = new SettingApis();
 	const windowApis = new WindowApis();
 	const extensionApis = new ExtensionApis();
 	const executeApis = new ExecuteApis();
-	const fsApis = new FsApis();
+	const fsApis = new FileApis();
 	const connectApis = new ConnectApis();
 	const keybindingApis = new KeybindingApis();
 	const findAndReplaceApis = new FindAndReplaceApis();
+	const commandApis = new CommandApis();
+	const breakpointApis = new BreakpointApis();
 
-	let smartVscodeChatViewProvider = vscode.window.registerWebviewViewProvider('SmartVscodeChat', new SmartVscodeViewProvider(context));
 
-	// 注册一个命令，用于提示用户安装扩展
-	let smartVscodeExtension = vscode.commands.registerCommand('smart-vscode.smart_ask', async () => {
-		// fsApis.createFile("wlg.txt", "Hello World");
-		// fsApis.openFileInEditor("hello.py");
-		// const res= await executeApis.startDebugging("Python: Current File");
-		// executeApis.addItemToLaunchJson(JSON.stringify(item));
-		// windowApis.requireUserOpenWorkspace();
-		// const res = await connectApis.isRemoteExtensionInstalled();
-		// console.log(res);
-		// 显示输入框要求用户输入一句话
-		// await extensionApis.requireUserToInstallExtension("ms-vscode-remote.remote-ssh", "Please install remote ssh extension first.");
-		// console.log("smart ask");
-
-		const question = await vscode.window.showInputBox({
-			placeHolder: "请输入您的问题…" // 这里设置输入框的提示文字
-		});
-
-		// const question = "i want to connect to remote server";
-		// themeApis.listThemes();
-		// 验证输入是否为空
-		if (question) {
-			// 如果输入不为空，则使用pipeline处理用户输入的文本
-			pipeline.run(question);
-		} else {
-			// 如果输入为空，则可选地给出提示或者执行其他逻辑
-			vscode.window.showInformationMessage("未输入任何问题。");
-		}
-	});
-
-	let view_panel = vscode.commands.registerCommand('smart-vscode.smart_view', async () => {
-
+	const provider = new SmartVscodeViewProvider(context, pipeline);
+	let smartVscodeChatViewProvider = vscode.window.registerWebviewViewProvider('smart-vscode.view', provider, {
+		webviewOptions: {
+			retainContextWhenHidden: true,
+		},
 	});
 
 	// 比如，您可以输入API的json [{"name": "setProperties", "arguments": "{\"key2Value\": \"{\\\"editor.fontSize\\\": 18}\"}"}] ，会直接执行
 	// 测试用，发布时删除
-	let debug_call_api = vscode.commands.registerCommand('smart-vscode.call_api', async () => {
+	let debugCallApi = vscode.commands.registerCommand('smart-vscode.call_api', async () => {
 		const apiJson = await vscode.window.showInputBox({
 			placeHolder: "Input api" // 这里设置输入框的提示文字
 		});
 
 		if (apiJson) {
 			console.log(apiJson);
-			apiScheduler.runApis(apiJson);
+			const api: Api = apiScheduler.getApi(apiJson["name"]);
+			await api.run(apiJson["arguments"], undefined);
 		} else {
 			vscode.window.showInformationMessage("未输入任何API。");
 		}
 	});
 
-
-
-
-	let commands_manual = vscode.commands.registerCommand('smart-vscode.commands_manual', async () => {
+	let commandsManual = vscode.commands.registerCommand('smart-vscode.commands_manual', async () => {
 		const allCommands: string[] = await vscode.commands.getCommands(true);
 
 		const commandDetails: { command: string; }[] = [];
@@ -118,71 +92,46 @@ export function activate(context: vscode.ExtensionContext) {
 		});
 	});
 
+	let collectCommandMetaData = vscode.commands.registerCommand('smart-vscode.collectCommandMetaData', async () => {
+		const commandCollector = new CommandsCollector("src/Metadata/CommandMetaData/");
+		commandCollector.writeExtensionCommands();
+		commandCollector.writeSystemCommands();
 
-	let debug_any = vscode.commands.registerCommand('smart-vscode.debug_any', async () => {
-		settingApis.storageAllSettings("test_settings.json");
+		const settingCollector = new SettingsCollector("src/Metadata/SettingMetaData/");
+		// settingCollector.writeSystemSettings();
+		settingCollector.writeExtensionSettings();
 	});
-	// 将注册的命令添加到VS Code的上下文中，以便它们在必要的时候被正确地回收
-	context.subscriptions.push(smartVscodeExtension);
-	context.subscriptions.push(view_panel);
-	context.subscriptions.push(debug_call_api);
-	context.subscriptions.push(commands_manual);
-	context.subscriptions.push(debug_any);
+
+
+	let debugAny = vscode.commands.registerCommand('smart-vscode.debug_any', async () => {
+		// commandApis.executeCommand("editor.action.blockComment");
+		// const res = await vscode.commands.executeCommand("workbench.extensions.action.setColorTheme");
+
+		const res = await vscode.commands.executeCommand("workbench.action.navigateBackInNavigationLocations");
+		// const res = await vscode.commands.executeCommand("workbench.extensions.action.setColorTheme");
+		//const settingCollector = new SettingsCollector("src/Metadata/SettingMetaData/");
+		//settingCollector.writeSystemSettings();
+		// settingCollector.writeExtensionSettings();
+
+		// settingApis.setLanguage("en");
+		// fsApis.formatCurrentFile();
+		// const result: ApiExecuteData = await commandApis.executeCommand("editor.action.formatDocument");
+		// console.log(result.toModelMsg);
+	});
+
+	context.subscriptions.push(debugCallApi);
+	context.subscriptions.push(commandsManual);
+	context.subscriptions.push(debugAny);
 	context.subscriptions.push(smartVscodeChatViewProvider);
-
-
+	context.subscriptions.push(collectCommandMetaData);
+	if (config.testMode) {
+		// startTestServer(config.testServerPort, (result) => {
+		// 	pipeline.interactionLoop(result, new Chat());
+		// });
+		startTestServer(config.testServerPort, (data) => {
+			pipeline.run(data["q"], new Chat(), true, data["a"]);
+		});
+	}
 }
 
-// export function activate(context: vscode.ExtensionContext) {
-// 	let smartVscodeChatViewProvider = vscode.window.registerWebviewViewProvider('SmartVscodeChat', new ViewProvider(context.extensionUri));
-// 	context.subscriptions.push(smartVscodeChatViewProvider);
-// }
-
-
-function registerAllApis(apiScheduler: ApiScheduler, config: Config) {
-	const themeApis = new ThemeApis(config);
-	const settingApis = new SettingApis();
-	const windowApis = new WindowApis();
-	const fsApis = new FsApis();
-	const extensionApis = new ExtensionApis();
-	const executeApis = new ExecuteApis();
-	const connectApis = new ConnectApis();
-	const keybindingApis = new KeybindingApis();
-	const commandApis = new CommandApis();
-	const findAndReplaceApis = new FindAndReplaceApis();
-
-	apiScheduler.registerApi(new Api(themeApis.listThemes.name, [], () => themeApis.listThemes()));
-	apiScheduler.registerApi(new Api(themeApis.applyTheme.name, ["themeId", "uiTheme"], (themeId: string, uiTheme: string) => themeApis.applyTheme(themeId, uiTheme)));
-
-	apiScheduler.registerApi(new Api(settingApis.getProperties.name, ["keys"], (keys) => settingApis.getProperties(keys)));
-	apiScheduler.registerApi(new Api(settingApis.setProperties.name, ["key2Value"], (key2Value) => settingApis.setProperties(key2Value)));
-
-	apiScheduler.registerApi(new Api(windowApis.createNewWindow.name, [], () => windowApis.createNewWindow()));
-	apiScheduler.registerApi(new Api(windowApis.createOrOpenWorkspace.name, [], () => windowApis.createOrOpenWorkspace()));
-
-	apiScheduler.registerApi(new Api(fsApis.createFile.name, ["path", "content"], (path: string, content: string) => fsApis.createFile(path, content)));
-	apiScheduler.registerApi(new Api(fsApis.openFileInEditor.name, ["path"], (path: string) => fsApis.openFileInEditor(path)));
-	apiScheduler.registerApi(new Api(fsApis.getLaunchFileContent.name, [], () => fsApis.getLaunchFileContent()));
-	apiScheduler.registerApi(new Api(fsApis.addConfigurationToLaunch.name, ["item"], (newLaunchItem) => fsApis.addConfigurationToLaunch(newLaunchItem)));
-
-	apiScheduler.registerApi(new Api(extensionApis.getInstalledExtensions.name, ["filterKey"], (filterKey: string | undefined = undefined) => extensionApis.getInstalledExtensions(filterKey)));
-	apiScheduler.registerApi(new Api(extensionApis.requireUserToInstallExtension.name, ["extensionName"], (extensionName: string, hint: string | undefined = undefined) => extensionApis.requireUserToInstallExtension(extensionName, hint)));
-	// apiScheduler.registerApi(new Api(extensionApis.openExtensionStore.name, ["searchKey"], extensionApis.openExtensionStore));
-
-	apiScheduler.registerApi(new Api(executeApis.startDebugging.name, ["debugConfigurationName"], (debugConfigurationName) => executeApis.startDebugging(debugConfigurationName)));
-
-	apiScheduler.registerApi(new Api(connectApis.createRemoteConnect.name, [], () => connectApis.createRemoteConnect()));
-	apiScheduler.registerApi(new Api(connectApis.openRemoteConfigFile.name, [], () => connectApis.openRemoteConfigFile()));
-
-	apiScheduler.registerApi(new Api(keybindingApis.openKeybindingSettings.name, [], () => keybindingApis.openKeybindingSettings()));
-	apiScheduler.registerApi(new Api(keybindingApis.openAndSetKeybinding.name, ["commandName"], (commandName: string) => keybindingApis.openAndSetKeybinding(commandName)));
-
-	apiScheduler.registerApi(new Api(commandApis.listCommands.name, ["filterKey"], (filterKey: string | undefined = undefined) => commandApis.listCommands(filterKey)));
-	apiScheduler.registerApi(new Api(commandApis.executeCommand.name, ["command", "rest"], (command: string, ...rest: any[]) => commandApis.executeCommand(command, ...rest)));
-
-	apiScheduler.registerApi(new Api(findAndReplaceApis.findAndReplace.name, ["position", "query", "replace", "isRegex", "preserveCase", "findInSelection", "matchWholeWord", "isCaseSensitive", "filesToInclude", "filesToExclude"], (position: string, query: string, replace: string, isRegex: boolean, preserveCase: boolean, findInSelection: boolean, matchWholeWord: boolean, isCaseSensitive: boolean, filesToInclude: string, filesToExclude: string) => findAndReplaceApis.findAndReplace(position, query, replace, isRegex, preserveCase, findInSelection, matchWholeWord, isCaseSensitive, filesToInclude, filesToExclude)));
-}
-
-
-// This method is called when your extension is deactivated
 export function deactivate() { }

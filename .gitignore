@@ -4,3 +4,10 @@ node_modules
 .vscode-test/
 *.vsix
 .history/
+src/Metadata/CommandMetaData
+.Ds_Store
+yarn.lock
+package-lock.json
+
+# Sphinx documentation
+docs/sphinx_doc/build

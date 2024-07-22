@@ -103,6 +103,76 @@
                     list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                 }
                 break;
+            case "addApiResponse":
+                let existingMessage2 = message.rawId && document.getElementById(message.id);
+
+                let updatedValue2 = "";
+
+                const unEscapeHtml2 = (unsafe) => {
+                    return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+                };
+
+                if (!message.responseInMarkdown) {
+                    updatedValue2 = "```\r\n" + unEscapeHtml2(message.value) + " \r\n ```";
+                } else {
+                    updatedValue2 = message.value.split("```").length % 2 === 1 ? message.value : message.value + "\n\n```\n\n";
+                }
+
+                const markedResponse2 = marked.parse(updatedValue2);
+
+                if (existingMessage2) {
+                    existingMessage2.innerHTML = markedResponse2;
+                } else {
+                    list.innerHTML +=
+                        `<div data-license="isc-gnc" class="p-4 self-end mt-4 pb-8 answer-element-ext">
+                        <h2 class="mb-5 flex">${aiSvg}ChatGPT</h2>
+                        <div class="result-streaming" id="${message.id}">${markedResponse2}</div>
+                    </div>`;
+                }
+
+
+                if (message.confirm) {
+                    existingMessage2 = document.getElementById(message.id);
+                    existingMessage2.classList.remove("result-streaming");
+                    const preCodeList2 = list.lastChild.querySelectorAll("pre > code");
+
+                    preCodeList2.forEach((preCode) => {
+                        preCode.classList.add("input-background", "p-4", "pb-2", "block", "whitespace-pre", "overflow-x-scroll");
+                        preCode.parentElement.classList.add("pre-code-element", "relative");
+
+                        const buttonWrapper = document.createElement("no-export");
+                        buttonWrapper.classList.add("code-actions-wrapper", "flex", "gap-3", "pr-2", "pt-1", "pb-1", "flex-wrap", "items-center", "justify-end", "rounded-t-lg", "input-background");
+
+                        const acceptApi = document.createElement("button");
+                        acceptApi.title = "Allow the API to execute";
+                        acceptApi.innerHTML = `${insertSvg} Accepted`;
+                        acceptApi.classList.add("accept-api-element-ext", "p-1", "pr-2", "flex", "items-center", "rounded-lg");
+
+                        const refuseApi = document.createElement("button");
+                        refuseApi.title = "Reject the API to execute";
+                        refuseApi.innerHTML = `${insertSvg} Refused`;
+                        refuseApi.classList.add("refuse-api-element-ext", "p-1", "pr-2", "flex", "items-center", "rounded-lg");
+
+                        buttonWrapper.append(acceptApi, refuseApi);
+
+                        if (preCode.parentNode.previousSibling) {
+                            preCode.parentNode.parentElement.insertAfter(buttonWrapper, preCode.parentElement.previousSibling);
+                        } else {
+                            preCode.parentNode.parentElement.append(buttonWrapper);
+                        }
+                    });
+                }
+
+                if (message.done) {
+                    existingMessage2 = document.getElementById(message.id);
+                    existingMessage2.classList.remove("result-streaming");
+                }
+
+                if (message.autoScroll && (message.done || markedResponse.endsWith("\n"))) {
+                    list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+                }
+
+                break;
             case "addResponse":
                 let existingMessage = message.rawId && document.getElementById(message.id);
                 let updatedValue = "";
@@ -130,6 +200,8 @@
                 }
 
                 if (message.done) {
+                    existingMessage = document.getElementById(message.id);
+                    existingMessage.classList.remove("result-streaming");
                     const preCodeList = list.lastChild.querySelectorAll("pre > code");
 
                     preCodeList.forEach((preCode) => {
@@ -166,11 +238,7 @@
                             preCode.parentNode.parentElement.append(buttonWrapper);
                         }
                     });
-
-                    existingMessage = document.getElementById(message.id);
-                    existingMessage.classList.remove("result-streaming");
                 }
-
                 if (message.autoScroll && (message.done || markedResponse.endsWith("\n"))) {
                     list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                 }
@@ -184,7 +252,6 @@
                         <h2 class="mb-5 flex">${aiSvg}ChatGPT</h2>
                         <div class="text-red-400">${marked.parse(messageValue)}</div>
                     </div>`;
-
                 if (message.autoScroll) {
                     list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                 }
@@ -311,6 +378,8 @@
             return;
         }
 
+
+
         if (targetButton?.classList?.contains("resend-element-ext")) {
             e.preventDefault();
             const question = targetButton.closest(".question-element-ext");
@@ -385,6 +454,24 @@
 
             return;
         }
+
+        if (targetButton?.classList?.contains("accept-api-element-ext")) {
+            e.preventDefault();
+            vscode.postMessage({
+                type: "acceptApi"
+            });
+            return;
+        }
+
+        if (targetButton?.classList?.contains("refuse-api-element-ext")) {
+            e.preventDefault();
+            vscode.postMessage({
+                type: "refuseApi"
+            });
+            return;
+        }
+
+
     });
 
 })();

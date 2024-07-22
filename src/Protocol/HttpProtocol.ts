@@ -1,31 +1,39 @@
-import Config from "../config";
+import Config from "../Common/Config";
+import { Context } from "../Context";
+import Protocol from "./Protocol";
 
-export default class HttpProtocol {
-    public config: Config;
-
+export default class HttpProtocol extends Protocol {
     public url: string;
 
     constructor(config: Config) {
-        this.config = config;
-        this.url = config.llm4apis_service_base_url;
+        super(config);
+        this.url = config.llm4apisServiceBaseUrl;
     }
 
-    public sendUserQuestion(user_question: string) {
-        return this.post("/start", { user_question: user_question });
+    public addMetaData(context: Context) {
+        return this.post("/addMetaData", context.toObject());
     }
 
-    public sendApisResult(apiJsons: string) {
-        return this.post("/handle_api_results", { apis: apiJsons });
+    public sendUserQuestion(context: Context) {
+        return this.post("/start", context.toObject());
     }
 
-    public stopTask() {
-        return this.post("/stopTask", {});
+    public sendApisResult(context: Context) {
+        return this.post("/handleApiResponse", context.toObject());
+    }
+
+    public finish(context: Context) {
+        return this.post("/finish", context.toObject());
+    }
+
+    public cancel(context: Context) {
+        return this.post("/cancel", context.toObject());
     }
 
     // 函数：发送一个HTTP Post请求
     private async post(url: string, data: object) {
-        const full_url = this.config.llm4apis_service_base_url + url;
-        const response = await fetch(full_url, {
+        const fullUrl = this.config.llm4apisServiceBaseUrl + url;
+        const response = await fetch(fullUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

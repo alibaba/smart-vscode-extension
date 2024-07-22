@@ -1,41 +1,56 @@
 {
   "name": "smart-vscode",
-  "displayName": "smart-vscode",
-  "description": "make vscode more smarter by llm",
-  "version": "0.0.1",
+  "publisher": "IntelligentComputing",
+  "displayName": "Smart Vscode",
+  "icon": "images/ai-logo.png",
+  "description": "SmartVscode: Controlling anything of Vscode by natural language",
+  "version": "1.0.0",
+  "aiKey": "",
+  "preview": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "url": "https://github.com/alibaba/smart-vscode-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/alibaba/smart-vscode-extension/issues"
+  },
+  "homepage": "https://github.com/alibaba/smart-vscode-extension",
   "engines": {
-    "vscode": "^1.83.0"
+    "vscode": "^1.73.0"
   },
   "categories": [
-    "Other"
+    "Data Science",
+    "Programming Languages",
+    "AI",
+    "Chat",
+    "Machine Learning",
+    "Extension Packs"
+  ],
+  "keywords": [
+    "chatgpt",
+    "api",
+    "control",
+    "function",
+    "assistant",
+    "gpt",
+    "codex",
+    "openai",
+    "testing",
+    "manipulation",
+    "copilot",
+    "ai",
+    "llm",
+    "chatbot",
+    "vscode",
+    "natural language",
+    "productivity",
+    "efficiency"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
-  "extensionKind": [
-    "workspace"
-  ],
-  "main": "./dist/extension.js",
+  "main": "./out/extension.js",
   "contributes": {
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "SmartVscode",
-          "title": "SmartVscode",
-          "icon": "media/myIcon.svg"
-        }
-      ]
-    },
-    "views": {
-      "SmartVscode": [
-        {
-          "type": "webview",
-          "id": "SmartVscodeChat",
-          "name": "Topic 列表",
-          "contextualTitle": "Topic 列表sdadas"
-        }
-      ]
-    },
     "commands": [
       {
         "command": "smart-vscode.smart_ask",
@@ -56,8 +71,115 @@
       {
         "command": "smart-vscode.smart_view",
         "title": "smart_view"
+      },
+      {
+        "command": "smart-vscode.collectCommandMetaData",
+        "title": "collectCommandMetaData"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vscode-chatgpt-view-container",
+          "title": "smartVscode",
+          "icon": "images/ai-logo-in.png"
+        }
+      ]
+    },
+    "views": {
+      "vscode-chatgpt-view-container": [
+        {
+          "type": "webview",
+          "id": "smart-vscode.view",
+          "name": "Conversation window"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "smart-vscode",
+      "properties": {
+        "smartVscode.apiBaseUrl": {
+          "type": "string",
+          "default": "https://api.openai.com",
+          "markdownDescription": "Optional override for the OpenAI API base URL. If you customize it, please make sure you have the same format. e.g. starts with `https://` without a trailing slash. The completions endpoint suffix is added internally, e.g. for reference: `${apiBaseUrl}/v1/completions`",
+          "order": 1
+        },
+        "smartVscode.apiKey": {
+          "type": "string",
+          "markdownDescription": "OpenAI API key. [Get your API Key from OpenAI](https://beta.openai.com/account/api-keys).",
+          "order": 2
+        },
+        "smartVscode.chatLightModel": {
+          "type": "string",
+          "enum": [
+            "gpt-4-turbo",
+            "gpt-4-turbo-2024-04-09",
+            "gpt-3.5-turbo-1106"
+          ],
+          "default": "gpt-3.5-turbo-1106",
+          "markdownDescription": "An lightweight OpenAI models like GPT-3.5 to use for quickly response. [Documentation](https://beta.openai.com/docs/models/models). ",
+          "order": 3,
+          "enumItemLabels": [
+            "gpt-4-turbo",
+            "gpt-4-turbo-2024-04-09",
+            "gpt-3.5-turbo-1106"
+          ],
+          "markdownEnumDescriptions": [
+            "ChatGPT Plus subscription GPT-4 model that's used in chat.openai.com. This requires a subscription on OpenAI side, please make sure you are eligible to use this model. ",
+            "ChatGPT Plus subscription default model that's used in chat.openai.com. This requires a subscription on OpenAI side, please make sure you are eligible to use this model.",
+            "Most capable GPT-3.5 model and optimized for current task."
+          ]
+        },
+        "smartVscode.chatAdvancedModel": {
+          "type": "string",
+          "enum": [
+            "gpt-4-turbo",
+            "gpt-4-turbo-2024-04-09",
+            "gpt-3.5-turbo-1106"
+          ],
+          "default": "gpt-3.5-turbo-1106",
+          "markdownDescription": "An advanced OpenAI models like GPT-4 to use for boosting performance. [Documentation](https://beta.openai.com/docs/models/models). ",
+          "order": 4,
+          "enumItemLabels": [
+            "gpt-4-turbo",
+            "gpt-4-turbo-2024-04-09",
+            "gpt-3.5-turbo-1106"
+          ],
+          "markdownEnumDescriptions": [
+            "ChatGPT Plus subscription GPT-4 model that's used in chat.openai.com. This requires a subscription on OpenAI side, please make sure you are eligible to use this model. ",
+            "ChatGPT Plus subscription default model that's used in chat.openai.com. This requires a subscription on OpenAI side, please make sure you are eligible to use this model.",
+            "Most capable GPT-3.5 model and optimized for current task."
+          ]
+        },
+        "smartVscode.embeddingModel": {
+          "type": "string",
+          "enum": [
+            "text-embedding-3-small"
+          ],
+          "default": "text-embedding-3-small",
+          "markdownDescription": "OpenAI Embedding model to use for your requirements. [Documentation](https://beta.openai.com/docs/models/models).",
+          "order": 5
+        },
+        "smartVscode.chatModelConfig": {
+          "type": "object",
+          "markdownDescription": "You can customize the chat model config here. All formats are referred by [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html).",
+          "order": 6,
+          "default": {}
+        },
+        "smartVscode.embeddingModelConfig": {
+          "type": "object",
+          "markdownDescription": "You can customize the embedding model config here. All formats are referred by [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html).",
+          "order": 7,
+          "default": {}
+        },
+        "smartVscode.response.autoScroll": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whenever there is a new question or response added to the conversation window, extension will automatically scroll to the bottom. You can change that behavior by disabling this setting.",
+          "order": 38
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "rimraf out && npm run esbuild-base -- --minify",
@@ -68,22 +190,16 @@
     "test": "eslint src --ext ts && tsc --noEmit"
   },
   "devDependencies": {
-    "@types/glob": "^8.0.0",
     "@types/isomorphic-fetch": "^0.0.36",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
-    "@types/uuid": "^9.0.0",
+    "@types/uuid": "^9.0.8",
     "@types/vscode": "^1.73.0",
     "@types/vscode-webview": "^1.57.0",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
-    "@typescript-eslint/parser": "^5.45.0",
-    "@vscode/test-electron": "^2.2.0",
     "esbuild": "^0.15.18",
-    "eslint": "^8.28.0",
-    "glob": "^8.0.3",
     "mocha": "^10.1.0",
-    "ts-loader": "^9.4.1",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "rimraf": "^4.0.0"
   },
   "dependencies": {
     "delay": "^5.0.0",
@@ -93,12 +209,8 @@
     "keyv": "^4.5.2",
     "openai": "^3.1.0",
     "p-timeout": "^6.1.1",
-    "puppeteer": "^19.4.0",
-    "puppeteer-extra": "^3.3.4",
-    "puppeteer-extra-plugin-stealth": "^2.11.1",
-    "puppeteer-extra-plugin-user-data-dir": "^2.4.0",
-    "puppeteer-extra-plugin-user-preferences": "^2.4.0",
     "quick-lru": "^6.1.1",
+    "reflect-metadata": "^0.1.13",
     "remark": "^14.0.2",
     "strip-markdown": "^5.0.0",
     "uuid": "^9.0.0"

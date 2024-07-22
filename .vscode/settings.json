@@ -1,6 +1,37 @@
-// Place your settings in this file to overwrite default and user settings.
 {
-    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
+    "files.exclude": {
+        "out": false
+    },
+    "search.exclude": {
+        "out": true
+    },
     "typescript.tsc.autoDetect": "off",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "javascript.format.semicolons": "insert",
+    "typescript.format.semicolons": "insert",
+    "javascript.preferences.quoteStyle": "double",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "typescript.preferences.quoteStyle": "double",
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
     "workbench.colorTheme": "IDEA like light Theme"
 }
