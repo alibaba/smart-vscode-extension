@@ -55,9 +55,9 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">How to use</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tasks.html">Supported Tasks</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">How to develop</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-the-extension-frontend-from-source-code">Install the extension frontend from source code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#start-your-own-backend-service-from-a-container">Start your own backend service from a container</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configure-frontend-to-communicate-with-backend">Configure Frontend to Communicate with Backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-install-and-run-the-extension-frontend-from-source-code">Step 1: Install and run the extension frontend from source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-start-your-own-backend-service-from-source-code">Step 2: Start your own backend service from source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step3-start-to-develop">Step3: Start to develop</a></li>
 </ul>
 </li>
 </ul>
@@ -93,56 +93,32 @@
 <li><p><strong>Frontend</strong> is responsible for the user interaction interface, communication with the backend service, and executing the API calls returned by the backend service.</p></li>
 <li><p><strong>Backend</strong> utilizes large language models (LLMs) to orchestrate the optimal API calls to fulfill user requirements based on <a class="reference external" href="https://github.com/alibaba/app-controller">App-Controller</a> framework.</p></li>
 </ul>
-<p>When you only need to develop the frontend of the extension, you can install the frontend from source code and start your own backend service from a container for testing and development.</p>
-<section id="install-the-extension-frontend-from-source-code">
-<h2>Install the extension frontend from source code<a class="headerlink" href="#install-the-extension-frontend-from-source-code" title="Link to this heading"></a></h2>
+<p>When you need to develop the frontend of the extension, you can install the frontend from source code and start your own backend service for testing and development.</p>
+<section id="step-1-install-and-run-the-extension-frontend-from-source-code">
+<h2>Step 1: Install and run the extension frontend from source code<a class="headerlink" href="#step-1-install-and-run-the-extension-frontend-from-source-code" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Before you start, ensure that you have <code class="docutils literal notranslate"><span class="pre">Node.js</span></code> and <code class="docutils literal notranslate"><span class="pre">npm</span></code> installed on your system.</p></li>
 <li><p>Clone the <a class="reference external" href="https://github.com/alibaba/smart-vscode-extension.git">repository</a> to your local machine</p></li>
 <li><p>Install the <code class="docutils literal notranslate"><span class="pre">Yarn</span></code> package manager by running <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">--global</span> <span class="pre">yarn</span></code></p></li>
 <li><p>On the root directory, run <code class="docutils literal notranslate"><span class="pre">yarn</span></code> command to install the dependencies listed in <code class="docutils literal notranslate"><span class="pre">package.json</span></code></p></li>
+<li><p>Configure the frontend to commuicate with backend by modifying <code class="docutils literal notranslate"><span class="pre">llm4apisServiceBaseUrl</span></code> in the <code class="docutils literal notranslate"><span class="pre">src/Common/Config.ts</span></code> file. Ensure that the <code class="docutils literal notranslate"><span class="pre">llm4apisServiceBaseUrl</span></code> correspond to the service to be deployed.</p></li>
 <li><p>Within VS Code - run the project by simply hitting <code class="docutils literal notranslate"><span class="pre">F5</span></code></p></li>
 </ul>
 </section>
-<section id="start-your-own-backend-service-from-a-container">
-<h2>Start your own backend service from a container<a class="headerlink" href="#start-your-own-backend-service-from-a-container" title="Link to this heading"></a></h2>
-<ul>
-<li><p>Download the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> from the link by running</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://raw.githubusercontent.com/alibaba/pilotscope/master/Dockerfile
-</pre></div>
-</div>
-</li>
-<li><p>Build a Docker image named <code class="docutils literal notranslate"><span class="pre">llm4api</span></code> locally by running:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>llm4api:latest<span class="w"> </span><span class="se">\</span>
---build-arg<span class="w"> </span><span class="nv">OPENAI_BASE_URL</span><span class="o">=</span><span class="s1">&#39;https://api.openai.com&#39;</span><span class="w"> </span><span class="se">\</span>
---build-arg<span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s1">&#39;your_api_key&#39;</span><span class="w"> </span><span class="se">\</span>
---build-arg<span class="w"> </span><span class="nv">SERVER_PORT</span><span class="o">=</span><span class="s1">&#39;your_server_port_number_in_contain&#39;</span><span class="w"> </span><span class="se">\</span>
-.
-</pre></div>
-</div>
-<p>Replace <code class="docutils literal notranslate"><span class="pre">your_api_key</span></code> and <code class="docutils literal notranslate"><span class="pre">your-server-port-number-in-contain</span></code> with your own settings.</p>
+<section id="step-2-start-your-own-backend-service-from-source-code">
+<h2>Step 2: Start your own backend service from source code<a class="headerlink" href="#step-2-start-your-own-backend-service-from-source-code" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">OPENAI_BASE_URL</span></code> is the base URL for the OpenAI API. It specifies the endpoint for API calls. The default value is <code class="docutils literal notranslate"><span class="pre">'https://api.openai.com'</span></code>. Modify it only if you are using a different endpoint. If you customize it, please make sure you have the same format. e.g. starts with <code class="docutils literal notranslate"><span class="pre">https://</span></code> without a trailing slash. The completions endpoint suffix is added internally, e.g. for reference: <code class="docutils literal notranslate"><span class="pre">${apiBaseUrl}/v1/completions</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">OPENAI_API_KEY</span></code> is your unique API key for authenticating requests to the OpenAI API. Replace <code class="docutils literal notranslate"><span class="pre">your_api_key</span></code> with your actual API key obtained from <a class="reference external" href="https://beta.openai.com/account/api-keys">OpenAI</a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SERVER_PORT</span></code> (optional) specifies the port number inside the container where the service will start. The default setting is 5000. You can modify it based on your preference or requirements.</p></li>
-</ul>
-</li>
-<li><p>Start a Docker container by running:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w">  </span>--name<span class="w"> </span>llm4api_test<span class="w">  </span>--shm-size<span class="w"> </span>5gb<span class="w">  </span>--cap-add<span class="w"> </span>sys_ptrace<span class="w">  </span>-p<span class="w"> </span>your_server_port_number_in_host:your_server_port_number_in_contain<span class="w"> </span>-p<span class="w"> </span><span class="m">5022</span>:22<span class="w"> </span>-d<span class="w"> </span>llm4api<span class="w"> </span>/bin/bash
-</pre></div>
-</div>
-<p>This command boots up a container named <code class="docutils literal notranslate"><span class="pre">llm4api_test</span></code>. <code class="docutils literal notranslate"><span class="pre">your_server_port_number_in_host</span></code> and <code class="docutils literal notranslate"><span class="pre">your_server_port_number_in_contain</span></code> should be replaced with your own settings. Port mappings are configured as follows:</p>
-<ul class="simple">
-<li><p>The container’s port <code class="docutils literal notranslate"><span class="pre">your_server_port_number_in_contain</span></code> is mapped to host machine’s port <code class="docutils literal notranslate"><span class="pre">your_server_port_number_in_host</span></code> (5000 is recommended), allowing starting the backend service via host port <code class="docutils literal notranslate"><span class="pre">your_server_port_number_in_host</span></code>.</p></li>
-<li><p>(Recommended) The container’s port 22 (SSH) is mapped to host machine’s port 5022, enabling SSH access to the container from the host via port 5022.</p></li>
-</ul>
-</li>
+<li><p>Install the backend (i.e. App-Controller) by following the <a class="reference external" href="https://alibaba.github.io/app-controller/en/tutorial/installation.html">docs</a>.</p></li>
+<li><p>Configure the service by following the <a class="reference external" href="https://alibaba.github.io/app-controller/en/tutorial/deploy.html#step3-configuration-your-app-controller">docs</a>.</p></li>
+<li><p>Start your own backend service by following the <a class="reference external" href="https://alibaba.github.io/app-controller/en/tutorial/deploy.html#step4-start-the-service">docs</a>.</p></li>
 </ul>
 </section>
-<section id="configure-frontend-to-communicate-with-backend">
-<h2>Configure Frontend to Communicate with Backend<a class="headerlink" href="#configure-frontend-to-communicate-with-backend" title="Link to this heading"></a></h2>
+<section id="step3-start-to-develop">
+<h2>Step3: Start to develop<a class="headerlink" href="#step3-start-to-develop" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>Ensure that the frontend can correctly access the backend service. Modify <code class="docutils literal notranslate"><span class="pre">llm4apisServiceBaseUrl</span></code> in the <code class="docutils literal notranslate"><span class="pre">src/Common/Config.ts</span></code> file of the frontend project to set the backend service URL. Ensure that the <code class="docutils literal notranslate"><span class="pre">IP</span> <span class="pre">address</span></code> and the <code class="docutils literal notranslate"><span class="pre">port</span> <span class="pre">number</span></code> correspond to the <strong>host machine</strong> where the service is deployed.</p></li>
+<li><p>You can expand the functionality of SmartVscode by providing more API knowledge, specifically referring to: <a class="reference external" href="https://alibaba.github.io/app-controller/en/tutorial/deploy.html#step1-data-preparation">Data Preparation</a>.</p></li>
+<li><p>You can expand more interactions between SmartVscode (fontend) and App-Controller (backend) by referring to:
+<a class="reference external" href="https://alibaba.github.io/app-controller/en/tutorial/deploy.html#step2-communication-interface-implementation">Communication Interface Implementation</a>.</p></li>
 </ul>
 </section>
 </section>
