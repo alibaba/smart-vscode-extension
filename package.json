@@ -1,0 +1,109 @@
+{
+  "name": "smart-vscode",
+  "displayName": "smart-vscode",
+  "description": "make vscode more smarter by llm",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "SmartVscode",
+          "title": "SmartVscode",
+          "icon": "media/myIcon.svg"
+        }
+      ]
+    },
+    "views": {
+      "SmartVscode": [
+        {
+          "type": "webview",
+          "id": "SmartVscodeChat",
+          "name": "Topic 列表",
+          "contextualTitle": "Topic 列表sdadas"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "smart-vscode.smart_ask",
+        "title": "smart_ask"
+      },
+      {
+        "command": "smart-vscode.call_api",
+        "title": "call_api"
+      },
+      {
+        "command": "smart-vscode.commands_manual",
+        "title": "commands_manual"
+      },
+      {
+        "command": "smart-vscode.debug_any",
+        "title": "debug_any"
+      },
+      {
+        "command": "smart-vscode.smart_view",
+        "title": "smart_view"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "rimraf out && npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "build": "npm run -S esbuild-base -- --sourcemap",
+    "watch": "npm run -S esbuild-base -- --sourcemap --watch",
+    "fmt": "prettier --write \"src/**/*.ts\"&& npm run test -- --fix",
+    "test": "eslint src --ext ts && tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/isomorphic-fetch": "^0.0.36",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/uuid": "^9.0.0",
+    "@types/vscode": "^1.73.0",
+    "@types/vscode-webview": "^1.57.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "esbuild": "^0.15.18",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "delay": "^5.0.0",
+    "eventsource-parser": "^0.1.0",
+    "gpt3-tokenizer": "^1.1.5",
+    "isomorphic-fetch": "^3.0.0",
+    "keyv": "^4.5.2",
+    "openai": "^3.1.0",
+    "p-timeout": "^6.1.1",
+    "puppeteer": "^19.4.0",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
+    "puppeteer-extra-plugin-user-data-dir": "^2.4.0",
+    "puppeteer-extra-plugin-user-preferences": "^2.4.0",
+    "quick-lru": "^6.1.1",
+    "remark": "^14.0.2",
+    "strip-markdown": "^5.0.0",
+    "uuid": "^9.0.0"
+  },
+  "resolutions": {
+    "clone-deep": "^4.0.1"
+  }
+}
