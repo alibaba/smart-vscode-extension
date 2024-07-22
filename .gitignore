@@ -5,6 +5,7 @@ node_modules
 *.vsix
 .history/
 src/Metadata/CommandMetaData
+src/Metadata/SettingMetaData
 .Ds_Store
 yarn.lock
 package-lock.json
