@@ -1,9 +1,0 @@
-[
-    {
-        "settingId": "timeline.pageSize",
-        "desc": " The number of items to show in the Timeline view by default and when loading more items. Setting to `null` (the default) will automatically choose a page size based on the visible area of the Timeline view.",
-        "setting": {
-            "timeline.pageSize": null
-        }
-    }
-]

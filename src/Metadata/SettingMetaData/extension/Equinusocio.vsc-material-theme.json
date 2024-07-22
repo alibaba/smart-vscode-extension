@@ -1,8 +1,0 @@
-[
-    {
-        "name": "materialTheme.accent",
-        "desc": "Current accent color selected",
-        "default": "Blue",
-        "type": "string"
-    }
-]

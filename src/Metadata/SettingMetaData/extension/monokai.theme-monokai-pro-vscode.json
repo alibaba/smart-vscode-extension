@@ -1,8 +1,0 @@
-[
-    {
-        "name": "monokaiPro.fileIconsMonochrome",
-        "desc": "makes the file icons monochrome",
-        "default": false,
-        "type": "boolean"
-    }
-]

@@ -1,7 +1,0 @@
-[
-    {
-        "name": "ipynb.pasteImagesAsAttachments.enabled",
-        "default": true,
-        "type": "boolean"
-    }
-]

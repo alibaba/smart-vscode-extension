@@ -1,8 +1,0 @@
-[
-    {
-        "name": "debugpy.debugJustMyCode",
-        "desc": "When debugging only step through user-written code. Disable this to allow stepping into library code.",
-        "default": true,
-        "type": "boolean"
-    }
-]

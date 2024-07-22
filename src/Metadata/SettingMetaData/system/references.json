@@ -1,9 +1,0 @@
-[
-    {
-        "settingId": "references.preferredLocation",
-        "desc": " Controls whether 'Peek References' or 'Find References' is invoked when selecting CodeLens references.\n  - peek: Show references in peek editor.\n  - view: Show references in separate view.",
-        "setting": {
-            "references.preferredLocation": "peek"
-        }
-    }
-]

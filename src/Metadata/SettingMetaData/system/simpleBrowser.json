@@ -1,9 +1,0 @@
-[
-    {
-        "settingId": "simpleBrowser.focusLockIndicator.enabled",
-        "desc": " Enable/disable the floating indicator that shows when focused in the simple browser.",
-        "setting": {
-            "simpleBrowser.focusLockIndicator.enabled": true
-        }
-    }
-]

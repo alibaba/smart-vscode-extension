@@ -1,8 +1,0 @@
-[
-    {
-        "name": "cmake.cmakePath",
-        "desc": "The path to CMake generator executable",
-        "default": "cmake",
-        "type": "string"
-    }
-]

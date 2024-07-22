@@ -1,9 +1,0 @@
-[
-    {
-        "settingId": "github-enterprise.uri",
-        "desc": " GitHub Enterprise Server URI",
-        "setting": {
-            "github-enterprise.uri": ""
-        }
-    }
-]

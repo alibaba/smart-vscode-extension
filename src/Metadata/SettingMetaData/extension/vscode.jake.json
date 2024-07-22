@@ -1,8 +1,0 @@
-[
-    {
-        "name": "jake.autoDetect",
-        "desc": "Controls enablement of Jake task detection. Jake task detection can cause files in any open workspace to be executed.",
-        "default": "off",
-        "type": "string"
-    }
-]
