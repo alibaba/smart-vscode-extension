@@ -1,0 +1,226 @@
+[
+    {
+        "settingId": "less.completion.completePropertyWithSemicolon",
+        "desc": " Insert semicolon at end of line when completing CSS properties.",
+        "setting": {
+            "less.completion.completePropertyWithSemicolon": true
+        }
+    },
+    {
+        "settingId": "less.completion.triggerPropertyValueCompletion",
+        "desc": " By default, VS Code triggers property value completion after selecting a CSS property. Use this setting to disable this behavior.",
+        "setting": {
+            "less.completion.triggerPropertyValueCompletion": true
+        }
+    },
+    {
+        "settingId": "less.format.braceStyle",
+        "desc": " Put braces on the same line as rules (`collapse`) or put braces on own line (`expand`).",
+        "setting": {
+            "less.format.braceStyle": "collapse"
+        }
+    },
+    {
+        "settingId": "less.format.enable",
+        "desc": " Enable/disable default LESS formatter.",
+        "setting": {
+            "less.format.enable": true
+        }
+    },
+    {
+        "settingId": "less.format.maxPreserveNewLines",
+        "desc": " Maximum number of line breaks to be preserved in one chunk, when `less.format.preserveNewLines` is enabled.",
+        "setting": {
+            "less.format.maxPreserveNewLines": null
+        }
+    },
+    {
+        "settingId": "less.format.newlineBetweenRules",
+        "desc": " Separate rulesets by a blank line.",
+        "setting": {
+            "less.format.newlineBetweenRules": true
+        }
+    },
+    {
+        "settingId": "less.format.newlineBetweenSelectors",
+        "desc": " Separate selectors with a new line.",
+        "setting": {
+            "less.format.newlineBetweenSelectors": true
+        }
+    },
+    {
+        "settingId": "less.format.preserveNewLines",
+        "desc": " Whether existing line breaks before elements should be preserved.",
+        "setting": {
+            "less.format.preserveNewLines": true
+        }
+    },
+    {
+        "settingId": "less.format.spaceAroundSelectorSeparator",
+        "desc": " Ensure a space character around selector separators '>', '+', '~' (e.g. `a > b`).",
+        "setting": {
+            "less.format.spaceAroundSelectorSeparator": false
+        }
+    },
+    {
+        "settingId": "less.hover.documentation",
+        "desc": " Show tag and attribute documentation in LESS hovers.",
+        "setting": {
+            "less.hover.documentation": true
+        }
+    },
+    {
+        "settingId": "less.hover.references",
+        "desc": " Show references to MDN in LESS hovers.",
+        "setting": {
+            "less.hover.references": true
+        }
+    },
+    {
+        "settingId": "less.lint.argumentsInColorFunction",
+        "desc": " Invalid number of parameters.",
+        "setting": {
+            "less.lint.argumentsInColorFunction": "error"
+        }
+    },
+    {
+        "settingId": "less.lint.boxModel",
+        "desc": " Do not use `width` or `height` when using `padding` or `border`.",
+        "setting": {
+            "less.lint.boxModel": "ignore"
+        }
+    },
+    {
+        "settingId": "less.lint.compatibleVendorPrefixes",
+        "desc": " When using a vendor-specific prefix make sure to also include all other vendor-specific properties.",
+        "setting": {
+            "less.lint.compatibleVendorPrefixes": "ignore"
+        }
+    },
+    {
+        "settingId": "less.lint.duplicateProperties",
+        "desc": " Do not use duplicate style definitions.",
+        "setting": {
+            "less.lint.duplicateProperties": "ignore"
+        }
+    },
+    {
+        "settingId": "less.lint.emptyRules",
+        "desc": " Do not use empty rulesets.",
+        "setting": {
+            "less.lint.emptyRules": "warning"
+        }
+    },
+    {
+        "settingId": "less.lint.float",
+        "desc": " Avoid using `float`. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.",
+        "setting": {
+            "less.lint.float": "ignore"
+        }
+    },
+    {
+        "settingId": "less.lint.fontFaceProperties",
+        "desc": " `@font-face` rule must define `src` and `font-family` properties.",
+        "setting": {
+            "less.lint.fontFaceProperties": "warning"
+        }
+    },
+    {
+        "settingId": "less.lint.hexColorLength",
+        "desc": " Hex colors must consist of 3, 4, 6 or 8 hex numbers.",
+        "setting": {
+            "less.lint.hexColorLength": "error"
+        }
+    },
+    {
+        "settingId": "less.lint.idSelector",
+        "desc": " Selectors should not contain IDs because these rules are too tightly coupled with the HTML.",
+        "setting": {
+            "less.lint.idSelector": "ignore"
+        }
+    },
+    {
+        "settingId": "less.lint.ieHack",
+        "desc": " IE hacks are only necessary when supporting IE7 and older.",
+        "setting": {
+            "less.lint.ieHack": "ignore"
+        }
+    },
+    {
+        "settingId": "less.lint.important",
+        "desc": " Avoid using `!important`. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.",
+        "setting": {
+            "less.lint.important": "ignore"
+        }
+    },
+    {
+        "settingId": "less.lint.importStatement",
+        "desc": " Import statements do not load in parallel.",
+        "setting": {
+            "less.lint.importStatement": "ignore"
+        }
+    },
+    {
+        "settingId": "less.lint.propertyIgnoredDueToDisplay",
+        "desc": " Property is ignored due to the display. E.g. with `display: inline`, the `width`, `height`, `margin-top`, `margin-bottom`, and `float` properties have no effect.",
+        "setting": {
+            "less.lint.propertyIgnoredDueToDisplay": "warning"
+        }
+    },
+    {
+        "settingId": "less.lint.universalSelector",
+        "desc": " The universal selector (`*`) is known to be slow.",
+        "setting": {
+            "less.lint.universalSelector": "ignore"
+        }
+    },
+    {
+        "settingId": "less.lint.unknownAtRules",
+        "desc": " Unknown at-rule.",
+        "setting": {
+            "less.lint.unknownAtRules": "warning"
+        }
+    },
+    {
+        "settingId": "less.lint.unknownProperties",
+        "desc": " Unknown property.",
+        "setting": {
+            "less.lint.unknownProperties": "warning"
+        }
+    },
+    {
+        "settingId": "less.lint.unknownVendorSpecificProperties",
+        "desc": " Unknown vendor specific property.",
+        "setting": {
+            "less.lint.unknownVendorSpecificProperties": "ignore"
+        }
+    },
+    {
+        "settingId": "less.lint.validProperties",
+        "desc": " A list of properties that are not validated against the `unknownProperties` rule.",
+        "setting": {
+            "less.lint.validProperties": []
+        }
+    },
+    {
+        "settingId": "less.lint.vendorPrefix",
+        "desc": " When using a vendor-specific prefix, also include the standard property.",
+        "setting": {
+            "less.lint.vendorPrefix": "warning"
+        }
+    },
+    {
+        "settingId": "less.lint.zeroUnits",
+        "desc": " No unit for zero needed.",
+        "setting": {
+            "less.lint.zeroUnits": "ignore"
+        }
+    },
+    {
+        "settingId": "less.validate",
+        "desc": " Enables or disables all validations.",
+        "setting": {
+            "less.validate": true
+        }
+    }
+]

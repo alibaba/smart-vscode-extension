@@ -1,0 +1,185 @@
+[
+    {
+        "name": "genieai.personalizedName",
+        "desc": "Personalize your AI pair programmer. You can rename your assistant to anything you responsibly prefer.",
+        "default": "Genie",
+        "type": "string"
+    },
+    {
+        "name": "genieai.openai.model",
+        "default": "gpt-4-1106-preview",
+        "type": "string"
+    },
+    {
+        "name": "genieai.enableGenerateCommitMessage",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.promptPrefix.commit-message",
+        "default": "Suggest a precise and informative commit message based on the following diff. Do not use markdown syntax in your response.\n\nThe commit message should have description with a short title that follows conventional commit message format like <type>[scope]: <description>.\n\nExamples:\n- fix(authentication): add 403 forbidden error cases\n- feat(ai): generate commit messages from changes\n\nIf necessary, follow with an explanatory body providing insight into the nature of the changes, the reasoning behind them, and any significant consequences or considerations arising from them.\n\nDiff: \n\n",
+        "type": "string"
+    },
+    {
+        "name": "genieai.enableConversationHistory",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.openai.temperature",
+        "default": 0.9,
+        "type": "number"
+    },
+    {
+        "name": "genieai.openai.maxTokens",
+        "default": 2048,
+        "type": "number"
+    },
+    {
+        "name": "genieai.openai.top_p",
+        "default": 1,
+        "type": "number"
+    },
+    {
+        "name": "genieai.openai.apiBaseUrl",
+        "default": "https://api.openai.com",
+        "type": "string"
+    },
+    {
+        "name": "genieai.openai.organization",
+        "type": "string"
+    },
+    {
+        "name": "genieai.azure.url",
+        "default": null,
+        "type": "string"
+    },
+    {
+        "name": "genieai.openai.generateCode-enabled",
+        "desc": "Enable the code generation context menu item for the selected comment/code for Codex. Only available with code-* models",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.promptPrefix.addTests",
+        "desc": "The prompt prefix used for adding tests for the selected code",
+        "default": "Implement tests for the following code",
+        "type": "string"
+    },
+    {
+        "name": "genieai.promptPrefix.addTests-enabled",
+        "desc": "Enable the prompt prefix used for adding tests for the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.promptPrefix.findProblems",
+        "desc": "The prompt prefix used for finding problems for the selected code",
+        "default": "Find problems with the following code",
+        "type": "string"
+    },
+    {
+        "name": "genieai.promptPrefix.findProblems-enabled",
+        "desc": "Enable the prompt prefix used for finding problems for the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.promptPrefix.optimize",
+        "desc": "The prompt prefix used for optimizing the selected code",
+        "default": "Optimize the following code",
+        "type": "string"
+    },
+    {
+        "name": "genieai.promptPrefix.optimize-enabled",
+        "desc": "Enable the prompt prefix used for optimizing the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.promptPrefix.explain",
+        "desc": "The prompt prefix used for explaining the selected code",
+        "default": "Explain the following code",
+        "type": "string"
+    },
+    {
+        "name": "genieai.promptPrefix.explain-enabled",
+        "desc": "Enable the prompt prefix used for explaining the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.promptPrefix.addComments",
+        "desc": "The prompt prefix used for adding comments for the selected code",
+        "default": "Add comments for the following code",
+        "type": "string"
+    },
+    {
+        "name": "genieai.promptPrefix.addComments-enabled",
+        "desc": "Enable the prompt prefix used for adding comments for the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.promptPrefix.completeCode",
+        "desc": "The prompt prefix used for completing the selected code",
+        "default": "Complete the following code",
+        "type": "string"
+    },
+    {
+        "name": "genieai.promptPrefix.completeCode-enabled",
+        "desc": "Enable the prompt prefix used for completing the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.promptPrefix.customPrompt1",
+        "desc": "Your custom prompt. It's disabled by default, please set to a custom prompt and enable it if you prefer using customized prompt",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "genieai.promptPrefix.customPrompt1-enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.promptPrefix.customPrompt2",
+        "desc": "Your custom prompt. It's disabled by default, please set to a custom prompt and enable it if you prefer using customized prompt",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "genieai.promptPrefix.customPrompt2-enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.promptPrefix.adhoc-enabled",
+        "desc": "Enable the prompt prefix used for adhoc command for the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.quickFix.enable",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.response.showNotification",
+        "desc": "Choose whether you'd like to receive a notification when ChatGPT bot responds to your query.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.response.autoScroll",
+        "desc": "Whenever there is a new question or response added to the conversation window, extension will automatically scroll to the bottom. You can change that behavior by disabling this setting.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "genieai.telemetry.disable",
+        "default": true,
+        "type": "boolean"
+    }
+]

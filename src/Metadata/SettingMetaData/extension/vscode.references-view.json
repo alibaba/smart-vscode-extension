@@ -1,0 +1,8 @@
+[
+    {
+        "name": "references.preferredLocation",
+        "desc": "Controls whether 'Peek References' or 'Find References' is invoked when selecting CodeLens references.",
+        "default": "peek",
+        "type": "string"
+    }
+]

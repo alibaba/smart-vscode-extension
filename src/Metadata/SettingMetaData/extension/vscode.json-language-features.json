@@ -1,0 +1,49 @@
+[
+    {
+        "name": "json.schemas",
+        "desc": "Associate schemas to JSON files in the current project.",
+        "type": "array"
+    },
+    {
+        "name": "json.validate.enable",
+        "desc": "Enable/disable JSON validation.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "json.format.enable",
+        "desc": "Enable/disable default JSON formatter",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "json.format.keepLines",
+        "desc": "Keep all existing new lines when formatting.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "json.trace.server",
+        "desc": "Traces the communication between VS Code and the JSON language server.",
+        "default": "off",
+        "type": "string"
+    },
+    {
+        "name": "json.colorDecorators.enable",
+        "desc": "Enables or disables color decorators",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "json.maxItemsComputed",
+        "desc": "The maximum number of outline symbols and folding regions computed (limited for performance reasons).",
+        "default": 5000,
+        "type": "number"
+    },
+    {
+        "name": "json.schemaDownload.enable",
+        "desc": "When enabled, JSON schemas can be fetched from http and https locations.",
+        "default": true,
+        "type": "boolean"
+    }
+]

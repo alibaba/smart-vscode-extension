@@ -1,0 +1,211 @@
+[
+    {
+        "name": "python.analysis.inlayHints.variableTypes",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.inlayHints.functionReturnTypes",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.inlayHints.callArgumentNames",
+        "default": "off",
+        "type": "string"
+    },
+    {
+        "name": "python.analysis.inlayHints.pytestParameters",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.completeFunctionParens",
+        "desc": "Add parentheses to function completions.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.autoImportCompletions",
+        "desc": "Enable auto-import completions.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.autoFormatStrings",
+        "desc": "When typing a '{' in a string, automatically prefix the string with an 'f'.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.autoSearchPaths",
+        "desc": "Automatically add common search paths like 'src'.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.stubPath",
+        "desc": "Path to directory containing custom type stub files.",
+        "default": "typings",
+        "type": "string"
+    },
+    {
+        "name": "python.analysis.diagnosticMode",
+        "desc": "Analysis scope for showing diagnostics.",
+        "default": "openFilesOnly",
+        "type": "string"
+    },
+    {
+        "name": "python.analysis.extraPaths",
+        "desc": "Additional import search resolution paths",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "python.analysis.include",
+        "desc": "Paths of directories or files that should be included. If no paths are specified, Pylance defaults to the workspace root directory. Paths may contain wildcard characters ** (a directory or multiple levels of directories), * (a sequence of zero or more characters), or ? (a single character).",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "python.analysis.exclude",
+        "desc": "Paths of directories or files that should not be included. These override the include directories, allowing specific subdirectories to be excluded. Note that files in the exclude paths may still be included in the analysis if they are referenced (imported) by source files that are not excluded. Paths may contain wildcard characters ** (a directory or multiple levels of directories), * (a sequence of zero or more characters), or ? (a single character). If no exclude paths are specified, Pylance automatically excludes the following: `**/node_modules`, `**/__pycache__`, `.git` and any virtual environment directories.",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "python.analysis.ignore",
+        "desc": "Paths of directories or files whose diagnostic output (errors and warnings) should be suppressed even if they are an included file or within the transitive closure of an included file. Paths may contain wildcard characters ** (a directory or multiple levels of directories), * (a sequence of zero or more characters), or ? (a single character).",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "python.analysis.indexing",
+        "desc": "Enable indexing of installed third party libraries and user files for language features such as auto-import, add import, workspace symbols and etc.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.userFileIndexingLimit",
+        "desc": "Maximum number of user files to index in the workspace. Indexing files is a performance-intensive task. Please use this setting to limit the number of files you want us to index. If you enter -1, we will index all files.",
+        "default": 2000,
+        "type": "number"
+    },
+    {
+        "name": "python.analysis.persistAllIndices",
+        "desc": "Indices for all third party libraries will be persisted to disk.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.extraCommitChars",
+        "desc": "Allow using '.', '(' as commit characters when applicable.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.useLibraryCodeForTypes",
+        "desc": "Use library implementations to extract type information when type stub is not present.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.autoIndent",
+        "desc": "Automatically adjust indentation based on language semantics when typing Python code.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.typeCheckingMode",
+        "desc": "Defines the default rule set for type checking.",
+        "default": "off",
+        "type": "string"
+    },
+    {
+        "name": "python.analysis.fixAll",
+        "desc": "source fixes to run in fix all.",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "python.analysis.packageIndexDepths",
+        "default": [
+            {
+                "name": "sklearn",
+                "depth": 2
+            },
+            {
+                "name": "matplotlib",
+                "depth": 2
+            },
+            {
+                "name": "scipy",
+                "depth": 2
+            },
+            {
+                "name": "django",
+                "depth": 2
+            },
+            {
+                "name": "flask",
+                "depth": 2
+            },
+            {
+                "name": "fastapi",
+                "depth": 2
+            }
+        ],
+        "type": "array"
+    },
+    {
+        "name": "python.analysis.diagnosticSeverityOverrides",
+        "type": "object"
+    },
+    {
+        "name": "python.analysis.logLevel",
+        "desc": "Specifies the level of logging for the Output panel",
+        "default": "Information",
+        "type": "string"
+    },
+    {
+        "name": "python.analysis.typeshedPaths",
+        "desc": "Paths to look for typeshed modules.",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "python.analysis.importFormat",
+        "desc": "Defines the default format for import module.",
+        "default": "absolute",
+        "type": "string"
+    },
+    {
+        "name": "python.analysis.perfReporting",
+        "desc": "Allow pylance to ask users to report performance issues",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.enableSyncServer",
+        "desc": "Use sync server mode [Experimental]. For internal use only, may cause Pylance to stop working.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.enablePytestSupport",
+        "desc": "Enables pytest support in Pylance.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.gotoDefinitionInStringLiteral",
+        "desc": "For string literals that look like module names, enables go to definition to go to the module.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "python.analysis.nodeExecutable",
+        "default": "",
+        "type": "string"
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "settingId": "interactiveWindow.collapseCellInputCode",
+        "desc": " Controls whether code cells in the interactive window are collapsed by default.",
+        "setting": {
+            "interactiveWindow.collapseCellInputCode": "fromEditor"
+        }
+    },
+    {
+        "settingId": "interactiveWindow.alwaysScrollOnNewCell",
+        "desc": " Automatically scroll the interactive window to show the output of the last statement executed. If this value is false, the window will only scroll if the last cell was already the one scrolled to.",
+        "setting": {
+            "interactiveWindow.alwaysScrollOnNewCell": true
+        }
+    },
+    {
+        "settingId": "interactiveWindow.promptToSaveOnClose",
+        "desc": " Prompt to save the interactive window when it is closed. Only new interactive windows will be affected by this setting change.",
+        "setting": {
+            "interactiveWindow.promptToSaveOnClose": false
+        }
+    }
+]

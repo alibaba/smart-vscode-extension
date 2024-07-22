@@ -1,0 +1,14 @@
+[
+    {
+        "settingId": "[jsonc]",
+        "desc": " Configure settings to be overridden for the jsonc language.",
+        "setting": {
+            "[jsonc]": {
+                "editor.quickSuggestions": {
+                    "strings": true
+                },
+                "editor.suggest.insertMode": "replace"
+            }
+        }
+    }
+]

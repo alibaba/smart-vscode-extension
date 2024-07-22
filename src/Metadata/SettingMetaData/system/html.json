@@ -1,0 +1,163 @@
+[
+    {
+        "settingId": "html.autoClosingTags",
+        "desc": " Enable/disable autoclosing of HTML tags.",
+        "setting": {
+            "html.autoClosingTags": true
+        }
+    },
+    {
+        "settingId": "html.autoCreateQuotes",
+        "desc": " Enable/disable auto creation of quotes for HTML attribute assignment. The type of quotes can be configured by `html.completion.attributeDefaultValue`.",
+        "setting": {
+            "html.autoCreateQuotes": true
+        }
+    },
+    {
+        "settingId": "html.completion.attributeDefaultValue",
+        "desc": " Controls the default value for attributes when completion is accepted.\n  - doublequotes: Attribute value is set to \"\".\n  - singlequotes: Attribute value is set to ''.\n  - empty: Attribute value is not set.",
+        "setting": {
+            "html.completion.attributeDefaultValue": "doublequotes"
+        }
+    },
+    {
+        "settingId": "html.customData",
+        "desc": " A list of relative file paths pointing to JSON files following the custom data format.\n VS Code loads custom data on startup to enhance its HTML support for the custom HTML tags, attributes and attribute values you specify in the JSON files.\n The file paths are relative to workspace and only workspace folder settings are considered.",
+        "setting": {
+            "html.customData": []
+        }
+    },
+    {
+        "settingId": "html.format.contentUnformatted",
+        "desc": " List of tags, comma separated, where the content shouldn't be reformatted. `null` defaults to the `pre` tag.",
+        "setting": {
+            "html.format.contentUnformatted": "pre,code,textarea"
+        }
+    },
+    {
+        "settingId": "html.format.enable",
+        "desc": " Enable/disable default HTML formatter.",
+        "setting": {
+            "html.format.enable": true
+        }
+    },
+    {
+        "settingId": "html.format.extraLiners",
+        "desc": " List of tags, comma separated, that should have an extra newline before them. `null` defaults to `\"head, body, /html\"`.",
+        "setting": {
+            "html.format.extraLiners": "head, body, /html"
+        }
+    },
+    {
+        "settingId": "html.format.indentHandlebars",
+        "desc": " Format and indent ``.",
+        "setting": {
+            "html.format.indentHandlebars": false
+        }
+    },
+    {
+        "settingId": "html.format.indentInnerHtml",
+        "desc": " Indent `<head>` and `<body>` sections.",
+        "setting": {
+            "html.format.indentInnerHtml": false
+        }
+    },
+    {
+        "settingId": "html.format.maxPreserveNewLines",
+        "desc": " Maximum number of line breaks to be preserved in one chunk. Use `null` for unlimited.",
+        "setting": {
+            "html.format.maxPreserveNewLines": null
+        }
+    },
+    {
+        "settingId": "html.format.preserveNewLines",
+        "desc": " Controls whether existing line breaks before elements should be preserved. Only works before elements, not inside tags or for text.",
+        "setting": {
+            "html.format.preserveNewLines": true
+        }
+    },
+    {
+        "settingId": "html.format.templating",
+        "desc": " Honor django, erb, handlebars and php templating language tags.",
+        "setting": {
+            "html.format.templating": false
+        }
+    },
+    {
+        "settingId": "html.format.unformatted",
+        "desc": " List of tags, comma separated, that shouldn't be reformatted.",
+        "setting": {
+            "html.format.unformatted": "wbr"
+        }
+    },
+    {
+        "settingId": "html.format.unformattedContentDelimiter",
+        "desc": " Keep text content together between this string.",
+        "setting": {
+            "html.format.unformattedContentDelimiter": ""
+        }
+    },
+    {
+        "settingId": "html.format.wrapAttributes",
+        "desc": " Wrap attributes.\n  - auto: Wrap attributes only when line length is exceeded.\n  - force: Wrap each attribute except first.\n  - force-aligned: Wrap each attribute except first and keep aligned.\n  - force-expand-multiline: Wrap each attribute.\n  - aligned-multiple: Wrap when line length is exceeded, align attributes vertically.\n  - preserve: Preserve wrapping of attributes.\n  - preserve-aligned: Preserve wrapping of attributes but align.",
+        "setting": {
+            "html.format.wrapAttributes": "auto"
+        }
+    },
+    {
+        "settingId": "html.format.wrapAttributesIndentSize",
+        "desc": " Indent wrapped attributes to after N characters. Use `null` to use the default indent size. Ignored if `html.format.wrapAttributes` is set to `aligned`.",
+        "setting": {
+            "html.format.wrapAttributesIndentSize": null
+        }
+    },
+    {
+        "settingId": "html.format.wrapLineLength",
+        "desc": " Maximum amount of characters per line (0 = disable).",
+        "setting": {
+            "html.format.wrapLineLength": 120
+        }
+    },
+    {
+        "settingId": "html.hover.documentation",
+        "desc": " Show tag and attribute documentation in hover.",
+        "setting": {
+            "html.hover.documentation": true
+        }
+    },
+    {
+        "settingId": "html.hover.references",
+        "desc": " Show references to MDN in hover.",
+        "setting": {
+            "html.hover.references": true
+        }
+    },
+    {
+        "settingId": "html.suggest.html5",
+        "desc": " Controls whether the built-in HTML language support suggests HTML5 tags, properties and values.",
+        "setting": {
+            "html.suggest.html5": true
+        }
+    },
+    {
+        "settingId": "html.trace.server",
+        "desc": " Traces the communication between VS Code and the HTML language server.",
+        "setting": {
+            "html.trace.server": "off"
+        }
+    },
+    {
+        "settingId": "html.validate.scripts",
+        "desc": " Controls whether the built-in HTML language support validates embedded scripts.",
+        "setting": {
+            "html.validate.scripts": true
+        }
+    },
+    {
+        "settingId": "html.validate.styles",
+        "desc": " Controls whether the built-in HTML language support validates embedded styles.",
+        "setting": {
+            "html.validate.styles": true
+        }
+    }
+]

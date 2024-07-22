@@ -1,0 +1,173 @@
+[
+    {
+        "settingId": "explorer.autoReveal",
+        "desc": " Controls whether the Explorer should automatically reveal and select files when opening them.\n  - true: Files will be revealed and selected.\n  - false: Files will not be revealed and selected.\n  - focusNoScroll: Files will not be scrolled into view, but will still be focused.",
+        "setting": {
+            "explorer.autoReveal": true
+        }
+    },
+    {
+        "settingId": "explorer.autoRevealExclude",
+        "desc": " Configure paths or glob patterns for excluding files and folders from being revealed and selected in the Explorer when they are opened.",
+        "setting": {
+            "explorer.autoRevealExclude": {
+                "**/node_modules": true,
+                "**/bower_components": true
+            }
+        }
+    },
+    {
+        "settingId": "explorer.compactFolders",
+        "desc": " Controls whether the Explorer should render folders in a compact form. In such a form, single child folders will be compressed in a combined tree element. Useful for Java package structures, for example.",
+        "setting": {
+            "explorer.compactFolders": true
+        }
+    },
+    {
+        "settingId": "explorer.confirmDelete",
+        "desc": " Controls whether the Explorer should ask for confirmation when deleting a file via the trash.",
+        "setting": {
+            "explorer.confirmDelete": true
+        }
+    },
+    {
+        "settingId": "explorer.confirmDragAndDrop",
+        "desc": " Controls whether the Explorer should ask for confirmation to move files and folders via drag and drop.",
+        "setting": {
+            "explorer.confirmDragAndDrop": true
+        }
+    },
+    {
+        "settingId": "explorer.confirmPasteNative",
+        "desc": " Controls whether the Explorer should ask for confirmation when pasting native files and folders.",
+        "setting": {
+            "explorer.confirmPasteNative": true
+        }
+    },
+    {
+        "settingId": "explorer.confirmUndo",
+        "desc": " Controls whether the Explorer should ask for confirmation when undoing.\n  - verbose: Explorer will prompt before all undo operations.\n  - default: Explorer will prompt before destructive undo operations.\n  - light: Explorer will not prompt before undo operations when focused.",
+        "setting": {
+            "explorer.confirmUndo": "default"
+        }
+    },
+    {
+        "settingId": "explorer.copyRelativePathSeparator",
+        "desc": " The path separation character used when copying relative file paths.\n  - /: Use slash as path separation character.\n  - \\: Use backslash as path separation character.\n  - auto: Uses operating system specific path separation character.",
+        "setting": {
+            "explorer.copyRelativePathSeparator": "auto"
+        }
+    },
+    {
+        "settingId": "explorer.decorations.badges",
+        "desc": " Controls whether file decorations should use badges.",
+        "setting": {
+            "explorer.decorations.badges": true
+        }
+    },
+    {
+        "settingId": "explorer.decorations.colors",
+        "desc": " Controls whether file decorations should use colors.",
+        "setting": {
+            "explorer.decorations.colors": true
+        }
+    },
+    {
+        "settingId": "explorer.enableDragAndDrop",
+        "desc": " Controls whether the Explorer should allow to move files and folders via drag and drop. This setting only effects drag and drop from inside the Explorer.",
+        "setting": {
+            "explorer.enableDragAndDrop": true
+        }
+    },
+    {
+        "settingId": "explorer.enableUndo",
+        "desc": " Controls whether the Explorer should support undoing file and folder operations.",
+        "setting": {
+            "explorer.enableUndo": true
+        }
+    },
+    {
+        "settingId": "explorer.excludeGitIgnore",
+        "desc": " Controls whether entries in .gitignore should be parsed and excluded from the Explorer. Similar to `files.exclude`.",
+        "setting": {
+            "explorer.excludeGitIgnore": false
+        }
+    },
+    {
+        "settingId": "explorer.expandSingleFolderWorkspaces",
+        "desc": " Controls whether the Explorer should expand multi-root workspaces containing only one folder during initialization",
+        "setting": {
+            "explorer.expandSingleFolderWorkspaces": true
+        }
+    },
+    {
+        "settingId": "explorer.fileNesting.enabled",
+        "desc": " Controls whether file nesting is enabled in the Explorer. File nesting allows for related files in a directory to be visually grouped together under a single parent file.",
+        "setting": {
+            "explorer.fileNesting.enabled": false
+        }
+    },
+    {
+        "settingId": "explorer.fileNesting.expand",
+        "desc": " Controls whether file nests are automatically expanded. `explorer.fileNesting.enabled` must be set for this to take effect.",
+        "setting": {
+            "explorer.fileNesting.expand": true
+        }
+    },
+    {
+        "settingId": "explorer.fileNesting.patterns",
+        "desc": " Controls nesting of files in the Explorer. `explorer.fileNesting.enabled` must be set for this to take effect. Each __Item__ represents a parent pattern and may contain a single `*` character that matches any string. Each __Value__ represents a comma separated list of the child patterns that should be shown nested under a given parent. Child patterns may contain several special tokens:\n - `${capture}`: Matches the resolved value of the `*` from the parent pattern\n - `${basename}`: Matches the parent file's basename, the `file` in `file.ts`\n - `${extname}`: Matches the parent file's extension, the `ts` in `file.ts`\n - `${dirname}`: Matches the parent file's directory name, the `src` in `src/file.ts`\n - `*`:  Matches any string, may only be used once per child pattern",
+        "setting": {
+            "explorer.fileNesting.patterns": {
+                "*.ts": "${capture}.js",
+                "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+                "*.jsx": "${capture}.js",
+                "*.tsx": "${capture}.ts",
+                "tsconfig.json": "tsconfig.*.json",
+                "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb"
+            }
+        }
+    },
+    {
+        "settingId": "explorer.incrementalNaming",
+        "desc": " Controls which naming strategy to use when giving a new name to a duplicated Explorer item on paste.\n  - simple: Appends the word \"copy\" at the end of the duplicated name potentially followed by a number.\n  - smart: Adds a number at the end of the duplicated name. If some number is already part of the name, tries to increase that number.\n  - disabled: Disables incremental naming. If two files with the same name exist, you will be prompted to overwrite the existing file.",
+        "setting": {
+            "explorer.incrementalNaming": "simple"
+        }
+    },
+    {
+        "settingId": "explorer.openEditors.minVisible",
+        "desc": " The minimum number of editor slots pre-allocated in the Open Editors pane. If set to 0 the Open Editors pane will dynamically resize based on the number of editors.",
+        "setting": {
+            "explorer.openEditors.minVisible": 0
+        }
+    },
+    {
+        "settingId": "explorer.openEditors.sortOrder",
+        "desc": " Controls the sorting order of editors in the Open Editors pane.\n  - editorOrder: Editors are ordered in the same order editor tabs are shown.\n  - alphabetical: Editors are ordered alphabetically by tab name inside each editor group.\n  - fullPath: Editors are ordered alphabetically by full path inside each editor group.",
+        "setting": {
+            "explorer.openEditors.sortOrder": "editorOrder"
+        }
+    },
+    {
+        "settingId": "explorer.openEditors.visible",
+        "desc": " The initial maximum number of editors shown in the Open Editors pane.",
+        "setting": {
+            "explorer.openEditors.visible": 9
+        }
+    },
+    {
+        "settingId": "explorer.sortOrder",
+        "desc": " Controls the property-based sorting of files and folders in the Explorer.\n  - default: Files and folders are sorted by their names. Folders are displayed before files.\n  - mixed: Files and folders are sorted by their names. Files are interwoven with folders.\n  - filesFirst: Files and folders are sorted by their names. Files are displayed before folders.\n  - type: Files and folders are grouped by extension type then sorted by their names. Folders are displayed before files.\n  - modified: Files and folders are sorted by last modified date in descending order. Folders are displayed before files.\n  - foldersNestsFiles: Files and folders are sorted by their names. Folders are displayed before files. Files with nested children are displayed before other files.",
+        "setting": {
+            "explorer.sortOrder": "default"
+        }
+    },
+    {
+        "settingId": "explorer.sortOrderLexicographicOptions",
+        "desc": " Controls the lexicographic sorting of file and folder names in the Explorer.\n  - default: Uppercase and lowercase names are mixed together.\n  - upper: Uppercase names are grouped together before lowercase names.\n  - lower: Lowercase names are grouped together before uppercase names.\n  - unicode: Names are sorted in Unicode order.",
+        "setting": {
+            "explorer.sortOrderLexicographicOptions": "default"
+        }
+    }
+]

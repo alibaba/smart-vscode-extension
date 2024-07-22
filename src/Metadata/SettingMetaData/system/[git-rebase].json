@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[git-rebase]",
+        "desc": " Configure settings to be overridden for the git-rebase language.",
+        "setting": {
+            "[git-rebase]": {
+                "workbench.editor.restoreViewState": false
+            }
+        }
+    }
+]

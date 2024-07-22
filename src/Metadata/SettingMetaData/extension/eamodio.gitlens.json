@@ -1,0 +1,2026 @@
+[
+    {
+        "name": "gitlens.currentLine.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.currentLine.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.currentLine.format",
+        "default": "${author, }${agoOrDate}${' via 'pullRequest}${ • message|50?}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.currentLine.uncommittedChangesFormat",
+        "default": null,
+        "type": "string"
+    },
+    {
+        "name": "gitlens.currentLine.fontFamily",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.currentLine.fontSize",
+        "default": 0,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.currentLine.fontStyle",
+        "default": "normal",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.currentLine.fontWeight",
+        "default": "normal",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.currentLine.scrollable",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.currentLine.dateFormat",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.codeLens.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.codeLens.authors.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.codeLens.authors.command",
+        "default": "gitlens.toggleFileBlame",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.codeLens.recentChange.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.codeLens.recentChange.command",
+        "default": "gitlens.showQuickCommitFileDetails",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.codeLens.scopes",
+        "default": [
+            "document",
+            "containers"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "gitlens.codeLens.symbolScopes",
+        "type": "array"
+    },
+    {
+        "name": "gitlens.codeLens.includeSingleLineSymbols",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.strings.codeLens.unsavedChanges.recentChangeAndAuthors",
+        "default": "$(ellipsis)",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.strings.codeLens.unsavedChanges.recentChangeOnly",
+        "default": "$(ellipsis)",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.strings.codeLens.unsavedChanges.authorsOnly",
+        "default": "$(ellipsis)",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.codeLens.dateFormat",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.codeLens.scopesByLanguage"
+    },
+    {
+        "name": "gitlens.statusBar.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.statusBar.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.statusBar.format",
+        "default": "${author}, ${agoOrDate}${' via 'pullRequest}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.statusBar.alignment",
+        "default": "right",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.statusBar.command",
+        "default": "gitlens.showQuickCommitDetails",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.statusBar.tooltipFormat",
+        "default": "${avatar} &nbsp;__${author}__, ${ago}${' via 'pullRequest} &nbsp; _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}\n\n${commands}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.statusBar.reduceFlicker",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.statusBar.dateFormat",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.hovers.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.avatarSize",
+        "default": 32,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.hovers.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.autolinks.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.autolinks.enhanced",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.currentLine.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.currentLine.over",
+        "default": "annotation",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.hovers.currentLine.details",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.currentLine.changes",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.annotations.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.annotations.over",
+        "default": "line",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.hovers.annotations.details",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.annotations.changes",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.hovers.detailsMarkdownFormat",
+        "default": "${avatar} &nbsp;__${author}__, ${ago}${' via 'pullRequest} &nbsp; _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}\n\n${commands}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.hovers.changesDiff",
+        "default": "line",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.collapseWorktreesWhenPossible",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.defaultItemLimit",
+        "default": 10,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.pageItemLimit",
+        "default": 40,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.showRelativeDateMarkers",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.formats.commits.label",
+        "default": "${❰ tips|11? ❱➤  }${message}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.formats.commits.description",
+        "default": "${author, }${agoOrDate}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.formats.commits.tooltip",
+        "default": "${link}${' via 'pullRequest}${'&nbsp;&nbsp;•&nbsp;&nbsp;'changesDetail}${'&nbsp;&nbsp;&nbsp;&nbsp;'tips}\n\n${avatar} &nbsp;__${author}__, ${ago} &nbsp; _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.formats.commits.tooltipWithStatus",
+        "default": "${link}${' via 'pullRequest}&nbsp;&nbsp;•&nbsp;&nbsp;{{slot-status}}${'&nbsp;&nbsp;•&nbsp;&nbsp;'changesDetail}${'&nbsp;&nbsp;&nbsp;&nbsp;'tips}\n\n${avatar} &nbsp;__${author}__, ${ago} &nbsp; _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.formats.files.label",
+        "default": "${working  }${file}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.formats.files.description",
+        "default": "${directory}${  ←  originalPath}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.formats.stashes.label",
+        "default": "${message}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.formats.stashes.description",
+        "default": "${stashOnRef, }${agoOrDate}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.openChangesInMultiDiffEditor",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commitFileFormat"
+    },
+    {
+        "name": "gitlens.views.commitFileDescriptionFormat"
+    },
+    {
+        "name": "gitlens.views.commitFormat"
+    },
+    {
+        "name": "gitlens.views.commitDescriptionFormat"
+    },
+    {
+        "name": "gitlens.views.stashFileFormat"
+    },
+    {
+        "name": "gitlens.views.stashFileDescriptionFormat"
+    },
+    {
+        "name": "gitlens.views.stashFormat"
+    },
+    {
+        "name": "gitlens.views.stashDescriptionFormat"
+    },
+    {
+        "name": "gitlens.views.statusFileFormat"
+    },
+    {
+        "name": "gitlens.views.statusFileDescriptionFormat"
+    },
+    {
+        "name": "gitlens.views.commits.showBranchComparison",
+        "default": "working",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.views.commits.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commits.pullRequests.showForBranches",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commits.pullRequests.showForCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commits.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.commits.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.commits.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commits.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.commits.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commits.reveal",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commitDetails.autolinks.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commitDetails.autolinks.enhanced",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commitDetails.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commitDetails.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.commitDetails.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.commitDetails.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.commitDetails.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.commitDetails.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.showBranchComparison",
+        "default": "working",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.views.repositories.showUpstreamStatus",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.includeWorkingTree",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.pullRequests.showForBranches",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.pullRequests.showForCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.showCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.showBranches",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.showRemotes",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.showStashes",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.showTags",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.showContributors",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.showWorktrees",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.showIncomingActivity",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.autoRefresh",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.autoReveal",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.branches.layout",
+        "default": "tree",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.repositories.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.repositories.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.repositories.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.repositories.compact",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.repositories.branches.showBranchComparison",
+        "default": "branch",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.views.repositories.enabled"
+    },
+    {
+        "name": "gitlens.views.pullRequest.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.pullRequest.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.pullRequest.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.pullRequest.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.pullRequest.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.fileHistory.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.fileHistory.pullRequests.showForCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.fileHistory.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.fileHistory.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.fileHistory.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.fileHistory.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.fileHistory.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.advanced.fileHistoryFollowsRenames",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.advanced.fileHistoryShowAllBranches",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.advanced.fileHistoryShowMergeCommits",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.lineHistory.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.lineHistory.enabled"
+    },
+    {
+        "name": "gitlens.views.branches.showBranchComparison",
+        "default": "branch",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.views.branches.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.branches.pullRequests.showForBranches",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.branches.pullRequests.showForCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.branches.branches.layout",
+        "default": "tree",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.branches.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.branches.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.branches.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.branches.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.branches.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.branches.reveal",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.remotes.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.remotes.pullRequests.showForBranches",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.remotes.pullRequests.showForCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.remotes.branches.layout",
+        "default": "tree",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.remotes.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.remotes.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.remotes.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.remotes.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.remotes.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.remotes.reveal",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.stashes.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.stashes.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.stashes.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.stashes.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.stashes.reveal",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.tags.branches.layout",
+        "default": "tree",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.tags.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.tags.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.tags.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.tags.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.tags.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.tags.reveal",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.worktrees.promptForLocation",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.worktrees.defaultLocation",
+        "default": null,
+        "type": "string"
+    },
+    {
+        "name": "gitlens.worktrees.openAfterCreate",
+        "default": "prompt",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.worktrees.showBranchComparison",
+        "default": "working",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.views.worktrees.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.worktrees.pullRequests.showForBranches",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.worktrees.pullRequests.showForCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.worktrees.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.worktrees.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.worktrees.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.worktrees.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.worktrees.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.worktrees.reveal",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.contributors.showAllBranches",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.contributors.showStatistics",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.contributors.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.contributors.pullRequests.showForCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.contributors.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.contributors.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.contributors.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.contributors.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.contributors.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.contributors.reveal",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.searchAndCompare.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.searchAndCompare.pullRequests.showForCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.searchAndCompare.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.searchAndCompare.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.searchAndCompare.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.searchAndCompare.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.searchAndCompare.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.drafts.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.drafts.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.drafts.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.drafts.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.drafts.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.showBranchComparison",
+        "default": "working",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.views.workspaces.showUpstreamStatus",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.includeWorkingTree",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.pullRequests.showForBranches",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.pullRequests.showForCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.showCommits",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.showBranches",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.showRemotes",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.showStashes",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.showTags",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.showContributors",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.showWorktrees",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.showIncomingActivity",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.branches.layout",
+        "default": "tree",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.workspaces.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.workspaces.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.workspaces.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.workspaces.compact",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.workspaces.branches.showBranchComparison",
+        "default": "branch",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.views.patchDetails.files.layout",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.patchDetails.files.threshold",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.views.patchDetails.files.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.views.patchDetails.files.icon",
+        "default": "type",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.views.patchDetails.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.fileAnnotations.dismissOnEscape",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.fileAnnotations.command",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.fileAnnotations.preserveWhileEditing",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.advanced.blame.delayAfterEdit",
+        "default": 5000,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.advanced.blame.sizeThresholdAfterEdit",
+        "default": 5000,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.blame.toggleMode",
+        "default": "file",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.blame.format",
+        "default": "${message|50?} ${agoOrDate|14-}",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.blame.fontFamily",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.blame.fontSize",
+        "default": 0,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.blame.fontStyle",
+        "default": "normal",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.blame.fontWeight",
+        "default": "normal",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.blame.heatmap.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.blame.heatmap.location",
+        "default": "right",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.blame.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.blame.compact",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.blame.highlight.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.blame.highlight.locations",
+        "default": [
+            "gutter",
+            "line",
+            "overview"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "gitlens.blame.separateLines",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.blame.dateFormat",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.changes.toggleMode",
+        "default": "file",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.changes.locations",
+        "default": [
+            "gutter",
+            "line",
+            "overview"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "gitlens.heatmap.toggleMode",
+        "default": "file",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.heatmap.locations",
+        "default": [
+            "gutter",
+            "overview"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "gitlens.heatmap.fadeLines",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.heatmap.ageThreshold",
+        "default": 90,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.heatmap.coldColor",
+        "default": "#0a60f6",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.heatmap.hotColor",
+        "default": "#f66a0a",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.graph.allowMultiple",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.defaultItemLimit",
+        "default": 500,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.graph.pageItemLimit",
+        "default": 200,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.graph.searchItemLimit",
+        "default": 100,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.graph.scrollMarkers.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.scrollMarkers.additionalTypes",
+        "default": [
+            "localBranches",
+            "stashes"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "gitlens.graph.scrollRowPadding",
+        "default": 0,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.graph.showDetailsView",
+        "default": "selection",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.graph.showGhostRefsOnRowHover",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.highlightRowsOnRefHover",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.dimMergeCommits",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.showRemoteNames",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.showUpstreamStatus",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.pullRequests.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.commitOrdering",
+        "default": "date",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.graph.dateStyle",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.graph.dateFormat",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.graph.statusBar.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.layout",
+        "default": "panel",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.graph.minimap.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.graph.minimap.dataType",
+        "default": "commits",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.graph.minimap.additionalTypes",
+        "default": [
+            "localBranches",
+            "stashes"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "gitlens.cloudPatches.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.launchpad.ignoredRepositories",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "gitlens.launchpad.staleThreshold",
+        "default": null,
+        "type": [
+            "number",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.launchpad.indicator.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.launchpad.indicator.icon",
+        "default": "default",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.launchpad.indicator.label",
+        "default": "item",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.launchpad.indicator.groups",
+        "default": [
+            "mergeable",
+            "blocked",
+            "needs-review",
+            "follow-up"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "gitlens.launchpad.indicator.useColors",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.launchpad.indicator.polling.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.launchpad.indicator.polling.interval",
+        "default": 30,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.launchpad.indicator.openInEditor",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.launchpad.allowMultiple",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.visualHistory.allowMultiple",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.visualHistory.queryLimit",
+        "default": 20,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.rebaseEditor.ordering",
+        "default": "desc",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.rebaseEditor.showDetailsView",
+        "default": "selection",
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.gitCommands.avatars",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.gitCommands.sortBy",
+        "default": "usage",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.gitCommands.skipConfirmations",
+        "default": [
+            "fetch:command",
+            "stash-push:command"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "gitlens.gitCommands.closeOnFocusOut",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.gitCommands.search.showResultsInSideBar",
+        "default": null,
+        "type": [
+            "boolean",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.gitCommands.search.matchAll",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.gitCommands.search.matchCase",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.gitCommands.search.matchRegex",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.gitCommands.search.showResultsInView"
+    },
+    {
+        "name": "gitlens.autolinks",
+        "default": null,
+        "type": [
+            "array",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.integrations.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.remotes",
+        "default": null,
+        "type": [
+            "array",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.partners",
+        "desc": "Specifies the configuration of a partner integration",
+        "default": null,
+        "type": [
+            "object",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.liveshare.enabled",
+        "desc": "Specifies whether to enable integration with Visual Studio Live Share",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.liveshare.allowGuestAccess",
+        "desc": "Specifies whether to allow guest access to GitLens features when using Visual Studio Live Share",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.terminalLinks.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.terminalLinks.showDetailsView",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.terminal.overrideGitEditor",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.ai.experimental.generateCommitMessage.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.experimental.generateCommitMessagePrompt",
+        "default": "Now, please generate a commit message. Ensure that it includes a precise and informative subject line that succinctly summarizes the crux of the changes in under 50 characters. If necessary, follow with an explanatory body providing insight into the nature of the changes, the reasoning behind them, and any significant consequences or considerations arising from them. Conclude with any relevant issue references at the end of the message.",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.ai.experimental.provider",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.ai.experimental.openai.model",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.ai.experimental.openai.url",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.ai.experimental.anthropic.model",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.ai.experimental.gemini.model",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.defaultDateStyle",
+        "default": "relative",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.defaultDateFormat",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.defaultDateLocale",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.defaultDateShortFormat",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.defaultTimeFormat",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.defaultDateSource",
+        "default": "authored",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.sortRepositoriesBy",
+        "default": "discovered",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.sortBranchesBy",
+        "default": "date:desc",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.sortTagsBy",
+        "default": "date:desc",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.sortContributorsBy",
+        "default": "count:desc",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.menus",
+        "default": {
+            "editor": {
+                "blame": true,
+                "clipboard": true,
+                "compare": true,
+                "history": true,
+                "remote": true
+            },
+            "editorGroup": {
+                "blame": true,
+                "compare": true
+            },
+            "editorGutter": {
+                "compare": true,
+                "remote": true,
+                "share": true
+            },
+            "editorTab": {
+                "clipboard": true,
+                "compare": true,
+                "history": true,
+                "remote": true
+            },
+            "explorer": {
+                "clipboard": true,
+                "compare": true,
+                "history": true,
+                "remote": true
+            },
+            "ghpr": {
+                "worktree": true
+            },
+            "scm": {
+                "graph": true
+            },
+            "scmRepositoryInline": {
+                "graph": true,
+                "stash": false
+            },
+            "scmRepository": {
+                "authors": true,
+                "generateCommitMessage": true,
+                "patch": true,
+                "graph": false
+            },
+            "scmGroupInline": {
+                "stash": true
+            },
+            "scmGroup": {
+                "compare": true,
+                "openClose": true,
+                "patch": true,
+                "stash": true
+            },
+            "scmItemInline": {
+                "stash": false
+            },
+            "scmItem": {
+                "clipboard": true,
+                "compare": true,
+                "history": true,
+                "remote": true,
+                "share": true,
+                "stash": true
+            }
+        }
+    },
+    {
+        "name": "gitlens.keymap",
+        "default": "chorded",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.mode.statusBar.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.mode.statusBar.alignment",
+        "default": "right",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.mode.active",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.modes",
+        "default": {
+            "zen": {
+                "name": "Zen",
+                "statusBarItemName": "Zen",
+                "description": "for a zen-like experience, disables many visual features",
+                "codeLens": false,
+                "currentLine": false,
+                "hovers": false,
+                "statusBar": false
+            },
+            "review": {
+                "name": "Review",
+                "statusBarItemName": "Reviewing",
+                "description": "for reviewing code, enables many visual features",
+                "codeLens": true,
+                "currentLine": true,
+                "hovers": true
+            }
+        },
+        "type": "object"
+    },
+    {
+        "name": "gitlens.gitKraken.activeOrganizationId",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.cloudPatches.experimental.layout",
+        "default": "view",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.detectNestedRepositories",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.telemetry.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.advanced.messages",
+        "default": {
+            "suppressCommitHasNoPreviousCommitWarning": false,
+            "suppressCommitNotFoundWarning": false,
+            "suppressCreatePullRequestPrompt": false,
+            "suppressDebugLoggingWarning": false,
+            "suppressFileNotUnderSourceControlWarning": false,
+            "suppressGitDisabledWarning": false,
+            "suppressGitMissingWarning": false,
+            "suppressGitVersionWarning": false,
+            "suppressLineUncommittedWarning": false,
+            "suppressNoRepositoryWarning": false,
+            "suppressRebaseSwitchToTextWarning": false,
+            "suppressIntegrationDisconnectedTooManyFailedRequestsWarning": false,
+            "suppressIntegrationRequestFailed500Warning": false,
+            "suppressIntegrationRequestTimedOutWarning": false,
+            "suppressBlameInvalidIgnoreRevsFileWarning": false,
+            "suppressBlameInvalidIgnoreRevsFileBadRevisionWarning": false
+        },
+        "type": "object"
+    },
+    {
+        "name": "gitlens.advanced.repositorySearchDepth",
+        "default": null,
+        "type": [
+            "number",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.advanced.abbreviatedShaLength",
+        "default": 7,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.advanced.abbreviateShaOnCopy",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.advanced.commitOrdering",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.blame.ignoreWhitespace",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.advanced.blame.customArguments",
+        "default": null,
+        "type": [
+            "array",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.advanced.similarityThreshold",
+        "default": null,
+        "type": [
+            "number",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.advanced.externalDiffTool",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.advanced.externalDirectoryDiffTool",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.advanced.quickPick.closeOnFocusOut",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.advanced.maxListItems",
+        "default": 200,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.advanced.maxSearchItems",
+        "default": 200,
+        "type": "number"
+    },
+    {
+        "name": "gitlens.advanced.caching.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.debug",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.deepLinks.schemeOverride",
+        "default": false,
+        "type": [
+            "boolean",
+            "string"
+        ]
+    },
+    {
+        "name": "gitlens.advanced.useSymmetricDifferenceNotation"
+    },
+    {
+        "name": "gitlens.showWelcomeOnInstall",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.showWhatsNewAfterUpgrades",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.outputLevel",
+        "default": "warn",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.defaultGravatarsStyle",
+        "default": "robohash",
+        "type": "string"
+    },
+    {
+        "name": "gitlens.proxy",
+        "desc": "Specifies the proxy configuration to use. If not specified, the proxy configuration will be determined based on VS Code or OS settings",
+        "default": null,
+        "type": [
+            "object",
+            "null"
+        ]
+    },
+    {
+        "name": "gitlens.plusFeatures.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.virtualRepositories.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "gitlens.insiders"
+    }
+]

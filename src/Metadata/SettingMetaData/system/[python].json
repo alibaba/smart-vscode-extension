@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[python]",
+        "desc": " Configure settings to be overridden for the python language.",
+        "setting": {
+            "[python]": {
+                "diffEditor.ignoreTrimWhitespace": false
+            }
+        }
+    }
+]

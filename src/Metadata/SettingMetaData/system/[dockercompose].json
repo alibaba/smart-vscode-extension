@@ -1,0 +1,13 @@
+[
+    {
+        "settingId": "[dockercompose]",
+        "desc": " Configure settings to be overridden for the dockercompose language.",
+        "setting": {
+            "[dockercompose]": {
+                "editor.insertSpaces": true,
+                "editor.tabSize": 2,
+                "editor.autoIndent": "advanced"
+            }
+        }
+    }
+]

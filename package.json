@@ -199,7 +199,8 @@
     "esbuild": "^0.15.18",
     "mocha": "^10.1.0",
     "typescript": "^4.9.3",
-    "rimraf": "^4.0.0"
+    "rimraf": "^4.0.0",
+    "axios": ">=0.28.0"
   },
   "dependencies": {
     "delay": "^5.0.0",

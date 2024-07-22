@@ -1,0 +1,33 @@
+[
+    {
+        "name": "github.copilot.editor.enableCodeActions",
+        "desc": "Enable/disable copilot code actions",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "github.copilot.chat.localeOverride",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "github.copilot.chat.welcomeMessage",
+        "default": "first",
+        "type": "string"
+    },
+    {
+        "name": "github.copilot.chat.terminalChatLocation",
+        "default": "chatView",
+        "type": "string"
+    },
+    {
+        "name": "github.copilot.chat.scopeSelection",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "github.copilot.chat.useProjectTemplates",
+        "default": true,
+        "type": "boolean"
+    }
+]

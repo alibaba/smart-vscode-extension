@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[csharp]",
+        "desc": " Configure settings to be overridden for the csharp language.",
+        "setting": {
+            "[csharp]": {
+                "editor.maxTokenizationLineLength": 2500
+            }
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "name": "mediaPreview.video.autoPlay",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "mediaPreview.video.loop",
+        "default": false,
+        "type": "boolean"
+    }
+]

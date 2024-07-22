@@ -1,0 +1,26 @@
+[
+    {
+        "name": "merge-conflict.codeLens.enabled",
+        "desc": "Create a CodeLens for merge conflict blocks within editor.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "merge-conflict.decorators.enabled",
+        "desc": "Create decorators for merge conflict blocks within editor.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "merge-conflict.autoNavigateNextConflict.enabled",
+        "desc": "Whether to automatically navigate to the next merge conflict after resolving a merge conflict.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "merge-conflict.diffViewPosition",
+        "desc": "Controls where the diff view should be opened when comparing changes in merge conflicts.",
+        "default": "Current",
+        "type": "string"
+    }
+]

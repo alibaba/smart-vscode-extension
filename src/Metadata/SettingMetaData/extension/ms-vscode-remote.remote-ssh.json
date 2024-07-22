@@ -1,0 +1,138 @@
+[
+    {
+        "name": "remote.SSH.configFile",
+        "desc": "The absolute file path to a custom SSH config file.",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "remote.SSH.showLoginTerminal",
+        "desc": "Always reveal the SSH login terminal.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.defaultForwardedPorts",
+        "desc": "A list of ports to forward when the connection is established.",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "remote.SSH.defaultExtensions",
+        "desc": "List of extensions that should be installed automatically on all SSH hosts.",
+        "type": "array"
+    },
+    {
+        "name": "remote.SSH.path",
+        "desc": "An absolute path to the SSH executable. When empty, it will use \"ssh\" on the path or in common install locations.",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "remote.SSH.serverInstallPath",
+        "desc": "A map of remote host to absolute path where the VS Code server will be installed. By default the server is installed in the home directory of every remote. **Note**: By changing this setting you may need to clean up other installations of `.vscode-server` on your remote that isn't in the path you've configured.",
+        "type": "object"
+    },
+    {
+        "name": "remote.SSH.lockfilesInTmp",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.useFlock",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.enableDynamicForwarding",
+        "desc": "Whether to use SSH dynamic forwarding to allow setting up new port tunnels over an existing SSH connection. When this is used, a password only needs to be entered once for each remote window.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.enableAgentForwarding",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.enableX11Forwarding",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.useExecServer",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.enableRemoteCommand",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.externalSSH_ASKPASS",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.allowLocalServerDownload",
+        "desc": "If downloading the VS Code server fails on the host, this allows the extension to fall back to downloading on the client and transferring it to the host with scp.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.localServerDownload",
+        "desc": "Whether the extension can download the VS Code Server on the client and transfer it to the host with scp, instead of downloading it on the host.",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "remote.SSH.windowsRemotes",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "remote.SSH.useLocalServer",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.connectTimeout",
+        "desc": "Specifies the timeout in seconds used for the SSH command that connects to the remote.",
+        "default": 15,
+        "type": "number"
+    },
+    {
+        "name": "remote.SSH.logLevel",
+        "desc": "The log level for the extension.",
+        "default": "debug",
+        "type": "string"
+    },
+    {
+        "name": "remote.SSH.maxReconnectionAttempts",
+        "default": null,
+        "type": [
+            "number",
+            "null"
+        ]
+    },
+    {
+        "name": "remote.SSH.suppressWindowsSshWarning",
+        "desc": "Due to a bug with password handling in some versions of the SSH client bundled with Windows, the extension prefers a non-Windows SSH client, such as the one bundled with Git, and will show a warning when another one can't be found. This setting disables that warning.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.remotePlatform",
+        "type": "object"
+    },
+    {
+        "name": "remote.SSH.remoteServerListenOnSocket",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.SSH.serverPickPortsFromRange",
+        "type": "object"
+    }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "name": "emmet.showExpandedAbbreviation",
+        "default": "always",
+        "type": [
+            "string"
+        ]
+    },
+    {
+        "name": "emmet.showAbbreviationSuggestions",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "emmet.includeLanguages",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "emmet.variables",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "emmet.syntaxProfiles",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "emmet.excludeLanguages",
+        "default": [
+            "markdown"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "emmet.extensionsPath",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "emmet.triggerExpansionOnTab",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "emmet.useInlineCompletions",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "emmet.preferences",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "emmet.showSuggestionsAsSnippets",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "emmet.optimizeStylesheetParsing",
+        "default": true,
+        "type": "boolean"
+    }
+]

@@ -1,0 +1,229 @@
+[
+    {
+        "name": "markdown.extension.completion.enabled",
+        "desc": "Whether to enable auto-completion.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.completion.respectVscodeSearchExclude",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.completion.root",
+        "desc": "The root folder for path auto-completion.",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "markdown.extension.italic.indicator",
+        "default": "*",
+        "type": "string"
+    },
+    {
+        "name": "markdown.extension.bold.indicator",
+        "default": "**",
+        "type": "string"
+    },
+    {
+        "name": "markdown.extension.katex.macros",
+        "desc": "User-defined KaTeX macros.",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "markdown.extension.list.indentationSize",
+        "default": "adaptive",
+        "type": "string"
+    },
+    {
+        "name": "markdown.extension.list.toggle.candidate-markers",
+        "desc": "List candidate markers. It will cycle through those markers",
+        "default": [
+            "-",
+            "*",
+            "+",
+            "1.",
+            "1)"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "markdown.extension.math.enabled",
+        "desc": "Enable basic math support (Powered by KaTeX).",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.orderedList.autoRenumber",
+        "desc": "Auto fix ordered list markers.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.orderedList.marker",
+        "desc": "Ordered list marker.",
+        "default": "ordered",
+        "type": "string"
+    },
+    {
+        "name": "markdown.extension.preview.autoShowPreviewToSide",
+        "desc": "Auto show preview to side.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.print.absoluteImgPath",
+        "desc": "Convert image path to absolute path.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.print.imgToBase64",
+        "desc": "Convert images to base64 when printing to HTML.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.print.includeVscodeStylesheets",
+        "desc": "Include VS Code's basic Markdown styles so that the exported HTML looks similar as inside VS Code.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.print.onFileSave",
+        "desc": "Print current document to HTML when file is saved.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.print.pureHtml",
+        "desc": "Print current document to pure HTML (without any stylesheets).",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.print.theme",
+        "desc": "Theme of the exported HTML. Only affects code blocks.",
+        "default": "light",
+        "type": "string"
+    },
+    {
+        "name": "markdown.extension.print.validateUrls",
+        "desc": "Enable/disable URL validation when printing.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.showActionButtons",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.syntax.decorations",
+        "default": null,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.syntax.decorationFileSizeLimit",
+        "desc": "If a file is larger than this size (in byte/B), we won't attempt to render syntax decorations.",
+        "default": 50000,
+        "type": "number"
+    },
+    {
+        "name": "markdown.extension.syntax.plainTheme",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.tableFormatter.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.tableFormatter.normalizeIndentation",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.tableFormatter.delimiterRowNoPadding",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.theming.decoration.renderCodeSpan",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.theming.decoration.renderHardLineBreak",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.theming.decoration.renderLink",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.theming.decoration.renderParagraph",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.theming.decoration.renderStrikethrough",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.theming.decoration.renderTrailingSpace",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.toc.levels",
+        "default": "1..6",
+        "type": "string"
+    },
+    {
+        "name": "markdown.extension.toc.omittedFromToc",
+        "desc": "Lists of headings to omit by project file.\nExample:\n{ \"README.md\": [\"# Introduction\"] }",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "markdown.extension.toc.orderedList",
+        "desc": "Use ordered list, that is:\n1. ...\n2. ...",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.toc.plaintext",
+        "desc": "Just plain text TOC, no links.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.toc.slugifyMode",
+        "default": "github",
+        "type": "string"
+    },
+    {
+        "name": "markdown.extension.toc.unorderedList.marker",
+        "default": "-",
+        "type": "string"
+    },
+    {
+        "name": "markdown.extension.toc.updateOnSave",
+        "desc": "Auto update TOC on save.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "markdown.extension.extraLangIds",
+        "desc": "List of extra supported languages (e.g., rmd, quarto), default [].",
+        "default": [],
+        "type": "array"
+    }
+]

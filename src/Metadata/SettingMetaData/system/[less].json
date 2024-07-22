@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[less]",
+        "desc": " Configure settings to be overridden for the less language.",
+        "setting": {
+            "[less]": {
+                "editor.suggest.insertMode": "replace"
+            }
+        }
+    }
+]

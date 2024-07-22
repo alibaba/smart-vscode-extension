@@ -1,0 +1,8 @@
+[
+    {
+        "name": "grunt.autoDetect",
+        "desc": "Controls enablement of Grunt task detection. Grunt task detection can cause files in any open workspace to be executed.",
+        "default": "off",
+        "type": "string"
+    }
+]

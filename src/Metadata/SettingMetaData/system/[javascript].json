@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[javascript]",
+        "desc": " Configure settings to be overridden for the javascript language.",
+        "setting": {
+            "[javascript]": {
+                "editor.maxTokenizationLineLength": 2500
+            }
+        }
+    }
+]

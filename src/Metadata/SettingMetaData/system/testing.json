@@ -1,0 +1,104 @@
+[
+    {
+        "settingId": "testing.alwaysRevealTestOnStateChange",
+        "desc": " Always reveal the executed test when `testing.followRunningTest` is on. If this setting is turned off, only failed tests will be revealed.",
+        "setting": {
+            "testing.alwaysRevealTestOnStateChange": false
+        }
+    },
+    {
+        "settingId": "testing.automaticallyOpenPeekView",
+        "desc": " Configures when the error Peek view is automatically opened.\n  - failureAnywhere: Open automatically no matter where the failure is.\n  - failureInVisibleDocument: Open automatically when a test fails in a visible document.\n  - never: Never automatically open.",
+        "setting": {
+            "testing.automaticallyOpenPeekView": "failureInVisibleDocument"
+        }
+    },
+    {
+        "settingId": "testing.automaticallyOpenPeekViewDuringAutoRun",
+        "desc": " Controls whether to automatically open the Peek view during continuous run mode.",
+        "setting": {
+            "testing.automaticallyOpenPeekViewDuringAutoRun": false
+        }
+    },
+    {
+        "settingId": "testing.autoRun.delay",
+        "desc": " How long to wait, in milliseconds, after a test is marked as outdated and starting a new run.",
+        "setting": {
+            "testing.autoRun.delay": 1000
+        }
+    },
+    {
+        "settingId": "testing.countBadge",
+        "desc": " Controls the count badge on the Testing icon on the Activity Bar.\n  - failed: Show the number of failed tests\n  - off: Disable the testing count badge\n  - passed: Show the number of passed tests\n  - skipped: Show the number of skipped tests",
+        "setting": {
+            "testing.countBadge": "failed"
+        }
+    },
+    {
+        "settingId": "testing.coverageBarThresholds",
+        "desc": " Configures the colors used for percentages in test coverage bars.",
+        "setting": {
+            "testing.coverageBarThresholds": {
+                "red": 0,
+                "yellow": 60,
+                "green": 90
+            }
+        }
+    },
+    {
+        "settingId": "testing.defaultGutterClickAction",
+        "desc": " Controls the action to take when left-clicking on a test decoration in the gutter.\n  - run: Run the test.\n  - debug: Debug the test.\n  - runWithCoverage: Run the test with coverage.\n  - contextMenu: Open the context menu for more options.",
+        "setting": {
+            "testing.defaultGutterClickAction": "run"
+        }
+    },
+    {
+        "settingId": "testing.displayedCoveragePercent",
+        "desc": " Configures what percentage is displayed by default for test coverage.\n  - totalCoverage: A calculation of the combined statement, function, and branch coverage.\n  - statement: The statement coverage.\n  - minimum: The minimum of statement, function, and branch coverage.",
+        "setting": {
+            "testing.displayedCoveragePercent": "totalCoverage"
+        }
+    },
+    {
+        "settingId": "testing.followRunningTest",
+        "desc": " Controls whether the running test should be followed in the Test Explorer view.",
+        "setting": {
+            "testing.followRunningTest": true
+        }
+    },
+    {
+        "settingId": "testing.gutterEnabled",
+        "desc": " Controls whether test decorations are shown in the editor gutter.",
+        "setting": {
+            "testing.gutterEnabled": true
+        }
+    },
+    {
+        "settingId": "testing.openTesting",
+        "desc": " Controls when the testing view should open.\n  - neverOpen: Never automatically open the testing views\n  - openOnTestStart: Open the test results view when tests start\n  - openOnTestFailure: Open the test result view on any test failure\n  - openExplorerOnTestStart: Open the test explorer when tests start",
+        "setting": {
+            "testing.openTesting": "openOnTestStart"
+        }
+    },
+    {
+        "settingId": "testing.saveBeforeTest",
+        "desc": " Control whether save all dirty editors before running a test.",
+        "setting": {
+            "testing.saveBeforeTest": true
+        }
+    },
+    {
+        "settingId": "testing.showAllMessages",
+        "desc": " Controls whether to show messages from all test runs.",
+        "setting": {
+            "testing.showAllMessages": false
+        }
+    },
+    {
+        "settingId": "testing.showCoverageInExplorer",
+        "desc": " Whether test coverage should be down in the File Explorer view.",
+        "setting": {
+            "testing.showCoverageInExplorer": true
+        }
+    }
+]

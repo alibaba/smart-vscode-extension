@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[css]",
+        "desc": " Configure settings to be overridden for the css language.",
+        "setting": {
+            "[css]": {
+                "editor.suggest.insertMode": "replace"
+            }
+        }
+    }
+]

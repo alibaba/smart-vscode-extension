@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[fsharp]",
+        "desc": " Configure settings to be overridden for the fsharp language.",
+        "setting": {
+            "[fsharp]": {
+                "diffEditor.ignoreTrimWhitespace": false
+            }
+        }
+    }
+]

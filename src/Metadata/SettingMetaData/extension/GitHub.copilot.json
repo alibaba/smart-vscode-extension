@@ -1,0 +1,28 @@
+[
+    {
+        "name": "github.copilot.advanced",
+        "type": "object"
+    },
+    {
+        "name": "github.copilot.enable",
+        "default": {
+            "*": true,
+            "plaintext": false,
+            "markdown": false,
+            "scminput": false
+        },
+        "type": "object"
+    },
+    {
+        "name": "github.copilot.inlineSuggest.enable",
+        "desc": "Show inline suggestions",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "github.copilot.editor.enableAutoCompletions",
+        "desc": "Automatically show inline completions",
+        "default": true,
+        "type": "boolean"
+    }
+]

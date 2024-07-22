@@ -1,0 +1,16 @@
+[
+    {
+        "settingId": "mediaPreview.video.autoPlay",
+        "desc": " Start playing videos on mute automatically.",
+        "setting": {
+            "mediaPreview.video.autoPlay": false
+        }
+    },
+    {
+        "settingId": "mediaPreview.video.loop",
+        "desc": " Loop videos over again automatically.",
+        "setting": {
+            "mediaPreview.video.loop": false
+        }
+    }
+]

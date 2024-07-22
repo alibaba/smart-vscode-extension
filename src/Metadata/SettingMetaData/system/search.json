@@ -1,0 +1,209 @@
+[
+    {
+        "settingId": "search.actionsPosition",
+        "desc": " Controls the positioning of the actionbar on rows in the search view.\n  - auto: Position the actionbar to the right when the search view is narrow, and immediately after the content when the search view is wide.\n  - right: Always position the actionbar to the right.",
+        "setting": {
+            "search.actionsPosition": "right"
+        }
+    },
+    {
+        "settingId": "search.collapseResults",
+        "desc": " Controls whether the search results will be collapsed or expanded.\n  - auto: Files with less than 10 results are expanded. Others are collapsed.\n  - alwaysCollapse\n  - alwaysExpand",
+        "setting": {
+            "search.collapseResults": "alwaysExpand"
+        }
+    },
+    {
+        "settingId": "search.decorations.badges",
+        "desc": " Controls whether search file decorations should use badges.",
+        "setting": {
+            "search.decorations.badges": true
+        }
+    },
+    {
+        "settingId": "search.decorations.colors",
+        "desc": " Controls whether search file decorations should use colors.",
+        "setting": {
+            "search.decorations.colors": true
+        }
+    },
+    {
+        "settingId": "search.defaultViewMode",
+        "desc": " Controls the default search result view mode.\n  - tree: Shows search results as a tree.\n  - list: Shows search results as a list.",
+        "setting": {
+            "search.defaultViewMode": "list"
+        }
+    },
+    {
+        "settingId": "search.exclude",
+        "desc": " Configure glob patterns for excluding files and folders in fulltext searches and quick open. Inherits all glob patterns from the `files.exclude` setting.",
+        "setting": {
+            "search.exclude": {
+                "**/node_modules": true,
+                "**/bower_components": true,
+                "**/*.code-search": true
+            }
+        }
+    },
+    {
+        "settingId": "search.followSymlinks",
+        "desc": " Controls whether to follow symlinks while searching.",
+        "setting": {
+            "search.followSymlinks": true
+        }
+    },
+    {
+        "settingId": "search.maxResults",
+        "desc": " Controls the maximum number of search results, this can be set to `null` (empty) to return unlimited results.",
+        "setting": {
+            "search.maxResults": 20000
+        }
+    },
+    {
+        "settingId": "search.globalFindClipboard",
+        "desc": " Controls whether the search view should read or modify the shared find clipboard on macOS.",
+        "setting": {
+            "search.globalFindClipboard": false
+        }
+    },
+    {
+        "settingId": "search.mode",
+        "desc": " Controls where new `Search: Find in Files` and `Find in Folder` operations occur: either in the search view, or in a search editor.\n  - view: Search in the search view, either in the panel or side bars.\n  - reuseEditor: Search in an existing search editor if present, otherwise in a new search editor.\n  - newEditor: Search in a new search editor.",
+        "setting": {
+            "search.mode": "view"
+        }
+    },
+    {
+        "settingId": "search.quickAccess.preserveInput",
+        "desc": " Controls whether the last typed input to Quick Search should be restored when opening it the next time.",
+        "setting": {
+            "search.quickAccess.preserveInput": false
+        }
+    },
+    {
+        "settingId": "search.quickOpen.history.filterSortOrder",
+        "desc": " Controls sorting order of editor history in quick open when filtering.\n  - default: History entries are sorted by relevance based on the filter value used. More relevant entries appear first.\n  - recency: History entries are sorted by recency. More recently opened entries appear first.",
+        "setting": {
+            "search.quickOpen.history.filterSortOrder": "default"
+        }
+    },
+    {
+        "settingId": "search.quickOpen.includeHistory",
+        "desc": " Whether to include results from recently opened files in the file results for Quick Open.",
+        "setting": {
+            "search.quickOpen.includeHistory": true
+        }
+    },
+    {
+        "settingId": "search.quickOpen.includeSymbols",
+        "desc": " Whether to include results from a global symbol search in the file results for Quick Open.",
+        "setting": {
+            "search.quickOpen.includeSymbols": false
+        }
+    },
+    {
+        "settingId": "search.searchEditor.defaultNumberOfContextLines",
+        "desc": " The default number of surrounding context lines to use when creating new Search Editors. If using `search.searchEditor.reusePriorSearchConfiguration`, this can be set to `null` (empty) to use the prior Search Editor's configuration.",
+        "setting": {
+            "search.searchEditor.defaultNumberOfContextLines": 1
+        }
+    },
+    {
+        "settingId": "search.searchEditor.doubleClickBehaviour",
+        "desc": " Configure effect of double-clicking a result in a search editor.\n  - selectWord: Double-clicking selects the word under the cursor.\n  - goToLocation: Double-clicking opens the result in the active editor group.\n  - openLocationToSide: Double-clicking opens the result in the editor group to the side, creating one if it does not yet exist.",
+        "setting": {
+            "search.searchEditor.doubleClickBehaviour": "goToLocation"
+        }
+    },
+    {
+        "settingId": "search.searchEditor.reusePriorSearchConfiguration",
+        "desc": " When enabled, new Search Editors will reuse the includes, excludes, and flags of the previously opened Search Editor.",
+        "setting": {
+            "search.searchEditor.reusePriorSearchConfiguration": false
+        }
+    },
+    {
+        "settingId": "search.searchEditor.singleClickBehaviour",
+        "desc": " Configure effect of single-clicking a result in a search editor.\n  - default: Single-clicking does nothing.\n  - peekDefinition: Single-clicking opens a Peek Definition window.",
+        "setting": {
+            "search.searchEditor.singleClickBehaviour": "default"
+        }
+    },
+    {
+        "settingId": "search.searchOnType",
+        "desc": " Search all files as you type.",
+        "setting": {
+            "search.searchOnType": true
+        }
+    },
+    {
+        "settingId": "search.searchOnTypeDebouncePeriod",
+        "desc": " When `search.searchOnType` is enabled, controls the timeout in milliseconds between a character being typed and the search starting. Has no effect when `search.searchOnType` is disabled.",
+        "setting": {
+            "search.searchOnTypeDebouncePeriod": 300
+        }
+    },
+    {
+        "settingId": "search.seedOnFocus",
+        "desc": " Update the search query to the editor's selected text when focusing the search view. This happens either on click or when triggering the `workbench.views.search.focus` command.",
+        "setting": {
+            "search.seedOnFocus": false
+        }
+    },
+    {
+        "settingId": "search.seedWithNearestWord",
+        "desc": " Enable seeding search from the word nearest the cursor when the active editor has no selection.",
+        "setting": {
+            "search.seedWithNearestWord": false
+        }
+    },
+    {
+        "settingId": "search.showLineNumbers",
+        "desc": " Controls whether to show line numbers for search results.",
+        "setting": {
+            "search.showLineNumbers": false
+        }
+    },
+    {
+        "settingId": "search.smartCase",
+        "desc": " Search case-insensitively if the pattern is all lowercase, otherwise, search case-sensitively.",
+        "setting": {
+            "search.smartCase": false
+        }
+    },
+    {
+        "settingId": "search.sortOrder",
+        "desc": " Controls sorting order of search results.\n  - default: Results are sorted by folder and file names, in alphabetical order.\n  - fileNames: Results are sorted by file names ignoring folder order, in alphabetical order.\n  - type: Results are sorted by file extensions, in alphabetical order.\n  - modified: Results are sorted by file last modified date, in descending order.\n  - countDescending: Results are sorted by count per file, in descending order.\n  - countAscending: Results are sorted by count per file, in ascending order.",
+        "setting": {
+            "search.sortOrder": "default"
+        }
+    },
+    {
+        "settingId": "search.useGlobalIgnoreFiles",
+        "desc": " Controls whether to use your global gitignore file (for example, from `$HOME/.config/git/ignore`) when searching for files. Requires `search.useIgnoreFiles` to be enabled.",
+        "setting": {
+            "search.useGlobalIgnoreFiles": false
+        }
+    },
+    {
+        "settingId": "search.useIgnoreFiles",
+        "desc": " Controls whether to use `.gitignore` and `.ignore` files when searching for files.",
+        "setting": {
+            "search.useIgnoreFiles": true
+        }
+    },
+    {
+        "settingId": "search.useParentIgnoreFiles",
+        "desc": " Controls whether to use `.gitignore` and `.ignore` files in parent directories when searching for files. Requires `search.useIgnoreFiles` to be enabled.",
+        "setting": {
+            "search.useParentIgnoreFiles": false
+        }
+    },
+    {
+        "settingId": "search.useReplacePreview",
+        "desc": " Controls whether to open Replace Preview when selecting or replacing a match.",
+        "setting": {
+            "search.useReplacePreview": true
+        }
+    }
+]

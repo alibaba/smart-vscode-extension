@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[coffeescript]",
+        "desc": " Configure settings to be overridden for the coffeescript language.",
+        "setting": {
+            "[coffeescript]": {
+                "diffEditor.ignoreTrimWhitespace": false
+            }
+        }
+    }
+]

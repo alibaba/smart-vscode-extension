@@ -1,0 +1,65 @@
+[
+    {
+        "settingId": "security.allowedUNCHosts",
+        "desc": " A set of UNC host names (without leading or trailing backslash, for example `192.168.0.1` or `my-server`) to allow without user confirmation. If a UNC host is being accessed that is not allowed via this setting or has not been acknowledged via user confirmation, an error will occur and the operation stopped.",
+        "setting": {
+            "security.allowedUNCHosts": []
+        }
+    },
+    {
+        "settingId": "security.promptForLocalFileProtocolHandling",
+        "desc": " If enabled, a dialog will ask for confirmation whenever a local file or workspace is about to open through a protocol handler.",
+        "setting": {
+            "security.promptForLocalFileProtocolHandling": true
+        }
+    },
+    {
+        "settingId": "security.promptForRemoteFileProtocolHandling",
+        "desc": " If enabled, a dialog will ask for confirmation whenever a remote file or workspace is about to open through a protocol handler.",
+        "setting": {
+            "security.promptForRemoteFileProtocolHandling": true
+        }
+    },
+    {
+        "settingId": "security.restrictUNCAccess",
+        "desc": " If enabled, only allows access to UNC host names that are allowed by the `security.allowedUNCHosts` setting or after user confirmation.",
+        "setting": {
+            "security.restrictUNCAccess": true
+        }
+    },
+    {
+        "settingId": "security.workspace.trust.banner",
+        "desc": " Controls when the restricted mode banner is shown.\n  - always: Show the banner every time an untrusted workspace is open.\n  - untilDismissed: Show the banner when an untrusted workspace is opened until dismissed.\n  - never: Do not show the banner when an untrusted workspace is open.",
+        "setting": {
+            "security.workspace.trust.banner": "untilDismissed"
+        }
+    },
+    {
+        "settingId": "security.workspace.trust.emptyWindow",
+        "desc": " Controls whether or not the empty window is trusted by default within VS Code. When used with `security.workspace.trust.untrustedFiles`, you can enable the full functionality of VS Code without prompting in an empty window.",
+        "setting": {
+            "security.workspace.trust.emptyWindow": true
+        }
+    },
+    {
+        "settingId": "security.workspace.trust.enabled",
+        "desc": " Controls whether or not Workspace Trust is enabled within VS Code.",
+        "setting": {
+            "security.workspace.trust.enabled": true
+        }
+    },
+    {
+        "settingId": "security.workspace.trust.startupPrompt",
+        "desc": " Controls when the startup prompt to trust a workspace is shown.\n  - always: Ask for trust every time an untrusted workspace is opened.\n  - once: Ask for trust the first time an untrusted workspace is opened.\n  - never: Do not ask for trust when an untrusted workspace is opened.",
+        "setting": {
+            "security.workspace.trust.startupPrompt": "once"
+        }
+    },
+    {
+        "settingId": "security.workspace.trust.untrustedFiles",
+        "desc": " Controls how to handle opening untrusted files in a trusted workspace. This setting also applies to opening files in an empty window which is trusted via `security.workspace.trust.emptyWindow`.\n  - prompt: Ask how to handle untrusted files for each workspace. Once untrusted files are introduced to a trusted workspace, you will not be prompted again.\n  - open: Always allow untrusted files to be introduced to a trusted workspace without prompting.\n  - newWindow: Always open untrusted files in a separate window in restricted mode without prompting.",
+        "setting": {
+            "security.workspace.trust.untrustedFiles": "prompt"
+        }
+    }
+]

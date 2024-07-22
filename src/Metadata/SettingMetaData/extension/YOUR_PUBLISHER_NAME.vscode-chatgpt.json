@@ -1,0 +1,189 @@
+[
+    {
+        "name": "chatgpt.method",
+        "default": "GPT3 OpenAI API Key",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.authenticationType",
+        "default": "OpenAI Authentication",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.emailAddress",
+        "desc": "[Optional] Your openai.com login email address. Provide this if you want to auto-fill your email address during autologin. You don't have to provide this if you want to fill it during login.",
+        "default": null,
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.password",
+        "desc": "[Optional] Your openai.com login password. Provide this if you want to auto-fill your password during autologin. You don't have to provide this if you want to fill it during login.",
+        "default": null,
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.proxyServer",
+        "default": null,
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.chromiumPath",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.gpt3.generateCode-enabled",
+        "desc": "Enable the code generation context menu item for the selected comment/code for Codex. Only available with code-* models",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.promptPrefix.addTests",
+        "desc": "The prompt prefix used for adding tests for the selected code",
+        "default": "Implement tests for the following code",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.promptPrefix.addTests-enabled",
+        "desc": "Enable the prompt prefix used for adding tests for the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.promptPrefix.findProblems",
+        "desc": "The prompt prefix used for finding problems for the selected code",
+        "default": "Find problems with the following code",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.promptPrefix.findProblems-enabled",
+        "desc": "Enable the prompt prefix used for finding problems for the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.promptPrefix.optimize",
+        "desc": "The prompt prefix used for optimizing the selected code",
+        "default": "Optimize the following code",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.promptPrefix.optimize-enabled",
+        "desc": "Enable the prompt prefix used for optimizing the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.promptPrefix.explain",
+        "desc": "The prompt prefix used for explaining the selected code",
+        "default": "Explain the following code",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.promptPrefix.explain-enabled",
+        "desc": "Enable the prompt prefix used for explaining the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.promptPrefix.addComments",
+        "desc": "The prompt prefix used for adding comments for the selected code",
+        "default": "Add comments for the following code",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.promptPrefix.addComments-enabled",
+        "desc": "Enable the prompt prefix used for adding comments for the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.promptPrefix.completeCode",
+        "desc": "The prompt prefix used for completing the selected code",
+        "default": "Complete the following code",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.promptPrefix.completeCode-enabled",
+        "desc": "Enable the prompt prefix used for completing the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.promptPrefix.customPrompt1",
+        "desc": "Your custom prompt. It's disabled by default, please set to a custom prompt and enable it if you prefer using customized prompt",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.promptPrefix.customPrompt1-enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.promptPrefix.customPrompt2",
+        "desc": "Your custom prompt. It's disabled by default, please set to a custom prompt and enable it if you prefer using customized prompt",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.promptPrefix.customPrompt2-enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.promptPrefix.adhoc-enabled",
+        "desc": "Enable the prompt prefix used for adhoc command for the selected code in the context menu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.gpt3.apiKey",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.gpt3.apiBaseUrl",
+        "default": "https://api.openai.com",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.gpt3.organization",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.gpt3.model",
+        "default": "gpt-3.5-turbo",
+        "type": "string"
+    },
+    {
+        "name": "chatgpt.gpt3.maxTokens",
+        "default": 1024,
+        "type": "number"
+    },
+    {
+        "name": "chatgpt.gpt3.temperature",
+        "default": 1,
+        "type": "number"
+    },
+    {
+        "name": "chatgpt.gpt3.top_p",
+        "default": 1,
+        "type": "number"
+    },
+    {
+        "name": "chatgpt.response.showNotification",
+        "desc": "Choose whether you'd like to receive a notification when ChatGPT bot responds to your query.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.response.autoScroll",
+        "desc": "Whenever there is a new question or response added to the conversation window, extension will automatically scroll to the bottom. You can change that behavior by disabling this setting.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "chatgpt.telemetry.disable",
+        "default": false,
+        "type": "boolean"
+    }
+]

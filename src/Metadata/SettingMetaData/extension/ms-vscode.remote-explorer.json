@@ -1,0 +1,8 @@
+[
+    {
+        "name": "remote-explorer.foldersSortOrder",
+        "desc": "Specifies the order in which to display folders under Remote targets in the Remote Explorer.",
+        "default": "most recently used",
+        "type": "string"
+    }
+]

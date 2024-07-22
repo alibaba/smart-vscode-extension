@@ -1,0 +1,1668 @@
+[
+    {
+        "settingId": "editor.acceptSuggestionOnCommitCharacter",
+        "desc": " Controls whether suggestions should be accepted on commit characters. For example, in JavaScript, the semi-colon (`;`) can be a commit character that accepts a suggestion and types that character.",
+        "setting": {
+            "editor.acceptSuggestionOnCommitCharacter": true
+        }
+    },
+    {
+        "settingId": "editor.acceptSuggestionOnEnter",
+        "desc": " Controls whether suggestions should be accepted on `Enter`, in addition to `Tab`. Helps to avoid ambiguity between inserting new lines or accepting suggestions.\n  - on\n  - smart: Only accept a suggestion with `Enter` when it makes a textual change.\n  - off",
+        "setting": {
+            "editor.acceptSuggestionOnEnter": "on"
+        }
+    },
+    {
+        "settingId": "editor.accessibilityPageSize",
+        "desc": " Controls the number of lines in the editor that can be read out by a screen reader at once. When we detect a screen reader, we automatically set the default to be 500.",
+        "setting": {
+            "editor.accessibilityPageSize": 10
+        }
+    },
+    {
+        "settingId": "editor.accessibilitySupport",
+        "desc": " Controls if the UI should run in a mode where it is optimized for screen readers.\n  - auto: Use platform APIs to detect when a Screen Reader is attached.\n  - on: Optimize for usage with a Screen Reader.\n  - off: Assume a screen reader is not attached.",
+        "setting": {
+            "editor.accessibilitySupport": "auto"
+        }
+    },
+    {
+        "settingId": "editor.autoClosingBrackets",
+        "desc": " Controls whether the editor should automatically close brackets after the user adds an opening bracket.\n  - always\n  - languageDefined: Use language configurations to determine when to autoclose brackets.\n  - beforeWhitespace: Autoclose brackets only when the cursor is to the left of whitespace.\n  - never",
+        "setting": {
+            "editor.autoClosingBrackets": "languageDefined"
+        }
+    },
+    {
+        "settingId": "editor.autoClosingComments",
+        "desc": " Controls whether the editor should automatically close comments after the user adds an opening comment.\n  - always\n  - languageDefined: Use language configurations to determine when to autoclose comments.\n  - beforeWhitespace: Autoclose comments only when the cursor is to the left of whitespace.\n  - never",
+        "setting": {
+            "editor.autoClosingComments": "languageDefined"
+        }
+    },
+    {
+        "settingId": "editor.autoClosingDelete",
+        "desc": " Controls whether the editor should remove adjacent closing quotes or brackets when deleting.\n  - always\n  - auto: Remove adjacent closing quotes or brackets only if they were automatically inserted.\n  - never",
+        "setting": {
+            "editor.autoClosingDelete": "auto"
+        }
+    },
+    {
+        "settingId": "editor.autoClosingOvertype",
+        "desc": " Controls whether the editor should type over closing quotes or brackets.\n  - always\n  - auto: Type over closing quotes or brackets only if they were automatically inserted.\n  - never",
+        "setting": {
+            "editor.autoClosingOvertype": "auto"
+        }
+    },
+    {
+        "settingId": "editor.autoClosingQuotes",
+        "desc": " Controls whether the editor should automatically close quotes after the user adds an opening quote.\n  - always\n  - languageDefined: Use language configurations to determine when to autoclose quotes.\n  - beforeWhitespace: Autoclose quotes only when the cursor is to the left of whitespace.\n  - never",
+        "setting": {
+            "editor.autoClosingQuotes": "languageDefined"
+        }
+    },
+    {
+        "settingId": "editor.autoIndent",
+        "desc": " Controls whether the editor should automatically adjust the indentation when users type, paste, move or indent lines.\n  - none: The editor will not insert indentation automatically.\n  - keep: The editor will keep the current line's indentation.\n  - brackets: The editor will keep the current line's indentation and honor language defined brackets.\n  - advanced: The editor will keep the current line's indentation, honor language defined brackets and invoke special onEnterRules defined by languages.\n  - full: The editor will keep the current line's indentation, honor language defined brackets, invoke special onEnterRules defined by languages, and honor indentationRules defined by languages.",
+        "setting": {
+            "editor.autoIndent": "full"
+        }
+    },
+    {
+        "settingId": "editor.autoSurround",
+        "desc": " Controls whether the editor should automatically surround selections when typing quotes or brackets.\n  - languageDefined: Use language configurations to determine when to automatically surround selections.\n  - quotes: Surround with quotes but not brackets.\n  - brackets: Surround with brackets but not quotes.\n  - never",
+        "setting": {
+            "editor.autoSurround": "languageDefined"
+        }
+    },
+    {
+        "settingId": "editor.bracketPairColorization.enabled",
+        "desc": " Controls whether bracket pair colorization is enabled or not. Use `workbench.colorCustomizations` to override the bracket highlight colors.",
+        "setting": {
+            "editor.bracketPairColorization.enabled": true
+        }
+    },
+    {
+        "settingId": "editor.bracketPairColorization.independentColorPoolPerBracketType",
+        "desc": " Controls whether each bracket type has its own independent color pool.",
+        "setting": {
+            "editor.bracketPairColorization.independentColorPoolPerBracketType": false
+        }
+    },
+    {
+        "settingId": "editor.codeActionsOnSave",
+        "desc": " Run Code Actions for the editor on save.",
+        "setting": {
+            "editor.codeActionsOnSave": {}
+        }
+    },
+    {
+        "settingId": "editor.codeActionWidget.includeNearbyQuickFixes",
+        "desc": " Enable/disable showing nearest Quick Fix within a line when not currently on a diagnostic.",
+        "setting": {
+            "editor.codeActionWidget.includeNearbyQuickFixes": true
+        }
+    },
+    {
+        "settingId": "editor.codeActionWidget.showHeaders",
+        "desc": " Enable/disable showing group headers in the Code Action menu.",
+        "setting": {
+            "editor.codeActionWidget.showHeaders": true
+        }
+    },
+    {
+        "settingId": "editor.codeLens",
+        "desc": " Controls whether the editor shows CodeLens.",
+        "setting": {
+            "editor.codeLens": true
+        }
+    },
+    {
+        "settingId": "editor.codeLensFontFamily",
+        "desc": " Controls the font family for CodeLens.",
+        "setting": {
+            "editor.codeLensFontFamily": ""
+        }
+    },
+    {
+        "settingId": "editor.codeLensFontSize",
+        "desc": " Controls the font size in pixels for CodeLens. When set to 0, 90% of `editor.fontSize` is used.",
+        "setting": {
+            "editor.codeLensFontSize": 0
+        }
+    },
+    {
+        "settingId": "editor.colorDecorators",
+        "desc": " Controls whether the editor should render the inline color decorators and color picker.",
+        "setting": {
+            "editor.colorDecorators": true
+        }
+    },
+    {
+        "settingId": "editor.colorDecoratorsActivatedOn",
+        "desc": " Controls the condition to make a color picker appear from a color decorator\n  - clickAndHover: Make the color picker appear both on click and hover of the color decorator\n  - hover: Make the color picker appear on hover of the color decorator\n  - click: Make the color picker appear on click of the color decorator",
+        "setting": {
+            "editor.colorDecoratorsActivatedOn": "clickAndHover"
+        }
+    },
+    {
+        "settingId": "editor.colorDecoratorsLimit",
+        "desc": " Controls the max number of color decorators that can be rendered in an editor at once.",
+        "setting": {
+            "editor.colorDecoratorsLimit": 500
+        }
+    },
+    {
+        "settingId": "editor.columnSelection",
+        "desc": " Enable that the selection with the mouse and keys is doing column selection.",
+        "setting": {
+            "editor.columnSelection": false
+        }
+    },
+    {
+        "settingId": "editor.comments.ignoreEmptyLines",
+        "desc": " Controls if empty lines should be ignored with toggle, add or remove actions for line comments.",
+        "setting": {
+            "editor.comments.ignoreEmptyLines": true
+        }
+    },
+    {
+        "settingId": "editor.comments.insertSpace",
+        "desc": " Controls whether a space character is inserted when commenting.",
+        "setting": {
+            "editor.comments.insertSpace": true
+        }
+    },
+    {
+        "settingId": "editor.copyWithSyntaxHighlighting",
+        "desc": " Controls whether syntax highlighting should be copied into the clipboard.",
+        "setting": {
+            "editor.copyWithSyntaxHighlighting": true
+        }
+    },
+    {
+        "settingId": "editor.cursorBlinking",
+        "desc": " Control the cursor animation style.",
+        "setting": {
+            "editor.cursorBlinking": "blink"
+        }
+    },
+    {
+        "settingId": "editor.cursorSmoothCaretAnimation",
+        "desc": " Controls whether the smooth caret animation should be enabled.\n  - off: Smooth caret animation is disabled.\n  - explicit: Smooth caret animation is enabled only when the user moves the cursor with an explicit gesture.\n  - on: Smooth caret animation is always enabled.",
+        "setting": {
+            "editor.cursorSmoothCaretAnimation": "off"
+        }
+    },
+    {
+        "settingId": "editor.cursorStyle",
+        "desc": " Controls the cursor style.",
+        "setting": {
+            "editor.cursorStyle": "line"
+        }
+    },
+    {
+        "settingId": "editor.cursorSurroundingLines",
+        "desc": " Controls the minimal number of visible leading lines (minimum 0) and trailing lines (minimum 1) surrounding the cursor. Known as 'scrollOff' or 'scrollOffset' in some other editors.",
+        "setting": {
+            "editor.cursorSurroundingLines": 0
+        }
+    },
+    {
+        "settingId": "editor.cursorSurroundingLinesStyle",
+        "desc": " Controls when `editor.cursorSurroundingLines` should be enforced.\n  - default: `cursorSurroundingLines` is enforced only when triggered via the keyboard or API.\n  - all: `cursorSurroundingLines` is enforced always.",
+        "setting": {
+            "editor.cursorSurroundingLinesStyle": "default"
+        }
+    },
+    {
+        "settingId": "editor.cursorWidth",
+        "desc": " Controls the width of the cursor when `editor.cursorStyle` is set to `line`.",
+        "setting": {
+            "editor.cursorWidth": 0
+        }
+    },
+    {
+        "settingId": "editor.defaultColorDecorators",
+        "desc": " Controls whether inline color decorations should be shown using the default document color provider",
+        "setting": {
+            "editor.defaultColorDecorators": false
+        }
+    },
+    {
+        "settingId": "editor.defaultFoldingRangeProvider",
+        "desc": " Defines a default folding range provider that takes precedence over all other folding range providers. Must be the identifier of an extension contributing a folding range provider.",
+        "setting": {
+            "editor.defaultFoldingRangeProvider": null
+        }
+    },
+    {
+        "settingId": "editor.defaultFormatter",
+        "desc": " Defines a default formatter which takes precedence over all other formatter settings. Must be the identifier of an extension contributing a formatter.",
+        "setting": {
+            "editor.defaultFormatter": null
+        }
+    },
+    {
+        "settingId": "editor.definitionLinkOpensInPeek",
+        "desc": " Controls whether the Go to Definition mouse gesture always opens the peek widget.",
+        "setting": {
+            "editor.definitionLinkOpensInPeek": false
+        }
+    },
+    {
+        "settingId": "editor.detectIndentation",
+        "desc": " Controls whether `editor.tabSize#` and `#editor.insertSpaces` will be automatically detected when a file is opened based on the file contents.",
+        "setting": {
+            "editor.detectIndentation": true
+        }
+    },
+    {
+        "settingId": "editor.dragAndDrop",
+        "desc": " Controls whether the editor should allow moving selections via drag and drop.",
+        "setting": {
+            "editor.dragAndDrop": true
+        }
+    },
+    {
+        "settingId": "editor.dropIntoEditor.enabled",
+        "desc": " Controls whether you can drag and drop a file into a text editor by holding down the `Shift` key (instead of opening the file in an editor).",
+        "setting": {
+            "editor.dropIntoEditor.enabled": true
+        }
+    },
+    {
+        "settingId": "editor.dropIntoEditor.showDropSelector",
+        "desc": " Controls if a widget is shown when dropping files into the editor. This widget lets you control how the file is dropped.\n  - afterDrop: Show the drop selector widget after a file is dropped into the editor.\n  - never: Never show the drop selector widget. Instead the default drop provider is always used.",
+        "setting": {
+            "editor.dropIntoEditor.showDropSelector": "afterDrop"
+        }
+    },
+    {
+        "settingId": "editor.emptySelectionClipboard",
+        "desc": " Controls whether copying without a selection copies the current line.",
+        "setting": {
+            "editor.emptySelectionClipboard": true
+        }
+    },
+    {
+        "settingId": "editor.fastScrollSensitivity",
+        "desc": " Scrolling speed multiplier when pressing `Alt`.",
+        "setting": {
+            "editor.fastScrollSensitivity": 5
+        }
+    },
+    {
+        "settingId": "editor.find.addExtraSpaceOnTop",
+        "desc": " Controls whether the Find Widget should add extra lines on top of the editor. When true, you can scroll beyond the first line when the Find Widget is visible.",
+        "setting": {
+            "editor.find.addExtraSpaceOnTop": true
+        }
+    },
+    {
+        "settingId": "editor.find.autoFindInSelection",
+        "desc": " Controls the condition for turning on Find in Selection automatically.\n  - never: Never turn on Find in Selection automatically (default).\n  - always: Always turn on Find in Selection automatically.\n  - multiline: Turn on Find in Selection automatically when multiple lines of content are selected.",
+        "setting": {
+            "editor.find.autoFindInSelection": "never"
+        }
+    },
+    {
+        "settingId": "editor.find.cursorMoveOnType",
+        "desc": " Controls whether the cursor should jump to find matches while typing.",
+        "setting": {
+            "editor.find.cursorMoveOnType": true
+        }
+    },
+    {
+        "settingId": "editor.find.globalFindClipboard",
+        "desc": " Controls whether the Find Widget should read or modify the shared find clipboard on macOS.",
+        "setting": {
+            "editor.find.globalFindClipboard": false
+        }
+    },
+    {
+        "settingId": "editor.find.loop",
+        "desc": " Controls whether the search automatically restarts from the beginning (or the end) when no further matches can be found.",
+        "setting": {
+            "editor.find.loop": true
+        }
+    },
+    {
+        "settingId": "editor.find.seedSearchStringFromSelection",
+        "desc": " Controls whether the search string in the Find Widget is seeded from the editor selection.\n  - never: Never seed search string from the editor selection.\n  - always: Always seed search string from the editor selection, including word at cursor position.\n  - selection: Only seed search string from the editor selection.",
+        "setting": {
+            "editor.find.seedSearchStringFromSelection": "always"
+        }
+    },
+    {
+        "settingId": "editor.folding",
+        "desc": " Controls whether the editor has code folding enabled.",
+        "setting": {
+            "editor.folding": true
+        }
+    },
+    {
+        "settingId": "editor.foldingHighlight",
+        "desc": " Controls whether the editor should highlight folded ranges.",
+        "setting": {
+            "editor.foldingHighlight": true
+        }
+    },
+    {
+        "settingId": "editor.foldingImportsByDefault",
+        "desc": " Controls whether the editor automatically collapses import ranges.",
+        "setting": {
+            "editor.foldingImportsByDefault": false
+        }
+    },
+    {
+        "settingId": "editor.foldingMaximumRegions",
+        "desc": " The maximum number of foldable regions. Increasing this value may result in the editor becoming less responsive when the current source has a large number of foldable regions.",
+        "setting": {
+            "editor.foldingMaximumRegions": 5000
+        }
+    },
+    {
+        "settingId": "editor.foldingStrategy",
+        "desc": " Controls the strategy for computing folding ranges.\n  - auto: Use a language-specific folding strategy if available, else the indentation-based one.\n  - indentation: Use the indentation-based folding strategy.",
+        "setting": {
+            "editor.foldingStrategy": "auto"
+        }
+    },
+    {
+        "settingId": "editor.fontFamily",
+        "desc": " Controls the font family.",
+        "setting": {
+            "editor.fontFamily": "Consolas, 'Courier New', monospace"
+        }
+    },
+    {
+        "settingId": "editor.fontLigatures",
+        "desc": " Configures font ligatures or font features. Can be either a boolean to enable/disable ligatures or a string for the value of the CSS 'font-feature-settings' property.",
+        "setting": {
+            "editor.fontLigatures": false
+        }
+    },
+    {
+        "settingId": "editor.fontSize",
+        "desc": " Controls the font size in pixels.",
+        "setting": {
+            "editor.fontSize": 14
+        }
+    },
+    {
+        "settingId": "editor.fontVariations",
+        "desc": " Configures font variations. Can be either a boolean to enable/disable the translation from font-weight to font-variation-settings or a string for the value of the CSS 'font-variation-settings' property.",
+        "setting": {
+            "editor.fontVariations": false
+        }
+    },
+    {
+        "settingId": "editor.fontWeight",
+        "desc": " Controls the font weight. Accepts \"normal\" and \"bold\" keywords or numbers between 1 and 1000.",
+        "setting": {
+            "editor.fontWeight": "normal"
+        }
+    },
+    {
+        "settingId": "editor.formatOnPaste",
+        "desc": " Controls whether the editor should automatically format the pasted content. A formatter must be available and the formatter should be able to format a range in a document.",
+        "setting": {
+            "editor.formatOnPaste": false
+        }
+    },
+    {
+        "settingId": "editor.formatOnSave",
+        "desc": " Format a file on save. A formatter must be available, the file must not be saved after delay, and the editor must not be shutting down.",
+        "setting": {
+            "editor.formatOnSave": false
+        }
+    },
+    {
+        "settingId": "editor.formatOnSaveMode",
+        "desc": " Controls if format on save formats the whole file or only modifications. Only applies when `editor.formatOnSave` is enabled.\n  - file: Format the whole file.\n  - modifications: Format modifications (requires source control).\n  - modificationsIfAvailable: Will attempt to format modifications only (requires source control). If source control can't be used, then the whole file will be formatted.",
+        "setting": {
+            "editor.formatOnSaveMode": "file"
+        }
+    },
+    {
+        "settingId": "editor.formatOnType",
+        "desc": " Controls whether the editor should automatically format the line after typing.",
+        "setting": {
+            "editor.formatOnType": false
+        }
+    },
+    {
+        "settingId": "editor.glyphMargin",
+        "desc": " Controls whether the editor should render the vertical glyph margin. Glyph margin is mostly used for debugging.",
+        "setting": {
+            "editor.glyphMargin": true
+        }
+    },
+    {
+        "settingId": "editor.gotoLocation.alternativeDeclarationCommand",
+        "desc": " Alternative command id that is being executed when the result of 'Go to Declaration' is the current location.",
+        "setting": {
+            "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.goToReferences"
+        }
+    },
+    {
+        "settingId": "editor.gotoLocation.alternativeDefinitionCommand",
+        "desc": " Alternative command id that is being executed when the result of 'Go to Definition' is the current location.",
+        "setting": {
+            "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.goToReferences"
+        }
+    },
+    {
+        "settingId": "editor.gotoLocation.alternativeImplementationCommand",
+        "desc": " Alternative command id that is being executed when the result of 'Go to Implementation' is the current location.",
+        "setting": {
+            "editor.gotoLocation.alternativeImplementationCommand": ""
+        }
+    },
+    {
+        "settingId": "editor.gotoLocation.alternativeReferenceCommand",
+        "desc": " Alternative command id that is being executed when the result of 'Go to Reference' is the current location.",
+        "setting": {
+            "editor.gotoLocation.alternativeReferenceCommand": ""
+        }
+    },
+    {
+        "settingId": "editor.gotoLocation.alternativeTypeDefinitionCommand",
+        "desc": " Alternative command id that is being executed when the result of 'Go to Type Definition' is the current location.",
+        "setting": {
+            "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.goToReferences"
+        }
+    },
+    {
+        "settingId": "editor.gotoLocation.multipleDeclarations",
+        "desc": " Controls the behavior the 'Go to Declaration'-command when multiple target locations exist.\n  - peek: Show Peek view of the results (default)\n  - gotoAndPeek: Go to the primary result and show a Peek view\n  - goto: Go to the primary result and enable Peek-less navigation to others",
+        "setting": {
+            "editor.gotoLocation.multipleDeclarations": "peek"
+        }
+    },
+    {
+        "settingId": "editor.gotoLocation.multipleDefinitions",
+        "desc": " Controls the behavior the 'Go to Definition'-command when multiple target locations exist.\n  - peek: Show Peek view of the results (default)\n  - gotoAndPeek: Go to the primary result and show a Peek view\n  - goto: Go to the primary result and enable Peek-less navigation to others",
+        "setting": {
+            "editor.gotoLocation.multipleDefinitions": "peek"
+        }
+    },
+    {
+        "settingId": "editor.gotoLocation.multipleImplementations",
+        "desc": " Controls the behavior the 'Go to Implementations'-command when multiple target locations exist.\n  - peek: Show Peek view of the results (default)\n  - gotoAndPeek: Go to the primary result and show a Peek view\n  - goto: Go to the primary result and enable Peek-less navigation to others",
+        "setting": {
+            "editor.gotoLocation.multipleImplementations": "peek"
+        }
+    },
+    {
+        "settingId": "editor.gotoLocation.multipleReferences",
+        "desc": " Controls the behavior the 'Go to References'-command when multiple target locations exist.\n  - peek: Show Peek view of the results (default)\n  - gotoAndPeek: Go to the primary result and show a Peek view\n  - goto: Go to the primary result and enable Peek-less navigation to others",
+        "setting": {
+            "editor.gotoLocation.multipleReferences": "peek"
+        }
+    },
+    {
+        "settingId": "editor.gotoLocation.multipleTypeDefinitions",
+        "desc": " Controls the behavior the 'Go to Type Definition'-command when multiple target locations exist.\n  - peek: Show Peek view of the results (default)\n  - gotoAndPeek: Go to the primary result and show a Peek view\n  - goto: Go to the primary result and enable Peek-less navigation to others",
+        "setting": {
+            "editor.gotoLocation.multipleTypeDefinitions": "peek"
+        }
+    },
+    {
+        "settingId": "editor.guides.bracketPairs",
+        "desc": " Controls whether bracket pair guides are enabled or not.\n  - true: Enables bracket pair guides.\n  - active: Enables bracket pair guides only for the active bracket pair.\n  - false: Disables bracket pair guides.",
+        "setting": {
+            "editor.guides.bracketPairs": false
+        }
+    },
+    {
+        "settingId": "editor.guides.bracketPairsHorizontal",
+        "desc": " Controls whether horizontal bracket pair guides are enabled or not.\n  - true: Enables horizontal guides as addition to vertical bracket pair guides.\n  - active: Enables horizontal guides only for the active bracket pair.\n  - false: Disables horizontal bracket pair guides.",
+        "setting": {
+            "editor.guides.bracketPairsHorizontal": "active"
+        }
+    },
+    {
+        "settingId": "editor.guides.highlightActiveBracketPair",
+        "desc": " Controls whether the editor should highlight the active bracket pair.",
+        "setting": {
+            "editor.guides.highlightActiveBracketPair": true
+        }
+    },
+    {
+        "settingId": "editor.guides.highlightActiveIndentation",
+        "desc": " Controls whether the editor should highlight the active indent guide.\n  - true: Highlights the active indent guide.\n  - always: Highlights the active indent guide even if bracket guides are highlighted.\n  - false: Do not highlight the active indent guide.",
+        "setting": {
+            "editor.guides.highlightActiveIndentation": true
+        }
+    },
+    {
+        "settingId": "editor.guides.indentation",
+        "desc": " Controls whether the editor should render indent guides.",
+        "setting": {
+            "editor.guides.indentation": true
+        }
+    },
+    {
+        "settingId": "editor.hideCursorInOverviewRuler",
+        "desc": " Controls whether the cursor should be hidden in the overview ruler.",
+        "setting": {
+            "editor.hideCursorInOverviewRuler": false
+        }
+    },
+    {
+        "settingId": "editor.hover.above",
+        "desc": " Prefer showing hovers above the line, if there's space.",
+        "setting": {
+            "editor.hover.above": true
+        }
+    },
+    {
+        "settingId": "editor.hover.delay",
+        "desc": " Controls the delay in milliseconds after which the hover is shown.",
+        "setting": {
+            "editor.hover.delay": 300
+        }
+    },
+    {
+        "settingId": "editor.hover.enabled",
+        "desc": " Controls whether the hover is shown.",
+        "setting": {
+            "editor.hover.enabled": true
+        }
+    },
+    {
+        "settingId": "editor.hover.hidingDelay",
+        "desc": " Controls the delay in milliseconds after which the hover is hidden.",
+        "setting": {
+            "editor.hover.hidingDelay": 300
+        }
+    },
+    {
+        "settingId": "editor.hover.sticky",
+        "desc": " Controls whether the hover should remain visible when mouse is moved over it.",
+        "setting": {
+            "editor.hover.sticky": true
+        }
+    },
+    {
+        "settingId": "editor.indentSize",
+        "desc": " The number of spaces used for indentation or `\"tabSize\"` to use the value from `editor.tabSize#`. This setting is overridden based on the file contents when `#editor.detectIndentation` is on.",
+        "setting": {
+            "editor.indentSize": "tabSize"
+        }
+    },
+    {
+        "settingId": "editor.inlayHints.enabled",
+        "desc": " Enables the inlay hints in the editor.\n  - on: Inlay hints are enabled\n  - onUnlessPressed: Inlay hints are showing by default and hide when holding Ctrl+Alt\n  - offUnlessPressed: Inlay hints are hidden by default and show when holding Ctrl+Alt\n  - off: Inlay hints are disabled",
+        "setting": {
+            "editor.inlayHints.enabled": "on"
+        }
+    },
+    {
+        "settingId": "editor.inlayHints.fontFamily",
+        "desc": " Controls font family of inlay hints in the editor. When set to empty, the `editor.fontFamily` is used.",
+        "setting": {
+            "editor.inlayHints.fontFamily": ""
+        }
+    },
+    {
+        "settingId": "editor.inlayHints.fontSize",
+        "desc": " Controls font size of inlay hints in the editor. As default the `editor.fontSize` is used when the configured value is less than `5` or greater than the editor font size.",
+        "setting": {
+            "editor.inlayHints.fontSize": 0
+        }
+    },
+    {
+        "settingId": "editor.inlayHints.padding",
+        "desc": " Enables the padding around the inlay hints in the editor.",
+        "setting": {
+            "editor.inlayHints.padding": false
+        }
+    },
+    {
+        "settingId": "editor.inlineCompletionsAccessibilityVerbose",
+        "desc": " Controls whether the accessibility hint should be provided to screen reader users when an inline completion is shown.",
+        "setting": {
+            "editor.inlineCompletionsAccessibilityVerbose": false
+        }
+    },
+    {
+        "settingId": "editor.inlineSuggest.enabled",
+        "desc": " Controls whether to automatically show inline suggestions in the editor.",
+        "setting": {
+            "editor.inlineSuggest.enabled": true
+        }
+    },
+    {
+        "settingId": "editor.inlineSuggest.fontFamily",
+        "desc": " Controls the font family of the inline suggestions.",
+        "setting": {
+            "editor.inlineSuggest.fontFamily": "default"
+        }
+    },
+    {
+        "settingId": "editor.inlineSuggest.showToolbar",
+        "desc": " Controls when to show the inline suggestion toolbar.\n  - always: Show the inline suggestion toolbar whenever an inline suggestion is shown.\n  - onHover: Show the inline suggestion toolbar when hovering over an inline suggestion.\n  - never: Never show the inline suggestion toolbar.",
+        "setting": {
+            "editor.inlineSuggest.showToolbar": "onHover"
+        }
+    },
+    {
+        "settingId": "editor.inlineSuggest.suppressSuggestions",
+        "desc": " Controls how inline suggestions interact with the suggest widget. If enabled, the suggest widget is not shown automatically when inline suggestions are available.",
+        "setting": {
+            "editor.inlineSuggest.suppressSuggestions": false
+        }
+    },
+    {
+        "settingId": "editor.insertSpaces",
+        "desc": " Insert spaces when pressing `Tab`. This setting is overridden based on the file contents when `editor.detectIndentation` is on.",
+        "setting": {
+            "editor.insertSpaces": true
+        }
+    },
+    {
+        "settingId": "editor.language.brackets",
+        "desc": " Defines the bracket symbols that increase or decrease the indentation.",
+        "setting": {
+            "editor.language.brackets": null
+        }
+    },
+    {
+        "settingId": "editor.language.colorizedBracketPairs",
+        "desc": " Defines the bracket pairs that are colorized by their nesting level if bracket pair colorization is enabled.",
+        "setting": {
+            "editor.language.colorizedBracketPairs": null
+        }
+    },
+    {
+        "settingId": "editor.largeFileOptimizations",
+        "desc": " Special handling for large files to disable certain memory intensive features.",
+        "setting": {
+            "editor.largeFileOptimizations": true
+        }
+    },
+    {
+        "settingId": "editor.letterSpacing",
+        "desc": " Controls the letter spacing in pixels.",
+        "setting": {
+            "editor.letterSpacing": 0
+        }
+    },
+    {
+        "settingId": "editor.lightbulb.enabled",
+        "desc": " Enables the Code Action lightbulb in the editor.\n  - off: Disable the code action menu.\n  - onCode: Show the code action menu when the cursor is on lines with code.\n  - on: Show the code action menu when the cursor is on lines with code or on empty lines.",
+        "setting": {
+            "editor.lightbulb.enabled": "on"
+        }
+    },
+    {
+        "settingId": "editor.lineHeight",
+        "desc": " Controls the line height.\n  - Use 0 to automatically compute the line height from the font size.\n  - Values between 0 and 8 will be used as a multiplier with the font size.\n  - Values greater than or equal to 8 will be used as effective values.",
+        "setting": {
+            "editor.lineHeight": 0
+        }
+    },
+    {
+        "settingId": "editor.lineNumbers",
+        "desc": " Controls the display of line numbers.\n  - off: Line numbers are not rendered.\n  - on: Line numbers are rendered as absolute number.\n  - relative: Line numbers are rendered as distance in lines to cursor position.\n  - interval: Line numbers are rendered every 10 lines.",
+        "setting": {
+            "editor.lineNumbers": "on"
+        }
+    },
+    {
+        "settingId": "editor.linkedEditing",
+        "desc": " Controls whether the editor has linked editing enabled. Depending on the language, related symbols such as HTML tags, are updated while editing.",
+        "setting": {
+            "editor.linkedEditing": false
+        }
+    },
+    {
+        "settingId": "editor.links",
+        "desc": " Controls whether the editor should detect links and make them clickable.",
+        "setting": {
+            "editor.links": true
+        }
+    },
+    {
+        "settingId": "editor.matchBrackets",
+        "desc": " Highlight matching brackets.",
+        "setting": {
+            "editor.matchBrackets": "always"
+        }
+    },
+    {
+        "settingId": "editor.maxTokenizationLineLength",
+        "desc": " Lines above this length will not be tokenized for performance reasons",
+        "setting": {
+            "editor.maxTokenizationLineLength": 20000
+        }
+    },
+    {
+        "settingId": "editor.minimap.autohide",
+        "desc": " Controls whether the minimap is hidden automatically.",
+        "setting": {
+            "editor.minimap.autohide": false
+        }
+    },
+    {
+        "settingId": "editor.minimap.enabled",
+        "desc": " Controls whether the minimap is shown.",
+        "setting": {
+            "editor.minimap.enabled": true
+        }
+    },
+    {
+        "settingId": "editor.minimap.maxColumn",
+        "desc": " Limit the width of the minimap to render at most a certain number of columns.",
+        "setting": {
+            "editor.minimap.maxColumn": 120
+        }
+    },
+    {
+        "settingId": "editor.minimap.renderCharacters",
+        "desc": " Render the actual characters on a line as opposed to color blocks.",
+        "setting": {
+            "editor.minimap.renderCharacters": true
+        }
+    },
+    {
+        "settingId": "editor.minimap.scale",
+        "desc": " Scale of content drawn in the minimap: 1, 2 or 3.",
+        "setting": {
+            "editor.minimap.scale": 1
+        }
+    },
+    {
+        "settingId": "editor.minimap.sectionHeaderFontSize",
+        "desc": " Controls the font size of section headers in the minimap.",
+        "setting": {
+            "editor.minimap.sectionHeaderFontSize": 9
+        }
+    },
+    {
+        "settingId": "editor.minimap.showMarkSectionHeaders",
+        "desc": " Controls whether MARK: comments are shown as section headers in the minimap.",
+        "setting": {
+            "editor.minimap.showMarkSectionHeaders": true
+        }
+    },
+    {
+        "settingId": "editor.minimap.showRegionSectionHeaders",
+        "desc": " Controls whether named regions are shown as section headers in the minimap.",
+        "setting": {
+            "editor.minimap.showRegionSectionHeaders": true
+        }
+    },
+    {
+        "settingId": "editor.minimap.showSlider",
+        "desc": " Controls when the minimap slider is shown.",
+        "setting": {
+            "editor.minimap.showSlider": "mouseover"
+        }
+    },
+    {
+        "settingId": "editor.minimap.side",
+        "desc": " Controls the side where to render the minimap.",
+        "setting": {
+            "editor.minimap.side": "right"
+        }
+    },
+    {
+        "settingId": "editor.minimap.size",
+        "desc": " Controls the size of the minimap.\n  - proportional: The minimap has the same size as the editor contents (and might scroll).\n  - fill: The minimap will stretch or shrink as necessary to fill the height of the editor (no scrolling).\n  - fit: The minimap will shrink as necessary to never be larger than the editor (no scrolling).",
+        "setting": {
+            "editor.minimap.size": "proportional"
+        }
+    },
+    {
+        "settingId": "editor.mouseWheelScrollSensitivity",
+        "desc": " A multiplier to be used on the `deltaX` and `deltaY` of mouse wheel scroll events.",
+        "setting": {
+            "editor.mouseWheelScrollSensitivity": 1
+        }
+    },
+    {
+        "settingId": "editor.mouseWheelZoom",
+        "desc": " Zoom the font of the editor when using mouse wheel and holding `Ctrl`.",
+        "setting": {
+            "editor.mouseWheelZoom": false
+        }
+    },
+    {
+        "settingId": "editor.multiCursorLimit",
+        "desc": " Controls the max number of cursors that can be in an active editor at once.",
+        "setting": {
+            "editor.multiCursorLimit": 10000
+        }
+    },
+    {
+        "settingId": "editor.multiCursorMergeOverlapping",
+        "desc": " Merge multiple cursors when they are overlapping.",
+        "setting": {
+            "editor.multiCursorMergeOverlapping": true
+        }
+    },
+    {
+        "settingId": "editor.multiCursorModifier",
+        "desc": " The modifier to be used to add multiple cursors with the mouse. The Go to Definition and Open Link mouse gestures will adapt such that they do not conflict with the multicursor modifier.\n  - ctrlCmd: Maps to `Control` on Windows and Linux and to `Command` on macOS.\n  - alt: Maps to `Alt` on Windows and Linux and to `Option` on macOS.",
+        "setting": {
+            "editor.multiCursorModifier": "alt"
+        }
+    },
+    {
+        "settingId": "editor.multiCursorPaste",
+        "desc": " Controls pasting when the line count of the pasted text matches the cursor count.\n  - spread: Each cursor pastes a single line of the text.\n  - full: Each cursor pastes the full text.",
+        "setting": {
+            "editor.multiCursorPaste": "spread"
+        }
+    },
+    {
+        "settingId": "editor.occurrencesHighlight",
+        "desc": " Controls whether occurrences should be highlighted across open files.\n  - off: Does not highlight occurrences.\n  - singleFile: Highlights occurrences only in the current file.\n  - multiFile: Experimental: Highlights occurrences across all valid open files.",
+        "setting": {
+            "editor.occurrencesHighlight": "singleFile"
+        }
+    },
+    {
+        "settingId": "editor.overviewRulerBorder",
+        "desc": " Controls whether a border should be drawn around the overview ruler.",
+        "setting": {
+            "editor.overviewRulerBorder": true
+        }
+    },
+    {
+        "settingId": "editor.padding.bottom",
+        "desc": " Controls the amount of space between the bottom edge of the editor and the last line.",
+        "setting": {
+            "editor.padding.bottom": 0
+        }
+    },
+    {
+        "settingId": "editor.padding.top",
+        "desc": " Controls the amount of space between the top edge of the editor and the first line.",
+        "setting": {
+            "editor.padding.top": 0
+        }
+    },
+    {
+        "settingId": "editor.parameterHints.cycle",
+        "desc": " Controls whether the parameter hints menu cycles or closes when reaching the end of the list.",
+        "setting": {
+            "editor.parameterHints.cycle": true
+        }
+    },
+    {
+        "settingId": "editor.parameterHints.enabled",
+        "desc": " Enables a pop-up that shows parameter documentation and type information as you type.",
+        "setting": {
+            "editor.parameterHints.enabled": true
+        }
+    },
+    {
+        "settingId": "editor.pasteAs.enabled",
+        "desc": " Controls whether you can paste content in different ways.",
+        "setting": {
+            "editor.pasteAs.enabled": true
+        }
+    },
+    {
+        "settingId": "editor.pasteAs.showPasteSelector",
+        "desc": " Controls if a widget is shown when pasting content in to the editor. This widget lets you control how the file is pasted.\n  - afterPaste: Show the paste selector widget after content is pasted into the editor.\n  - never: Never show the paste selector widget. Instead the default pasting behavior is always used.",
+        "setting": {
+            "editor.pasteAs.showPasteSelector": "afterPaste"
+        }
+    },
+    {
+        "settingId": "editor.peekWidgetDefaultFocus",
+        "desc": " Controls whether to focus the inline editor or the tree in the peek widget.\n  - tree: Focus the tree when opening peek\n  - editor: Focus the editor when opening peek",
+        "setting": {
+            "editor.peekWidgetDefaultFocus": "tree"
+        }
+    },
+    {
+        "settingId": "editor.quickSuggestions",
+        "desc": " Controls whether suggestions should automatically show up while typing.",
+        "setting": {
+            "editor.quickSuggestions": {
+                "other": "on",
+                "comments": "off",
+                "strings": "off"
+            }
+        }
+    },
+    {
+        "settingId": "editor.quickSuggestionsDelay",
+        "desc": " Controls the delay in milliseconds after which quick suggestions will show up.",
+        "setting": {
+            "editor.quickSuggestionsDelay": 10
+        }
+    },
+    {
+        "settingId": "editor.rename.enablePreview",
+        "desc": " Enable/disable the ability to preview changes before renaming",
+        "setting": {
+            "editor.rename.enablePreview": true
+        }
+    },
+    {
+        "settingId": "editor.renderControlCharacters",
+        "desc": " Controls whether the editor should render control characters.",
+        "setting": {
+            "editor.renderControlCharacters": true
+        }
+    },
+    {
+        "settingId": "editor.renderFinalNewline",
+        "desc": " Render last line number when the file ends with a newline.",
+        "setting": {
+            "editor.renderFinalNewline": "on"
+        }
+    },
+    {
+        "settingId": "editor.renderLineHighlight",
+        "desc": " Controls how the editor should render the current line highlight.\n  - none\n  - gutter\n  - line\n  - all: Highlights both the gutter and the current line.",
+        "setting": {
+            "editor.renderLineHighlight": "line"
+        }
+    },
+    {
+        "settingId": "editor.renderLineHighlightOnlyWhenFocus",
+        "desc": " Controls if the editor should render the current line highlight only when the editor is focused.",
+        "setting": {
+            "editor.renderLineHighlightOnlyWhenFocus": false
+        }
+    },
+    {
+        "settingId": "editor.renderWhitespace",
+        "desc": " Controls how the editor should render whitespace characters.\n  - none\n  - boundary: Render whitespace characters except for single spaces between words.\n  - selection: Render whitespace characters only on selected text.\n  - trailing: Render only trailing whitespace characters.\n  - all",
+        "setting": {
+            "editor.renderWhitespace": "selection"
+        }
+    },
+    {
+        "settingId": "editor.roundedSelection",
+        "desc": " Controls whether selections should have rounded corners.",
+        "setting": {
+            "editor.roundedSelection": true
+        }
+    },
+    {
+        "settingId": "editor.rulers",
+        "desc": " Render vertical rulers after a certain number of monospace characters. Use multiple values for multiple rulers. No rulers are drawn if array is empty.",
+        "setting": {
+            "editor.rulers": []
+        }
+    },
+    {
+        "settingId": "editor.screenReaderAnnounceInlineSuggestion",
+        "desc": " Control whether inline suggestions are announced by a screen reader.",
+        "setting": {
+            "editor.screenReaderAnnounceInlineSuggestion": true
+        }
+    },
+    {
+        "settingId": "editor.scrollbar.horizontal",
+        "desc": " Controls the visibility of the horizontal scrollbar.\n  - auto: The horizontal scrollbar will be visible only when necessary.\n  - visible: The horizontal scrollbar will always be visible.\n  - hidden: The horizontal scrollbar will always be hidden.",
+        "setting": {
+            "editor.scrollbar.horizontal": "auto"
+        }
+    },
+    {
+        "settingId": "editor.scrollbar.horizontalScrollbarSize",
+        "desc": " The height of the horizontal scrollbar.",
+        "setting": {
+            "editor.scrollbar.horizontalScrollbarSize": 12
+        }
+    },
+    {
+        "settingId": "editor.scrollbar.ignoreHorizontalScrollbarInContentHeight",
+        "desc": " When set, the horizontal scrollbar will not increase the size of the editor's content.",
+        "setting": {
+            "editor.scrollbar.ignoreHorizontalScrollbarInContentHeight": false
+        }
+    },
+    {
+        "settingId": "editor.scrollbar.scrollByPage",
+        "desc": " Controls whether clicks scroll by page or jump to click position.",
+        "setting": {
+            "editor.scrollbar.scrollByPage": false
+        }
+    },
+    {
+        "settingId": "editor.scrollbar.vertical",
+        "desc": " Controls the visibility of the vertical scrollbar.\n  - auto: The vertical scrollbar will be visible only when necessary.\n  - visible: The vertical scrollbar will always be visible.\n  - hidden: The vertical scrollbar will always be hidden.",
+        "setting": {
+            "editor.scrollbar.vertical": "auto"
+        }
+    },
+    {
+        "settingId": "editor.scrollbar.verticalScrollbarSize",
+        "desc": " The width of the vertical scrollbar.",
+        "setting": {
+            "editor.scrollbar.verticalScrollbarSize": 14
+        }
+    },
+    {
+        "settingId": "editor.scrollBeyondLastColumn",
+        "desc": " Controls the number of extra characters beyond which the editor will scroll horizontally.",
+        "setting": {
+            "editor.scrollBeyondLastColumn": 4
+        }
+    },
+    {
+        "settingId": "editor.scrollBeyondLastLine",
+        "desc": " Controls whether the editor will scroll beyond the last line.",
+        "setting": {
+            "editor.scrollBeyondLastLine": true
+        }
+    },
+    {
+        "settingId": "editor.selectionClipboard",
+        "desc": " Controls whether the Linux primary clipboard should be supported.",
+        "setting": {
+            "editor.selectionClipboard": true
+        }
+    },
+    {
+        "settingId": "editor.scrollPredominantAxis",
+        "desc": " Scroll only along the predominant axis when scrolling both vertically and horizontally at the same time. Prevents horizontal drift when scrolling vertically on a trackpad.",
+        "setting": {
+            "editor.scrollPredominantAxis": true
+        }
+    },
+    {
+        "settingId": "editor.selectionHighlight",
+        "desc": " Controls whether the editor should highlight matches similar to the selection.",
+        "setting": {
+            "editor.selectionHighlight": true
+        }
+    },
+    {
+        "settingId": "editor.semanticHighlighting.enabled",
+        "desc": " Controls whether the semanticHighlighting is shown for the languages that support it.\n  - true: Semantic highlighting enabled for all color themes.\n  - false: Semantic highlighting disabled for all color themes.\n  - configuredByTheme: Semantic highlighting is configured by the current color theme's `semanticHighlighting` setting.",
+        "setting": {
+            "editor.semanticHighlighting.enabled": "configuredByTheme"
+        }
+    },
+    {
+        "settingId": "editor.semanticTokenColorCustomizations",
+        "desc": " Overrides editor semantic token color and styles from the currently selected color theme.",
+        "setting": {
+            "editor.semanticTokenColorCustomizations": {}
+        }
+    },
+    {
+        "settingId": "editor.showDeprecated",
+        "desc": " Controls strikethrough deprecated variables.",
+        "setting": {
+            "editor.showDeprecated": true
+        }
+    },
+    {
+        "settingId": "editor.showFoldingControls",
+        "desc": " Controls when the folding controls on the gutter are shown.\n  - always: Always show the folding controls.\n  - never: Never show the folding controls and reduce the gutter size.\n  - mouseover: Only show the folding controls when the mouse is over the gutter.",
+        "setting": {
+            "editor.showFoldingControls": "mouseover"
+        }
+    },
+    {
+        "settingId": "editor.showUnused",
+        "desc": " Controls fading out of unused code.",
+        "setting": {
+            "editor.showUnused": true
+        }
+    },
+    {
+        "settingId": "editor.smartSelect.selectLeadingAndTrailingWhitespace",
+        "desc": " Whether leading and trailing whitespace should always be selected.",
+        "setting": {
+            "editor.smartSelect.selectLeadingAndTrailingWhitespace": true
+        }
+    },
+    {
+        "settingId": "editor.smartSelect.selectSubwords",
+        "desc": " Whether subwords (like 'foo' in 'fooBar' or 'foo_bar') should be selected.",
+        "setting": {
+            "editor.smartSelect.selectSubwords": true
+        }
+    },
+    {
+        "settingId": "editor.smoothScrolling",
+        "desc": " Controls whether the editor will scroll using an animation.",
+        "setting": {
+            "editor.smoothScrolling": false
+        }
+    },
+    {
+        "settingId": "editor.snippets.codeActions.enabled",
+        "desc": " Controls if surround-with-snippets or file template snippets show as Code Actions.",
+        "setting": {
+            "editor.snippets.codeActions.enabled": true
+        }
+    },
+    {
+        "settingId": "editor.snippetSuggestions",
+        "desc": " Controls whether snippets are shown with other suggestions and how they are sorted.\n  - top: Show snippet suggestions on top of other suggestions.\n  - bottom: Show snippet suggestions below other suggestions.\n  - inline: Show snippets suggestions with other suggestions.\n  - none: Do not show snippet suggestions.",
+        "setting": {
+            "editor.snippetSuggestions": "inline"
+        }
+    },
+    {
+        "settingId": "editor.stablePeek",
+        "desc": " Keep peek editors open even when double-clicking their content or when hitting `Escape`.",
+        "setting": {
+            "editor.stablePeek": false
+        }
+    },
+    {
+        "settingId": "editor.stickyScroll.defaultModel",
+        "desc": " Defines the model to use for determining which lines to stick. If the outline model does not exist, it will fall back on the folding provider model which falls back on the indentation model. This order is respected in all three cases.",
+        "setting": {
+            "editor.stickyScroll.defaultModel": "outlineModel"
+        }
+    },
+    {
+        "settingId": "editor.stickyScroll.enabled",
+        "desc": " Shows the nested current scopes during the scroll at the top of the editor.",
+        "setting": {
+            "editor.stickyScroll.enabled": true
+        }
+    },
+    {
+        "settingId": "editor.stickyScroll.maxLineCount",
+        "desc": " Defines the maximum number of sticky lines to show.",
+        "setting": {
+            "editor.stickyScroll.maxLineCount": 5
+        }
+    },
+    {
+        "settingId": "editor.stickyScroll.scrollWithEditor",
+        "desc": " Enable scrolling of Sticky Scroll with the editor's horizontal scrollbar.",
+        "setting": {
+            "editor.stickyScroll.scrollWithEditor": true
+        }
+    },
+    {
+        "settingId": "editor.stickyTabStops",
+        "desc": " Emulate selection behavior of tab characters when using spaces for indentation. Selection will stick to tab stops.",
+        "setting": {
+            "editor.stickyTabStops": false
+        }
+    },
+    {
+        "settingId": "editor.suggest.filterGraceful",
+        "desc": " Controls whether filtering and sorting suggestions accounts for small typos.",
+        "setting": {
+            "editor.suggest.filterGraceful": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.insertMode",
+        "desc": " Controls whether words are overwritten when accepting completions. Note that this depends on extensions opting into this feature.\n  - insert: Insert suggestion without overwriting text right of the cursor.\n  - replace: Insert suggestion and overwrite text right of the cursor.",
+        "setting": {
+            "editor.suggest.insertMode": "insert"
+        }
+    },
+    {
+        "settingId": "editor.suggest.localityBonus",
+        "desc": " Controls whether sorting favors words that appear close to the cursor.",
+        "setting": {
+            "editor.suggest.localityBonus": false
+        }
+    },
+    {
+        "settingId": "editor.suggest.matchOnWordStartOnly",
+        "desc": " When enabled IntelliSense filtering requires that the first character matches on a word start. For example, `c` on `Console` or `WebContext` but not on `description`.",
+        "setting": {
+            "editor.suggest.matchOnWordStartOnly": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.preview",
+        "desc": " Controls whether to preview the suggestion outcome in the editor.",
+        "setting": {
+            "editor.suggest.preview": false
+        }
+    },
+    {
+        "settingId": "editor.suggest.selectionMode",
+        "desc": " Controls whether a suggestion is selected when the widget shows.\n  - always: Always select a suggestion when automatically triggering IntelliSense.\n  - never: Never select a suggestion when automatically triggering IntelliSense.\n  - whenTriggerCharacter: Select a suggestion only when triggering IntelliSense from a trigger character.\n  - whenQuickSuggestion: Select a suggestion only when triggering IntelliSense as you type.",
+        "setting": {
+            "editor.suggest.selectionMode": "always"
+        }
+    },
+    {
+        "settingId": "editor.suggest.shareSuggestSelections",
+        "desc": " Controls whether remembered suggestion selections are shared between multiple workspaces and windows (needs `editor.suggestSelection`).",
+        "setting": {
+            "editor.suggest.shareSuggestSelections": false
+        }
+    },
+    {
+        "settingId": "editor.suggest.showClasses",
+        "desc": " When enabled IntelliSense shows `class`-suggestions.",
+        "setting": {
+            "editor.suggest.showClasses": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showColors",
+        "desc": " When enabled IntelliSense shows `color`-suggestions.",
+        "setting": {
+            "editor.suggest.showColors": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showConstants",
+        "desc": " When enabled IntelliSense shows `constant`-suggestions.",
+        "setting": {
+            "editor.suggest.showConstants": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showConstructors",
+        "desc": " When enabled IntelliSense shows `constructor`-suggestions.",
+        "setting": {
+            "editor.suggest.showConstructors": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showCustomcolors",
+        "desc": " When enabled IntelliSense shows `customcolor`-suggestions.",
+        "setting": {
+            "editor.suggest.showCustomcolors": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showDeprecated",
+        "desc": " When enabled IntelliSense shows `deprecated`-suggestions.",
+        "setting": {
+            "editor.suggest.showDeprecated": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showEnumMembers",
+        "desc": " When enabled IntelliSense shows `enumMember`-suggestions.",
+        "setting": {
+            "editor.suggest.showEnumMembers": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showEnums",
+        "desc": " When enabled IntelliSense shows `enum`-suggestions.",
+        "setting": {
+            "editor.suggest.showEnums": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showEvents",
+        "desc": " When enabled IntelliSense shows `event`-suggestions.",
+        "setting": {
+            "editor.suggest.showEvents": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showFields",
+        "desc": " When enabled IntelliSense shows `field`-suggestions.",
+        "setting": {
+            "editor.suggest.showFields": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showFiles",
+        "desc": " When enabled IntelliSense shows `file`-suggestions.",
+        "setting": {
+            "editor.suggest.showFiles": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showFolders",
+        "desc": " When enabled IntelliSense shows `folder`-suggestions.",
+        "setting": {
+            "editor.suggest.showFolders": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showFunctions",
+        "desc": " When enabled IntelliSense shows `function`-suggestions.",
+        "setting": {
+            "editor.suggest.showFunctions": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showIcons",
+        "desc": " Controls whether to show or hide icons in suggestions.",
+        "setting": {
+            "editor.suggest.showIcons": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showInlineDetails",
+        "desc": " Controls whether suggest details show inline with the label or only in the details widget.",
+        "setting": {
+            "editor.suggest.showInlineDetails": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showInterfaces",
+        "desc": " When enabled IntelliSense shows `interface`-suggestions.",
+        "setting": {
+            "editor.suggest.showInterfaces": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showIssues",
+        "desc": " When enabled IntelliSense shows `issues`-suggestions.",
+        "setting": {
+            "editor.suggest.showIssues": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showKeywords",
+        "desc": " When enabled IntelliSense shows `keyword`-suggestions.",
+        "setting": {
+            "editor.suggest.showKeywords": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showMethods",
+        "desc": " When enabled IntelliSense shows `method`-suggestions.",
+        "setting": {
+            "editor.suggest.showMethods": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showModules",
+        "desc": " When enabled IntelliSense shows `module`-suggestions.",
+        "setting": {
+            "editor.suggest.showModules": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showOperators",
+        "desc": " When enabled IntelliSense shows `operator`-suggestions.",
+        "setting": {
+            "editor.suggest.showOperators": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showProperties",
+        "desc": " When enabled IntelliSense shows `property`-suggestions.",
+        "setting": {
+            "editor.suggest.showProperties": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showReferences",
+        "desc": " When enabled IntelliSense shows `reference`-suggestions.",
+        "setting": {
+            "editor.suggest.showReferences": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showSnippets",
+        "desc": " When enabled IntelliSense shows `snippet`-suggestions.",
+        "setting": {
+            "editor.suggest.showSnippets": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showStatusBar",
+        "desc": " Controls the visibility of the status bar at the bottom of the suggest widget.",
+        "setting": {
+            "editor.suggest.showStatusBar": false
+        }
+    },
+    {
+        "settingId": "editor.suggest.showStructs",
+        "desc": " When enabled IntelliSense shows `struct`-suggestions.",
+        "setting": {
+            "editor.suggest.showStructs": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showTypeParameters",
+        "desc": " When enabled IntelliSense shows `typeParameter`-suggestions.",
+        "setting": {
+            "editor.suggest.showTypeParameters": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showUnits",
+        "desc": " When enabled IntelliSense shows `unit`-suggestions.",
+        "setting": {
+            "editor.suggest.showUnits": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showUsers",
+        "desc": " When enabled IntelliSense shows `user`-suggestions.",
+        "setting": {
+            "editor.suggest.showUsers": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showValues",
+        "desc": " When enabled IntelliSense shows `value`-suggestions.",
+        "setting": {
+            "editor.suggest.showValues": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showVariables",
+        "desc": " When enabled IntelliSense shows `variable`-suggestions.",
+        "setting": {
+            "editor.suggest.showVariables": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.showWords",
+        "desc": " When enabled IntelliSense shows `text`-suggestions.",
+        "setting": {
+            "editor.suggest.showWords": true
+        }
+    },
+    {
+        "settingId": "editor.suggest.snippetsPreventQuickSuggestions",
+        "desc": " Controls whether an active snippet prevents quick suggestions.",
+        "setting": {
+            "editor.suggest.snippetsPreventQuickSuggestions": false
+        }
+    },
+    {
+        "settingId": "editor.suggestFontSize",
+        "desc": " Font size for the suggest widget. When set to `0`, the value of `editor.fontSize` is used.",
+        "setting": {
+            "editor.suggestFontSize": 0
+        }
+    },
+    {
+        "settingId": "editor.suggestLineHeight",
+        "desc": " Line height for the suggest widget. When set to `0`, the value of `editor.lineHeight` is used. The minimum value is 8.",
+        "setting": {
+            "editor.suggestLineHeight": 0
+        }
+    },
+    {
+        "settingId": "editor.suggestOnTriggerCharacters",
+        "desc": " Controls whether suggestions should automatically show up when typing trigger characters.",
+        "setting": {
+            "editor.suggestOnTriggerCharacters": true
+        }
+    },
+    {
+        "settingId": "editor.suggestSelection",
+        "desc": " Controls how suggestions are pre-selected when showing the suggest list.\n  - first: Always select the first suggestion.\n  - recentlyUsed: Select recent suggestions unless further typing selects one, e.g. `console.| -> console.log` because `log` has been completed recently.\n  - recentlyUsedByPrefix: Select suggestions based on previous prefixes that have completed those suggestions, e.g. `co -> console` and `con -> const`.",
+        "setting": {
+            "editor.suggestSelection": "first"
+        }
+    },
+    {
+        "settingId": "editor.tabCompletion",
+        "desc": " Enables tab completions.\n  - on: Tab complete will insert the best matching suggestion when pressing tab.\n  - off: Disable tab completions.\n  - onlySnippets: Tab complete snippets when their prefix match. Works best when 'quickSuggestions' aren't enabled.",
+        "setting": {
+            "editor.tabCompletion": "off"
+        }
+    },
+    {
+        "settingId": "editor.tabFocusMode",
+        "desc": " Controls whether the editor receives tabs or defers them to the workbench for navigation.",
+        "setting": {
+            "editor.tabFocusMode": false
+        }
+    },
+    {
+        "settingId": "editor.tabSize",
+        "desc": " The number of spaces a tab is equal to. This setting is overridden based on the file contents when `editor.detectIndentation` is on.",
+        "setting": {
+            "editor.tabSize": 4
+        }
+    },
+    {
+        "settingId": "editor.tokenColorCustomizations",
+        "desc": " Overrides editor syntax colors and font style from the currently selected color theme.",
+        "setting": {
+            "editor.tokenColorCustomizations": {}
+        }
+    },
+    {
+        "settingId": "editor.trimAutoWhitespace",
+        "desc": " Remove trailing auto inserted whitespace.",
+        "setting": {
+            "editor.trimAutoWhitespace": true
+        }
+    },
+    {
+        "settingId": "editor.unfoldOnClickAfterEndOfLine",
+        "desc": " Controls whether clicking on the empty content after a folded line will unfold the line.",
+        "setting": {
+            "editor.unfoldOnClickAfterEndOfLine": false
+        }
+    },
+    {
+        "settingId": "editor.unicodeHighlight.allowedCharacters",
+        "desc": " Defines allowed characters that are not being highlighted.",
+        "setting": {
+            "editor.unicodeHighlight.allowedCharacters": {}
+        }
+    },
+    {
+        "settingId": "editor.unicodeHighlight.allowedLocales",
+        "desc": " Unicode characters that are common in allowed locales are not being highlighted.",
+        "setting": {
+            "editor.unicodeHighlight.allowedLocales": {
+                "_os": true,
+                "_vscode": true
+            }
+        }
+    },
+    {
+        "settingId": "editor.unicodeHighlight.ambiguousCharacters",
+        "desc": " Controls whether characters are highlighted that can be confused with basic ASCII characters, except those that are common in the current user locale.",
+        "setting": {
+            "editor.unicodeHighlight.ambiguousCharacters": true
+        }
+    },
+    {
+        "settingId": "editor.unicodeHighlight.includeComments",
+        "desc": " Controls whether characters in comments should also be subject to Unicode highlighting.",
+        "setting": {
+            "editor.unicodeHighlight.includeComments": "inUntrustedWorkspace"
+        }
+    },
+    {
+        "settingId": "editor.unicodeHighlight.includeStrings",
+        "desc": " Controls whether characters in strings should also be subject to Unicode highlighting.",
+        "setting": {
+            "editor.unicodeHighlight.includeStrings": true
+        }
+    },
+    {
+        "settingId": "editor.unicodeHighlight.invisibleCharacters",
+        "desc": " Controls whether characters that just reserve space or have no width at all are highlighted.",
+        "setting": {
+            "editor.unicodeHighlight.invisibleCharacters": true
+        }
+    },
+    {
+        "settingId": "editor.unicodeHighlight.nonBasicASCII",
+        "desc": " Controls whether all non-basic ASCII characters are highlighted. Only characters between U+0020 and U+007E, tab, line-feed and carriage-return are considered basic ASCII.",
+        "setting": {
+            "editor.unicodeHighlight.nonBasicASCII": "inUntrustedWorkspace"
+        }
+    },
+    {
+        "settingId": "editor.unusualLineTerminators",
+        "desc": " Remove unusual line terminators that might cause problems.\n  - auto: Unusual line terminators are automatically removed.\n  - off: Unusual line terminators are ignored.\n  - prompt: Unusual line terminators prompt to be removed.",
+        "setting": {
+            "editor.unusualLineTerminators": "prompt"
+        }
+    },
+    {
+        "settingId": "editor.useTabStops",
+        "desc": " Inserting and deleting whitespace follows tab stops.",
+        "setting": {
+            "editor.useTabStops": true
+        }
+    },
+    {
+        "settingId": "editor.wordBasedSuggestions",
+        "desc": " Controls whether completions should be computed based on words in the document and from which documents they are computed.\n  - off: Turn off Word Based Suggestions.\n  - currentDocument: Only suggest words from the active document.\n  - matchingDocuments: Suggest words from all open documents of the same language.\n  - allDocuments: Suggest words from all open documents.",
+        "setting": {
+            "editor.wordBasedSuggestions": "matchingDocuments"
+        }
+    },
+    {
+        "settingId": "editor.wordBreak",
+        "desc": " Controls the word break rules used for Chinese/Japanese/Korean (CJK) text.\n  - normal: Use the default line break rule.\n  - keepAll: Word breaks should not be used for Chinese/Japanese/Korean (CJK) text. Non-CJK text behavior is the same as for normal.",
+        "setting": {
+            "editor.wordBreak": "normal"
+        }
+    },
+    {
+        "settingId": "editor.wordSegmenterLocales",
+        "desc": "",
+        "setting": {
+            "editor.wordSegmenterLocales": null
+        }
+    },
+    {
+        "settingId": "editor.wordSeparators",
+        "desc": " Characters that will be used as word separators when doing word related navigations or operations.",
+        "setting": {
+            "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?"
+        }
+    },
+    {
+        "settingId": "editor.wordWrap",
+        "desc": " Controls how lines should wrap.\n  - off: Lines will never wrap.\n  - on: Lines will wrap at the viewport width.\n  - wordWrapColumn: Lines will wrap at `editor.wordWrapColumn`.\n  - bounded: Lines will wrap at the minimum of viewport and `editor.wordWrapColumn`.",
+        "setting": {
+            "editor.wordWrap": "off"
+        }
+    },
+    {
+        "settingId": "editor.wordWrapColumn",
+        "desc": " Controls the wrapping column of the editor when `editor.wordWrap` is `wordWrapColumn` or `bounded`.",
+        "setting": {
+            "editor.wordWrapColumn": 80
+        }
+    },
+    {
+        "settingId": "editor.wrappingIndent",
+        "desc": " Controls the indentation of wrapped lines.\n  - none: No indentation. Wrapped lines begin at column 1.\n  - same: Wrapped lines get the same indentation as the parent.\n  - indent: Wrapped lines get +1 indentation toward the parent.\n  - deepIndent: Wrapped lines get +2 indentation toward the parent.",
+        "setting": {
+            "editor.wrappingIndent": "same"
+        }
+    },
+    {
+        "settingId": "editor.wrappingStrategy",
+        "desc": " Controls the algorithm that computes wrapping points. Note that when in accessibility mode, advanced will be used for the best experience.\n  - simple: Assumes that all characters are of the same width. This is a fast algorithm that works correctly for monospace fonts and certain scripts (like Latin characters) where glyphs are of equal width.\n  - advanced: Delegates wrapping points computation to the browser. This is a slow algorithm, that might cause freezes for large files, but it works correctly in all cases.",
+        "setting": {
+            "editor.wrappingStrategy": "simple"
+        }
+    }
+]

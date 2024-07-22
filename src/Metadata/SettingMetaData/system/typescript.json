@@ -1,0 +1,527 @@
+[
+    {
+        "settingId": "typescript.autoClosingTags",
+        "desc": " Enable/disable automatic closing of JSX tags.",
+        "setting": {
+            "typescript.autoClosingTags": true
+        }
+    },
+    {
+        "settingId": "typescript.check.npmIsInstalled",
+        "desc": " Check if npm is installed for Automatic Type Acquisition.",
+        "setting": {
+            "typescript.check.npmIsInstalled": true
+        }
+    },
+    {
+        "settingId": "typescript.disableAutomaticTypeAcquisition",
+        "desc": " Disables automatic type acquisition. Automatic type acquisition fetches `@types` packages from npm to improve IntelliSense for external libraries.",
+        "setting": {
+            "typescript.disableAutomaticTypeAcquisition": false
+        }
+    },
+    {
+        "settingId": "typescript.enablePromptUseWorkspaceTsdk",
+        "desc": " Enables prompting of users to use the TypeScript version configured in the workspace for Intellisense.",
+        "setting": {
+            "typescript.enablePromptUseWorkspaceTsdk": false
+        }
+    },
+    {
+        "settingId": "typescript.format.enable",
+        "desc": " Enable/disable default TypeScript formatter.",
+        "setting": {
+            "typescript.format.enable": true
+        }
+    },
+    {
+        "settingId": "typescript.format.indentSwitchCase",
+        "desc": " Indent case clauses in switch statements.",
+        "setting": {
+            "typescript.format.indentSwitchCase": true
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterCommaDelimiter",
+        "desc": " Defines space handling after a comma delimiter.",
+        "setting": {
+            "typescript.format.insertSpaceAfterCommaDelimiter": true
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterConstructor",
+        "desc": " Defines space handling after the constructor keyword.",
+        "setting": {
+            "typescript.format.insertSpaceAfterConstructor": false
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions",
+        "desc": " Defines space handling after function keyword for anonymous functions.",
+        "setting": {
+            "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements",
+        "desc": " Defines space handling after keywords in a control flow statement.",
+        "setting": {
+            "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": true
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces",
+        "desc": " Defines space handling after opening and before closing empty braces.",
+        "setting": {
+            "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces",
+        "desc": " Defines space handling after opening and before closing JSX expression braces.",
+        "setting": {
+            "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces",
+        "desc": " Defines space handling after opening and before closing non-empty braces.",
+        "setting": {
+            "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets",
+        "desc": " Defines space handling after opening and before closing non-empty brackets.",
+        "setting": {
+            "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis",
+        "desc": " Defines space handling after opening and before closing non-empty parenthesis.",
+        "setting": {
+            "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces",
+        "desc": " Defines space handling after opening and before closing template string braces.",
+        "setting": {
+            "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterSemicolonInForStatements",
+        "desc": " Defines space handling after a semicolon in a for statement.",
+        "setting": {
+            "typescript.format.insertSpaceAfterSemicolonInForStatements": true
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceAfterTypeAssertion",
+        "desc": " Defines space handling after type assertions in TypeScript.",
+        "setting": {
+            "typescript.format.insertSpaceAfterTypeAssertion": false
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceBeforeAndAfterBinaryOperators",
+        "desc": " Defines space handling after a binary operator.",
+        "setting": {
+            "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true
+        }
+    },
+    {
+        "settingId": "typescript.format.insertSpaceBeforeFunctionParenthesis",
+        "desc": " Defines space handling before function argument parentheses.",
+        "setting": {
+            "typescript.format.insertSpaceBeforeFunctionParenthesis": false
+        }
+    },
+    {
+        "settingId": "typescript.format.placeOpenBraceOnNewLineForControlBlocks",
+        "desc": " Defines whether an open brace is put onto a new line for control blocks or not.",
+        "setting": {
+            "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false
+        }
+    },
+    {
+        "settingId": "typescript.format.placeOpenBraceOnNewLineForFunctions",
+        "desc": " Defines whether an open brace is put onto a new line for functions or not.",
+        "setting": {
+            "typescript.format.placeOpenBraceOnNewLineForFunctions": false
+        }
+    },
+    {
+        "settingId": "typescript.format.semicolons",
+        "desc": " Defines handling of optional semicolons.\n  - ignore: Don't insert or remove any semicolons.\n  - insert: Insert semicolons at statement ends.\n  - remove: Remove unnecessary semicolons.",
+        "setting": {
+            "typescript.format.semicolons": "ignore"
+        }
+    },
+    {
+        "settingId": "typescript.implementationsCodeLens.enabled",
+        "desc": " Enable/disable implementations CodeLens. This CodeLens shows the implementers of an interface.",
+        "setting": {
+            "typescript.implementationsCodeLens.enabled": false
+        }
+    },
+    {
+        "settingId": "typescript.implementationsCodeLens.showOnInterfaceMethods",
+        "desc": " Enable/disable implementations CodeLens on interface methods.",
+        "setting": {
+            "typescript.implementationsCodeLens.showOnInterfaceMethods": false
+        }
+    },
+    {
+        "settingId": "typescript.inlayHints.enumMemberValues.enabled",
+        "desc": " Enable/disable inlay hints for member values in enum declarations:",
+        "setting": {
+            "typescript.inlayHints.enumMemberValues.enabled": false
+        }
+    },
+    {
+        "settingId": "typescript.inlayHints.functionLikeReturnTypes.enabled",
+        "desc": " Enable/disable inlay hints for implicit return types on function signatures:",
+        "setting": {
+            "typescript.inlayHints.functionLikeReturnTypes.enabled": false
+        }
+    },
+    {
+        "settingId": "typescript.inlayHints.parameterNames.enabled",
+        "desc": " Enable/disable inlay hints for parameter names:",
+        "setting": {
+            "typescript.inlayHints.parameterNames.enabled": "none"
+        }
+    },
+    {
+        "settingId": "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName",
+        "desc": " Suppress parameter name hints on arguments whose text is identical to the parameter name.",
+        "setting": {
+            "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true
+        }
+    },
+    {
+        "settingId": "typescript.inlayHints.parameterTypes.enabled",
+        "desc": " Enable/disable inlay hints for implicit parameter types:",
+        "setting": {
+            "typescript.inlayHints.parameterTypes.enabled": false
+        }
+    },
+    {
+        "settingId": "typescript.inlayHints.propertyDeclarationTypes.enabled",
+        "desc": " Enable/disable inlay hints for implicit types on property declarations:",
+        "setting": {
+            "typescript.inlayHints.propertyDeclarationTypes.enabled": false
+        }
+    },
+    {
+        "settingId": "typescript.inlayHints.variableTypes.enabled",
+        "desc": " Enable/disable inlay hints for implicit variable types:",
+        "setting": {
+            "typescript.inlayHints.variableTypes.enabled": false
+        }
+    },
+    {
+        "settingId": "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName",
+        "desc": " Suppress type hints on variables whose name is identical to the type name.",
+        "setting": {
+            "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true
+        }
+    },
+    {
+        "settingId": "typescript.locale",
+        "desc": " Sets the locale used to report JavaScript and TypeScript errors. Defaults to use VS Code's locale.",
+        "setting": {
+            "typescript.locale": "auto"
+        }
+    },
+    {
+        "settingId": "typescript.npm",
+        "desc": " Specifies the path to the npm executable used for Automatic Type Acquisition.",
+        "setting": {
+            "typescript.npm": ""
+        }
+    },
+    {
+        "settingId": "typescript.preferences.autoImportFileExcludePatterns",
+        "desc": " Specify glob patterns of files to exclude from auto imports.",
+        "setting": {
+            "typescript.preferences.autoImportFileExcludePatterns": []
+        }
+    },
+    {
+        "settingId": "typescript.preferences.importModuleSpecifier",
+        "desc": " Preferred path style for auto imports.\n  - shortest: Prefers a non-relative import only if one is available that has fewer path segments than a relative import.\n  - relative: Prefers a relative path to the imported file location.\n  - non-relative: Prefers a non-relative import based on the `baseUrl` or `paths` configured in your `jsconfig.json` / `tsconfig.json`.\n  - project-relative: Prefers a non-relative import only if the relative import path would leave the package or project directory.",
+        "setting": {
+            "typescript.preferences.importModuleSpecifier": "shortest"
+        }
+    },
+    {
+        "settingId": "typescript.preferences.importModuleSpecifierEnding",
+        "desc": " Preferred path ending for auto imports.\n  - auto: Use project settings to select a default.\n  - minimal: Shorten `./component/index.js` to `./component`.\n  - index: Shorten `./component/index.js` to `./component/index`.\n  - js: Do not shorten path endings; include the `.js` or `.ts` extension.",
+        "setting": {
+            "typescript.preferences.importModuleSpecifierEnding": "auto"
+        }
+    },
+    {
+        "settingId": "typescript.preferences.includePackageJsonAutoImports",
+        "desc": " Enable/disable searching `package.json` dependencies for available auto imports.\n  - auto: Search dependencies based on estimated performance impact.\n  - on: Always search dependencies.\n  - off: Never search dependencies.",
+        "setting": {
+            "typescript.preferences.includePackageJsonAutoImports": "auto"
+        }
+    },
+    {
+        "settingId": "typescript.preferences.jsxAttributeCompletionStyle",
+        "desc": " Preferred style for JSX attribute completions.\n  - auto: Insert `={}` or `=\"\"` after attribute names based on the prop type.\n  - braces: Insert `={}` after attribute names.\n  - none: Only insert attribute names.",
+        "setting": {
+            "typescript.preferences.jsxAttributeCompletionStyle": "auto"
+        }
+    },
+    {
+        "settingId": "typescript.preferences.preferTypeOnlyAutoImports",
+        "desc": " Include the `type` keyword in auto-imports whenever possible.",
+        "setting": {
+            "typescript.preferences.preferTypeOnlyAutoImports": false
+        }
+    },
+    {
+        "settingId": "typescript.preferences.quoteStyle",
+        "desc": " Preferred quote style to use for Quick Fixes.\n  - auto: Infer quote type from existing code\n  - single: Always use single quotes: `'`\n  - double: Always use double quotes: `\"`",
+        "setting": {
+            "typescript.preferences.quoteStyle": "auto"
+        }
+    },
+    {
+        "settingId": "typescript.preferences.renameMatchingJsxTags",
+        "desc": " When on a JSX tag, try to rename the matching tag instead of renaming the symbol.",
+        "setting": {
+            "typescript.preferences.renameMatchingJsxTags": true
+        }
+    },
+    {
+        "settingId": "typescript.preferences.useAliasesForRenames",
+        "desc": " Enable/disable introducing aliases for object shorthand properties during renames.",
+        "setting": {
+            "typescript.preferences.useAliasesForRenames": true
+        }
+    },
+    {
+        "settingId": "typescript.preferGoToSourceDefinition",
+        "desc": " Makes Go to Definition avoid type declaration files when possible by triggering Go to Source Definition instead. This allows Go to Source Definition to be triggered with the mouse gesture.",
+        "setting": {
+            "typescript.preferGoToSourceDefinition": false
+        }
+    },
+    {
+        "settingId": "typescript.referencesCodeLens.enabled",
+        "desc": " Enable/disable references CodeLens in TypeScript files.",
+        "setting": {
+            "typescript.referencesCodeLens.enabled": false
+        }
+    },
+    {
+        "settingId": "typescript.referencesCodeLens.showOnAllFunctions",
+        "desc": " Enable/disable references CodeLens on all functions in TypeScript files.",
+        "setting": {
+            "typescript.referencesCodeLens.showOnAllFunctions": false
+        }
+    },
+    {
+        "settingId": "typescript.reportStyleChecksAsWarnings",
+        "desc": " Report style checks as warnings.",
+        "setting": {
+            "typescript.reportStyleChecksAsWarnings": true
+        }
+    },
+    {
+        "settingId": "typescript.suggest.autoImports",
+        "desc": " Enable/disable auto import suggestions.",
+        "setting": {
+            "typescript.suggest.autoImports": true
+        }
+    },
+    {
+        "settingId": "typescript.suggest.classMemberSnippets.enabled",
+        "desc": " Enable/disable snippet completions for class members.",
+        "setting": {
+            "typescript.suggest.classMemberSnippets.enabled": true
+        }
+    },
+    {
+        "settingId": "typescript.suggest.completeFunctionCalls",
+        "desc": " Complete functions with their parameter signature.",
+        "setting": {
+            "typescript.suggest.completeFunctionCalls": false
+        }
+    },
+    {
+        "settingId": "typescript.suggest.completeJSDocs",
+        "desc": " Enable/disable suggestion to complete JSDoc comments.",
+        "setting": {
+            "typescript.suggest.completeJSDocs": true
+        }
+    },
+    {
+        "settingId": "typescript.suggest.enabled",
+        "desc": " Enabled/disable autocomplete suggestions.",
+        "setting": {
+            "typescript.suggest.enabled": true
+        }
+    },
+    {
+        "settingId": "typescript.suggest.includeAutomaticOptionalChainCompletions",
+        "desc": " Enable/disable showing completions on potentially undefined values that insert an optional chain call. Requires strict null checks to be enabled.",
+        "setting": {
+            "typescript.suggest.includeAutomaticOptionalChainCompletions": true
+        }
+    },
+    {
+        "settingId": "typescript.suggest.includeCompletionsForImportStatements",
+        "desc": " Enable/disable auto-import-style completions on partially-typed import statements.",
+        "setting": {
+            "typescript.suggest.includeCompletionsForImportStatements": true
+        }
+    },
+    {
+        "settingId": "typescript.suggest.jsdoc.generateReturns",
+        "desc": " Enable/disable generating `@returns` annotations for JSDoc templates.",
+        "setting": {
+            "typescript.suggest.jsdoc.generateReturns": true
+        }
+    },
+    {
+        "settingId": "typescript.suggest.objectLiteralMethodSnippets.enabled",
+        "desc": " Enable/disable snippet completions for methods in object literals.",
+        "setting": {
+            "typescript.suggest.objectLiteralMethodSnippets.enabled": true
+        }
+    },
+    {
+        "settingId": "typescript.suggest.paths",
+        "desc": " Enable/disable suggestions for paths in import statements and require calls.",
+        "setting": {
+            "typescript.suggest.paths": true
+        }
+    },
+    {
+        "settingId": "typescript.suggestionActions.enabled",
+        "desc": " Enable/disable suggestion diagnostics for TypeScript files in the editor.",
+        "setting": {
+            "typescript.suggestionActions.enabled": true
+        }
+    },
+    {
+        "settingId": "typescript.surveys.enabled",
+        "desc": " Enabled/disable occasional surveys that help us improve VS Code's JavaScript and TypeScript support.",
+        "setting": {
+            "typescript.surveys.enabled": true
+        }
+    },
+    {
+        "settingId": "typescript.tsc.autoDetect",
+        "desc": " Controls auto detection of tsc tasks.\n  - on: Create both build and watch tasks.\n  - off: Disable this feature.\n  - build: Only create single run compile tasks.\n  - watch: Only create compile and watch tasks.",
+        "setting": {
+            "typescript.tsc.autoDetect": "on"
+        }
+    },
+    {
+        "settingId": "typescript.tsdk",
+        "desc": " Specifies the folder path to the tsserver and `lib*.d.ts` files under a TypeScript install to use for IntelliSense, for example: `./node_modules/typescript/lib`.\n - When specified as a user setting, the TypeScript version from `typescript.tsdk` automatically replaces the built-in TypeScript version.\n - When specified as a workspace setting, `typescript.tsdk` allows you to switch to use that workspace version of TypeScript for IntelliSense with the `TypeScript: Select TypeScript version` command.",
+        "setting": {
+            "typescript.tsdk": ""
+        }
+    },
+    {
+        "settingId": "typescript.tsserver.enableTracing",
+        "desc": " Enables tracing TS server performance to a directory. These trace files can be used to diagnose TS Server performance issues. The log may contain file paths, source code, and other potentially sensitive information from your project.",
+        "setting": {
+            "typescript.tsserver.enableTracing": false
+        }
+    },
+    {
+        "settingId": "typescript.tsserver.log",
+        "desc": " Enables logging of the TS server to a file. This log can be used to diagnose TS Server issues. The log may contain file paths, source code, and other potentially sensitive information from your project.",
+        "setting": {
+            "typescript.tsserver.log": "off"
+        }
+    },
+    {
+        "settingId": "typescript.tsserver.maxTsServerMemory",
+        "desc": " The maximum amount of memory (in MB) to allocate to the TypeScript server process.",
+        "setting": {
+            "typescript.tsserver.maxTsServerMemory": 3072
+        }
+    },
+    {
+        "settingId": "typescript.tsserver.nodePath",
+        "desc": " Run TS Server on a custom Node installation. This can be a path to a Node executable, or 'node' if you want VS Code to detect a Node installation.",
+        "setting": {
+            "typescript.tsserver.nodePath": ""
+        }
+    },
+    {
+        "settingId": "typescript.tsserver.pluginPaths",
+        "desc": " Additional paths to discover TypeScript Language Service plugins.",
+        "setting": {
+            "typescript.tsserver.pluginPaths": []
+        }
+    },
+    {
+        "settingId": "typescript.tsserver.useSyntaxServer",
+        "desc": " Controls if TypeScript launches a dedicated server to more quickly handle syntax related operations, such as computing code folding.\n  - always: Use a lighter weight syntax server to handle all IntelliSense operations. This syntax server can only provide IntelliSense for opened files.\n  - never: Don't use a dedicated syntax server. Use a single server to handle all IntelliSense operations.\n  - auto: Spawn both a full server and a lighter weight server dedicated to syntax operations. The syntax server is used to speed up syntax operations and provide IntelliSense while projects are loading.",
+        "setting": {
+            "typescript.tsserver.useSyntaxServer": "auto"
+        }
+    },
+    {
+        "settingId": "typescript.tsserver.watchOptions",
+        "desc": " Configure which watching strategies should be used to keep track of files and directories.",
+        "setting": {
+            "typescript.tsserver.watchOptions": {}
+        }
+    },
+    {
+        "settingId": "typescript.tsserver.web.projectWideIntellisense.enabled",
+        "desc": " Enable/disable project-wide IntelliSense on web.",
+        "setting": {
+            "typescript.tsserver.web.projectWideIntellisense.enabled": true
+        }
+    },
+    {
+        "settingId": "typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors",
+        "desc": " Suppresses semantic errors.",
+        "setting": {
+            "typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors": true
+        }
+    },
+    {
+        "settingId": "typescript.updateImportsOnFileMove.enabled",
+        "desc": " Enable/disable automatic updating of import paths when you rename or move a file in VS Code.\n  - prompt: Prompt on each rename.\n  - always: Always update paths automatically.\n  - never: Never rename paths and don't prompt.",
+        "setting": {
+            "typescript.updateImportsOnFileMove.enabled": "prompt"
+        }
+    },
+    {
+        "settingId": "typescript.validate.enable",
+        "desc": " Enable/disable TypeScript validation.",
+        "setting": {
+            "typescript.validate.enable": true
+        }
+    },
+    {
+        "settingId": "typescript.workspaceSymbols.excludeLibrarySymbols",
+        "desc": " Exclude symbols that come from library files in Go to Symbol in Workspace results.",
+        "setting": {
+            "typescript.workspaceSymbols.excludeLibrarySymbols": true
+        }
+    },
+    {
+        "settingId": "typescript.workspaceSymbols.scope",
+        "desc": " Controls which files are searched by Go to Symbol in Workspace.\n  - allOpenProjects: Search all open JavaScript or TypeScript projects for symbols.\n  - currentProject: Only search for symbols in the current JavaScript or TypeScript project.",
+        "setting": {
+            "typescript.workspaceSymbols.scope": "allOpenProjects"
+        }
+    }
+]

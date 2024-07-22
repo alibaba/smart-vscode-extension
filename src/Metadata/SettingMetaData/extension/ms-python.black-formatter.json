@@ -1,0 +1,37 @@
+[
+    {
+        "name": "black-formatter.args",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "black-formatter.cwd",
+        "default": "${workspaceFolder}",
+        "type": "string"
+    },
+    {
+        "name": "black-formatter.importStrategy",
+        "default": "useBundled",
+        "type": "string"
+    },
+    {
+        "name": "black-formatter.interpreter",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "black-formatter.path",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "black-formatter.showNotifications",
+        "default": "off",
+        "type": "string"
+    },
+    {
+        "name": "black-formatter.serverTransport",
+        "default": "stdio",
+        "type": "string"
+    }
+]

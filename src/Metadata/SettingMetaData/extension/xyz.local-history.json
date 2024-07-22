@@ -1,0 +1,63 @@
+[
+    {
+        "name": "local-history.saveDelay",
+        "desc": "Controls the delay in seconds after which local-history is saved. To avoid too many history files.",
+        "default": 0,
+        "type": "number"
+    },
+    {
+        "name": "local-history.daysLimit",
+        "desc": "A day number to purge local history. (0: no purge)",
+        "default": 30,
+        "type": "number"
+    },
+    {
+        "name": "local-history.maxDisplay",
+        "desc": "A max files to display",
+        "default": 10,
+        "type": "number"
+    },
+    {
+        "name": "local-history.dateLocale",
+        "desc": "Specify locale to use when displaying date",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "local-history.exclude",
+        "desc": "Files or folder to not save",
+        "default": [
+            "**/.history/**",
+            "**/.vscode/**",
+            "**/node_modules/**",
+            "**/typings/**",
+            "**/out/**",
+            "**/Code/User/**"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "local-history.enabled",
+        "desc": "Is save in local history enabled (Never=0, Always=1, Limited to workspaceFolder=2)",
+        "default": 1,
+        "type": "number"
+    },
+    {
+        "name": "local-history.path",
+        "desc": "Specify a location for .history folder (null: use workspaceFolder)",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "local-history.absolute",
+        "desc": "Save absolute path in local-history.path",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "local-history.treeLocation",
+        "desc": "Specify a location for tree view: explorer or localHistory",
+        "default": "explorer",
+        "type": "string"
+    }
+]

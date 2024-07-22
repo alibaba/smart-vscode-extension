@@ -1,0 +1,299 @@
+[
+    {
+        "settingId": "markdown.copyFiles.destination",
+        "desc": " Defines where files copied created by drop or paste should be created. This is a map from globs that match on the Markdown document to destinations.",
+        "setting": {
+            "markdown.copyFiles.destination": {}
+        }
+    },
+    {
+        "settingId": "markdown.copyFiles.overwriteBehavior",
+        "desc": " Controls if files created by drop or paste should overwrite existing files.\n  - nameIncrementally: If a file with the same name already exists, append a number to the file name, for example: `image.png` becomes `image-1.png`.\n  - overwrite: If a file with the same name already exists, overwrite it.",
+        "setting": {
+            "markdown.copyFiles.overwriteBehavior": "nameIncrementally"
+        }
+    },
+    {
+        "settingId": "markdown.editor.drop.copyIntoWorkspace",
+        "desc": " Controls if files outside of the workspace that are dropped into a Markdown editor should be copied into the workspace.\n  - mediaFiles: Try to copy external image and video files into the workspace.\n  - never: Do not copy external files into the workspace.",
+        "setting": {
+            "markdown.editor.drop.copyIntoWorkspace": "mediaFiles"
+        }
+    },
+    {
+        "settingId": "markdown.editor.drop.enabled",
+        "desc": " Enable dropping files into a Markdown editor while holding Shift. Requires enabling `editor.dropIntoEditor.enabled`.\n  - always: Always insert Markdown links.\n  - smart: Smartly create Markdown links by default when not dropping into a code block or other special element. Use the drop widget to switch between pasting as plain text or as Markdown links.\n  - never: Never create Markdown links.",
+        "setting": {
+            "markdown.editor.drop.enabled": "smart"
+        }
+    },
+    {
+        "settingId": "markdown.editor.filePaste.audioSnippet",
+        "desc": " Snippet used when adding audio to Markdown. This snippet can use the following variables:\n - `${src}` — The resolved path of the audio  file.\n - `${title}` — The title used for the audio. A snippet placeholder will automatically be created for this variable.",
+        "setting": {
+            "markdown.editor.filePaste.audioSnippet": "<audio controls src=\"${src}\" title=\"${title}\"></audio>"
+        }
+    },
+    {
+        "settingId": "markdown.editor.filePaste.copyIntoWorkspace",
+        "desc": " Controls if files outside of the workspace that are pasted into a Markdown editor should be copied into the workspace.\n  - mediaFiles: Try to copy external image and video files into the workspace.\n  - never: Do not copy external files into the workspace.",
+        "setting": {
+            "markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles"
+        }
+    },
+    {
+        "settingId": "markdown.editor.filePaste.enabled",
+        "desc": " Enable pasting files into a Markdown editor to create Markdown links. Requires enabling `editor.pasteAs.enabled`.\n  - always: Always insert Markdown links.\n  - smart: Smartly create Markdown links by default when not pasting into a code block or other special element. Use the paste widget to switch between pasting as plain text or as Markdown links.\n  - never: Never create Markdown links.",
+        "setting": {
+            "markdown.editor.filePaste.enabled": "smart"
+        }
+    },
+    {
+        "settingId": "markdown.editor.filePaste.videoSnippet",
+        "desc": " Snippet used when adding videos to Markdown. This snippet can use the following variables:\n - `${src}` — The resolved path of the video file.\n - `${title}` — The title used for the video. A snippet placeholder will automatically be created for this variable.",
+        "setting": {
+            "markdown.editor.filePaste.videoSnippet": "<video controls src=\"${src}\" title=\"${title}\"></video>"
+        }
+    },
+    {
+        "settingId": "markdown.editor.pasteUrlAsFormattedLink.enabled",
+        "desc": " Controls if Markdown links are created when URLs are pasted into a Markdown editor. Requires enabling `editor.pasteAs.enabled`.\n  - always: Always insert Markdown links.\n  - smart: Smartly create Markdown links by default when not pasting into a code block or other special element. Use the paste widget to switch between pasting as plain text or as Markdown links.\n  - smartWithSelection: Smartly create Markdown links by default when you have selected text and are not pasting into a code block or other special element. Use the paste widget to switch between pasting as plain text or as Markdown links.\n  - never: Never create Markdown links.",
+        "setting": {
+            "markdown.editor.pasteUrlAsFormattedLink.enabled": "smartWithSelection"
+        }
+    },
+    {
+        "settingId": "markdown.links.openLocation",
+        "desc": " Controls where links in Markdown files should be opened.\n  - currentGroup: Open links in the active editor group.\n  - beside: Open links beside the active editor.",
+        "setting": {
+            "markdown.links.openLocation": "currentGroup"
+        }
+    },
+    {
+        "settingId": "markdown.occurrencesHighlight.enabled",
+        "desc": " Enable highlighting link occurrences in the current document.",
+        "setting": {
+            "markdown.occurrencesHighlight.enabled": false
+        }
+    },
+    {
+        "settingId": "markdown.preferredMdPathExtensionStyle",
+        "desc": " Controls if file extensions (for example `.md`) are added or not for links to Markdown files. This setting is used when file paths are added by tooling such as path completions or file renames.\n  - auto: For existing paths, try to maintain the file extension style. For new paths, add file extensions.\n  - includeExtension: Prefer including the file extension. For example, path completions to a file named `file.md` will insert `file.md`.\n  - removeExtension: Prefer removing the file extension. For example, path completions to a file named `file.md` will insert `file` without the `.md`.",
+        "setting": {
+            "markdown.preferredMdPathExtensionStyle": "auto"
+        }
+    },
+    {
+        "settingId": "markdown.preview.breaks",
+        "desc": " Sets how line-breaks are rendered in the Markdown preview. Setting it to `true` creates a `<br>` for newlines inside paragraphs.",
+        "setting": {
+            "markdown.preview.breaks": false
+        }
+    },
+    {
+        "settingId": "markdown.preview.doubleClickToSwitchToEditor",
+        "desc": " Double-click in the Markdown preview to switch to the editor.",
+        "setting": {
+            "markdown.preview.doubleClickToSwitchToEditor": true
+        }
+    },
+    {
+        "settingId": "markdown.preview.fontFamily",
+        "desc": " Controls the font family used in the Markdown preview.",
+        "setting": {
+            "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif"
+        }
+    },
+    {
+        "settingId": "markdown.preview.fontSize",
+        "desc": " Controls the font size in pixels used in the Markdown preview.",
+        "setting": {
+            "markdown.preview.fontSize": 14
+        }
+    },
+    {
+        "settingId": "markdown.preview.lineHeight",
+        "desc": " Controls the line height used in the Markdown preview. This number is relative to the font size.",
+        "setting": {
+            "markdown.preview.lineHeight": 1.6
+        }
+    },
+    {
+        "settingId": "markdown.preview.linkify",
+        "desc": " Convert URL-like text to links in the Markdown preview.",
+        "setting": {
+            "markdown.preview.linkify": true
+        }
+    },
+    {
+        "settingId": "markdown.preview.markEditorSelection",
+        "desc": " Mark the current editor selection in the Markdown preview.",
+        "setting": {
+            "markdown.preview.markEditorSelection": true
+        }
+    },
+    {
+        "settingId": "markdown.preview.openMarkdownLinks",
+        "desc": " Controls how links to other Markdown files in the Markdown preview should be opened.\n  - inPreview: Try to open links in the Markdown preview.\n  - inEditor: Try to open links in the editor.",
+        "setting": {
+            "markdown.preview.openMarkdownLinks": "inPreview"
+        }
+    },
+    {
+        "settingId": "markdown.preview.scrollEditorWithPreview",
+        "desc": " When a Markdown preview is scrolled, update the view of the editor.",
+        "setting": {
+            "markdown.preview.scrollEditorWithPreview": true
+        }
+    },
+    {
+        "settingId": "markdown.preview.scrollPreviewWithEditor",
+        "desc": " When a Markdown editor is scrolled, update the view of the preview.",
+        "setting": {
+            "markdown.preview.scrollPreviewWithEditor": true
+        }
+    },
+    {
+        "settingId": "markdown.preview.typographer",
+        "desc": " Enable some language-neutral replacement and quotes beautification in the Markdown preview.",
+        "setting": {
+            "markdown.preview.typographer": false
+        }
+    },
+    {
+        "settingId": "markdown.server.log",
+        "desc": " Controls the logging level of the Markdown language server.",
+        "setting": {
+            "markdown.server.log": "off"
+        }
+    },
+    {
+        "settingId": "markdown.styles",
+        "desc": " A list of URLs or local paths to CSS style sheets to use from the Markdown preview. Relative paths are interpreted relative to the folder open in the Explorer. If there is no open folder, they are interpreted relative to the location of the Markdown file. All '\\' need to be written as '\\\\'.",
+        "setting": {
+            "markdown.styles": []
+        }
+    },
+    {
+        "settingId": "markdown.suggest.paths.enabled",
+        "desc": " Enable path suggestions while writing links in Markdown files.",
+        "setting": {
+            "markdown.suggest.paths.enabled": true
+        }
+    },
+    {
+        "settingId": "markdown.suggest.paths.includeWorkspaceHeaderCompletions",
+        "desc": " Enable suggestions for headers in other Markdown files in the current workspace. Accepting one of these suggestions inserts the full path to header in that file, for example: `[link text](/path/to/file.md#header)`.\n  - never: Disable workspace header suggestions.\n  - onDoubleHash: Enable workspace header suggestions after typing `#` in a path, for example: `[link text](#_`.\n  - onSingleOrDoubleHash: Enable workspace header suggestions after typing either `#` or `#` in a path, for example: `[link text](#_` or `[link text](#_`.",
+        "setting": {
+            "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onDoubleHash"
+        }
+    },
+    {
+        "settingId": "markdown.trace.extension",
+        "desc": " Enable debug logging for the Markdown extension.",
+        "setting": {
+            "markdown.trace.extension": "off"
+        }
+    },
+    {
+        "settingId": "markdown.trace.server",
+        "desc": " Traces the communication between VS Code and the Markdown language server.",
+        "setting": {
+            "markdown.trace.server": "off"
+        }
+    },
+    {
+        "settingId": "markdown.updateLinksOnFileMove.enabled",
+        "desc": " Try to update links in Markdown files when a file is renamed/moved in the workspace. Use `markdown.updateLinksOnFileMove.include` to configure which files trigger link updates.\n  - prompt: Prompt on each file move.\n  - always: Always update links automatically.\n  - never: Never try to update link and don't prompt.",
+        "setting": {
+            "markdown.updateLinksOnFileMove.enabled": "never"
+        }
+    },
+    {
+        "settingId": "markdown.updateLinksOnFileMove.enableForDirectories",
+        "desc": " Enable updating links when a directory is moved or renamed in the workspace.",
+        "setting": {
+            "markdown.updateLinksOnFileMove.enableForDirectories": true
+        }
+    },
+    {
+        "settingId": "markdown.updateLinksOnFileMove.include",
+        "desc": " Glob patterns that specifies files that trigger automatic link updates. See `markdown.updateLinksOnFileMove.enabled` for details about this feature.",
+        "setting": {
+            "markdown.updateLinksOnFileMove.include": [
+                "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+                "**/*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,tiff,svg,mp4}"
+            ]
+        }
+    },
+    {
+        "settingId": "markdown.validate.duplicateLinkDefinitions.enabled",
+        "desc": " Validate duplicated definitions in the current file.",
+        "setting": {
+            "markdown.validate.duplicateLinkDefinitions.enabled": "warning"
+        }
+    },
+    {
+        "settingId": "markdown.validate.enabled",
+        "desc": " Enable all error reporting in Markdown files.",
+        "setting": {
+            "markdown.validate.enabled": false
+        }
+    },
+    {
+        "settingId": "markdown.validate.fileLinks.enabled",
+        "desc": " Validate links to other files in Markdown files, for example `[link](/path/to/file.md)`. This checks that the target files exists. Requires enabling `markdown.validate.enabled`.",
+        "setting": {
+            "markdown.validate.fileLinks.enabled": "warning"
+        }
+    },
+    {
+        "settingId": "markdown.validate.fileLinks.markdownFragmentLinks",
+        "desc": " Validate the fragment part of links to headers in other files in Markdown files, for example: `[link](/path/to/file.md#header)`. Inherits the setting value from `markdown.validate.fragmentLinks.enabled` by default.",
+        "setting": {
+            "markdown.validate.fileLinks.markdownFragmentLinks": "inherit"
+        }
+    },
+    {
+        "settingId": "markdown.validate.fragmentLinks.enabled",
+        "desc": " Validate fragment links to headers in the current Markdown file, for example: `[link](#_header)`. Requires enabling `markdown.validate.enabled`.",
+        "setting": {
+            "markdown.validate.fragmentLinks.enabled": "warning"
+        }
+    },
+    {
+        "settingId": "markdown.validate.ignoredLinks",
+        "desc": " Configure links that should not be validated. For example adding `/about` would not validate the link `[about](/about)`, while the glob `/assets/**/*.svg` would let you skip validation for any link to `.svg` files under the `assets` directory.",
+        "setting": {
+            "markdown.validate.ignoredLinks": []
+        }
+    },
+    {
+        "settingId": "markdown.validate.referenceLinks.enabled",
+        "desc": " Validate reference links in Markdown files, for example: `[link][ref]`. Requires enabling `markdown.validate.enabled`.",
+        "setting": {
+            "markdown.validate.referenceLinks.enabled": "warning"
+        }
+    },
+    {
+        "settingId": "markdown.validate.unusedLinkDefinitions.enabled",
+        "desc": " Validate link definitions that are unused in the current file.",
+        "setting": {
+            "markdown.validate.unusedLinkDefinitions.enabled": "hint"
+        }
+    },
+    {
+        "settingId": "markdown.math.enabled",
+        "desc": " Enable/disable rendering math in the built-in Markdown preview.",
+        "setting": {
+            "markdown.math.enabled": true
+        }
+    },
+    {
+        "settingId": "markdown.math.macros",
+        "desc": " A collection of custom macros. Each macro is a key-value pair where the key is a new command name and the value is the expansion of the macro.",
+        "setting": {
+            "markdown.math.macros": {}
+        }
+    }
+]

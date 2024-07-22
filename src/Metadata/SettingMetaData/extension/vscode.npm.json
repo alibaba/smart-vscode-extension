@@ -1,0 +1,61 @@
+[
+    {
+        "name": "npm.autoDetect",
+        "desc": "Controls whether npm scripts should be automatically detected.",
+        "default": "on",
+        "type": "string"
+    },
+    {
+        "name": "npm.runSilent",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "npm.packageManager",
+        "desc": "The package manager used to run scripts.",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "npm.exclude",
+        "desc": "Configure glob patterns for folders that should be excluded from automatic script detection.",
+        "type": [
+            "string",
+            "array"
+        ]
+    },
+    {
+        "name": "npm.enableScriptExplorer",
+        "desc": "Enable an explorer view for npm scripts when there is no top-level 'package.json' file.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "npm.enableRunFromFolder",
+        "desc": "Enable running npm scripts contained in a folder from the Explorer context menu.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "npm.scriptExplorerAction",
+        "default": "open",
+        "type": "string"
+    },
+    {
+        "name": "npm.scriptExplorerExclude",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "npm.fetchOnlinePackageInfo",
+        "desc": "Fetch data from https://registry.npmjs.org and https://registry.bower.io to provide auto-completion and information on hover features on npm dependencies.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "npm.scriptHover",
+        "desc": "Display hover with 'Run' and 'Debug' commands for scripts.",
+        "default": true,
+        "type": "boolean"
+    }
+]

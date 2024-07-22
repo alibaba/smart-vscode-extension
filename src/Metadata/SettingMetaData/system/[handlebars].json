@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[handlebars]",
+        "desc": " Configure settings to be overridden for the handlebars language.",
+        "setting": {
+            "[handlebars]": {
+                "editor.suggest.insertMode": "replace"
+            }
+        }
+    }
+]

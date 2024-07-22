@@ -1,0 +1,219 @@
+[
+    {
+        "settingId": "breadcrumbs.enabled",
+        "desc": " Enable/disable navigation breadcrumbs.",
+        "setting": {
+            "breadcrumbs.enabled": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.filePath",
+        "desc": " Controls whether and how file paths are shown in the breadcrumbs view.\n  - on: Show the file path in the breadcrumbs view.\n  - off: Do not show the file path in the breadcrumbs view.\n  - last: Only show the last element of the file path in the breadcrumbs view.",
+        "setting": {
+            "breadcrumbs.filePath": "on"
+        }
+    },
+    {
+        "settingId": "breadcrumbs.icons",
+        "desc": " Render breadcrumb items with icons.",
+        "setting": {
+            "breadcrumbs.icons": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showArrays",
+        "desc": " When enabled breadcrumbs show `array`-symbols.",
+        "setting": {
+            "breadcrumbs.showArrays": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showBooleans",
+        "desc": " When enabled breadcrumbs show `boolean`-symbols.",
+        "setting": {
+            "breadcrumbs.showBooleans": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showClasses",
+        "desc": " When enabled breadcrumbs show `class`-symbols.",
+        "setting": {
+            "breadcrumbs.showClasses": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showConstants",
+        "desc": " When enabled breadcrumbs show `constant`-symbols.",
+        "setting": {
+            "breadcrumbs.showConstants": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showConstructors",
+        "desc": " When enabled breadcrumbs show `constructor`-symbols.",
+        "setting": {
+            "breadcrumbs.showConstructors": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showEnumMembers",
+        "desc": " When enabled breadcrumbs show `enumMember`-symbols.",
+        "setting": {
+            "breadcrumbs.showEnumMembers": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showEnums",
+        "desc": " When enabled breadcrumbs show `enum`-symbols.",
+        "setting": {
+            "breadcrumbs.showEnums": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showEvents",
+        "desc": " When enabled breadcrumbs show `event`-symbols.",
+        "setting": {
+            "breadcrumbs.showEvents": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showFields",
+        "desc": " When enabled breadcrumbs show `field`-symbols.",
+        "setting": {
+            "breadcrumbs.showFields": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showFiles",
+        "desc": " When enabled breadcrumbs show `file`-symbols.",
+        "setting": {
+            "breadcrumbs.showFiles": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showFunctions",
+        "desc": " When enabled breadcrumbs show `function`-symbols.",
+        "setting": {
+            "breadcrumbs.showFunctions": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showInterfaces",
+        "desc": " When enabled breadcrumbs show `interface`-symbols.",
+        "setting": {
+            "breadcrumbs.showInterfaces": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showKeys",
+        "desc": " When enabled breadcrumbs show `key`-symbols.",
+        "setting": {
+            "breadcrumbs.showKeys": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showMethods",
+        "desc": " When enabled breadcrumbs show `method`-symbols.",
+        "setting": {
+            "breadcrumbs.showMethods": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showModules",
+        "desc": " When enabled breadcrumbs show `module`-symbols.",
+        "setting": {
+            "breadcrumbs.showModules": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showNamespaces",
+        "desc": " When enabled breadcrumbs show `namespace`-symbols.",
+        "setting": {
+            "breadcrumbs.showNamespaces": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showNull",
+        "desc": " When enabled breadcrumbs show `null`-symbols.",
+        "setting": {
+            "breadcrumbs.showNull": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showNumbers",
+        "desc": " When enabled breadcrumbs show `number`-symbols.",
+        "setting": {
+            "breadcrumbs.showNumbers": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showObjects",
+        "desc": " When enabled breadcrumbs show `object`-symbols.",
+        "setting": {
+            "breadcrumbs.showObjects": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showOperators",
+        "desc": " When enabled breadcrumbs show `operator`-symbols.",
+        "setting": {
+            "breadcrumbs.showOperators": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showPackages",
+        "desc": " When enabled breadcrumbs show `package`-symbols.",
+        "setting": {
+            "breadcrumbs.showPackages": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showProperties",
+        "desc": " When enabled breadcrumbs show `property`-symbols.",
+        "setting": {
+            "breadcrumbs.showProperties": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showStrings",
+        "desc": " When enabled breadcrumbs show `string`-symbols.",
+        "setting": {
+            "breadcrumbs.showStrings": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showStructs",
+        "desc": " When enabled breadcrumbs show `struct`-symbols.",
+        "setting": {
+            "breadcrumbs.showStructs": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showTypeParameters",
+        "desc": " When enabled breadcrumbs show `typeParameter`-symbols.",
+        "setting": {
+            "breadcrumbs.showTypeParameters": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.showVariables",
+        "desc": " When enabled breadcrumbs show `variable`-symbols.",
+        "setting": {
+            "breadcrumbs.showVariables": true
+        }
+    },
+    {
+        "settingId": "breadcrumbs.symbolPath",
+        "desc": " Controls whether and how symbols are shown in the breadcrumbs view.\n  - on: Show all symbols in the breadcrumbs view.\n  - off: Do not show symbols in the breadcrumbs view.\n  - last: Only show the current symbol in the breadcrumbs view.",
+        "setting": {
+            "breadcrumbs.symbolPath": "on"
+        }
+    },
+    {
+        "settingId": "breadcrumbs.symbolSortOrder",
+        "desc": " Controls how symbols are sorted in the breadcrumbs outline view.\n  - position: Show symbol outline in file position order.\n  - name: Show symbol outline in alphabetical order.\n  - type: Show symbol outline in symbol type order.",
+        "setting": {
+            "breadcrumbs.symbolSortOrder": "position"
+        }
+    }
+]

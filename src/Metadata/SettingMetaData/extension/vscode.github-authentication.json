@@ -1,0 +1,7 @@
+[
+    {
+        "name": "github-enterprise.uri",
+        "desc": "GitHub Enterprise Server URI",
+        "type": "string"
+    }
+]

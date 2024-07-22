@@ -1,0 +1,29 @@
+[
+    {
+        "name": "php.suggest.basic",
+        "desc": "Controls whether the built-in PHP language suggestions are enabled. The support suggests PHP globals and variables.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "php.validate.enable",
+        "desc": "Enable/disable built-in PHP validation.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "php.validate.executablePath",
+        "desc": "Points to the PHP executable.",
+        "default": null,
+        "type": [
+            "string",
+            "null"
+        ]
+    },
+    {
+        "name": "php.validate.run",
+        "desc": "Whether the linter is run on save or on type.",
+        "default": "onSave",
+        "type": "string"
+    }
+]

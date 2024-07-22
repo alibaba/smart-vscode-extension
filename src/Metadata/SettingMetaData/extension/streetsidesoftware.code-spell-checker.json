@@ -1,0 +1,340 @@
+[
+    {
+        "name": "cSpell.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.advanced.feature.useReferenceProviderRemove",
+        "type": "string"
+    },
+    {
+        "name": "cSpell.advanced.feature.useReferenceProviderWithRename",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.fixSpellingWithRenameProvider",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.logFile",
+        "type": "string"
+    },
+    {
+        "name": "cSpell.logLevel",
+        "default": "Error",
+        "type": "string"
+    },
+    {
+        "name": "cSpell.ignoreRegExpList",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.includeRegExpList",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.overrides",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.patterns",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.suggestWords",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.experimental.enableRegexpView",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.experimental.enableSettingsViewerV2",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.allowedSchemas",
+        "default": [
+            "file",
+            "gist",
+            "repo",
+            "sftp",
+            "untitled",
+            "vscode-notebook-cell",
+            "vscode-scm",
+            "vscode-userdata"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "cSpell.checkOnlyEnabledFileTypes",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.enableFiletypes",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.files",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.globRoot",
+        "type": "string"
+    },
+    {
+        "name": "cSpell.ignorePaths",
+        "default": [
+            "package-lock.json",
+            "node_modules",
+            "vscode-extension",
+            ".git/objects",
+            ".vscode",
+            ".vscode-insiders"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "cSpell.import",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.noConfigSearch",
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.spellCheckOnlyWorkspaceFiles",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.useGitignore",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.usePnP",
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.workspaceRootPath",
+        "type": "string"
+    },
+    {
+        "name": "cSpell.caseSensitive",
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.customDictionaries",
+        "type": "object"
+    },
+    {
+        "name": "cSpell.dictionaries",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.dictionaryDefinitions",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.flagWords",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.ignoreWords",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.language",
+        "default": "en",
+        "type": "string"
+    },
+    {
+        "name": "cSpell.languageSettings",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.noSuggestDictionaries",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.userWords",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.words",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.allowCompoundWords",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.customFolderDictionaries",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.customUserDictionaries",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.customWorkspaceDictionaries",
+        "type": "array"
+    },
+    {
+        "name": "cSpell.enabledLanguageIds",
+        "default": [
+            "asciidoc",
+            "c",
+            "cpp",
+            "csharp",
+            "css",
+            "elixir",
+            "erlang",
+            "git-commit",
+            "go",
+            "graphql",
+            "handlebars",
+            "haskell",
+            "html",
+            "jade",
+            "java",
+            "javascript",
+            "javascriptreact",
+            "json",
+            "jsonc",
+            "jupyter",
+            "latex",
+            "less",
+            "markdown",
+            "php",
+            "plaintext",
+            "python",
+            "pug",
+            "restructuredtext",
+            "rust",
+            "scala",
+            "scss",
+            "scminput",
+            "swift",
+            "text",
+            "typescript",
+            "typescriptreact",
+            "vue",
+            "yaml",
+            "yml"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "cSpell.blockCheckingWhenAverageChunkSizeGreaterThan",
+        "default": 80,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.blockCheckingWhenLineLengthGreaterThan",
+        "default": 10000,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.blockCheckingWhenTextChunkSizeGreaterThan",
+        "default": 500,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.checkLimit",
+        "default": 500,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.spellCheckDelayMs",
+        "default": 50,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.suggestionsTimeout",
+        "default": 400,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.autoFormatConfigFile",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.diagnosticLevel",
+        "default": "Information",
+        "type": "string"
+    },
+    {
+        "name": "cSpell.hideAddToDictionaryCodeActions",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.maxDuplicateProblems",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.maxNumberOfProblems",
+        "default": 100,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.minWordLength",
+        "default": 4,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.numSuggestions",
+        "default": 8,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.showAutocompleteSuggestions",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.showCommandsInEditorContextMenu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.showStatus",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.showStatusAlignment",
+        "default": "Right",
+        "type": "string"
+    },
+    {
+        "name": "cSpell.showSuggestionsLinkInEditorContextMenu",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "cSpell.suggestionMenuType",
+        "default": "quickPick",
+        "type": "string"
+    },
+    {
+        "name": "cSpell.suggestionNumChanges",
+        "default": 3,
+        "type": "number"
+    },
+    {
+        "name": "cSpell.validateDirectives",
+        "type": "boolean"
+    }
+]

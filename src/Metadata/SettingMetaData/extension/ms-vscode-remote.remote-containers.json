@@ -1,0 +1,160 @@
+[
+    {
+        "name": "remote.containers.defaultExtensions"
+    },
+    {
+        "name": "dev.containers.defaultExtensions",
+        "desc": "Configures the list of extensions to always install while creating a container.",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "dev.containers.defaultExtensionsIfInstalledLocally",
+        "desc": "Configures the list of extensions to install while creating a container if they are already installed locally.",
+        "default": [
+            "GitHub.copilot",
+            "GitHub.copilot-chat",
+            "GitHub.vscode-pull-request-github"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "dev.containers.defaultFeatures",
+        "desc": "Configures the list of features to always install while creating a container.",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "remote.containers.workspaceMountConsistency"
+    },
+    {
+        "name": "dev.containers.workspaceMountConsistency",
+        "desc": "The consistency level used for the workspace mount (existing containers must be rebuilt to take effect).",
+        "default": "cached",
+        "type": "string"
+    },
+    {
+        "name": "remote.containers.cacheVolume"
+    },
+    {
+        "name": "dev.containers.cacheVolume",
+        "desc": "Controls whether a Docker volume should be used to cache the VS Code server and extensions. Currently only applies to single container and not Docker Compose configurations.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.containers.copyGitConfig"
+    },
+    {
+        "name": "dev.containers.copyGitConfig",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.containers.gitCredentialHelperConfigLocation"
+    },
+    {
+        "name": "dev.containers.gitCredentialHelperConfigLocation",
+        "desc": "Where to write the configuration for the Git credential helper.",
+        "default": "global",
+        "type": "string"
+    },
+    {
+        "name": "dev.containers.dockerCredentialHelper",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "dev.containers.mountWaylandSocket",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.containers.logLevel"
+    },
+    {
+        "name": "dev.containers.logLevel",
+        "desc": "The log level for the extension.",
+        "default": "debug",
+        "type": "string"
+    },
+    {
+        "name": "remote.containers.dockerPath"
+    },
+    {
+        "name": "dev.containers.dockerPath",
+        "desc": "Docker (or Podman) executable name or path.",
+        "default": "docker",
+        "type": "string"
+    },
+    {
+        "name": "remote.containers.dockerComposePath"
+    },
+    {
+        "name": "dev.containers.dockerComposePath",
+        "desc": "Docker Compose executable name or path.",
+        "default": "docker-compose",
+        "type": "string"
+    },
+    {
+        "name": "remote.containers.executeInWSL"
+    },
+    {
+        "name": "dev.containers.executeInWSL",
+        "desc": "Controls whether CLI commands should always be executed in WSL. The default is to only execute in WSL for workspace folders in WSL. This setting has no effect on other platforms than Windows.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "remote.containers.executeInWSLDistro"
+    },
+    {
+        "name": "dev.containers.executeInWSLDistro",
+        "type": "string"
+    },
+    {
+        "name": "dev.containers.forwardWSLServices",
+        "desc": "Controls whether services in WSL (SSH agent, GPG agent, X display, Wayland display) are forwarded into the container. This setting has no effect on other platforms than Windows.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "dotfiles.repository",
+        "desc": "URL of a dotfiles Git repository (e.g., https://github.com/owner/repository.git) or owner/repository of a GitHub repository.",
+        "type": "string"
+    },
+    {
+        "name": "dotfiles.installCommand",
+        "desc": "The command to run after cloning the dotfiles repository. Defaults to run the first file of `install.sh`, `install`, `bootstrap.sh`, `bootstrap`, `setup.sh` and `setup` found in the dotfiles repository's root folder.",
+        "type": "string"
+    },
+    {
+        "name": "dotfiles.targetPath",
+        "desc": "The path to clone the dotfiles repository to. Defaults to `~/dotfiles`.",
+        "default": "~/dotfiles",
+        "type": "string"
+    },
+    {
+        "name": "remote.containers.dotfiles.repository"
+    },
+    {
+        "name": "remote.containers.dotfiles.installCommand"
+    },
+    {
+        "name": "remote.containers.dotfiles.targetPath"
+    },
+    {
+        "name": "remote.containers.repositoryConfigurationPaths"
+    },
+    {
+        "name": "dev.containers.repositoryConfigurationPaths",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "dev.containers.experimentalLockfile",
+        "desc": "Controls whether an experimental devcontainer-lock.json should be written. This functionality is experimental and may change in the future.",
+        "default": false,
+        "type": "boolean"
+    }
+]

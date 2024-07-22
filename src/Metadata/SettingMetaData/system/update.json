@@ -1,0 +1,23 @@
+[
+    {
+        "settingId": "update.enableWindowsBackgroundUpdates",
+        "desc": " Enable to download and install new VS Code versions in the background on Windows.",
+        "setting": {
+            "update.enableWindowsBackgroundUpdates": true
+        }
+    },
+    {
+        "settingId": "update.mode",
+        "desc": " Configure whether you receive automatic updates. Requires a restart after change. The updates are fetched from a Microsoft online service.\n  - none: Disable updates.\n  - manual: Disable automatic background update checks. Updates will be available if you manually check for updates.\n  - start: Check for updates only on startup. Disable automatic background update checks.\n  - default: Enable automatic update checks. Code will check for updates automatically and periodically.",
+        "setting": {
+            "update.mode": "default"
+        }
+    },
+    {
+        "settingId": "update.showReleaseNotes",
+        "desc": " Show Release Notes after an update. The Release Notes are fetched from a Microsoft online service.",
+        "setting": {
+            "update.showReleaseNotes": true
+        }
+    }
+]

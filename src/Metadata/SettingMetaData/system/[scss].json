@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[scss]",
+        "desc": " Configure settings to be overridden for the scss language.",
+        "setting": {
+            "[scss]": {
+                "editor.suggest.insertMode": "replace"
+            }
+        }
+    }
+]

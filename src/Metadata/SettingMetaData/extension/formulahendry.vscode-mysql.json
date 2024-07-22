@@ -1,0 +1,20 @@
+[
+    {
+        "name": "vscode-mysql.enableTelemetry",
+        "desc": "Whether to enable anonymous usage collection.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "vscode-mysql.maxTableCount",
+        "desc": "The maximum table count shown in the tree view",
+        "default": 500,
+        "type": "integer"
+    },
+    {
+        "name": "vscode-mysql.enableDelimiterOperator",
+        "desc": "Enable support for DELIMITER operator.",
+        "default": true,
+        "type": "boolean"
+    }
+]

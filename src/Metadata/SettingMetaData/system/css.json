@@ -1,0 +1,240 @@
+[
+    {
+        "settingId": "css.completion.completePropertyWithSemicolon",
+        "desc": " Insert semicolon at end of line when completing CSS properties.",
+        "setting": {
+            "css.completion.completePropertyWithSemicolon": true
+        }
+    },
+    {
+        "settingId": "css.completion.triggerPropertyValueCompletion",
+        "desc": " By default, VS Code triggers property value completion after selecting a CSS property. Use this setting to disable this behavior.",
+        "setting": {
+            "css.completion.triggerPropertyValueCompletion": true
+        }
+    },
+    {
+        "settingId": "css.customData",
+        "desc": " A list of relative file paths pointing to JSON files following the custom data format.\n VS Code loads custom data on startup to enhance its CSS support for the custom CSS properties, at directives, pseudo classes and pseudo elements you specify in the JSON files.\n The file paths are relative to workspace and only workspace folder settings are considered.",
+        "setting": {
+            "css.customData": []
+        }
+    },
+    {
+        "settingId": "css.format.braceStyle",
+        "desc": " Put braces on the same line as rules (`collapse`) or put braces on own line (`expand`).",
+        "setting": {
+            "css.format.braceStyle": "collapse"
+        }
+    },
+    {
+        "settingId": "css.format.enable",
+        "desc": " Enable/disable default CSS formatter.",
+        "setting": {
+            "css.format.enable": true
+        }
+    },
+    {
+        "settingId": "css.format.maxPreserveNewLines",
+        "desc": " Maximum number of line breaks to be preserved in one chunk, when `css.format.preserveNewLines` is enabled.",
+        "setting": {
+            "css.format.maxPreserveNewLines": null
+        }
+    },
+    {
+        "settingId": "css.format.newlineBetweenRules",
+        "desc": " Separate rulesets by a blank line.",
+        "setting": {
+            "css.format.newlineBetweenRules": true
+        }
+    },
+    {
+        "settingId": "css.format.newlineBetweenSelectors",
+        "desc": " Separate selectors with a new line.",
+        "setting": {
+            "css.format.newlineBetweenSelectors": true
+        }
+    },
+    {
+        "settingId": "css.format.preserveNewLines",
+        "desc": " Whether existing line breaks before elements should be preserved.",
+        "setting": {
+            "css.format.preserveNewLines": true
+        }
+    },
+    {
+        "settingId": "css.format.spaceAroundSelectorSeparator",
+        "desc": " Ensure a space character around selector separators '>', '+', '~' (e.g. `a > b`).",
+        "setting": {
+            "css.format.spaceAroundSelectorSeparator": false
+        }
+    },
+    {
+        "settingId": "css.hover.documentation",
+        "desc": " Show tag and attribute documentation in CSS hovers.",
+        "setting": {
+            "css.hover.documentation": true
+        }
+    },
+    {
+        "settingId": "css.hover.references",
+        "desc": " Show references to MDN in CSS hovers.",
+        "setting": {
+            "css.hover.references": true
+        }
+    },
+    {
+        "settingId": "css.lint.argumentsInColorFunction",
+        "desc": " Invalid number of parameters.",
+        "setting": {
+            "css.lint.argumentsInColorFunction": "error"
+        }
+    },
+    {
+        "settingId": "css.lint.boxModel",
+        "desc": " Do not use `width` or `height` when using `padding` or `border`.",
+        "setting": {
+            "css.lint.boxModel": "ignore"
+        }
+    },
+    {
+        "settingId": "css.lint.compatibleVendorPrefixes",
+        "desc": " When using a vendor-specific prefix make sure to also include all other vendor-specific properties.",
+        "setting": {
+            "css.lint.compatibleVendorPrefixes": "ignore"
+        }
+    },
+    {
+        "settingId": "css.lint.duplicateProperties",
+        "desc": " Do not use duplicate style definitions.",
+        "setting": {
+            "css.lint.duplicateProperties": "ignore"
+        }
+    },
+    {
+        "settingId": "css.lint.emptyRules",
+        "desc": " Do not use empty rulesets.",
+        "setting": {
+            "css.lint.emptyRules": "warning"
+        }
+    },
+    {
+        "settingId": "css.lint.float",
+        "desc": " Avoid using `float`. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.",
+        "setting": {
+            "css.lint.float": "ignore"
+        }
+    },
+    {
+        "settingId": "css.lint.fontFaceProperties",
+        "desc": " `@font-face` rule must define `src` and `font-family` properties.",
+        "setting": {
+            "css.lint.fontFaceProperties": "warning"
+        }
+    },
+    {
+        "settingId": "css.lint.hexColorLength",
+        "desc": " Hex colors must consist of 3, 4, 6 or 8 hex numbers.",
+        "setting": {
+            "css.lint.hexColorLength": "error"
+        }
+    },
+    {
+        "settingId": "css.lint.idSelector",
+        "desc": " Selectors should not contain IDs because these rules are too tightly coupled with the HTML.",
+        "setting": {
+            "css.lint.idSelector": "ignore"
+        }
+    },
+    {
+        "settingId": "css.lint.ieHack",
+        "desc": " IE hacks are only necessary when supporting IE7 and older.",
+        "setting": {
+            "css.lint.ieHack": "ignore"
+        }
+    },
+    {
+        "settingId": "css.lint.important",
+        "desc": " Avoid using `!important`. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.",
+        "setting": {
+            "css.lint.important": "ignore"
+        }
+    },
+    {
+        "settingId": "css.lint.importStatement",
+        "desc": " Import statements do not load in parallel.",
+        "setting": {
+            "css.lint.importStatement": "ignore"
+        }
+    },
+    {
+        "settingId": "css.lint.propertyIgnoredDueToDisplay",
+        "desc": " Property is ignored due to the display. E.g. with `display: inline`, the `width`, `height`, `margin-top`, `margin-bottom`, and `float` properties have no effect.",
+        "setting": {
+            "css.lint.propertyIgnoredDueToDisplay": "warning"
+        }
+    },
+    {
+        "settingId": "css.lint.universalSelector",
+        "desc": " The universal selector (`*`) is known to be slow.",
+        "setting": {
+            "css.lint.universalSelector": "ignore"
+        }
+    },
+    {
+        "settingId": "css.lint.unknownAtRules",
+        "desc": " Unknown at-rule.",
+        "setting": {
+            "css.lint.unknownAtRules": "warning"
+        }
+    },
+    {
+        "settingId": "css.lint.unknownProperties",
+        "desc": " Unknown property.",
+        "setting": {
+            "css.lint.unknownProperties": "warning"
+        }
+    },
+    {
+        "settingId": "css.lint.unknownVendorSpecificProperties",
+        "desc": " Unknown vendor specific property.",
+        "setting": {
+            "css.lint.unknownVendorSpecificProperties": "ignore"
+        }
+    },
+    {
+        "settingId": "css.lint.validProperties",
+        "desc": " A list of properties that are not validated against the `unknownProperties` rule.",
+        "setting": {
+            "css.lint.validProperties": []
+        }
+    },
+    {
+        "settingId": "css.lint.vendorPrefix",
+        "desc": " When using a vendor-specific prefix, also include the standard property.",
+        "setting": {
+            "css.lint.vendorPrefix": "warning"
+        }
+    },
+    {
+        "settingId": "css.lint.zeroUnits",
+        "desc": " No unit for zero needed.",
+        "setting": {
+            "css.lint.zeroUnits": "ignore"
+        }
+    },
+    {
+        "settingId": "css.trace.server",
+        "desc": " Traces the communication between VS Code and the CSS language server.",
+        "setting": {
+            "css.trace.server": "off"
+        }
+    },
+    {
+        "settingId": "css.validate",
+        "desc": " Enables or disables all validations.",
+        "setting": {
+            "css.validate": true
+        }
+    }
+]

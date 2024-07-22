@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[search-result]",
+        "desc": " Configure settings to be overridden for the search-result language.",
+        "setting": {
+            "[search-result]": {
+                "editor.lineNumbers": "off"
+            }
+        }
+    }
+]

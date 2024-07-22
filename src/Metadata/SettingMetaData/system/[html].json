@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[html]",
+        "desc": " Configure settings to be overridden for the html language.",
+        "setting": {
+            "[html]": {
+                "editor.suggest.insertMode": "replace"
+            }
+        }
+    }
+]

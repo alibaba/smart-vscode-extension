@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[clojure]",
+        "desc": " Configure settings to be overridden for the clojure language.",
+        "setting": {
+            "[clojure]": {
+                "diffEditor.ignoreTrimWhitespace": false
+            }
+        }
+    }
+]

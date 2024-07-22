@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[jade]",
+        "desc": " Configure settings to be overridden for the jade language.",
+        "setting": {
+            "[jade]": {
+                "diffEditor.ignoreTrimWhitespace": false
+            }
+        }
+    }
+]

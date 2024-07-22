@@ -1,0 +1,203 @@
+[
+    {
+        "settingId": "files.associations",
+        "desc": " Configure glob patterns of file associations to languages.",
+        "setting": {
+            "files.associations": {}
+        }
+    },
+    {
+        "settingId": "files.autoGuessEncoding",
+        "desc": " When enabled, the editor will attempt to guess the character set encoding when opening files. This setting can also be configured per language. Note, this setting is not respected by text search. Only `files.encoding` is respected.",
+        "setting": {
+            "files.autoGuessEncoding": false
+        }
+    },
+    {
+        "settingId": "files.autoSave",
+        "desc": " Controls auto save of editors that have unsaved changes.\n  - off: An editor with changes is never automatically saved.\n  - afterDelay: An editor with changes is automatically saved after the configured `files.autoSaveDelay`.\n  - onFocusChange: An editor with changes is automatically saved when the editor loses focus.\n  - onWindowChange: An editor with changes is automatically saved when the window loses focus.",
+        "setting": {
+            "files.autoSave": "off"
+        }
+    },
+    {
+        "settingId": "files.autoSaveDelay",
+        "desc": " Controls the delay in milliseconds after which an editor with unsaved changes is saved automatically. Only applies when `files.autoSave` is set to `afterDelay`.",
+        "setting": {
+            "files.autoSaveDelay": 1000
+        }
+    },
+    {
+        "settingId": "files.autoSaveWhenNoErrors",
+        "desc": " When enabled, will limit auto save of editors to files that have no errors reported in them at the time the auto save is triggered. Only applies when `files.autoSave` is enabled.",
+        "setting": {
+            "files.autoSaveWhenNoErrors": false
+        }
+    },
+    {
+        "settingId": "files.autoSaveWorkspaceFilesOnly",
+        "desc": " When enabled, will limit auto save of editors to files that are inside the opened workspace. Only applies when `files.autoSave` is enabled.",
+        "setting": {
+            "files.autoSaveWorkspaceFilesOnly": false
+        }
+    },
+    {
+        "settingId": "files.defaultLanguage",
+        "desc": " The default language identifier that is assigned to new files. If configured to `${activeEditorLanguage}`, will use the language identifier of the currently active text editor if any.",
+        "setting": {
+            "files.defaultLanguage": ""
+        }
+    },
+    {
+        "settingId": "files.dialog.defaultPath",
+        "desc": " Default path for file dialogs, overriding user's home path. Only used in the absence of a context-specific path, such as most recently opened file or folder.",
+        "setting": {
+            "files.dialog.defaultPath": ""
+        }
+    },
+    {
+        "settingId": "files.enableTrash",
+        "desc": " Moves files/folders to the OS trash (recycle bin on Windows) when deleting. Disabling this will delete files/folders permanently.",
+        "setting": {
+            "files.enableTrash": true
+        }
+    },
+    {
+        "settingId": "files.encoding",
+        "desc": " The default character set encoding to use when reading and writing files. This setting can also be configured per language.",
+        "setting": {
+            "files.encoding": "utf8"
+        }
+    },
+    {
+        "settingId": "files.eol",
+        "desc": " The default end of line character.\n  - \\n: LF\n  - \\r\\n: CRLF\n  - auto: Uses operating system specific end of line character.",
+        "setting": {
+            "files.eol": "auto"
+        }
+    },
+    {
+        "settingId": "files.exclude",
+        "desc": " Configure glob patterns for excluding files and folders. For example, the File Explorer decides which files and folders to show or hide based on this setting. Refer to the `search.exclude` setting to define search-specific excludes.",
+        "setting": {
+            "files.exclude": {
+                "**/.git": true,
+                "**/.svn": true,
+                "**/.hg": true,
+                "**/CVS": true,
+                "**/.DS_Store": true,
+                "**/Thumbs.db": true
+            }
+        }
+    },
+    {
+        "settingId": "files.hotExit",
+        "desc": " Hot Exit controls whether unsaved files are remembered between sessions, allowing the save prompt when exiting the editor to be skipped.\n  - off: Disable hot exit. A prompt will show when attempting to close a window with editors that have unsaved changes.\n  - onExit: Hot exit will be triggered when the last window is closed on Windows/Linux or when the `workbench.action.quit` command is triggered (command palette, keybinding, menu). All windows without folders opened will be restored upon next launch. A list of previously opened windows with unsaved files can be accessed via `File > Open Recent > More...`\n  - onExitAndWindowClose: Hot exit will be triggered when the last window is closed on Windows/Linux or when the `workbench.action.quit` command is triggered (command palette, keybinding, menu), and also for any window with a folder opened regardless of whether it's the last window. All windows without folders opened will be restored upon next launch. A list of previously opened windows with unsaved files can be accessed via `File > Open Recent > More...`",
+        "setting": {
+            "files.hotExit": "onExit"
+        }
+    },
+    {
+        "settingId": "files.insertFinalNewline",
+        "desc": " When enabled, insert a final new line at the end of the file when saving it.",
+        "setting": {
+            "files.insertFinalNewline": false
+        }
+    },
+    {
+        "settingId": "files.participants.timeout",
+        "desc": " Timeout in milliseconds after which file participants for create, rename, and delete are cancelled. Use `0` to disable participants.",
+        "setting": {
+            "files.participants.timeout": 60000
+        }
+    },
+    {
+        "settingId": "files.readonlyExclude",
+        "desc": " Configure paths or glob patterns to exclude from being marked as read-only if they match as a result of the `files.readonlyInclude` setting.",
+        "setting": {
+            "files.readonlyExclude": {}
+        }
+    },
+    {
+        "settingId": "files.readonlyFromPermissions",
+        "desc": " Marks files as read-only when their file permissions indicate as such. This can be overridden via `files.readonlyInclude#` and `#files.readonlyExclude` settings.",
+        "setting": {
+            "files.readonlyFromPermissions": false
+        }
+    },
+    {
+        "settingId": "files.readonlyInclude",
+        "desc": " Configure paths or glob patterns to mark as read-only.",
+        "setting": {
+            "files.readonlyInclude": {}
+        }
+    },
+    {
+        "settingId": "files.refactoring.autoSave",
+        "desc": " Controls if files that were part of a refactoring are saved automatically",
+        "setting": {
+            "files.refactoring.autoSave": true
+        }
+    },
+    {
+        "settingId": "files.restoreUndoStack",
+        "desc": " Restore the undo stack when a file is reopened.",
+        "setting": {
+            "files.restoreUndoStack": true
+        }
+    },
+    {
+        "settingId": "files.saveConflictResolution",
+        "desc": " A save conflict can occur when a file is saved to disk that was changed by another program in the meantime. To prevent data loss, the user is asked to compare the changes in the editor with the version on disk. This setting should only be changed if you frequently encounter save conflict errors and may result in data loss if used without caution.\n  - askUser: Will refuse to save and ask for resolving the save conflict manually.\n  - overwriteFileOnDisk: Will resolve the save conflict by overwriting the file on disk with the changes in the editor.",
+        "setting": {
+            "files.saveConflictResolution": "askUser"
+        }
+    },
+    {
+        "settingId": "files.simpleDialog.enable",
+        "desc": " Enables the simple file dialog for opening and saving files and folders. The simple file dialog replaces the system file dialog when enabled.",
+        "setting": {
+            "files.simpleDialog.enable": false
+        }
+    },
+    {
+        "settingId": "files.trimFinalNewlines",
+        "desc": " When enabled, will trim all new lines after the final new line at the end of the file when saving it.",
+        "setting": {
+            "files.trimFinalNewlines": false
+        }
+    },
+    {
+        "settingId": "files.trimTrailingWhitespace",
+        "desc": " When enabled, will trim trailing whitespace when saving a file.",
+        "setting": {
+            "files.trimTrailingWhitespace": false
+        }
+    },
+    {
+        "settingId": "files.trimTrailingWhitespaceInRegexAndStrings",
+        "desc": " When enabled, trailing whitespace will be removed from multiline strings and regexes will be removed on save or when executing 'editor.action.trimTrailingWhitespace'.",
+        "setting": {
+            "files.trimTrailingWhitespaceInRegexAndStrings": true
+        }
+    },
+    {
+        "settingId": "files.watcherExclude",
+        "desc": " Configure paths or glob patterns to exclude from file watching.",
+        "setting": {
+            "files.watcherExclude": {
+                "**/.git/objects/**": true,
+                "**/.git/subtree-cache/**": true,
+                "**/node_modules/*/**": true,
+                "**/.hg/store/**": true
+            }
+        }
+    },
+    {
+        "settingId": "files.watcherInclude",
+        "desc": " Configure extra paths to watch for changes inside the workspace.",
+        "setting": {
+            "files.watcherInclude": []
+        }
+    }
+]

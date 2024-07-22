@@ -1,0 +1,219 @@
+[
+    {
+        "settingId": "outline.collapseItems",
+        "desc": " Controls whether Outline items are collapsed or expanded.\n  - alwaysCollapse: Collapse all items.\n  - alwaysExpand: Expand all items.",
+        "setting": {
+            "outline.collapseItems": "alwaysExpand"
+        }
+    },
+    {
+        "settingId": "outline.icons",
+        "desc": " Render Outline elements with icons.",
+        "setting": {
+            "outline.icons": true
+        }
+    },
+    {
+        "settingId": "outline.problems.badges",
+        "desc": " Use badges for errors and warnings on Outline elements. Overwritten by `problems.visibility` when it is off.",
+        "setting": {
+            "outline.problems.badges": true
+        }
+    },
+    {
+        "settingId": "outline.problems.colors",
+        "desc": " Use colors for errors and warnings on Outline elements. Overwritten by `problems.visibility` when it is off.",
+        "setting": {
+            "outline.problems.colors": true
+        }
+    },
+    {
+        "settingId": "outline.problems.enabled",
+        "desc": " Show errors and warnings on Outline elements. Overwritten by `problems.visibility` when it is off.",
+        "setting": {
+            "outline.problems.enabled": true
+        }
+    },
+    {
+        "settingId": "outline.showArrays",
+        "desc": " When enabled, Outline shows `array`-symbols.",
+        "setting": {
+            "outline.showArrays": true
+        }
+    },
+    {
+        "settingId": "outline.showBooleans",
+        "desc": " When enabled, Outline shows `boolean`-symbols.",
+        "setting": {
+            "outline.showBooleans": true
+        }
+    },
+    {
+        "settingId": "outline.showClasses",
+        "desc": " When enabled, Outline shows `class`-symbols.",
+        "setting": {
+            "outline.showClasses": true
+        }
+    },
+    {
+        "settingId": "outline.showConstants",
+        "desc": " When enabled, Outline shows `constant`-symbols.",
+        "setting": {
+            "outline.showConstants": true
+        }
+    },
+    {
+        "settingId": "outline.showConstructors",
+        "desc": " When enabled, Outline shows `constructor`-symbols.",
+        "setting": {
+            "outline.showConstructors": true
+        }
+    },
+    {
+        "settingId": "outline.showEnumMembers",
+        "desc": " When enabled, Outline shows `enumMember`-symbols.",
+        "setting": {
+            "outline.showEnumMembers": true
+        }
+    },
+    {
+        "settingId": "outline.showEnums",
+        "desc": " When enabled, Outline shows `enum`-symbols.",
+        "setting": {
+            "outline.showEnums": true
+        }
+    },
+    {
+        "settingId": "outline.showEvents",
+        "desc": " When enabled, Outline shows `event`-symbols.",
+        "setting": {
+            "outline.showEvents": true
+        }
+    },
+    {
+        "settingId": "outline.showFields",
+        "desc": " When enabled, Outline shows `field`-symbols.",
+        "setting": {
+            "outline.showFields": true
+        }
+    },
+    {
+        "settingId": "outline.showFiles",
+        "desc": " When enabled, Outline shows `file`-symbols.",
+        "setting": {
+            "outline.showFiles": true
+        }
+    },
+    {
+        "settingId": "outline.showFunctions",
+        "desc": " When enabled, Outline shows `function`-symbols.",
+        "setting": {
+            "outline.showFunctions": true
+        }
+    },
+    {
+        "settingId": "outline.showInterfaces",
+        "desc": " When enabled, Outline shows `interface`-symbols.",
+        "setting": {
+            "outline.showInterfaces": true
+        }
+    },
+    {
+        "settingId": "outline.showKeys",
+        "desc": " When enabled, Outline shows `key`-symbols.",
+        "setting": {
+            "outline.showKeys": true
+        }
+    },
+    {
+        "settingId": "outline.showMethods",
+        "desc": " When enabled, Outline shows `method`-symbols.",
+        "setting": {
+            "outline.showMethods": true
+        }
+    },
+    {
+        "settingId": "outline.showModules",
+        "desc": " When enabled, Outline shows `module`-symbols.",
+        "setting": {
+            "outline.showModules": true
+        }
+    },
+    {
+        "settingId": "outline.showNamespaces",
+        "desc": " When enabled, Outline shows `namespace`-symbols.",
+        "setting": {
+            "outline.showNamespaces": true
+        }
+    },
+    {
+        "settingId": "outline.showNull",
+        "desc": " When enabled, Outline shows `null`-symbols.",
+        "setting": {
+            "outline.showNull": true
+        }
+    },
+    {
+        "settingId": "outline.showNumbers",
+        "desc": " When enabled, Outline shows `number`-symbols.",
+        "setting": {
+            "outline.showNumbers": true
+        }
+    },
+    {
+        "settingId": "outline.showObjects",
+        "desc": " When enabled, Outline shows `object`-symbols.",
+        "setting": {
+            "outline.showObjects": true
+        }
+    },
+    {
+        "settingId": "outline.showOperators",
+        "desc": " When enabled, Outline shows `operator`-symbols.",
+        "setting": {
+            "outline.showOperators": true
+        }
+    },
+    {
+        "settingId": "outline.showPackages",
+        "desc": " When enabled, Outline shows `package`-symbols.",
+        "setting": {
+            "outline.showPackages": true
+        }
+    },
+    {
+        "settingId": "outline.showProperties",
+        "desc": " When enabled, Outline shows `property`-symbols.",
+        "setting": {
+            "outline.showProperties": true
+        }
+    },
+    {
+        "settingId": "outline.showStrings",
+        "desc": " When enabled, Outline shows `string`-symbols.",
+        "setting": {
+            "outline.showStrings": true
+        }
+    },
+    {
+        "settingId": "outline.showStructs",
+        "desc": " When enabled, Outline shows `struct`-symbols.",
+        "setting": {
+            "outline.showStructs": true
+        }
+    },
+    {
+        "settingId": "outline.showTypeParameters",
+        "desc": " When enabled, Outline shows `typeParameter`-symbols.",
+        "setting": {
+            "outline.showTypeParameters": true
+        }
+    },
+    {
+        "settingId": "outline.showVariables",
+        "desc": " When enabled, Outline shows `variable`-symbols.",
+        "setting": {
+            "outline.showVariables": true
+        }
+    }
+]

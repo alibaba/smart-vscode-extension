@@ -1,0 +1,37 @@
+[
+    {
+        "settingId": "chat.editor.fontFamily",
+        "desc": " Controls the font family in chat codeblocks.",
+        "setting": {
+            "chat.editor.fontFamily": "default"
+        }
+    },
+    {
+        "settingId": "chat.editor.fontSize",
+        "desc": " Controls the font size in pixels in chat codeblocks.",
+        "setting": {
+            "chat.editor.fontSize": 14
+        }
+    },
+    {
+        "settingId": "chat.editor.fontWeight",
+        "desc": " Controls the font weight in chat codeblocks.",
+        "setting": {
+            "chat.editor.fontWeight": "default"
+        }
+    },
+    {
+        "settingId": "chat.editor.lineHeight",
+        "desc": " Controls the line height in pixels in chat codeblocks. Use 0 to compute the line height from the font size.",
+        "setting": {
+            "chat.editor.lineHeight": 0
+        }
+    },
+    {
+        "settingId": "chat.editor.wordWrap",
+        "desc": " Controls whether lines should wrap in chat codeblocks.",
+        "setting": {
+            "chat.editor.wordWrap": "off"
+        }
+    }
+]

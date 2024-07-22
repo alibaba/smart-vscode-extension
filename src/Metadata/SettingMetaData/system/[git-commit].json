@@ -1,0 +1,16 @@
+[
+    {
+        "settingId": "[git-commit]",
+        "desc": " Configure settings to be overridden for the git-commit language.",
+        "setting": {
+            "[git-commit]": {
+                "editor.rulers": [
+                    50,
+                    72
+                ],
+                "editor.wordWrap": "off",
+                "workbench.editor.restoreViewState": false
+            }
+        }
+    }
+]

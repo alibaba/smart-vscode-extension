@@ -1,0 +1,89 @@
+[
+    {
+        "name": "jestrunner.configPath",
+        "desc": "Jest config path (relative to `${workspaceFolder}` e.g. jest-config.json)",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "jestrunner.jestPath",
+        "desc": "Absolute path to jest bin file (e.g. /usr/lib/node_modules/jest/bin/jest.js)",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "jestrunner.projectPath",
+        "desc": "Absolute path to project directory (e.g. /home/me/project/sub-folder)",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "jestrunner.debugOptions",
+        "desc": "Add or overwrite vscode debug configurations (only in debug mode) (e.g. { \"args\": [\"--no-cache\"] })",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "jestrunner.runOptions",
+        "desc": "Add CLI Options to the Jest Command e.g. https://jestjs.io/docs/en/cli",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "jestrunner.jestCommand",
+        "desc": "Define an alternative Jest command (e.g. for Create React App and similar abstractions)",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "jestrunner.disableCodeLens",
+        "desc": "Disable CodeLens feature",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "jestrunner.runInExternalNativeTerminal",
+        "desc": "Run jest runner in external native terminal. Disabled on debug mode",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "jestrunner.codeLens",
+        "desc": "Enable desired codeLens, possible value : 'run', 'debug', 'watch', 'coverage'. Defaults to ['run', 'debug'] ",
+        "default": [
+            "run",
+            "debug"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "jestrunner.codeLensSelector",
+        "desc": "CodeLens will be shown on files matching this pattern",
+        "default": "**/*.{test,spec}.{js,jsx,ts,tsx}",
+        "type": "string"
+    },
+    {
+        "name": "jestrunner.enableYarnPnpSupport",
+        "desc": "Enable if you are using Yarn 2 with Plug'n'Play",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "jestrunner.changeDirectoryToWorkspaceRoot",
+        "desc": "Changes directory before execution. The fallback order is:\n1. `jestrunner.projectPath`\n2. the nearest `package.json`\n3. `${workspaceFolder}`",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "jestrunner.preserveEditorFocus",
+        "desc": "Preserve focus on editor when running tests",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "jestrunner.yarnPnpCommand",
+        "desc": "Command for debugging with Plug'n'Play",
+        "default": "yarn-*.*js",
+        "type": "string"
+    }
+]

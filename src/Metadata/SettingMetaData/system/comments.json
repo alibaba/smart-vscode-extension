@@ -1,0 +1,37 @@
+[
+    {
+        "settingId": "comments.collapseOnResolve",
+        "desc": " Controls whether the comment thread should collapse when the thread is resolved.",
+        "setting": {
+            "comments.collapseOnResolve": true
+        }
+    },
+    {
+        "settingId": "comments.maxHeight",
+        "desc": " Controls whether the comments widget scrolls or expands.",
+        "setting": {
+            "comments.maxHeight": true
+        }
+    },
+    {
+        "settingId": "comments.openView",
+        "desc": " Controls when the comments view should open.\n  - never: The comments view will never be opened.\n  - file: The comments view will open when a file with comments is active.\n  - firstFile: If the comments view has not been opened yet during this session it will open the first time during a session that a file with comments is active.\n  - firstFileUnresolved: If the comments view has not been opened yet during this session and the comment is not resolved, it will open the first time during a session that a file with comments is active.",
+        "setting": {
+            "comments.openView": "firstFile"
+        }
+    },
+    {
+        "settingId": "comments.useRelativeTime",
+        "desc": " Determines if relative time will be used in comment timestamps (ex. '1 day ago').",
+        "setting": {
+            "comments.useRelativeTime": true
+        }
+    },
+    {
+        "settingId": "comments.visible",
+        "desc": " Controls the visibility of the comments bar and comment threads in editors that have commenting ranges and comments. Comments are still accessible via the Comments view and will cause commenting to be toggled on in the same way running the command \"Comments: Toggle Editor Commenting\" toggles comments.",
+        "setting": {
+            "comments.visible": true
+        }
+    }
+]

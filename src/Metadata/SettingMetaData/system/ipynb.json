@@ -1,0 +1,9 @@
+[
+    {
+        "settingId": "ipynb.pasteImagesAsAttachments.enabled",
+        "desc": " Enable/disable pasting of images into Markdown cells in ipynb notebook files. Pasted images are inserted as attachments to the cell.",
+        "setting": {
+            "ipynb.pasteImagesAsAttachments.enabled": true
+        }
+    }
+]

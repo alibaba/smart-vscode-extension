@@ -1,0 +1,8 @@
+[
+    {
+        "name": "gulp.autoDetect",
+        "desc": "Controls enablement of Gulp task detection. Gulp task detection can cause files in any open workspace to be executed.",
+        "default": "off",
+        "type": "string"
+    }
+]

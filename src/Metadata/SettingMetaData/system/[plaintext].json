@@ -1,0 +1,12 @@
+[
+    {
+        "settingId": "[plaintext]",
+        "desc": " Configure settings to be overridden for the plaintext language.",
+        "setting": {
+            "[plaintext]": {
+                "editor.unicodeHighlight.ambiguousCharacters": false,
+                "editor.unicodeHighlight.invisibleCharacters": false
+            }
+        }
+    }
+]

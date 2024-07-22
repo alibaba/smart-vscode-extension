@@ -1,0 +1,9 @@
+[
+    {
+        "settingId": "telemetry.telemetryLevel",
+        "desc": "  - all: Sends usage data, errors, and crash reports.\n  - error: Sends general error telemetry and crash reports.\n  - crash: Sends OS level crash reports.\n  - off: Disables all product telemetry.",
+        "setting": {
+            "telemetry.telemetryLevel": "all"
+        }
+    }
+]

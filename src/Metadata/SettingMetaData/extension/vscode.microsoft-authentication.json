@@ -1,0 +1,10 @@
+[
+    {
+        "name": "microsoft-sovereign-cloud.environment",
+        "type": "string"
+    },
+    {
+        "name": "microsoft-sovereign-cloud.customEnvironment",
+        "type": "object"
+    }
+]

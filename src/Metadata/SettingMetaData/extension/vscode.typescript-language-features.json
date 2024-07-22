@@ -1,0 +1,783 @@
+[
+    {
+        "name": "typescript.tsdk",
+        "type": "string"
+    },
+    {
+        "name": "typescript.disableAutomaticTypeAcquisition",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.enablePromptUseWorkspaceTsdk",
+        "desc": "Enables prompting of users to use the TypeScript version configured in the workspace for Intellisense.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.npm",
+        "type": "string"
+    },
+    {
+        "name": "typescript.check.npmIsInstalled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.referencesCodeLens.enabled",
+        "desc": "Enable/disable references CodeLens in JavaScript files.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.referencesCodeLens.showOnAllFunctions",
+        "desc": "Enable/disable references CodeLens on all functions in JavaScript files.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.referencesCodeLens.enabled",
+        "desc": "Enable/disable references CodeLens in TypeScript files.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.referencesCodeLens.showOnAllFunctions",
+        "desc": "Enable/disable references CodeLens on all functions in TypeScript files.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.implementationsCodeLens.enabled",
+        "desc": "Enable/disable implementations CodeLens. This CodeLens shows the implementers of an interface.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.implementationsCodeLens.showOnInterfaceMethods",
+        "desc": "Enable/disable implementations CodeLens on interface methods.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.tsserver.enableTracing",
+        "desc": "Enables tracing TS server performance to a directory. These trace files can be used to diagnose TS Server performance issues. The log may contain file paths, source code, and other potentially sensitive information from your project.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.tsserver.log",
+        "desc": "Enables logging of the TS server to a file. This log can be used to diagnose TS Server issues. The log may contain file paths, source code, and other potentially sensitive information from your project.",
+        "default": "off",
+        "type": "string"
+    },
+    {
+        "name": "typescript.tsserver.pluginPaths",
+        "desc": "Additional paths to discover TypeScript Language Service plugins.",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "javascript.suggest.completeFunctionCalls",
+        "desc": "Complete functions with their parameter signature.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggest.completeFunctionCalls",
+        "desc": "Complete functions with their parameter signature.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.suggest.includeAutomaticOptionalChainCompletions",
+        "desc": "Enable/disable showing completions on potentially undefined values that insert an optional chain call. Requires strict null checks to be enabled.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggest.includeAutomaticOptionalChainCompletions",
+        "desc": "Enable/disable showing completions on potentially undefined values that insert an optional chain call. Requires strict null checks to be enabled.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.inlayHints.parameterNames.enabled",
+        "default": "none",
+        "type": "string"
+    },
+    {
+        "name": "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.inlayHints.parameterTypes.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.inlayHints.variableTypes.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.inlayHints.propertyDeclarationTypes.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.inlayHints.functionLikeReturnTypes.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.inlayHints.enumMemberValues.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.inlayHints.parameterNames.enabled",
+        "default": "none",
+        "type": "string"
+    },
+    {
+        "name": "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.inlayHints.parameterTypes.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.inlayHints.variableTypes.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.inlayHints.propertyDeclarationTypes.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.inlayHints.functionLikeReturnTypes.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.inlayHints.enumMemberValues.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.suggest.includeCompletionsForImportStatements",
+        "desc": "Enable/disable auto-import-style completions on partially-typed import statements.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggest.includeCompletionsForImportStatements",
+        "desc": "Enable/disable auto-import-style completions on partially-typed import statements.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.reportStyleChecksAsWarnings",
+        "desc": "Report style checks as warnings.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.validate.enable",
+        "desc": "Enable/disable TypeScript validation.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.enable",
+        "desc": "Enable/disable default TypeScript formatter.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterCommaDelimiter",
+        "desc": "Defines space handling after a comma delimiter.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterConstructor",
+        "desc": "Defines space handling after the constructor keyword.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterSemicolonInForStatements",
+        "desc": "Defines space handling after a semicolon in a for statement.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceBeforeAndAfterBinaryOperators",
+        "desc": "Defines space handling after a binary operator.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements",
+        "desc": "Defines space handling after keywords in a control flow statement.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions",
+        "desc": "Defines space handling after function keyword for anonymous functions.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceBeforeFunctionParenthesis",
+        "desc": "Defines space handling before function argument parentheses.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis",
+        "desc": "Defines space handling after opening and before closing non-empty parenthesis.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets",
+        "desc": "Defines space handling after opening and before closing non-empty brackets.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces",
+        "desc": "Defines space handling after opening and before closing non-empty braces.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces",
+        "desc": "Defines space handling after opening and before closing empty braces.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces",
+        "desc": "Defines space handling after opening and before closing template string braces.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces",
+        "desc": "Defines space handling after opening and before closing JSX expression braces.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.insertSpaceAfterTypeAssertion",
+        "desc": "Defines space handling after type assertions in TypeScript.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.placeOpenBraceOnNewLineForFunctions",
+        "desc": "Defines whether an open brace is put onto a new line for functions or not.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.placeOpenBraceOnNewLineForControlBlocks",
+        "desc": "Defines whether an open brace is put onto a new line for control blocks or not.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.format.semicolons",
+        "desc": "Defines handling of optional semicolons.",
+        "default": "ignore",
+        "type": "string"
+    },
+    {
+        "name": "typescript.format.indentSwitchCase",
+        "desc": "Indent case clauses in switch statements. Requires using TypeScript 5.1+ in the workspace.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.validate.enable",
+        "desc": "Enable/disable JavaScript validation.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.enable",
+        "desc": "Enable/disable default JavaScript formatter.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterCommaDelimiter",
+        "desc": "Defines space handling after a comma delimiter.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterConstructor",
+        "desc": "Defines space handling after the constructor keyword.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterSemicolonInForStatements",
+        "desc": "Defines space handling after a semicolon in a for statement.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceBeforeAndAfterBinaryOperators",
+        "desc": "Defines space handling after a binary operator.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements",
+        "desc": "Defines space handling after keywords in a control flow statement.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions",
+        "desc": "Defines space handling after function keyword for anonymous functions.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceBeforeFunctionParenthesis",
+        "desc": "Defines space handling before function argument parentheses.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis",
+        "desc": "Defines space handling after opening and before closing non-empty parenthesis.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets",
+        "desc": "Defines space handling after opening and before closing non-empty brackets.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces",
+        "desc": "Defines space handling after opening and before closing non-empty braces.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces",
+        "desc": "Defines space handling after opening and before closing empty braces.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces",
+        "desc": "Defines space handling after opening and before closing template string braces.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces",
+        "desc": "Defines space handling after opening and before closing JSX expression braces.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.placeOpenBraceOnNewLineForFunctions",
+        "desc": "Defines whether an open brace is put onto a new line for functions or not.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.placeOpenBraceOnNewLineForControlBlocks",
+        "desc": "Defines whether an open brace is put onto a new line for control blocks or not.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.format.semicolons",
+        "desc": "Defines handling of optional semicolons.",
+        "default": "ignore",
+        "type": "string"
+    },
+    {
+        "name": "js/ts.implicitProjectConfig.module",
+        "default": "ESNext",
+        "type": "string"
+    },
+    {
+        "name": "js/ts.implicitProjectConfig.target",
+        "default": "ES2020",
+        "type": "string"
+    },
+    {
+        "name": "javascript.implicitProjectConfig.checkJs",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "js/ts.implicitProjectConfig.checkJs",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.implicitProjectConfig.experimentalDecorators",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "js/ts.implicitProjectConfig.experimentalDecorators",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "js/ts.implicitProjectConfig.strictNullChecks",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "js/ts.implicitProjectConfig.strictFunctionTypes",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.suggest.names",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.tsc.autoDetect",
+        "desc": "Controls auto detection of tsc tasks.",
+        "default": "on",
+        "type": "string"
+    },
+    {
+        "name": "javascript.suggest.paths",
+        "desc": "Enable/disable suggestions for paths in import statements and require calls.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggest.paths",
+        "desc": "Enable/disable suggestions for paths in import statements and require calls.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.suggest.autoImports",
+        "desc": "Enable/disable auto import suggestions.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggest.autoImports",
+        "desc": "Enable/disable auto import suggestions.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.suggest.completeJSDocs",
+        "desc": "Enable/disable suggestion to complete JSDoc comments.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggest.completeJSDocs",
+        "desc": "Enable/disable suggestion to complete JSDoc comments.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.suggest.jsdoc.generateReturns",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggest.jsdoc.generateReturns",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.locale",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "javascript.suggestionActions.enabled",
+        "desc": "Enable/disable suggestion diagnostics for JavaScript files in the editor.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggestionActions.enabled",
+        "desc": "Enable/disable suggestion diagnostics for TypeScript files in the editor.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.preferences.quoteStyle",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "typescript.preferences.quoteStyle",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "javascript.preferences.importModuleSpecifier",
+        "desc": "Preferred path style for auto imports.",
+        "default": "shortest",
+        "type": "string"
+    },
+    {
+        "name": "typescript.preferences.importModuleSpecifier",
+        "desc": "Preferred path style for auto imports.",
+        "default": "shortest",
+        "type": "string"
+    },
+    {
+        "name": "javascript.preferences.importModuleSpecifierEnding",
+        "desc": "Preferred path ending for auto imports.",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "typescript.preferences.importModuleSpecifierEnding",
+        "desc": "Preferred path ending for auto imports.",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "javascript.preferences.jsxAttributeCompletionStyle",
+        "desc": "Preferred style for JSX attribute completions.",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "typescript.preferences.jsxAttributeCompletionStyle",
+        "desc": "Preferred style for JSX attribute completions.",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "typescript.preferences.includePackageJsonAutoImports",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "typescript.preferences.autoImportFileExcludePatterns",
+        "type": "array"
+    },
+    {
+        "name": "javascript.preferences.autoImportFileExcludePatterns",
+        "type": "array"
+    },
+    {
+        "name": "typescript.preferences.preferTypeOnlyAutoImports",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.preferences.renameShorthandProperties",
+        "desc": "Enable/disable introducing aliases for object shorthand properties during renames.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.preferences.renameShorthandProperties",
+        "desc": "Enable/disable introducing aliases for object shorthand properties during renames.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.preferences.useAliasesForRenames",
+        "desc": "Enable/disable introducing aliases for object shorthand properties during renames.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.preferences.useAliasesForRenames",
+        "desc": "Enable/disable introducing aliases for object shorthand properties during renames.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.preferences.renameMatchingJsxTags",
+        "desc": "When on a JSX tag, try to rename the matching tag instead of renaming the symbol. Requires using TypeScript 5.1+ in the workspace.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.preferences.renameMatchingJsxTags",
+        "desc": "When on a JSX tag, try to rename the matching tag instead of renaming the symbol. Requires using TypeScript 5.1+ in the workspace.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.updateImportsOnFileMove.enabled",
+        "desc": "Enable/disable automatic updating of import paths when you rename or move a file in VS Code.",
+        "default": "prompt",
+        "type": "string"
+    },
+    {
+        "name": "javascript.updateImportsOnFileMove.enabled",
+        "desc": "Enable/disable automatic updating of import paths when you rename or move a file in VS Code.",
+        "default": "prompt",
+        "type": "string"
+    },
+    {
+        "name": "typescript.autoClosingTags",
+        "desc": "Enable/disable automatic closing of JSX tags.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.autoClosingTags",
+        "desc": "Enable/disable automatic closing of JSX tags.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.suggest.enabled",
+        "desc": "Enabled/disable autocomplete suggestions.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggest.enabled",
+        "desc": "Enabled/disable autocomplete suggestions.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.surveys.enabled",
+        "desc": "Enabled/disable occasional surveys that help us improve VS Code's JavaScript and TypeScript support.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.tsserver.useSeparateSyntaxServer",
+        "desc": "Enable/disable spawning a separate TypeScript server that can more quickly respond to syntax related operations, such as calculating folding or computing document symbols.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.tsserver.useSyntaxServer",
+        "desc": "Controls if TypeScript launches a dedicated server to more quickly handle syntax related operations, such as computing code folding.",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "typescript.tsserver.maxTsServerMemory",
+        "default": 3072,
+        "type": "number"
+    },
+    {
+        "name": "typescript.tsserver.experimental.enableProjectDiagnostics",
+        "desc": "(Experimental) Enables project wide error reporting.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.tsserver.experimental.useVsCodeWatcher",
+        "desc": "Use VS Code's file watchers instead of TypeScript's. Requires using TypeScript 5.4+ in the workspace.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.tsserver.watchOptions",
+        "desc": "Configure which watching strategies should be used to keep track of files and directories.",
+        "type": "object"
+    },
+    {
+        "name": "typescript.workspaceSymbols.scope",
+        "default": "allOpenProjects",
+        "type": "string"
+    },
+    {
+        "name": "javascript.suggest.classMemberSnippets.enabled",
+        "desc": "Enable/disable snippet completions for class members.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggest.classMemberSnippets.enabled",
+        "desc": "Enable/disable snippet completions for class members.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.suggest.objectLiteralMethodSnippets.enabled",
+        "desc": "Enable/disable snippet completions for methods in object literals.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.tsserver.web.projectWideIntellisense.enabled",
+        "desc": "Enable/disable project-wide IntelliSense on web. Requires that VS Code is running in a trusted context.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors",
+        "desc": "Suppresses semantic errors. This is needed when using external packages as these can't be included analyzed on web.",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.tsserver.nodePath",
+        "desc": "Run TS Server on a custom Node installation. This can be a path to a Node executable, or 'node' if you want VS Code to detect a Node installation.",
+        "type": "string"
+    },
+    {
+        "name": "typescript.experimental.tsserver.web.typeAcquisition.enabled",
+        "desc": "Enable/disable package acquisition on the web.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.preferGoToSourceDefinition",
+        "desc": "Makes Go to Definition avoid type declaration files when possible by triggering Go to Source Definition instead. This allows Go to Source Definition to be triggered with the mouse gesture.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "javascript.preferGoToSourceDefinition",
+        "desc": "Makes Go to Definition avoid type declaration files when possible by triggering Go to Source Definition instead. This allows Go to Source Definition to be triggered with the mouse gesture.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "typescript.workspaceSymbols.excludeLibrarySymbols",
+        "default": true,
+        "type": "boolean"
+    }
+]

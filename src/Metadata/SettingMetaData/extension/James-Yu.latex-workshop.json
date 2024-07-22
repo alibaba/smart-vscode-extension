@@ -1,0 +1,1161 @@
+[
+    {
+        "name": "latex-workshop.latex.recipes",
+        "default": [
+            {
+                "name": "latexmk",
+                "tools": [
+                    "latexmk"
+                ]
+            },
+            {
+                "name": "latexmk (latexmkrc)",
+                "tools": [
+                    "latexmk_rconly"
+                ]
+            },
+            {
+                "name": "latexmk (lualatex)",
+                "tools": [
+                    "lualatexmk"
+                ]
+            },
+            {
+                "name": "latexmk (xelatex)",
+                "tools": [
+                    "xelatexmk"
+                ]
+            },
+            {
+                "name": "pdflatex -> bibtex -> pdflatex * 2",
+                "tools": [
+                    "pdflatex",
+                    "bibtex",
+                    "pdflatex",
+                    "pdflatex"
+                ]
+            },
+            {
+                "name": "Compile Rnw files",
+                "tools": [
+                    "rnw2tex",
+                    "latexmk"
+                ]
+            },
+            {
+                "name": "Compile Jnw files",
+                "tools": [
+                    "jnw2tex",
+                    "latexmk"
+                ]
+            },
+            {
+                "name": "Compile Pnw files",
+                "tools": [
+                    "pnw2tex",
+                    "latexmk"
+                ]
+            },
+            {
+                "name": "tectonic",
+                "tools": [
+                    "tectonic"
+                ]
+            }
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.recipe.default",
+        "default": "first",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.latex.tools",
+        "default": [
+            {
+                "name": "latexmk",
+                "command": "latexmk",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "-pdf",
+                    "-outdir=%OUTDIR%",
+                    "%DOC%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "lualatexmk",
+                "command": "latexmk",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "-lualatex",
+                    "-outdir=%OUTDIR%",
+                    "%DOC%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "xelatexmk",
+                "command": "latexmk",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "-xelatex",
+                    "-outdir=%OUTDIR%",
+                    "%DOC%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "latexmk_rconly",
+                "command": "latexmk",
+                "args": [
+                    "%DOC%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "pdflatex",
+                "command": "pdflatex",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "%DOC%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "bibtex",
+                "command": "bibtex",
+                "args": [
+                    "%DOCFILE%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "rnw2tex",
+                "command": "Rscript",
+                "args": [
+                    "-e",
+                    "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+                ],
+                "env": {}
+            },
+            {
+                "name": "jnw2tex",
+                "command": "julia",
+                "args": [
+                    "-e",
+                    "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+                ],
+                "env": {}
+            },
+            {
+                "name": "jnw2texminted",
+                "command": "julia",
+                "args": [
+                    "-e",
+                    "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+                ],
+                "env": {}
+            },
+            {
+                "name": "pnw2tex",
+                "command": "pweave",
+                "args": [
+                    "-f",
+                    "tex",
+                    "%DOC_EXT%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "pnw2texminted",
+                "command": "pweave",
+                "args": [
+                    "-f",
+                    "texminted",
+                    "%DOC_EXT%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "tectonic",
+                "command": "tectonic",
+                "args": [
+                    "--synctex",
+                    "--keep-logs",
+                    "%DOC%.tex"
+                ],
+                "env": {}
+            }
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.magic.args",
+        "default": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.magic.bib.args",
+        "default": [
+            "%DOCFILE%"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.external.build.command",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.latex.external.build.args",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.build.forceRecipeUsage",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.latex.outDir",
+        "default": "%DIR%",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.latex.jobname",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.latex.build.rootfileInStatus",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.latex.texDirs",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.verbatimEnvs",
+        "default": [
+            "verbatim",
+            "lstlisting",
+            "minted"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.kpsewhich.path",
+        "default": "kpsewhich",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.kpsewhich.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.kpsewhich.class.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.kpsewhich.bibtex.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.latex.bibDirs",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.search.rootFiles.include",
+        "default": [
+            "**/*.tex",
+            "**/*.rnw",
+            "**/*.Rnw"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.search.rootFiles.exclude",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.rootFile.useSubFile",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.latex.rootFile.doNotPrompt",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.latex.rootFile.indicator",
+        "default": "\\documentclass[]{}",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.latex.watch.delay",
+        "default": 250,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.latex.watch.pdf.delay",
+        "default": 250,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.latex.watch.files.ignore",
+        "default": [
+            "**/*.bbx",
+            "**/*.bbl",
+            "**/*.cbx",
+            "**/*.cfg",
+            "**/*.clo",
+            "**/*.cnf",
+            "**/*.def",
+            "**/*.dfu",
+            "**/*.enc",
+            "**/*.fd",
+            "**/*.fmt",
+            "**/*.lbx",
+            "**/*.map",
+            "**/*.mkii",
+            "**/*.pfb",
+            "**/*.tfm",
+            "**/*.vf",
+            "**/*.code.tex",
+            "**/*.sty",
+            "**/texmf-{dist,var}/**",
+            "**/Local/MiKTeX/**",
+            "**/Local/Programs/MiKTeX/**",
+            "**/Roaming/MiKTeX/**",
+            "**/Program*/MiKTeX*/**",
+            "**/.miktex/texmfs/**",
+            "/var/cache/miktex-texmf/**",
+            "/usr/local/share/miktex-texmf/**",
+            "**/Library/Application Support/MiKTeX/texmfs/**",
+            "/dev/null"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.autoBuild.run",
+        "default": "onFileChange",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.latex.autoBuild.interval",
+        "default": 1000,
+        "type": "integer"
+    },
+    {
+        "name": "latex-workshop.latex.autoBuild.cleanAndRetry.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.latex.autoClean.run",
+        "default": "never",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.latex.clean.subfolder.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.latex.clean.fileTypes",
+        "default": [
+            "%DOCFILE%.aux",
+            "%DOCFILE%.bbl",
+            "%DOCFILE%.blg",
+            "%DOCFILE%.idx",
+            "%DOCFILE%.ind",
+            "%DOCFILE%.lof",
+            "%DOCFILE%.lot",
+            "%DOCFILE%.out",
+            "%DOCFILE%.toc",
+            "%DOCFILE%.acn",
+            "%DOCFILE%.acr",
+            "%DOCFILE%.alg",
+            "%DOCFILE%.glg",
+            "%DOCFILE%.glo",
+            "%DOCFILE%.gls",
+            "%DOCFILE%.fls",
+            "%DOCFILE%.log",
+            "%DOCFILE%.fdb_latexmk",
+            "%DOCFILE%.snm",
+            "%DOCFILE%.synctex(busy)",
+            "%DOCFILE%.synctex.gz(busy)",
+            "%DOCFILE%.nav",
+            "%DOCFILE%.vrb"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.clean.command",
+        "default": "latexmk",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.latex.clean.args",
+        "default": [
+            "-outdir=%OUTDIR%",
+            "-c",
+            "%TEX%"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.latex.clean.method",
+        "default": "command",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.latex.option.maxPrintLine.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.view.outline.sections",
+        "default": [
+            "part",
+            "chapter",
+            "section",
+            "subsection",
+            "subsubsection"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.view.outline.commands",
+        "default": [
+            "label"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.view.outline.follow.editor",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.view.outline.sync.viewer",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.view.outline.floats.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.view.outline.floats.number.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.view.outline.floats.caption.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.view.outline.numbers.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.view.autoFocus.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.view.pdf.viewer",
+        "default": "tab",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.tab.editorGroup",
+        "default": "right",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.ref.viewer",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.viewer.pdf.internal.port",
+        "default": 0,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.view.pdf.internal.synctex.keybinding",
+        "default": "ctrl-click",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.viewer.pdf.internal.keyboardEvent",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.external.viewer.command",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.external.viewer.args",
+        "default": [
+            "%PDF%"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.view.pdf.external.synctex.command",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.external.synctex.args",
+        "default": [
+            "%LINE%",
+            "%PDF%",
+            "%TEX%"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.view.pdf.zoom",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.trim",
+        "default": 0,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.view.pdf.scrollMode",
+        "default": 0,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.view.pdf.spreadMode",
+        "default": 0,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.view.pdf.hand",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.view.pdf.invertMode.enabled",
+        "default": "compat",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.invert",
+        "default": 0,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.view.pdf.invertMode.brightness",
+        "default": 1,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.view.pdf.invertMode.grayscale",
+        "default": 0.6,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.view.pdf.invertMode.hueRotate",
+        "default": 180,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.view.pdf.invertMode.sepia",
+        "default": 0,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.view.pdf.color.light.pageColorsForeground",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.color.light.pageColorsBackground",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.color.light.backgroundColor",
+        "default": "#ffffff",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.color.light.pageBorderColor",
+        "default": "lightgrey",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.color.dark.pageColorsForeground",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.color.dark.pageColorsBackground",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.color.dark.backgroundColor",
+        "default": "#ffffff",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.view.pdf.color.dark.pageBorderColor",
+        "default": "lightgrey",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.synctex.path",
+        "default": "synctex",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.synctex.indicator",
+        "default": "rectangle",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.synctex.indicator.enabled",
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.synctex.afterBuild.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.synctex.synctexjs.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.linting.chktex.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.linting.lacheck.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.linting.run",
+        "default": "onSave",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.linting.chktex.exec.path",
+        "default": "chktex",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.linting.chktex.exec.args",
+        "default": [
+            "-wall",
+            "-n22",
+            "-n30",
+            "-e16",
+            "-q"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.linting.chktex.convertOutput.column.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.linting.chktex.convertOutput.column.chktexrcTabSize",
+        "default": -1,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.linting.delay",
+        "default": 500,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.linting.lacheck.exec.path",
+        "default": "lacheck",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.check.duplicatedLabels.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.texcount.path",
+        "default": "texcount",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.texcount.args",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.texcount.autorun",
+        "default": "never",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.texcount.interval",
+        "default": 1000,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.intellisense.update.aggressive.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.intellisense.update.delay",
+        "default": 1000,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.intellisense.atSuggestion.user",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "latex-workshop.intellisense.command.user",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "latex-workshop.intellisense.citation.type",
+        "default": "inline",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.intellisense.citation.label",
+        "default": "bibtex key",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.intellisense.citation.format",
+        "default": [
+            "author",
+            "title",
+            "journal",
+            "publisher",
+            "booktitle",
+            "year"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.intellisense.triggers.latex",
+        "default": [
+            "{"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.intellisense.atSuggestion.trigger.latex",
+        "default": "@",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.intellisense.file.exclude",
+        "default": [
+            "**/*.aux",
+            "**/*.bbl",
+            "**/*.bcf",
+            "**/*.blg",
+            "**/*.idx",
+            "**/*.ind",
+            "**/*.lof",
+            "**/*.lot",
+            "**/*.out",
+            "**/*.toc",
+            "**/*.acn",
+            "**/*.acr",
+            "**/*.alg",
+            "**/*.glg",
+            "**/*.glo",
+            "**/*.gls",
+            "**/*.ist",
+            "**/*.fls",
+            "**/*.log",
+            "**/*.nav",
+            "**/*.snm",
+            "**/*.fdb_latexmk",
+            "**/*.synctex.gz",
+            "**/*.run.xml"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.intellisense.file.base",
+        "default": "root relative",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.intellisense.label.command",
+        "default": [
+            "label",
+            "linelabel"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.intellisense.unimathsymbols.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.intellisense.subsuperscript.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.intellisense.package.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.intellisense.package.extra",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.intellisense.package.exclude",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.intellisense.package.env.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.intellisense.package.dirs",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.intellisense.includegraphics.preview.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.message.badbox.show",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.message.biberlog.exclude",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.message.bibtexlog.exclude",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.message.latexlog.exclude",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.message.information.show",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.message.warning.show",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.message.error.show",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.message.log.show",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.message.convertFilenameEncoding",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.latexindent.path",
+        "default": "latexindent",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.latexindent.args",
+        "default": [
+            "-c",
+            "%DIR%/",
+            "%TMPFILE%",
+            "-y=defaultIndent: '%INDENT%'"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.docker.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.docker.image.latex",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.showContextMenu",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.bind.enter.key",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.bind.altKeymap.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.hover.ref.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.hover.ref.number.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.hover.citation.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.hover.command.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.hover.preview.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.hover.preview.maxLines",
+        "default": 20,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.hover.preview.scale",
+        "default": 1,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.hover.preview.newcommand.parseTeXFile.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.hover.preview.newcommand.newcommandFile",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.hover.preview.cursor.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.hover.preview.cursor.symbol",
+        "default": "\\!|\\!",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.hover.preview.cursor.color",
+        "default": "auto",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.hover.preview.mathjax.extensions",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.intellisense.optionalArgsEntries.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.intellisense.argumentHint.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.intellisense.citation.backend",
+        "default": "bibtex",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.intellisense.bibtexJSON.replace",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "latex-workshop.intellisense.biblatexJSON.replace",
+        "default": {},
+        "type": "object"
+    },
+    {
+        "name": "latex-workshop.texdoc.path",
+        "default": "texdoc",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.texdoc.args",
+        "default": [
+            "--view"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.bibtex.maxFileSize",
+        "default": 5,
+        "type": "number"
+    },
+    {
+        "name": "latex-workshop.bibtex-format.tab",
+        "default": "2 spaces",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.bibtex-format.surround",
+        "desc": "Surround each field value with either {Curly braces} or \"Quotation marks\".",
+        "default": "Curly braces",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.bibtex-format.case",
+        "desc": "Determines if field names should be formatted like 'AUTHOR' or 'author'.",
+        "default": "lowercase",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.bibtex-format.trailingComma",
+        "desc": "Keep the trailing comma of the last field item.",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.bibtex-format.sortby",
+        "default": [
+            "key"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.bibtex-format.handleDuplicates",
+        "default": "Highlight Duplicates",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.bibtex-format.sort.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.bibtex-format.align-equal.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.bibtex-entries.first",
+        "default": [
+            "string",
+            "xdata"
+        ],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.bibtex-fields.sort.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.bibtex-fields.order",
+        "default": [],
+        "type": "array"
+    },
+    {
+        "name": "latex-workshop.mathpreviewpanel.cursor.enabled",
+        "default": false,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.mathpreviewpanel.editorGroup",
+        "default": "below",
+        "type": "string"
+    },
+    {
+        "name": "latex-workshop.selection.smart.latex.enabled",
+        "default": true,
+        "type": "boolean"
+    },
+    {
+        "name": "latex-workshop.codespaces.portforwarding.openDelay",
+        "default": 20000,
+        "type": "number"
+    }
+]

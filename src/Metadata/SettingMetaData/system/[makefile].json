@@ -1,0 +1,11 @@
+[
+    {
+        "settingId": "[makefile]",
+        "desc": " Configure settings to be overridden for the makefile language.",
+        "setting": {
+            "[makefile]": {
+                "editor.insertSpaces": false
+            }
+        }
+    }
+]
