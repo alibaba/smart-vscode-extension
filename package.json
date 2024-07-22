@@ -117,7 +117,7 @@
             "gpt-3.5-turbo-1106"
           ],
           "default": "gpt-3.5-turbo-1106",
-          "markdownDescription": "An lightweight OpenAI models like GPT-3.5 to use for quickly response. [Documentation](https://beta.openai.com/docs/models/models). ",
+          "markdownDescription": "An lightweight OpenAI models like GPT-3.5 to use for simple steps in reasoning pipeline. [Documentation](https://beta.openai.com/docs/models/models). ",
           "order": 3,
           "enumItemLabels": [
             "gpt-4-turbo",
@@ -138,7 +138,7 @@
             "gpt-3.5-turbo-1106"
           ],
           "default": "gpt-3.5-turbo-1106",
-          "markdownDescription": "An advanced OpenAI models like GPT-4 to use for boosting performance. [Documentation](https://beta.openai.com/docs/models/models). ",
+          "markdownDescription": "An advanced OpenAI models like GPT-4 for complex steps in reasoning pipeline. [Documentation](https://beta.openai.com/docs/models/models). ",
           "order": 4,
           "enumItemLabels": [
             "gpt-4-turbo",
