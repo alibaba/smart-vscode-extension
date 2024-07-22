@@ -12,7 +12,7 @@ When you only need to develop the frontend of the extension, you can install the
 
 ## Install the extension frontend from source code
 - Before you start, ensure that you have `Node.js` and `npm` installed on your system.
-- Clone the [repository](https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html#vscode-plugin) to your local machine
+- Clone the [repository](https://github.com/alibaba/smart-vscode-extension.git) to your local machine
 - Install the `Yarn` package manager by running `npm install --global yarn`
 - On the root directory, run `yarn` command to install the dependencies listed in `package.json`
 - Within VS Code - run the project by simply hitting `F5`
