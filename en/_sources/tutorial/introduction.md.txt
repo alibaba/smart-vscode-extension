@@ -4,20 +4,14 @@
 
 <h3 align="center"><img src="../_static/ai-logo.png" height="64"><br>SmartVscode: Controlling anything of Vscode by natural language</h3>
 
-<p align="center">
-    <a>
-        <img src="https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?color=orange&label=VS%20Code" />
-    </a>
-    <a>
-        <img src="https://img.shields.io/badge/license-Apache--2.0-black" />
-    </a>
-    <a>
-        <img src="https://img.shields.io/badge/Contribute-Welcome-green" />
-    <!-- </a>
-        <a alt="Github star count">
-        <img src="https://img.shields.io/github/stars/modelscope/agentscope?color=blue&label=Github%20" />
-    </a> -->
-</p>
+
+<div align="center">
+
+![](https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?color=orange&label=VS%20Code)
+![](https://img.shields.io/badge/license-Apache--2.0-black")
+[![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://alibaba.github.io/smart-vscode-extension/en/index.html)
+
+</div>
 
 
 

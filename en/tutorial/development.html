@@ -52,11 +52,10 @@
               <p class="caption" role="heading"><span class="caption-text">Smart-Vscode Tutorial</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">How to use</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tasks.html">Supported Tasks</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">How to develop</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#step-1-install-and-run-the-extension-frontend-from-source-code">Step 1: Install and run the extension frontend from source code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-2-start-your-own-backend-service-from-source-code">Step 2: Start your own backend service from source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-start-your-own-backend-service">Step 1: Start your own backend service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-install-and-run-the-smartvscode-extension">Step 2: Install and run the SmartVscode extension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step3-start-to-develop">Step3: Start to develop</a></li>
 </ul>
 </li>
@@ -90,27 +89,35 @@
 <span id="development-en"></span><h1>How to develop<a class="headerlink" href="#how-to-develop" title="Link to this heading"></a></h1>
 <p>This extension project is divided into two parts:</p>
 <ul class="simple">
-<li><p><strong>Frontend</strong> is responsible for the user interaction interface, communication with the backend service, and executing the API calls returned by the backend service.</p></li>
-<li><p><strong>Backend</strong> utilizes large language models (LLMs) to orchestrate the optimal API calls to fulfill user requirements based on <a class="reference external" href="https://github.com/alibaba/app-controller">App-Controller</a> framework.</p></li>
+<li><p><strong>SmartVscode Side (Frontend)</strong>: It is responsible for the user interaction interface, communication with the backend service, and executing the API calls returned by the backend service.</p></li>
+<li><p><strong>App-Controller Side （Backend）</strong>: It utilizes large language models (LLMs) to orchestrate the optimal API calls to fulfill user requirements based on <a class="reference external" href="https://github.com/alibaba/app-controller">App-Controller</a> framework.</p></li>
 </ul>
-<p>When you need to develop the frontend of the extension, you can install the frontend from source code and start your own backend service for testing and development.</p>
-<section id="step-1-install-and-run-the-extension-frontend-from-source-code">
-<h2>Step 1: Install and run the extension frontend from source code<a class="headerlink" href="#step-1-install-and-run-the-extension-frontend-from-source-code" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>Before you start, ensure that you have <code class="docutils literal notranslate"><span class="pre">Node.js</span></code> and <code class="docutils literal notranslate"><span class="pre">npm</span></code> installed on your system.</p></li>
-<li><p>Clone the <a class="reference external" href="https://github.com/alibaba/smart-vscode-extension.git">repository</a> to your local machine</p></li>
-<li><p>Install the <code class="docutils literal notranslate"><span class="pre">Yarn</span></code> package manager by running <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">--global</span> <span class="pre">yarn</span></code></p></li>
-<li><p>On the root directory, run <code class="docutils literal notranslate"><span class="pre">yarn</span></code> command to install the dependencies listed in <code class="docutils literal notranslate"><span class="pre">package.json</span></code></p></li>
-<li><p>Configure the frontend to commuicate with backend by modifying <code class="docutils literal notranslate"><span class="pre">llm4apisServiceBaseUrl</span></code> in the <code class="docutils literal notranslate"><span class="pre">src/Common/Config.ts</span></code> file. Ensure that the <code class="docutils literal notranslate"><span class="pre">llm4apisServiceBaseUrl</span></code> correspond to the service to be deployed.</p></li>
-<li><p>Within VS Code - run the project by simply hitting <code class="docutils literal notranslate"><span class="pre">F5</span></code></p></li>
-</ul>
-</section>
-<section id="step-2-start-your-own-backend-service-from-source-code">
-<h2>Step 2: Start your own backend service from source code<a class="headerlink" href="#step-2-start-your-own-backend-service-from-source-code" title="Link to this heading"></a></h2>
+<p>When you need to develop the SmartVscode extension, you need to install the frontend from source code and start your own backend service for testing and development.</p>
+<section id="step-1-start-your-own-backend-service">
+<h2>Step 1: Start your own backend service<a class="headerlink" href="#step-1-start-your-own-backend-service" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Install the backend (i.e. App-Controller) by following the <a class="reference external" href="https://alibaba.github.io/app-controller/en/tutorial/installation.html">docs</a>.</p></li>
 <li><p>Configure the service by following the <a class="reference external" href="https://alibaba.github.io/app-controller/en/tutorial/deploy.html#step3-configuration-your-app-controller">docs</a>.</p></li>
 <li><p>Start your own backend service by following the <a class="reference external" href="https://alibaba.github.io/app-controller/en/tutorial/deploy.html#step4-start-the-service">docs</a>.</p></li>
+</ul>
+</section>
+<section id="step-2-install-and-run-the-smartvscode-extension">
+<h2>Step 2: Install and run the SmartVscode extension<a class="headerlink" href="#step-2-install-and-run-the-smartvscode-extension" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Before you start, ensure that you have <code class="docutils literal notranslate"><span class="pre">Node.js</span></code> and <code class="docutils literal notranslate"><span class="pre">npm</span></code> installed on your system.</p></li>
+<li><p>Clone the <a class="reference external" href="https://github.com/alibaba/smart-vscode-extension.git">repository</a> to your local machine</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:alibaba/smart-vscode-extension.git
+</pre></div>
+</div>
+</li>
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">Yarn</span></code> package manager by running <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">--global</span> <span class="pre">yarn</span></code></p></li>
+<li><p>On the root directory, run <code class="docutils literal notranslate"><span class="pre">yarn</span></code> command to install the dependencies listed in <code class="docutils literal notranslate"><span class="pre">package.json</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>yarn<span class="w"> </span>install<span class="w"> </span>
+</pre></div>
+</div>
+</li>
+<li><p>Configure the URL and Port of http communication  between <code class="docutils literal notranslate"><span class="pre">SmartVscode</span> <span class="pre">extension</span></code> with <code class="docutils literal notranslate"><span class="pre">App-Controller</span> <span class="pre">Side</span> <span class="pre">（Backend）</span></code>  by modifying <code class="docutils literal notranslate"><span class="pre">llm4apisServiceBaseUrl</span></code> in the <code class="docutils literal notranslate"><span class="pre">src/Common/Config.ts</span></code> file. Ensure that the <code class="docutils literal notranslate"><span class="pre">llm4apisServiceBaseUrl</span></code> correspond to the service to be deployed.</p></li>
+<li><p>Within VS Code - run the project by simply hitting <code class="docutils literal notranslate"><span class="pre">F5</span></code></p></li>
 </ul>
 </section>
 <section id="step3-start-to-develop">
