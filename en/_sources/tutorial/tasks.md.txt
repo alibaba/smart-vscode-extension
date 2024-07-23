@@ -12,6 +12,7 @@ Here we provide an overview of the tasks supported by SmartVscode.
 | Theme                 | Switch to dark theme                            |
 | Font                  | Set font size to 14                             |
 | Keybinding            | I want to set a shortcut key for saving as      |
+| Color                 | Change the color of code comments to green      |
 | **Editor**            |                                                 |
 | Format                | Format this file                                |
 | Format                | Format the selected code                        |
