@@ -1,4 +1,4 @@
-(installaion-en)=
+(installation-en)=
 
 # How to use
 To begin utilizing this extension, follow these steps:
