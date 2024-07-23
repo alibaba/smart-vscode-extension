@@ -105,7 +105,7 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
   private leftOverMessage?: any;
   constructor(private context: vscode.ExtensionContext, pipeline: ChatPipeline) {
     this.subscribeToResponse = vscode.workspace.getConfiguration("chatgpt").get("response.showNotification") || false;
-    this.autoScroll = !!vscode.workspace.getConfiguration("chatgpt").get("response.autoScroll");
+    this.autoScroll = !!vscode.workspace.getConfiguration("smartVscode").get("response.autoScroll");
     this.model = vscode.workspace.getConfiguration().get("smartVscode.chatLightModel") as string;
     this.pipeline = pipeline;
     this.chat = new Chat(this);
