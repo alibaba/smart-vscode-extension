@@ -13,6 +13,7 @@ Here we provide an overview of the tasks supported by SmartVscode.
 | Font                  | Set font size to 14                             |
 | Keybinding            | I want to set a shortcut key for saving as      |
 | Color                 | Change the color of code comments to green      |
+| Auto Save             | Enable auto-saving of files every 5 seconds     |
 | **Editor**            |                                                 |
 | Format                | Format this file                                |
 | Format                | Format the selected code                        |
