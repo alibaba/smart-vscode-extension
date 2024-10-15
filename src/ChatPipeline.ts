@@ -67,6 +67,7 @@ export default class ChatPipeline {
                 const status = actionResponse['status'];
                 if (status === TaskResponseEnum.taskFinished) {
                     chat.sendMsgToUser("Task has been finished.");
+                    await this.backendService.finish(new Context(this.userId, this.sessionId));
                     break;
                 } else if (status === TaskResponseEnum.apiCall) {
                     const apiJson = actionResponse["data"]["apis"][0];
@@ -126,6 +127,10 @@ export default class ChatPipeline {
                     return;
                 } else {
                     chat.sendMsgToUser("" + error, false);
+                    if (this.config.testMode) {
+                        await this.backendService.sendApisResult(new Context(this.userId, this.sessionId, actionResponse["data"]["apis"]));
+                        return;
+                    }
                     throw error;
                 }
             }

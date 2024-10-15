@@ -59,7 +59,7 @@ export default class CommandApis {
         const apiExecuteData = new ApiExecuteData();
         try {
             await vscode.commands.executeCommand(commandId);
-            apiExecuteData.executeSuccess(`Command ${commandId} has been executed.`);
+            apiExecuteData.executeSuccess(`Command ${commandId} has been executed.`, `Command ${commandId} has been executed.`);
         }
         catch (err) {
             apiExecuteData.executeFailed(`Error executing command ${commandId}: ${err}. You may need to install the extension that provides this command.`);

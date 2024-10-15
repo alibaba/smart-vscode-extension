@@ -49,27 +49,41 @@ export default class SettingApis {
                 key2Value = JSON.parse(key2Value);
             }
             const config = vscode.workspace.getConfiguration();
-            for (const [key, value] of Object.entries(key2Value)) {
+            const changes: string[] = [];
+
+            for (const [key, newValue] of Object.entries(key2Value)) {
                 const setting = config.inspect(key);
+
+                // 获取当前设置值
+                let currentValue = setting?.globalValue || setting?.workspaceValue;
+                if (currentValue === undefined) {
+                    currentValue = setting?.defaultValue; // 如果没有设置，获取默认值
+                }
+
+                // 添加修改信息
+                changes.push(`Setting '${key}': Old Value = ${currentValue}, New Value = ${newValue}`);
+
                 if (setting?.defaultValue === undefined || this.isFilterSetting(key)) {
-                    // setting is incorrect or outdated
-                    apiExecuteData.executeFailed(`Failed to update setting ${key} to ${value}, because the setting ${key} is incorrect or outdated, please check the setting name.`);
+                    apiExecuteData.executeFailed(`Failed to update setting ${key} to ${newValue}, because the setting ${key} is incorrect or outdated, please check the setting name.`);
                     return apiExecuteData;
                 }
-                if (setting && setting.defaultValue !== undefined && typeof setting.defaultValue !== typeof value) {
-                    // value's type is incorrect
-                    apiExecuteData.executeFailed(`Failed to update setting ${key} to ${value} because the type of the value is incorrect. Expected type: ${typeof setting.defaultValue}.`);
+                if (setting && setting.defaultValue !== undefined && typeof setting.defaultValue !== typeof newValue) {
+                    apiExecuteData.executeFailed(`Failed to update setting ${key} to ${newValue} because the type of the value is incorrect. Expected type: ${typeof setting.defaultValue}.`);
+                    return apiExecuteData;
                 }
+
+                // 更新设置
                 if (onGlobal) {
-                    await config.update(key, value, vscode.ConfigurationTarget.Global);
+                    await config.update(key, newValue, vscode.ConfigurationTarget.Global);
                 } else {
-                    await config.update(key, value, vscode.ConfigurationTarget.Workspace);
+                    await config.update(key, newValue, vscode.ConfigurationTarget.Workspace);
                 }
             }
-            apiExecuteData.executeSuccess(`Settings have been updated`);
+            apiExecuteData.executeSuccess(`Settings have been updated`, `Settings have been updated:\n${changes.join('\n')}`);
         } catch (e) {
             apiExecuteData.executeFailed(`Failed to update settings: ${e}`);
         }
+
         return apiExecuteData;
     }
 
