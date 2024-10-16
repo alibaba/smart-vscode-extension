@@ -107,6 +107,7 @@ export default class ChatPipeline {
                     }
                 } else if (status === TaskResponseEnum.taskFailed) {
                     chat.sendMsgToUser("Task failure may be due to insufficient APIs or task complexity.");
+                    await this.backendService.finish(new Context(this.userId, this.sessionId));
                     break;
                 } else if (status === TaskResponseEnum.taskCanceled) {
                     break;
@@ -115,6 +116,7 @@ export default class ChatPipeline {
                     break;
                 } else if (status === TaskResponseEnum.taskException) {
                     chat.sendMsgToUser("Task exception: there is an exception in the task, Please restart or try again later.");
+                    await this.backendService.finish(new Context(this.userId, this.sessionId));
                     break;
                 } else {
                     throw new Error("Unknown status: " + status);
