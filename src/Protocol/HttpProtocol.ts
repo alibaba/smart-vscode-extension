@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Config from "../Common/Config";
 import { Context } from "../Context";
 import Protocol from "./Protocol";
@@ -7,7 +8,27 @@ export default class HttpProtocol extends Protocol {
 
     constructor(config: Config) {
         super(config);
-        this.url = config.llm4apisServiceBaseUrl;
+        this.url = this.config.llm4apisServiceBaseUrlChina;
+        this.routeByIp();
+    }
+
+    private async routeByIp() {
+        const isDomestic = await this.isDomesticIp();
+        if (isDomestic) {
+            this.url = this.config.llm4apisServiceBaseUrlChina;
+        } else {
+            this.url = this.config.llm4apisServiceBaseUrlGlobal;
+        }
+    }
+
+    private async isDomesticIp() {
+        try {
+            const response = await axios.get(`http://ip-api.com/json/`);
+            return response.data.countryCode === 'CN'; // 只判断国家
+        } catch (error) {
+            console.error('Error checking IP:', error);
+            return true; // 如果查询失败，默认返回国内
+        }
     }
 
     public addMetaData(context: Context) {
@@ -32,7 +53,9 @@ export default class HttpProtocol extends Protocol {
 
     // 函数：发送一个HTTP Post请求
     private async post(url: string, data: object) {
-        const fullUrl = this.config.llm4apisServiceBaseUrl + url;
+
+        let fullUrl = this.url + url;
+
         const response = await fetch(fullUrl, {
             method: 'POST',
             headers: {
