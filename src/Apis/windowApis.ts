@@ -27,6 +27,7 @@ export default class WindowApis {
             // Open the provided folder as a workspace (in a new window by default)
             await vscode.commands.executeCommand('vscode.openFolder', vscode.Uri.file(folderPath), false);
             apiExecuteData.executeSuccess("The workspace folder is opened successfully.");
+            return apiExecuteData;
         }
 
         return new Promise<ApiExecuteData>(async (resolve, reject) => {

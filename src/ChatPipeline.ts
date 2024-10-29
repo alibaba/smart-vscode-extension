@@ -5,6 +5,7 @@ import ApiScheduler from "./Apis/ApiScheduler";
 import Config from "./Common/Config";
 import { TaskResponseEnum } from "./Common/enum";
 import { Context } from "./Context";
+import ArgumentMissingError from "./Error/ArgumentMissingError";
 import TaskStopError from "./Error/TaskStopError";
 import HttpProtocol from "./Protocol/HttpProtocol";
 import Protocol from "./Protocol/Protocol";
@@ -127,12 +128,14 @@ export default class ChatPipeline {
                     chat.sendMsgToUser("Task has been cancelled.");
                     await this.backendService.finish(new Context(this.userId, this.sessionId));
                     return;
-                } else {
+                } else if (error instanceof ArgumentMissingError) {
                     chat.sendMsgToUser("" + error, false);
-                    if (this.config.testMode) {
-                        await this.backendService.sendApisResult(new Context(this.userId, this.sessionId, actionResponse["data"]["apis"]));
-                        return;
-                    }
+                    actionResponse["data"]["apis"][0]["result"] = "" + error;
+                    actionResponse = await this.backendService.sendApisResult(new Context(this.userId, this.sessionId, actionResponse["data"]["apis"]));
+                }
+                else {
+                    chat.sendMsgToUser("" + error, false);
+                    await this.backendService.finish(new Context(this.userId, this.sessionId));
                     throw error;
                 }
             }

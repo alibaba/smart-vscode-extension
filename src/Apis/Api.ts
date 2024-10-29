@@ -1,5 +1,5 @@
+import ArgumentMissingError from "../Error/ArgumentMissingError";
 import { Chat } from "../ViewProvider";
-
 
 export default class Api {
     public name: string;
@@ -31,7 +31,7 @@ export default class Api {
             } else if (args[argument] !== undefined) {
                 return args[argument];
             } else {
-                throw new Error(`Argument ${argument} is required for API ${this.name}`);
+                throw new ArgumentMissingError(`Argument ${argument} is required for API ${this.name}`);
             }
         });
         return this.executer(...argValues);
