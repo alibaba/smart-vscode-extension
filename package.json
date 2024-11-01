@@ -97,85 +97,140 @@
     },
     "configuration": {
       "title": "smart-vscode",
+      "type": "object",
       "properties": {
-        "smartVscode.apiBaseUrl": {
+        "smartVscode.modelType": {
+          "type": "string",
+          "enum": [
+            "OpenAI",
+            "Tongyi"
+          ],
+          "default": "OpenAI",
+          "order": 1,
+          "markdownDescription": "Select the model type: **OpenAI** or **Tongyi**. **Please choose one model type and fill in the corresponding API Key and model settings below.**"
+        },
+        "smartVscode.openai.apiBaseUrl": {
           "type": "string",
           "default": "https://api.openai.com",
-          "markdownDescription": "Optional override for the OpenAI API base URL. If you customize it, please make sure you have the same format. e.g. starts with `https://` without a trailing slash. The completions endpoint suffix is added internally, e.g. for reference: `${apiBaseUrl}/v1/completions`",
-          "order": 1
+          "order": 2,
+          "markdownDescription": "OpenAI API Base URL. **Use only if you have selected OpenAI.** Ensure the format is correct, e.g., starts with `https://` and does not have a trailing slash."
         },
-        "smartVscode.apiKey": {
+        "smartVscode.openai.apiKey": {
           "type": "string",
-          "markdownDescription": "OpenAI API key. [Get your API Key from OpenAI](https://beta.openai.com/account/api-keys).",
-          "order": 2
-        },
-        "smartVscode.chatLightModel": {
-          "type": "string",
-          "enum": [
-            "gpt-4-turbo",
-            "gpt-4-turbo-2024-04-09",
-            "gpt-3.5-turbo-1106"
-          ],
-          "default": "gpt-3.5-turbo-1106",
-          "markdownDescription": "An lightweight OpenAI models like GPT-3.5 to use for simple steps in reasoning pipeline. [Documentation](https://beta.openai.com/docs/models/models). ",
           "order": 3,
-          "enumItemLabels": [
-            "gpt-4-turbo",
-            "gpt-4-turbo-2024-04-09",
-            "gpt-3.5-turbo-1106"
-          ],
-          "markdownEnumDescriptions": [
-            "ChatGPT Plus subscription GPT-4 model that's used in chat.openai.com. This requires a subscription on OpenAI side, please make sure you are eligible to use this model. ",
-            "ChatGPT Plus subscription default model that's used in chat.openai.com. This requires a subscription on OpenAI side, please make sure you are eligible to use this model.",
-            "Most capable GPT-3.5 model and optimized for current task."
-          ]
+          "markdownDescription": "**OpenAI API Key**. **Use only if you have selected OpenAI.** [Get your OpenAI API Key](https://beta.openai.com/account/api-keys)."
         },
-        "smartVscode.chatAdvancedModel": {
+        "smartVscode.openai.chatLightModel": {
           "type": "string",
           "enum": [
             "gpt-4-turbo",
+            "gpt-4o",
+            "gpt-4o-mini",
             "gpt-4-turbo-2024-04-09",
             "gpt-3.5-turbo-1106"
           ],
           "default": "gpt-3.5-turbo-1106",
-          "markdownDescription": "An advanced OpenAI models like GPT-4 for complex steps in reasoning pipeline. [Documentation](https://beta.openai.com/docs/models/models). ",
           "order": 4,
-          "enumItemLabels": [
+          "markdownDescription": "Lightweight OpenAI model for simple reasoning steps. **Use only if you have selected OpenAI.** [Documentation](https://beta.openai.com/docs/models/models).",
+          "enumDescriptions": [
+            "GPT-4 Turbo model available with ChatGPT Plus subscription. Ensure you have the appropriate OpenAI subscription.",
+            "A specific version of the GPT-4 model enhanced for particular tasks or domains, potentially offering specialized capabilities or features compared to the standard GPT-4.",
+            "A smaller and more efficient version of gpt-4o, designed for environments with limited computational resources, providing a balance between performance and resource usage.",
+            "Default GPT-4 Turbo model used in ChatGPT Plus subscription. Ensure you have the appropriate OpenAI subscription.",
+            "Most capable GPT-3.5 model, optimized for current tasks."
+          ]
+        },
+        "smartVscode.openai.chatAdvancedModel": {
+          "type": "string",
+          "enum": [
             "gpt-4-turbo",
+            "gpt-4o",
+            "gpt-4o-mini",
             "gpt-4-turbo-2024-04-09",
             "gpt-3.5-turbo-1106"
           ],
-          "markdownEnumDescriptions": [
-            "ChatGPT Plus subscription GPT-4 model that's used in chat.openai.com. This requires a subscription on OpenAI side, please make sure you are eligible to use this model. ",
-            "ChatGPT Plus subscription default model that's used in chat.openai.com. This requires a subscription on OpenAI side, please make sure you are eligible to use this model.",
-            "Most capable GPT-3.5 model and optimized for current task."
+          "default": "gpt-3.5-turbo-1106",
+          "order": 5,
+          "markdownDescription": "Advanced OpenAI model for complex reasoning steps. **Use only if you have selected OpenAI.** [Documentation](https://beta.openai.com/docs/models/models).",
+          "enumDescriptions": [
+            "GPT-4 Turbo model available with ChatGPT Plus subscription. Ensure you have the appropriate OpenAI subscription.",
+            "A specific version of the GPT-4 model enhanced for particular tasks or domains, potentially offering specialized capabilities or features compared to the standard GPT-4.",
+            "A smaller and more efficient version of gpt-4o, designed for environments with limited computational resources, providing a balance between performance and resource usage.",
+            "Default GPT-4 Turbo model used in ChatGPT Plus subscription. Ensure you have the appropriate OpenAI subscription.",
+            "Most capable GPT-3.5 model, optimized for current tasks."
           ]
         },
-        "smartVscode.embeddingModel": {
+        "smartVscode.openai.embeddingModel": {
           "type": "string",
           "enum": [
             "text-embedding-3-small"
           ],
           "default": "text-embedding-3-small",
-          "markdownDescription": "OpenAI Embedding model to use for your requirements. [Documentation](https://beta.openai.com/docs/models/models).",
-          "order": 5
-        },
-        "smartVscode.chatModelConfig": {
-          "type": "object",
-          "markdownDescription": "You can customize the chat model config here. All formats are referred by [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html).",
           "order": 6,
+          "markdownDescription": "OpenAI Embedding model to use. **Use only if you have selected OpenAI.** [Documentation](https://beta.openai.com/docs/models/models)."
+        },
+        "smartVscode.tongyi.apiKey": {
+          "type": "string",
+          "order": 7,
+          "markdownDescription": "**Tongyi API Key**. **Use only if you have selected Tongyi.** [Get your Tongyi API Key](https://help.aliyun.com/zh/model-studio/developer-reference/get-api-key)."
+        },
+        "smartVscode.tongyi.chatLightModel": {
+          "type": "string",
+          "enum": [
+            "qwen-max",
+            "qwen-plus",
+            "qwen-turbo"
+          ],
+          "default": "qwen-plus",
+          "order": 8,
+          "markdownDescription": "Tongyi model for simple reasoning steps. **Use only if you have selected Tongyi.**",
+          "enumDescriptions": [
+            "A high-performance model designed for enhanced accuracy and detailed responses, making it suitable for complex tasks and in-depth analysis.",
+            "A versatile model that balances performance and efficiency, providing quick responses while maintaining good quality for a wide range of applications.",
+            "An optimized model focused on speed, offering rapid response times ideal for applications where quick interaction is essential, without compromising too much on quality."
+          ]
+        },
+        "smartVscode.tongyi.chatAdvancedModel": {
+          "type": "string",
+          "enum": [
+            "qwen-max",
+            "qwen-plus",
+            "qwen-turbo"
+          ],
+          "order": 9,
+          "default": "qwen-max",
+          "markdownDescription": "Advanced Tongyi model for complex reasoning steps. **Use only if you have selected Tongyi.**",
+          "enumDescriptions": [
+            "A high-performance model designed for enhanced accuracy and detailed responses, making it suitable for complex tasks and in-depth analysis.",
+            "A versatile model that balances performance and efficiency, providing quick responses while maintaining good quality for a wide range of applications.",
+            "An optimized model focused on speed, offering rapid response times ideal for applications where quick interaction is essential, without compromising too much on quality."
+          ]
+        },
+        "smartVscode.tongyi.embeddingModel": {
+          "type": "string",
+          "enum": [
+            "text-embedding-v2"
+          ],
+          "default": "text-embedding-v2",
+          "order": 10,
+          "markdownDescription": "Tongyi Embedding model to use. **Use only if you have selected Tongyi.**"
+        },
+        "smartVscode.anyModel.chatModelConfig": {
+          "type": "object",
+          "order": 11,
+          "markdownDescription": "Customize chat model configuration here. Refer to [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html) for formats.",
           "default": {}
         },
-        "smartVscode.embeddingModelConfig": {
+        "smartVscode.anyModel.embeddingModelConfig": {
           "type": "object",
-          "markdownDescription": "You can customize the embedding model config here. All formats are referred by [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html).",
-          "order": 7,
+          "order": 12,
+          "markdownDescription": "Customize the embedding model configuration here. Refer to [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html) for formats.",
           "default": {}
         },
         "smartVscode.response.autoScroll": {
           "type": "boolean",
           "default": true,
-          "description": "Whenever there is a new question or response added to the conversation window, extension will automatically scroll to the bottom. You can change that behavior by disabling this setting.",
+          "description": "Automatically scroll to the bottom when a new question or response is added to the conversation window. You can disable this behavior by setting it to `false`.",
           "order": 38
         }
       }
