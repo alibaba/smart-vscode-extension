@@ -3,7 +3,7 @@
   "publisher": "IntelligentComputing",
   "displayName": "Smart Vscode",
   "icon": "images/ai-logo.png",
-  "description": "SmartVscode: Controlling anything of Vscode by natural language",
+  "description": "SmartVscode: Controlling VS Code by natural language",
   "version": "1.0.0",
   "aiKey": "",
   "preview": true,
@@ -215,13 +215,13 @@
           "order": 10,
           "markdownDescription": "Tongyi Embedding model to use. **Use only if you have selected Tongyi.**"
         },
-        "smartVscode.anyModel.chatModelConfig": {
+        "smartVscode.chatModelConfig": {
           "type": "object",
           "order": 11,
           "markdownDescription": "Customize chat model configuration here. Refer to [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html) for formats.",
           "default": {}
         },
-        "smartVscode.anyModel.embeddingModelConfig": {
+        "smartVscode.embeddingModelConfig": {
           "type": "object",
           "order": 12,
           "markdownDescription": "Customize the embedding model configuration here. Refer to [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html) for formats.",

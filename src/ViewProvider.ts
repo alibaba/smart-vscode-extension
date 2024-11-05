@@ -645,136 +645,127 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
     const nonce = this.getRandomId();
 
     return `<!DOCTYPE html>
-			<html lang="en">
-			<head>
-				<meta charset="UTF-8">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" data-license="isc-gnc">
-
-				<link href="${stylesMainUri}" rel="stylesheet">
-				<link href="${vendorHighlightCss}" rel="stylesheet">
-				<script src="${vendorHighlightJs}"></script>
-				<script src="${vendorMarkedJs}"></script>
-				<script src="${vendorTailwindJs}"></script>
-				<script src="${vendorTurndownJs}"></script>
-			</head>
-			<body class="overflow-hidden">
-				<div class="flex flex-col h-screen">
-					<div id="introduction" class="flex flex-col justify-between h-full justify-center px-6 w-full relative login-screen overflow-auto">
-						<div data-license="isc-gnc-hi-there" class="flex items-start text-center features-block my-5">
-							<div class="flex flex-col gap-3.5 flex-1">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-6 h-6 m-auto">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
-								</svg>
-								<h2>Features</h2>
-								<ul class="flex flex-col gap-3.5" style="font-size: 14px;">
-									<li class="features-li w-full border border-zinc-700 p-3 rounded-md">Describe tasks in natural language, and they'll be finished directly</li>
-									<li class="features-li w-full border border-zinc-700 p-3 rounded-md">Answer your question like a normal chatbot</li>
-								</ul>
-                <div class="mt-8" style="font-size: 12px;">
-                  <table class="w-full border-collapse border-2 border-dashed border-zinc-700 rounded-md">
-                    <thead>
-                      <tr>
-                        <th colspan="2" class="p-4 text-center border-b border-dashed border-zinc-700">Input Example</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                     <tr class="border-b border-zinc-700">
-                        <td class="p-3 text-center border-r border-zinc-700">Go to line 35 in the current file.</td>
-                        <td class="p-3 text-center">Task</td>
-                      </tr>
-                        <tr class="border-b border-zinc-700">
-                        <td class="p-3 text-center border-r border-zinc-700">Navigate back to the previous location.</td>
-                        <td class="p-3 text-center">Task</td>
-                      </tr>
-                        <tr class="border-b border-zinc-700">
-                        <td class="p-3 text-center border-r border-zinc-700">Format current file.</td>
-                        <td class="p-3 text-center">Task</td>
-                      </tr>
-                        <tr class="border-b border-zinc-700">
-                        <td class="p-3 text-center border-r border-zinc-700">Change the color of code comments to green.</td>
-                        <td class="p-3 text-center">Task</td>
-                      </tr>
-                      <tr class="border-b border-zinc-700">
-                        <td class="p-3 text-center border-r border-zinc-700">Help me set a black theme</td>
-                        <td class="p-3 text-center">Task</td>
-                      </tr>
-                      <tr class="border-b border-zinc-700">
-                        <td class="p-3 text-center border-r border-zinc-700">Connect to a remote SSH server.</td>
-                        <td class="p-3 text-center">Task</td>
-                      </tr>
-                      </tr>
-                        <tr class="border-b border-zinc-700">
-                        <td class="p-3 text-center border-r border-zinc-700">How long a cat lives</td>
-                        <td class="p-3 text-center">Question</td>
-                      </tr>
-                      </tr>
-                        <tr class="border-b border-zinc-700">
-                        <td class="p-3 text-center border-r border-zinc-700">How many calories are in watermelon</td>
-                        <td class="p-3 text-center">Question</td>
-                      </tr>
-                      </tr>
-                        <tr class="border-b border-zinc-700">
-                        <td class="p-3 text-center border-r border-zinc-700">Others</td>
-                        <td class="p-3 text-center"></td>
-                      </tr>
-                      <!-- More rows can be added here if needed -->
-                    </tbody>
-                  </table>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-license="isc-gnc">
+    <link href="${stylesMainUri}" rel="stylesheet">
+    <link href="${vendorHighlightCss}" rel="stylesheet">
+    <script src="${vendorHighlightJs}"></script>
+    <script src="${vendorMarkedJs}"></script>
+    <script src="${vendorTailwindJs}"></script>
+    <script src="${vendorTurndownJs}"></script>
+</head>
+<body class="overflow-hidden">
+    <div class="flex flex-col h-screen">
+        <div id="introduction" class="flex flex-col justify-between h-full justify-center px-6 w-full relative login-screen overflow-auto">
+            <div data-license="isc-gnc-hi-there" class="flex items-start text-center features-block my-5">
+                <div class="flex flex-col gap-3.5 flex-1">
+                    <!-- <img src="/Users/pengjiazhen/code/github/smart-vscode-extension/images/ai-logo.png" height="48"/> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-6 h-6 m-auto">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+                    </svg>
+                    <h2>Features</h2>
+                    <ul class="flex flex-col gap-3.5" style="font-size: 14px;">
+                        <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Describe tasks about VS Code in natural language, and they will be automatically completed.</li>
+                        <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Supported tasks cover various functionalities across editor, terminal, extension ...  </li>
+                        <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Recommended tasks are those achievable through VS Code commands and settings. </li>
+                    </ul>
+                    <div class="mt-8" style="font-size: 12px;">
+                        <table class="w-full border-collapse border-2 border-dashed border-zinc-700 rounded-md">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="p-4 text-center border-b border-dashed border-zinc-700">Input Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Increase the font size in my editor to 16. </td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Enable auto-saving of files every 5 seconds. </td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Navigate back to the previous location. </td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Help me set a black theme.</td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Enable the column selection.   </td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Disable the tab preview mode to open a file in a new tab.</td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Scroll files together when I view multiple files at the same time. </td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Open the current file position in the system window. </td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Show me where the extensions are installed. </td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Increase the amount of scrollback kept in the terminal buffer to 2000. </td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700"> ... ... </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-4">
+                        <a href="https://help.aliyun.com/zh/model-studio/getting-started/first-api-call-to-qwen?spm=a2c4g.11186623.help-menu-2400256.d_0_1_0.25a41d1c0TzugM&scm=20140722.H_2840915._.OR_help-V_1" ">Get Qwen Free Token</a>
+                        <span class="mx-2">|</span>
+                        <a href="https://platform.openai.com/api-keys" >Get ChatGPT Token</a>
+                    </div>
                 </div>
-
-                </div>
-							</div>
-						<div class="flex flex-col gap-4 h-full items-center justify-end text-center">
-							<p class="max-w-sm text-center text-xs text-slate-500">
-								<a title="" id="settings-button" href="#">Settings</a>&nbsp; | &nbsp;<a title="Supported Tasks" id="github-button" href="https://github.com/alibaba/smart-vscode-extension">Supported Tasks</a>&nbsp; | &nbsp;<a title="Go to GitHub" id="github-button" href="https://github.com/alibaba/smart-vscode-extension">GitHub</a>&nbsp; | &nbsp;<a title="Read Document" id="doc-button" href="https://github.com/alibaba/pilotscope">Document</a>
-							</p>
-						</div>
-					</div>
-
-					<div class="flex-1 overflow-y-auto" id="qa-list" data-license="isc-gnc"></div>
-
-					<div class="flex-1 overflow-y-auto hidden" id="conversation-list" data-license="isc-gnc"></div>
-
-					<div id="in-progress" class="pl-4 pt-2 flex items-center hidden" data-license="isc-gnc">
-						<div class="typing">Thinking</div>
-						<div class="spinner">
-							<div class="bounce1"></div>
-							<div class="bounce2"></div>
-							<div class="bounce3"></div>
-						</div>
-
-						<button id="stop-button" class="btn btn-primary flex items-end p-1 pr-2 rounded-md ml-5">
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Stop responding</button>
-					</div>
-
-					<div class="p-4 flex items-center pt-2" data-license="isc-gnc">
-						<div class="flex-1 textarea-wrapper">
-							<textarea
-								type="text"
-								rows="1" data-license="isc-gnc"
-								id="question-input"
-								placeholder="Input a question or task..."
-								onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
-						</div>
-						<div id="chat-button-wrapper" class="absolute bottom-14 items-center more-menu right-8 border border-gray-200 shadow-xl hidden text-xs" data-license="isc-gnc">
-							<button class="flex gap-2 items-center justify-start p-2 w-full" id="clear-button"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>&nbsp;New chat</button>	
-							<button class="flex gap-2 items-center justify-start p-2 w-full" id="settings-button"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>&nbsp;Settings</button>
-						</div>
-						<div id="question-input-buttons" class="right-6 absolute p-0.5 ml-5 flex items-center gap-2">
-							<button id="more-button" title="More actions" class="rounded-lg p-0.5" data-license="isc-gnc">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" /></svg>
-							</button>
-
-							<button id="ask-button" title="Submit prompt" class="ask-button rounded-lg p-0.5">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<script nonce="${nonce}" src="${scriptUri}"></script>
-			</body>
-			</html>`;
+            </div>
+            <div class="flex flex-col gap-4 h-full items-center justify-end text-center">
+                <p class="max-w-sm text-center text-xs text-slate-500">
+                    <a title="" id="settings-button" href="#">Settings</a>&nbsp; | &nbsp;<a title="Supported Tasks" id="github-button" href="https://alibaba.github.io/smart-vscode-extension/en/tutorial/tasks.html">Supported Tasks</a>&nbsp; | &nbsp;<a title="Go to GitHub" id="github-button" href="https://github.com/alibaba/smart-vscode-extension">GitHub</a>&nbsp; | &nbsp;<a title="Read Document" id="doc-button" href="https://alibaba.github.io/smart-vscode-extension/en/index.html">Document</a>
+                </p>
+            </div>
+        </div>
+        <div class="flex-1 overflow-y-auto" id="qa-list" data-license="isc-gnc"></div>
+        <div class="flex-1 overflow-y-auto hidden" id="conversation-list" data-license="isc-gnc"></div>
+        <div id="in-progress" class="pl-4 pt-2 flex items-center hidden" data-license="isc-gnc">
+            <div class="typing">Thinking</div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <button id="stop-button" class="btn btn-primary flex items-end p-1 pr-2 rounded-md ml-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Stop responding</button>
+        </div>
+        <div class="p-4 flex items-center pt-2" data-license="isc-gnc">
+            <div class="flex-1 textarea-wrapper">
+                <textarea
+                    type="text"
+                    rows="1" data-license="isc-gnc"
+                    id="question-input"
+                    placeholder="Input a question or task..."
+                    onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+            </div>
+            <div id="chat-button-wrapper" class="absolute bottom-14 items-center more-menu right-8 border border-gray-200 shadow-xl hidden text-xs" data-license="isc-gnc">
+                <button class="flex gap-2 items-center justify-start p-2 w-full" id="clear-button"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>&nbsp;New chat</button>	
+                <button class="flex gap-2 items-center justify-start p-2 w-full" id="settings-button"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>&nbsp;Settings</button>
+            </div>
+            <div id="question-input-buttons" class="right-6 absolute p-0.5 ml-5 flex items-center gap-2">
+                <button id="more-button" title="More actions" class="rounded-lg p-0.5" data-license="isc-gnc">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" /></svg>
+                </button>
+                <button id="ask-button" title="Submit prompt" class="ask-button rounded-lg p-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script nonce="${nonce}" src="${scriptUri}"></script>
+</body>
+</html>`;
   }
 
   public getRandomId() {
