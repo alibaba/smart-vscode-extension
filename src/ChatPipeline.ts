@@ -116,8 +116,8 @@ export default class ChatPipeline {
                     chat.responseQuestion(this.userInput);
                     break;
                 } else if (status === TaskResponseEnum.taskException) {
-                    chat.sendMsgToUser("Task exception: there is an exception in the task, Please restart or try again later.");
-                    await this.backendService.finish(new Context(this.userId, this.sessionId));
+                    const msg = actionResponse["data"]["msg"];
+                    chat.sendMsgToUser("Task exception: " + msg);
                     break;
                 } else {
                     throw new Error("Unknown status: " + status);
