@@ -1,4 +1,4 @@
-import ArgumentMissingError from "../Error/ArgumentMissingError";
+import { ArgumentMissingError } from "../Error/SmartVscodeError";
 import { Chat } from "../ViewProvider";
 
 export default class Api {

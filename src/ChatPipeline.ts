@@ -5,11 +5,11 @@ import ApiScheduler from "./Apis/ApiScheduler";
 import Config from "./Common/Config";
 import { TaskResponseEnum } from "./Common/enum";
 import { Context } from "./Context";
-import ArgumentMissingError from "./Error/ArgumentMissingError";
-import TaskStopError from "./Error/TaskStopError";
+import TaskStopError, { ArgumentMissingError, NetworkError } from "./Error/SmartVscodeError";
 import HttpProtocol from "./Protocol/HttpProtocol";
 import Protocol from "./Protocol/Protocol";
 import { Chat } from "./ViewProvider";
+import Constants from "./Common/Constants";
 
 
 
@@ -28,6 +28,10 @@ export default class ChatPipeline {
     private sessionId: string;
 
     private userInput = "";
+
+    private isSendTaskCancelledMsg = false;
+
+    private chat: Chat | null = null;
 
     constructor(config: Config, apiScheduler: ApiScheduler, userId: string) {
         this.config = config;
@@ -55,10 +59,22 @@ export default class ChatPipeline {
     }
 
     public async run(userQuestion: string, chat: Chat, isTest: boolean = false, testAnswer: string = "") {
+        this.chat = chat;
         this.userInput = userQuestion;
         this.sessionId = uuid();
-        let actionResponse = await this.backendService.sendUserQuestion(new Context(this.userId, this.sessionId, userQuestion, isTest, testAnswer));
-        await this.interactionLoop(actionResponse, chat);
+        try {
+            let actionResponse = await this.backendService.sendUserQuestion(new Context(this.userId, this.sessionId, userQuestion, isTest, testAnswer));
+            await this.interactionLoop(actionResponse, chat);
+        } catch (error) {
+            if (error instanceof NetworkError) {
+                chat.sendMsgToUser(error.message, false);
+            }
+            else {
+                chat.sendMsgToUser(error + "", false);
+                await this.backendService.finish(new Context(this.userId, this.sessionId));
+                throw error;
+            }
+        }
     }
 
     public async interactionLoop(actionResponse, chat: Chat) {
@@ -107,10 +123,10 @@ export default class ChatPipeline {
                         actionResponse = await this.backendService.sendApisResult(new Context(this.userId, this.sessionId, actionResponse["data"]["apis"]));
                     }
                 } else if (status === TaskResponseEnum.taskFailed) {
-                    chat.sendMsgToUser("Task failure may be due to insufficient APIs or task complexity.");
-                    await this.backendService.finish(new Context(this.userId, this.sessionId));
+                    chat.sendMsgToUser(actionResponse["data"]["msg"]);
                     break;
                 } else if (status === TaskResponseEnum.taskCanceled) {
+                    this.sendTaskCancelledMsg();
                     break;
                 } else if (status === TaskResponseEnum.taskQuestion) {
                     chat.responseQuestion(this.userInput);
@@ -129,21 +145,27 @@ export default class ChatPipeline {
                     await this.backendService.finish(new Context(this.userId, this.sessionId));
                     return;
                 } else if (error instanceof ArgumentMissingError) {
-                    chat.sendMsgToUser("" + error, false);
+                    chat.sendMsgToUser(error.message, false);
                     actionResponse["data"]["apis"][0]["result"] = "" + error;
                     actionResponse = await this.backendService.sendApisResult(new Context(this.userId, this.sessionId, actionResponse["data"]["apis"]));
                 }
                 else {
-                    chat.sendMsgToUser("" + error, false);
-                    await this.backendService.finish(new Context(this.userId, this.sessionId));
                     throw error;
                 }
             }
         }
     }
 
+    private sendTaskCancelledMsg() {
+        if (!this.isSendTaskCancelledMsg) {
+            this.chat?.sendMsgToUser(Constants.TASK_FAILED_MSG);
+        }
+        this.isSendTaskCancelledMsg = true;
+    }
+
     public stopTask() {
         this.backendService.cancel(new Context(this.userId, this.sessionId));
+        this.sendTaskCancelledMsg();
     }
 
     public isTerminalApi(actionResponse: Object) {

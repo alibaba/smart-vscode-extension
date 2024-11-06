@@ -1,6 +1,6 @@
 import * as path from 'path';
 import * as vscode from 'vscode';
-import TaskStopError from '../Error/TaskStopError';
+import TaskStopError from '../Error/SmartVscodeError';
 
 
 export function getWorkspaceFolder() {

@@ -1,7 +1,7 @@
 
 export default class Constants {
     public static systemName = "Chatbot";
-    // public static TASK_CANCEL_MSG = "TASK CANCELLED";
+    public static TASK_FAILED_MSG = "The task has been canceled, which may have been due to a timeout or manual cancellation.";
 }
 
 
@@ -17,3 +17,5 @@ export class ApiMessage {
         return `${Constants.systemName} will ${target} for you.`;
     }
 }
+
+

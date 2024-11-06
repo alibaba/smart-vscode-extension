@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { ApiMessage } from "../Common/Constants";
-import TaskStopError from "../Error/TaskStopError";
+import TaskStopError from "../Error/SmartVscodeError";
 import ApiExecuteData from "./ApiExecuteData";
 import { registerApi } from "./ApiScheduler";
 

@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as vscode from 'vscode';
 import { ApiMessage } from "../Common/Constants";
-import TaskStopError from "../Error/TaskStopError";
+import TaskStopError from "../Error/SmartVscodeError";
 import ApiExecuteData from "./ApiExecuteData";
 import { registerApi } from "./ApiScheduler";
 import { getFullFilePath, getLaunchFilePath } from './Utils';

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Config from "../Common/Config";
 import { Context } from "../Context";
+import { NetworkError } from "../Error/SmartVscodeError";
 import Protocol from "./Protocol";
 
 export default class HttpProtocol extends Protocol {
@@ -56,13 +57,17 @@ export default class HttpProtocol extends Protocol {
 
         let fullUrl = this.url + url;
 
-        const response = await fetch(fullUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-        return await response.json();
+        try {
+            const response = await fetch(fullUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            });
+            return await response.json();
+        } catch (error) {
+            throw new NetworkError();
+        }
     }
 }
