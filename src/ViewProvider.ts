@@ -703,9 +703,6 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
                                     <td class="p-3 text-center border-r border-zinc-700">Open the current file position in the system window. </td>
                                 </tr>
                                 <tr class="border-b border-zinc-700">
-                                    <td class="p-3 text-center border-r border-zinc-700">Show me where the extensions are installed. </td>
-                                </tr>
-                                <tr class="border-b border-zinc-700">
                                     <td class="p-3 text-center border-r border-zinc-700">Increase the amount of scrollback kept in the terminal buffer to 2000. </td>
                                 </tr>
                                 <tr class="border-b border-zinc-700">
