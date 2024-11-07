@@ -38,6 +38,7 @@ export default class FileApis {
             } catch {
             }
             await vscode.workspace.fs.writeFile(fileUri, encodedContent);
+            this.openFileInEditor(fullFilePath);
             apiExecuteData.executeSuccess("Content inserted to file successfully.");
             return apiExecuteData;
         } catch (error) {
@@ -46,23 +47,10 @@ export default class FileApis {
         return apiExecuteData;
     }
 
-    @registerApi(ApiMessage.getActionMsg("open file in editor"))
-    public async openFileInEditor(filePath: string): Promise<ApiExecuteData> {
-        const apiExecuteData = new ApiExecuteData();
-        try {
-            const fullFilePath = getFullFilePath(filePath);
-            if (!fullFilePath) {
-                apiExecuteData.executeFailed("No open folder found, cannot create file.");
-                return apiExecuteData;
-            }
 
-            const fileUri = vscode.Uri.file(fullFilePath);
-            await vscode.window.showTextDocument(fileUri);
-            apiExecuteData.executeSuccess("File opened successfully.");
-        } catch (error) {
-            apiExecuteData.executeFailed(`Failed to open file: ${error}`);
-        }
-        return apiExecuteData;
+    public async openFileInEditor(fullFilePath: string) {
+        const fileUri = vscode.Uri.file(fullFilePath);
+        await vscode.window.showTextDocument(fileUri);
     };
 
     @registerApi(ApiMessage.getQueryMsg("launch file content"))
