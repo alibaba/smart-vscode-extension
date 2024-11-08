@@ -60,6 +60,7 @@ export default class ChatPipeline {
 
     public async run(userQuestion: string, chat: Chat, isTest: boolean = false, testAnswer: string = "") {
         this.chat = chat;
+        this.isSendTaskCancelledMsg = false;
         this.userInput = userQuestion;
         this.sessionId = uuid();
         try {

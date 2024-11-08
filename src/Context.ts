@@ -112,7 +112,7 @@ export class Context {
     private getEmbeddingModelConfig(): Object {
         const config = vscode.workspace.getConfiguration();
         const modelType = config.get("smartVscode.modelType");
-        return modelType === "openai" ? this.getOpenAIEmbeddingModelConfig() : this.getTongYiEmbeddingModelConfig();
+        return modelType === "OpenAI" ? this.getOpenAIEmbeddingModelConfig() : this.getTongYiEmbeddingModelConfig();
     }
 
     private getOpenAIEmbeddingModelConfig(): Object {

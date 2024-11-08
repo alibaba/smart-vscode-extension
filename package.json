@@ -123,41 +123,29 @@
         "smartVscode.openai.chatLightModel": {
           "type": "string",
           "enum": [
-            "gpt-4-turbo",
             "gpt-4o",
-            "gpt-4o-mini",
-            "gpt-4-turbo-2024-04-09",
-            "gpt-3.5-turbo-1106"
+            "gpt-4o-mini"
           ],
-          "default": "gpt-3.5-turbo-1106",
+          "default": "gpt-4o-mini",
           "order": 4,
           "markdownDescription": "Lightweight OpenAI model for simple reasoning steps. **Use only if you have selected OpenAI.** [Documentation](https://beta.openai.com/docs/models/models).",
           "enumDescriptions": [
-            "GPT-4 Turbo model available with ChatGPT Plus subscription. Ensure you have the appropriate OpenAI subscription.",
             "A specific version of the GPT-4 model enhanced for particular tasks or domains, potentially offering specialized capabilities or features compared to the standard GPT-4.",
-            "A smaller and more efficient version of gpt-4o, designed for environments with limited computational resources, providing a balance between performance and resource usage.",
-            "Default GPT-4 Turbo model used in ChatGPT Plus subscription. Ensure you have the appropriate OpenAI subscription.",
-            "Most capable GPT-3.5 model, optimized for current tasks."
+            "A smaller and more efficient version of gpt-4o, designed for environments with limited computational resources, providing a balance between performance and resource usage."
           ]
         },
         "smartVscode.openai.chatAdvancedModel": {
           "type": "string",
           "enum": [
-            "gpt-4-turbo",
             "gpt-4o",
-            "gpt-4o-mini",
-            "gpt-4-turbo-2024-04-09",
-            "gpt-3.5-turbo-1106"
+            "gpt-4o-mini"
           ],
-          "default": "gpt-3.5-turbo-1106",
+          "default": "gpt-4o",
           "order": 5,
           "markdownDescription": "Advanced OpenAI model for complex reasoning steps. **Use only if you have selected OpenAI.** [Documentation](https://beta.openai.com/docs/models/models).",
           "enumDescriptions": [
-            "GPT-4 Turbo model available with ChatGPT Plus subscription. Ensure you have the appropriate OpenAI subscription.",
             "A specific version of the GPT-4 model enhanced for particular tasks or domains, potentially offering specialized capabilities or features compared to the standard GPT-4.",
-            "A smaller and more efficient version of gpt-4o, designed for environments with limited computational resources, providing a balance between performance and resource usage.",
-            "Default GPT-4 Turbo model used in ChatGPT Plus subscription. Ensure you have the appropriate OpenAI subscription.",
-            "Most capable GPT-3.5 model, optimized for current tasks."
+            "A smaller and more efficient version of gpt-4o, designed for environments with limited computational resources, providing a balance between performance and resource usage."
           ]
         },
         "smartVscode.openai.embeddingModel": {
