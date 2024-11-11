@@ -50,7 +50,7 @@ To begin utilizing this extension, follow these steps:
 ### Add Model Config
 Once the extension is installed:
 - Locate the chat window titled "SmartVscode" in your left sidebar, which should resemble the following:
-<p align="center"><img src="images/mainView.png" alt="alt text" width="200"/></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/4de7f0aa-514d-4e34-9f51-9411ec5b0f70" alt="alt text" width="200"/></p>
 
 - Configure your model settings within the extension:
    - Access our settings by clicking "Settings" button:
@@ -60,7 +60,7 @@ Once the extension is installed:
    - For using Tongyi, select the model type to `Tongyi` and modify the settings in the blue box as shown in the figure below, including: 
       - your `API key` 
       - your preferred `chat` and `embedding` models 
-<p align="center"><img src="images/modelConfig.png" alt="alt text" width="400"/></p> 
+<p align="center"><img src="https://github.com/user-attachments/assets/4f86e7e2-1b51-4e15-a73e-6fb747fd776a" alt="alt text" width="400"/></p> 
 
 ## Supported Tasks
 

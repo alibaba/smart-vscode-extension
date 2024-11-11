@@ -31,28 +31,19 @@
 ## Feature Video
 
 ### Tic-tac-toe Game
+![game8x](https://github.com/user-attachments/assets/5ae87029-6669-4d36-8655-6a7f0c408b2d)
 
-<!-- https://github.com/alibaba/pilotscope/assets/31238100/eef9765a-8cda-4654-a147-475ed1a13c58 -->
-![game](../_static/game8x.gif)
 
 ### A comprehensive pipeline in Python including configuration, code, and execution.
-![python](../_static/quicksort4x.gif)
+![quicksort4x](https://github.com/user-attachments/assets/2201a72b-2348-4c94-a01a-2f64515325d6)
+
 
 ### Style Changing
+![fontsize2x](https://github.com/user-attachments/assets/a5ab2c2a-0046-4f57-8dc3-7e0a304f2817)
 
-<!-- https://github.com/alibaba/pilotscope/assets/31238100/18480837-b90f-44d6-8c28-d5f17a4552da -->
-![style](../_static/fontsize2x.gif)
 
 ### Theme Changing
-
-<!-- https://github.com/alibaba/pilotscope/assets/31238100/2a8cd2fd-22df-4ba0-a564-90cad6c708bb -->
-![Theme Changing](../_static/theme1_8x.gif)
-
-
-### Enable auto saving
-
-<!-- https://github.com/alibaba/pilotscope/assets/31238100/77548e8a-2832-4770-8924-ea479646e3a8 -->
-![Auto Saving](../_static/autosave2x.gif)
+![theme1_8x](https://github.com/user-attachments/assets/3f84f3e2-f75d-4b12-9a2e-c3fe0627222d)
 
 
 ## Roadmap
