@@ -28,9 +28,13 @@
 ### Tic-tac-toe Game
 <img src="images/game8x.gif">
 
+### A comprehensive pipeline in Python including configuration, code, and execution.
+<img src="images/quicksort4x.gif">
+
 
 ### Style Changing
 <img src="images/fontsize2x.gif">
+
 
 ### Theme Changing
 <img src="images/theme1_8x.gif">

@@ -706,6 +706,9 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
                                     <td class="p-3 text-center border-r border-zinc-700">Increase the amount of scrollback kept in the terminal buffer to 2000. </td>
                                 </tr>
                                 <tr class="border-b border-zinc-700">
+                                    <td class="p-3 text-center border-r border-zinc-700">Help me configure the python environment, and write a quick sort example in python, and help me execute it. </td>
+                                </tr>
+                                <tr class="border-b border-zinc-700">
                                     <td class="p-3 text-center border-r border-zinc-700"> ... ... </td>
                                 </tr>
                             </tbody>

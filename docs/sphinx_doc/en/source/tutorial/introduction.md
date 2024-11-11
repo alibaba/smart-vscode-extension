@@ -35,6 +35,9 @@
 <!-- https://github.com/alibaba/pilotscope/assets/31238100/eef9765a-8cda-4654-a147-475ed1a13c58 -->
 ![game](../_static/game8x.gif)
 
+### A comprehensive pipeline in Python including configuration, code, and execution.
+![python](../_static/quicksort4x.gif)
+
 ### Style Changing
 
 <!-- https://github.com/alibaba/pilotscope/assets/31238100/18480837-b90f-44d6-8c28-d5f17a4552da -->
