@@ -56,10 +56,13 @@ export async function activate(context: vscode.ExtensionContext) {
 	// 比如，您可以输入API的json [{"name": "setProperties", "arguments": "{\"key2Value\": \"{\\\"editor.fontSize\\\": 18}\"}"}] ，会直接执行
 	// 测试用，发布时删除
 	let debugCallApi = vscode.commands.registerCommand('smart-vscode.call_api', async () => {
-		const apiJson = await vscode.window.showInputBox({
+		let apiJson = await vscode.window.showInputBox({
 			placeHolder: "Input api" // 这里设置输入框的提示文字
 		});
-
+		if (!apiJson) {
+			return;
+		}
+		apiJson = JSON.parse(apiJson);
 		if (apiJson) {
 			console.log(apiJson);
 			const api: Api = apiScheduler.getApi(apiJson["name"]);

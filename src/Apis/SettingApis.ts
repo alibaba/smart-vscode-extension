@@ -10,7 +10,7 @@ import { getVSCodeArgvPath, isOpenWorkspaceFolder } from "./Utils";
 export default class SettingApis {
     private static filterSettings: string[] = ["workbench.colorTheme"];
 
-    @registerApi(ApiMessage.getQueryMsg("settings"))
+    @registerApi(["keys"], ApiMessage.getQueryMsg("settings"))
     public async getProperties(keys: string[]): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -33,7 +33,7 @@ export default class SettingApis {
         return apiExecuteData;
     }
 
-    @registerApi(ApiMessage.getActionMsg("update settings"), true)
+    @registerApi(["key2Value", "onGlobal=false"], ApiMessage.getActionMsg("update settings"), true)
     public async setProperties(key2Value: Object, onGlobal: boolean = false): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         if (typeof onGlobal === 'string') {
@@ -149,7 +149,7 @@ export default class SettingApis {
 
 
 
-    @registerApi(ApiMessage.getActionMsg("set language and then restart vscode"), true)
+    @registerApi(["language"], ApiMessage.getActionMsg("set language and then restart vscode"), true)
     public async setLanguage(language: string): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         const argvJsonPath = getVSCodeArgvPath(); // Construct the path to the argv.json file

@@ -5,7 +5,7 @@ import { registerApi } from "./ApiScheduler";
 
 
 export default class CommandApis {
-    @registerApi(ApiMessage.getQueryMsg("commands"))
+    @registerApi(["filterKey=undefined"], ApiMessage.getQueryMsg("commands"))
     public async listCommands(filterKey: string | undefined = undefined): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         const commands = await vscode.commands.getCommands();
@@ -54,7 +54,7 @@ export default class CommandApis {
         return apiExecuteData;
     }
 
-    @registerApi(ApiMessage.getActionMsg("execute commands"), true)
+    @registerApi(["commandId"], ApiMessage.getActionMsg("execute commands"), true)
     public async executeCommand(commandId: string) {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -67,7 +67,7 @@ export default class CommandApis {
         return apiExecuteData;
     }
 
-    @registerApi(ApiMessage.getActionMsg("create DBMS connection"))
+    @registerApi(["extensionId"], ApiMessage.getActionMsg("create DBMS connection"))
     public async createDBMSConnect(extensionId: string): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {

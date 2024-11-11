@@ -9,7 +9,7 @@ import { getFullFilePath, getLaunchFilePath } from './Utils';
 
 
 export default class FileApis {
-    @registerApi(ApiMessage.getActionMsg("insert content to file"), true)
+    @registerApi(["filePath", "content"], ApiMessage.getActionMsg("insert content to file"), true)
     public async insertContentToFile(filePath: string, content: string): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -53,7 +53,7 @@ export default class FileApis {
         await vscode.window.showTextDocument(fileUri);
     };
 
-    @registerApi(ApiMessage.getQueryMsg("launch file content"))
+    @registerApi([], ApiMessage.getQueryMsg("launch file content"))
     public async getLaunchFileContent(): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -70,7 +70,7 @@ export default class FileApis {
         return apiExecuteData;
     };
 
-    @registerApi(ApiMessage.getActionMsg("add configuration to launch"), true)
+    @registerApi(["newLaunchItem"], ApiMessage.getActionMsg("add configuration to launch"), true)
     public async addConfigurationToLaunch(newLaunchItem): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -122,7 +122,7 @@ export default class FileApis {
         return apiExecuteData;
     }
 
-    @registerApi(ApiMessage.getActionMsg('format current file'))
+    @registerApi(["onlySelectedText = false"], ApiMessage.getActionMsg('format current file'))
     public async formatCurrentFile(onlySelectedText: boolean = false): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {

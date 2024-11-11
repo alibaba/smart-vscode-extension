@@ -43,31 +43,13 @@ export default class ApiScheduler {
 
 }
 
-export function registerApi(toUserMsg: string, needToConfirm: boolean = false) {
+export function registerApi(parameters: string[], toUserMsg: string, needToConfirm: boolean = false) {
     // 返回实际的装饰器函数
     return function (target: any, propertyKey: string | symbol, descriptor: PropertyDescriptor) {
         const apiScheduler = ApiScheduler.getInstance(); // 获取单例实例
         const name = String(propertyKey);
         const method = descriptor.value.bind(target);
-        const parameters = getParameterNames(descriptor.value);
         apiScheduler.registerApi(name, parameters, method, toUserMsg, needToConfirm);
     };
 }
 
-
-function getParameterNames(func: Function): string[] {
-    // 转换函数为字符串
-    const functionAsString = func.toString();
-
-    // 正则匹配以获取参数部分
-    const parametersString = functionAsString.slice(
-        functionAsString.indexOf('(') + 1,
-        functionAsString.indexOf(')')
-    );
-
-    // 清除参数字符串中的注释和空白符，并分割成数组
-    const parameters = parametersString.replace(/\/\*.*?\*\//g, '').replace(/\s/g, '').split(',');
-
-    // 过滤掉空字符串
-    return parameters.filter(parameter => parameter !== '');
-}

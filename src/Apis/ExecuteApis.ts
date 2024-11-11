@@ -7,7 +7,7 @@ import { registerApi } from "./ApiScheduler";
 
 export default class ExecuteApis {
 
-    @registerApi(ApiMessage.getActionMsg("execute program"), true)
+    @registerApi(["debugConfigurationName=undefined"], ApiMessage.getActionMsg("execute program"), true)
     public async executeProgram(debugConfigurationName: string | undefined = undefined): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -44,13 +44,13 @@ export default class ExecuteApis {
 
 
 
-    @registerApi(ApiMessage.getActionMsg("stop debugging"))
+    @registerApi([], ApiMessage.getActionMsg("stop debugging"))
     public async stopDebugging() {
         await vscode.debug.stopDebugging();
         vscode.window.showInformationMessage('Debugging stopped');
     }
 
-    @registerApi(ApiMessage.getActionMsg("execute html in browser"))
+    @registerApi(["filePath"], ApiMessage.getActionMsg("execute html in browser"))
     public async executeHtmlInBrowser(filePath: string): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {

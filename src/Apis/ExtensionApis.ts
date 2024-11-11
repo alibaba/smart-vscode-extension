@@ -7,7 +7,7 @@ import { registerApi } from "./ApiScheduler";
 
 export default class ExtensionApis {
 
-    @registerApi(ApiMessage.getQueryMsg("extensions"))
+    @registerApi(["filterKey=undefined"], ApiMessage.getQueryMsg("extensions"))
     public async getInstalledExtensions(filterKey: string | undefined = undefined): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
 
@@ -37,7 +37,7 @@ export default class ExtensionApis {
         await vscode.commands.executeCommand('workbench.extensions.search', searchKey);
     }
 
-    @registerApi(ApiMessage.getActionMsg("install extension"))
+    @registerApi(["extensionName", "chat"], ApiMessage.getActionMsg("install extension"))
     public async requireUserToInstallExtension(extensionName: string, chat: Chat): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {

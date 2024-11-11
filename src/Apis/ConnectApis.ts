@@ -5,7 +5,7 @@ import { registerApi } from "./ApiScheduler";
 
 
 export default class ConnectApis {
-    @registerApi(ApiMessage.getActionMsg("create remote SSH server connect"))
+    @registerApi([], ApiMessage.getActionMsg("create remote SSH server connect"))
     public async createRemoteSSHServerConnect() {
         const apiExecuteData = new ApiExecuteData();
 
@@ -18,7 +18,7 @@ export default class ConnectApis {
         return apiExecuteData;
     }
 
-    @registerApi(ApiMessage.getActionMsg("open remote config file"))
+    @registerApi([], ApiMessage.getActionMsg("open remote config file"))
     public async openRemoteConfigFile() {
         const apiExecuteData = new ApiExecuteData();
         if (!this.isRemoteExtensionInstalled()) {

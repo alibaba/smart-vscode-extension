@@ -6,7 +6,7 @@ import { registerApi } from "./ApiScheduler";
 
 export default class KeybindingApis {
 
-    @registerApi(ApiMessage.getActionMsg("open keyboard shortcuts settings"))
+    @registerApi([], ApiMessage.getActionMsg("open keyboard shortcuts settings"))
     public async openKeybindingSettings(): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -18,7 +18,7 @@ export default class KeybindingApis {
         return apiExecuteData;
     }
 
-    @registerApi(ApiMessage.getActionMsg("open and set keybinding"))
+    @registerApi(["commandName"], ApiMessage.getActionMsg("open and set keybinding"))
     public async openAndSetKeybinding(commandName: string): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {

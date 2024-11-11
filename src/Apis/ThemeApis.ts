@@ -12,7 +12,7 @@ export default class ThemeApis {
         this.config = config;
     }
 
-    @registerApi(ApiMessage.getQueryMsg("themes"))
+    @registerApi([], ApiMessage.getQueryMsg("themes"))
     public async listThemes(): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -39,7 +39,7 @@ export default class ThemeApis {
         return apiExecuteData;
     }
 
-    @registerApi(ApiMessage.getActionMsg("apply theme"), true)
+    @registerApi(["themeId", "uiTheme"], ApiMessage.getActionMsg("apply theme"), true)
     public async applyTheme(themeId: string, uiTheme: string): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {

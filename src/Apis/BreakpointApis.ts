@@ -6,7 +6,7 @@ import { registerApi } from "./ApiScheduler";
 
 export default class BreakpointApis {
 
-    @registerApi(ApiMessage.getActionMsg("toggle breakpoint"))
+    @registerApi(["line=undefined"], ApiMessage.getActionMsg("toggle breakpoint"))
     public async toggleBreakpointAtLine(line: number | undefined = undefined): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {

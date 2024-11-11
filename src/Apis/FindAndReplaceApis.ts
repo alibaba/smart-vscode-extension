@@ -7,7 +7,7 @@ import { registerApi } from "./ApiScheduler";
 export default class FindAndReplaceApis {
     static findAndReplace: any;
 
-    @registerApi(ApiMessage.getActionMsg("find and replace"))
+    @registerApi(["position", "query", "replace", "isRegex=false", "preserveCase=false", "findInSelection=false", "matchWholeWord=false", "isCaseSensitive=false", "filesToInclude=''", "filesToExclude=''"], ApiMessage.getActionMsg("find and replace"))
     public async findAndReplace(position: string, query: string, replace: string, isRegex: boolean = false, preserveCase: boolean = false, findInSelection: boolean = false, matchWholeWord: boolean = false, isCaseSensitive: boolean = false, filesToInclude: string = "", filesToExclude: string = "") {
         const apiExecuteData = new ApiExecuteData();
         try {

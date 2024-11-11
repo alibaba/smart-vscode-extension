@@ -6,7 +6,7 @@ import { registerApi } from "./ApiScheduler";
 
 
 export default class WindowApis {
-    @registerApi(ApiMessage.getActionMsg("create new window"))
+    @registerApi([], ApiMessage.getActionMsg("create new window"))
     public async createNewWindow() {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -18,7 +18,7 @@ export default class WindowApis {
         return apiExecuteData;
     }
 
-    @registerApi(ApiMessage.getActionMsg("close window"))
+    @registerApi(["folderPath=undefined"], ApiMessage.getActionMsg("close window"))
     public async openWorkspaceFolder(folderPath: string | undefined = undefined): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
 
@@ -49,7 +49,7 @@ export default class WindowApis {
         });
     }
 
-    @registerApi(ApiMessage.getActionMsg("close workspace folder"))
+    @registerApi([], ApiMessage.getActionMsg("close workspace folder"))
     public async closeWorkspaceFolder(): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {
