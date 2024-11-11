@@ -26,22 +26,20 @@
 ## Feature Video
 
 ### Tic-tac-toe Game
-<img src="images/game8x.gif">
+![game8x](https://github.com/user-attachments/assets/5ae87029-6669-4d36-8655-6a7f0c408b2d)
+
 
 ### A comprehensive pipeline in Python including configuration, code, and execution.
-<img src="images/quicksort4x.gif">
+![quicksort4x](https://github.com/user-attachments/assets/2201a72b-2348-4c94-a01a-2f64515325d6)
 
 
 ### Style Changing
-<img src="images/fontsize2x.gif">
+![fontsize2x](https://github.com/user-attachments/assets/a5ab2c2a-0046-4f57-8dc3-7e0a304f2817)
 
 
 ### Theme Changing
-<img src="images/theme1_8x.gif">
+![theme1_8x](https://github.com/user-attachments/assets/3f84f3e2-f75d-4b12-9a2e-c3fe0627222d)
 
-
-### Enable auto saving
-<img src="images/autosave2x.gif">
 
   
 ## How to use
