@@ -5,7 +5,7 @@ import ApiScheduler from "./Apis/ApiScheduler";
 import Config from "./Common/Config";
 import { TaskResponseEnum } from "./Common/enum";
 import { Context } from "./Context";
-import TaskStopError, { ArgumentMissingError, NetworkError } from "./Error/SmartVscodeError";
+import TaskStopError, { ApiKeyMissingError, ArgumentMissingError, NetworkError } from "./Error/SmartVscodeError";
 import HttpProtocol from "./Protocol/HttpProtocol";
 import Protocol from "./Protocol/Protocol";
 import { Chat } from "./ViewProvider";
@@ -67,7 +67,7 @@ export default class ChatPipeline {
             let actionResponse = await this.backendService.sendUserQuestion(new Context(this.userId, this.sessionId, userQuestion, isTest, testAnswer));
             await this.interactionLoop(actionResponse, chat);
         } catch (error) {
-            if (error instanceof NetworkError) {
+            if (error instanceof NetworkError || error instanceof ApiKeyMissingError) {
                 chat.sendMsgToUser(error.message, false);
             }
             else {

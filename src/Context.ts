@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import * as vscode from 'vscode';
 import { getCurFocusFilePath, getWorkspaceFolder } from "./Apis/Utils";
+import { ApiKeyMissingError } from "./Error/SmartVscodeError";
 
 
 export class Context {
@@ -67,6 +68,10 @@ export class Context {
         const lightModelName = config.get("smartVscode.openai.chatLightModel");
         const advancedModelName = config.get("smartVscode.openai.chatAdvancedModel");
 
+        if (!apiKey || apiKey === "") {
+            throw new ApiKeyMissingError();
+        }
+
         /* eslint-disable @typescript-eslint/naming-convention */
         return {
             "Lightweight": {
@@ -94,6 +99,10 @@ export class Context {
         const lightModelName = config.get("smartVscode.tongyi.chatLightModel");
         const advancedModelName = config.get("smartVscode.tongyi.chatAdvancedModel");
 
+        if (!apiKey || apiKey === "") {
+            throw new ApiKeyMissingError();
+        }
+        
         /* eslint-disable @typescript-eslint/naming-convention */
         return {
             "Lightweight": {

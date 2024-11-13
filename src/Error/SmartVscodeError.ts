@@ -19,3 +19,10 @@ export class ArgumentMissingError extends Error {
         this.name = "ArgumentMissingError";
     }
 }
+
+export class ApiKeyMissingError extends Error {
+    constructor(message: string = "Sorry, your API key for OpenAI or TongYi is missing. Please set it in the settings.") {
+        super(message);
+        this.name = "ApiKeyMissingError";
+    }
+}

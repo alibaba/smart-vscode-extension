@@ -117,6 +117,7 @@
         },
         "smartVscode.openai.apiKey": {
           "type": "string",
+          "default": "",
           "order": 3,
           "markdownDescription": "**OpenAI API Key**. **Use only if you have selected OpenAI.** [Get your OpenAI API Key](https://beta.openai.com/account/api-keys)."
         },
@@ -159,6 +160,7 @@
         },
         "smartVscode.tongyi.apiKey": {
           "type": "string",
+          "default": "",
           "order": 7,
           "markdownDescription": "**Tongyi API Key**. **Use only if you have selected Tongyi.** [Get your Tongyi API Key](https://help.aliyun.com/zh/model-studio/developer-reference/get-api-key)."
         },
