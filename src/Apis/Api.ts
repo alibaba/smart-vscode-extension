@@ -18,8 +18,13 @@ export default class Api {
         this.toUserMsg = toUserMsg;
     }
 
-    public run(args: Object, chat?: Chat) {
-        const argValues = this.arguments.map(argument => {
+    public hasPlaceholder(): boolean {
+        return this.toUserMsg.includes("[placeholder]");
+    }
+
+    public parseValues(args: Object, chat?: Chat):
+        Array<string | number | boolean | Chat | undefined> {
+        return this.arguments.map(argument => {
             if (argument === "chat") {
                 return chat;
             }
@@ -34,6 +39,10 @@ export default class Api {
                 throw new ArgumentMissingError(`Argument ${argument} is required for API ${this.name}`);
             }
         });
+    }
+
+    public run(args: Object, chat?: Chat) {
+        const argValues = this.parseValues(args, chat);
         return this.executer(...argValues);
     }
 

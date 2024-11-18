@@ -33,7 +33,7 @@ export default class SettingApis {
         return apiExecuteData;
     }
 
-    @registerApi(["key2Value", "onGlobal=false"], ApiMessage.getActionMsg("update settings"), true)
+    @registerApi(["key2Value", "onGlobal=false"], ApiMessage.getActionWithParamsMsg("update settings"), true)
     public async setProperties(key2Value: Object, onGlobal: boolean = false): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         if (typeof onGlobal === 'string') {
@@ -62,11 +62,11 @@ export default class SettingApis {
                 // 添加修改信息
                 changes.push(this.formatSettingChange(key, currentValue, newValue));
                 if (setting?.defaultValue === undefined || this.isFilterSetting(key)) {
-                    apiExecuteData.executeFailed(`Failed to update setting ${key} to ${newValue}, because the setting ${key} is incorrect or outdated, please check the setting name.`);
+                    apiExecuteData.executeFailed(`Failed to update setting ${key} to ${newValue}, because the setting ${key} is incorrect or outdated, please check the setting name.`, `Failed to update settings. Chatbot is trying other actions.`);
                     return apiExecuteData;
                 }
                 if (setting && setting.defaultValue !== undefined && typeof setting.defaultValue !== typeof newValue) {
-                    apiExecuteData.executeFailed(`Failed to update setting ${key} to ${newValue} because the type of the value is incorrect. Expected type: ${typeof setting.defaultValue}.`);
+                    apiExecuteData.executeFailed(`Failed to update setting ${key} to ${newValue} because the type of the value is incorrect. Expected type: ${typeof setting.defaultValue}.`, `Failed to update settings. Chatbot is trying other actions.`);
                     return apiExecuteData;
                 }
                 // 更新设置
@@ -83,7 +83,7 @@ export default class SettingApis {
             this.openSettingsAndReveal(updatedKeys[0], onGlobal);
 
         } catch (e) {
-            apiExecuteData.executeFailed(`Failed to update settings: ${e}`);
+            apiExecuteData.executeFailed(`Failed to update settings: ${e}`, `Failed to update settings. Chatbot is trying other actions.`);
         }
         return apiExecuteData;
     }

@@ -3,13 +3,13 @@ import Api from "./Apis/Api";
 import ApiExecuteData from "./Apis/ApiExecuteData";
 import ApiScheduler from "./Apis/ApiScheduler";
 import Config from "./Common/Config";
+import Constants from "./Common/Constants";
 import { TaskResponseEnum } from "./Common/enum";
 import { Context } from "./Context";
 import TaskStopError, { ApiKeyMissingError, ArgumentMissingError, NetworkError } from "./Error/SmartVscodeError";
 import HttpProtocol from "./Protocol/HttpProtocol";
 import Protocol from "./Protocol/Protocol";
 import { Chat } from "./ViewProvider";
-import Constants from "./Common/Constants";
 
 
 
@@ -93,8 +93,25 @@ export default class ChatPipeline {
 
                     const doConfirm = api.needConfirm && !this.config.testMode;
 
+                    let toUserMsg = api.toUserMsg;
+
+                    // if the api user msg need to be imputated, replace the placeholder with the arguments
+                    if (api.hasPlaceholder()) {
+                        let values = api.parseValues(apiJson["arguments"], chat);
+                        let placeHolder = "";
+                        if (api.name == "setProperties") {
+                            values[0] = JSON.stringify(values[0], null, 2).replace(/"/g, '');
+                            values[1] = values[1] ? "globally" : "locally";
+                        }
+                        placeHolder = values.join(', ');
+                        if (api.name == "insertContentToFile") {
+                            placeHolder = values[0] as string || '';
+                        }
+                        toUserMsg = api.toUserMsg.replace('[placeholder]', placeHolder);
+                    }
+
                     // require user to confirm the api execution
-                    const confirmResult = await chat.sendMsgToUser(api.toUserMsg, doConfirm);
+                    const confirmResult = await chat.sendMsgToUser(toUserMsg, doConfirm);
 
                     // if user refuse to execute the api, stop the task
                     if (!confirmResult) {

@@ -9,13 +9,13 @@ import { getFullFilePath, getLaunchFilePath } from './Utils';
 
 
 export default class FileApis {
-    @registerApi(["filePath", "content"], ApiMessage.getActionMsg("insert content to file"), true)
+    @registerApi(["filePath", "content"], ApiMessage.getActionWithParamsMsg("insert content to file"), true)
     public async insertContentToFile(filePath: string, content: string): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {
             const fullFilePath = getFullFilePath(filePath);
             if (!fullFilePath) {
-                apiExecuteData.executeFailed("No open folder found, cannot create file.");
+                apiExecuteData.executeFailed("No open folder found, cannot create file.", "Failed to create file. No open folder found.");
                 return apiExecuteData;
             }
 
@@ -42,7 +42,7 @@ export default class FileApis {
             apiExecuteData.executeSuccess("Content inserted to file successfully.");
             return apiExecuteData;
         } catch (error) {
-            apiExecuteData.executeFailed(`Failed to insert content to file: ${error}`);
+            apiExecuteData.executeFailed(`Failed to insert content to file: ${error}`, 'Failed to insert content to file.');
         }
         return apiExecuteData;
     }
