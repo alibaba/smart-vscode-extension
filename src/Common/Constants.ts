@@ -2,6 +2,7 @@
 export default class Constants {
     public static systemName = "Chatbot";
     public static TASK_FAILED_MSG = "The task has been canceled, which may have been due to a timeout or manual cancellation.";
+    public static INPUT_QUESTION_MSG = "Sorry, SmartVscode is designed to complete specific tasks in VS Code. Please enter your task instead of a question or a chat message.";
 }
 
 

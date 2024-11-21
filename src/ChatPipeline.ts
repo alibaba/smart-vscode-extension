@@ -130,7 +130,8 @@ export default class ChatPipeline {
                     this.sendTaskCancelledMsg();
                     break;
                 } else if (status === TaskResponseEnum.taskQuestion) {
-                    chat.responseQuestion(this.userInput);
+                    // chat.responseQuestion(this.userInput);
+                    chat.sendMsgToUser(Constants.INPUT_QUESTION_MSG);
                     break;
                 } else if (status === TaskResponseEnum.taskException) {
                     const msg = actionResponse["data"]["msg"];
