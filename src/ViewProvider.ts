@@ -715,11 +715,15 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
                         </table>
                     </div>
                     <div class="mt-4">
-                        <a href="https://help.aliyun.com/zh/model-studio/getting-started/first-api-call-to-qwen?spm=a2c4g.11186623.help-menu-2400256.d_0_1_0.25a41d1c0TzugM&scm=20140722.H_2840915._.OR_help-V_1" ">Get Qwen Free Token</a>
+                        <a href="https://help.aliyun.com/zh/model-studio/getting-started/first-api-call-to-qwen?spm=a2c4g.11186623.help-menu-2400256.d_0_1_0.25a41d1c0TzugM&scm=20140722.H_2840915._.OR_help-V_1" ">Get Free Qwen Token</a>
                         <span class="mx-2">|</span>
                         <a href="https://platform.openai.com/api-keys" >Get ChatGPT Token</a>
                     </div>
                 </div>
+            </div>
+            <div class="notification bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Notice:</strong>
+                <span class="block sm:inline">The current version shares some free Qwen tokens, but please note that they may be exhausted at any time.</span>
             </div>
             <div class="flex flex-col gap-4 h-full items-center justify-end text-center">
                 <p class="max-w-sm text-center text-xs text-slate-500">

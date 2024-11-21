@@ -6,3 +6,6 @@
 
 ### 1.0.2
 - Provided more detailed execution information to users during confirmation, improving clarity and user experience.
+
+### 1.0.4
+- Provided free tongyi tokens for users.

@@ -4,7 +4,7 @@
   "displayName": "Smart Vscode",
   "icon": "images/ai-logo.png",
   "description": "SmartVscode: Controlling VS Code by natural language",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "aiKey": "",
   "preview": false,
   "license": "SEE LICENSE IN LICENSE",
@@ -105,7 +105,7 @@
             "OpenAI",
             "Tongyi"
           ],
-          "default": "OpenAI",
+          "default": "Tongyi",
           "order": 1,
           "markdownDescription": "Select the model type: **OpenAI** or **Tongyi**. **Please choose one model type and fill in the corresponding API Key and model settings below.**"
         },
@@ -160,7 +160,7 @@
         },
         "smartVscode.tongyi.apiKey": {
           "type": "string",
-          "default": "",
+          "default": "sk-bfb3b40df90a4c7f83a49ced7a830be0",
           "order": 7,
           "markdownDescription": "**Tongyi API Key**. **Use only if you have selected Tongyi.** [Get your Tongyi API Key](https://help.aliyun.com/zh/model-studio/developer-reference/get-api-key)."
         },
@@ -209,7 +209,21 @@
           "type": "object",
           "order": 11,
           "markdownDescription": "Customize chat model configuration here. Refer to [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html) for formats.",
-          "default": {}
+          "default": {},
+          "required": [
+            "Lightweight",
+            "Advanced"
+          ],
+          "properties": {
+            "Lightweight": {
+              "type": "object",
+              "markdownDescription": "Lightweight model configuration. Refer to [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html) for formats."
+            },
+            "Advanced": {
+              "type": "object",
+              "markdownDescription": "Advanced model configuration. Refer to [Documentation](https://modelscope.github.io/agentscope/en/tutorial/203-model.html) for formats."
+            }
+          }
         },
         "smartVscode.embeddingModelConfig": {
           "type": "object",
