@@ -54,7 +54,7 @@ export default class CommandApis {
         return apiExecuteData;
     }
 
-    @registerApi(["commandId"], ApiMessage.getActionMsg("execute commands"), true)
+    @registerApi(["commandId"], ApiMessage.getActionWithParamsMsg("execute commands"), true)
     public async executeCommand(commandId: string) {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -62,7 +62,7 @@ export default class CommandApis {
             apiExecuteData.executeSuccess(`Command ${commandId} has been executed.`, `Command ${commandId} has been executed.`);
         }
         catch (err) {
-            apiExecuteData.executeFailed(`Error executing command ${commandId}: ${err}. You may need to install the extension that provides this command.`);
+            apiExecuteData.executeFailed(`Error executing command ${commandId}: ${err}. You may need to install the extension that provides this command.`, `Failed to execute command ${commandId}. Chatbot is trying other actions. `);
         }
         return apiExecuteData;
     }

@@ -17,6 +17,10 @@ export class ApiMessage {
     public static getActionMsg(target: string) {
         return `${Constants.systemName} will ${target} for you.`;
     }
+
+    public static getActionWithParamsMsg(target: string) {
+        return `${Constants.systemName} will ${target}: [placeholder] for you.`;
+    }
 }
 
 

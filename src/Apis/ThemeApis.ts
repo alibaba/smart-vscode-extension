@@ -39,7 +39,7 @@ export default class ThemeApis {
         return apiExecuteData;
     }
 
-    @registerApi(["themeId", "uiTheme"], ApiMessage.getActionMsg("apply theme"), true)
+    @registerApi(["themeId", "uiTheme"], ApiMessage.getActionWithParamsMsg("apply theme"), true)
     public async applyTheme(themeId: string, uiTheme: string): Promise<ApiExecuteData> {
         const apiExecuteData = new ApiExecuteData();
         try {
@@ -66,7 +66,7 @@ export default class ThemeApis {
                 });
             apiExecuteData.executeSuccess(`Theme has been applied`);
         } catch (e) {
-            apiExecuteData.executeFailed(`Failed to apply theme: ${e}`);
+            apiExecuteData.executeFailed(`Failed to apply theme: ${e}`, `Failed to apply theme. Chatbot is trying other actions.`);
         }
         return apiExecuteData;
     }
