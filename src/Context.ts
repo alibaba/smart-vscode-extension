@@ -12,18 +12,21 @@ export class Context {
     public curFile = "";
     public chatModelConfig: any;
     public embeddingModelConfig: any;
+    private version = "";
+    public enable_free_tongyi_token = false;
 
     // for test
     private isTest = false;
     private testAnswer = "";
 
 
-    constructor(userId: string, sessionId: string, content: any = undefined, isTest: boolean = false, testAnswer: string = "") {
+    constructor(userId: string, sessionId: string, content: any = undefined, isTest: boolean = false, testAnswer: string = "", version: string, enable_free_tongyi_token: boolean = false) {
         this.userId = userId;
         this.sessionId = sessionId;
         this.content = content;
         this.workspaceFolder = getWorkspaceFolder() || "";
         this.curFile = getCurFocusFilePath() || "";
+        this.enable_free_tongyi_token = enable_free_tongyi_token;
         const config = vscode.workspace.getConfiguration();
         this.chatModelConfig = this.existedModelConfig("smartVscode.chatModelConfig") ? config.get("smartVscode.chatModelConfig") : this.getChatModelConfig();
         this.embeddingModelConfig = this.existedModelConfig("smartVscode.embeddingModelConfig") ? config.get("smartVscode.embeddingModelConfig") : this.getEmbeddingModelConfig();
@@ -31,6 +34,8 @@ export class Context {
         // for test
         this.isTest = isTest;
         this.testAnswer = testAnswer;
+        this.version = version;
+
     }
 
 
@@ -49,7 +54,8 @@ export class Context {
             chatModelConfig: this.chatModelConfig,
             embeddingModelConfig: this.embeddingModelConfig,
             isTest: this.isTest,
-            testAnswer: this.testAnswer
+            testAnswer: this.testAnswer,
+            version: this.version
         };
     }
 
@@ -99,10 +105,10 @@ export class Context {
         const lightModelName = config.get("smartVscode.tongyi.chatLightModel");
         const advancedModelName = config.get("smartVscode.tongyi.chatAdvancedModel");
 
-        if (!apiKey || apiKey === "") {
+        if ((!apiKey || apiKey === "") && !this.enable_free_tongyi_token) {
             throw new ApiKeyMissingError();
         }
-        
+
         /* eslint-disable @typescript-eslint/naming-convention */
         return {
             "Lightweight": {

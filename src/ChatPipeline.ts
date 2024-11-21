@@ -33,6 +33,8 @@ export default class ChatPipeline {
 
     private chat: Chat | null = null;
 
+    private context!: Context;
+
     constructor(config: Config, apiScheduler: ApiScheduler, userId: string) {
         this.config = config;
         this.backendService = new HttpProtocol(this.config);
@@ -63,8 +65,9 @@ export default class ChatPipeline {
         this.isSendTaskCancelledMsg = false;
         this.userInput = userQuestion;
         this.sessionId = uuid();
+        this.context = new Context(this.userId, this.sessionId, userQuestion, isTest, testAnswer, this.config.version, true);
         try {
-            let actionResponse = await this.backendService.sendUserQuestion(new Context(this.userId, this.sessionId, userQuestion, isTest, testAnswer));
+            let actionResponse = await this.backendService.sendUserQuestion(this.context);
             await this.interactionLoop(actionResponse, chat);
         } catch (error) {
             if (error instanceof NetworkError || error instanceof ApiKeyMissingError) {
@@ -72,7 +75,7 @@ export default class ChatPipeline {
             }
             else {
                 chat.sendMsgToUser(error + "", false);
-                await this.backendService.finish(new Context(this.userId, this.sessionId));
+                await this.backendService.finish(this.context);
                 throw error;
             }
         }
@@ -85,7 +88,7 @@ export default class ChatPipeline {
                 const status = actionResponse['status'];
                 if (status === TaskResponseEnum.taskFinished) {
                     chat.sendMsgToUser("Task has been finished.");
-                    await this.backendService.finish(new Context(this.userId, this.sessionId));
+                    await this.backendService.finish(this.context);
                     break;
                 } else if (status === TaskResponseEnum.apiCall) {
                     const apiJson = actionResponse["data"]["apis"][0];
@@ -134,11 +137,12 @@ export default class ChatPipeline {
                     // if the api is terminal and it is success. The task has been finished.
                     if (apiExecuteData.success && this.isTerminalApi(actionResponse)) {
                         chat.sendMsgToUser("Task has been finished.");
-                        await this.backendService.finish(new Context(this.userId, this.sessionId));
+                        await this.backendService.finish(this.context);
                         break;
                     } else {
                         apiJson["result"] = apiExecuteData.toModelMsg;
-                        actionResponse = await this.backendService.sendApisResult(new Context(this.userId, this.sessionId, actionResponse["data"]["apis"]));
+                        this.context.content = actionResponse["data"]["apis"];
+                        actionResponse = await this.backendService.sendApisResult(this.context);
                     }
                 } else if (status === TaskResponseEnum.taskFailed) {
                     chat.sendMsgToUser(actionResponse["data"]["msg"]);
@@ -161,12 +165,13 @@ export default class ChatPipeline {
             } catch (error) {
                 if (error instanceof TaskStopError) {
                     chat.sendMsgToUser("Task has been cancelled.");
-                    await this.backendService.finish(new Context(this.userId, this.sessionId));
+                    await this.backendService.finish(this.context);
                     return;
                 } else if (error instanceof ArgumentMissingError) {
                     chat.sendMsgToUser(error.message, false);
                     actionResponse["data"]["apis"][0]["result"] = "" + error;
-                    actionResponse = await this.backendService.sendApisResult(new Context(this.userId, this.sessionId, actionResponse["data"]["apis"]));
+                    this.context.content = actionResponse["data"]["apis"];
+                    actionResponse = await this.backendService.sendApisResult(this.context);
                 }
                 else {
                     throw error;
@@ -183,7 +188,7 @@ export default class ChatPipeline {
     }
 
     public stopTask() {
-        this.backendService.cancel(new Context(this.userId, this.sessionId));
+        this.backendService.cancel(this.context);
         this.sendTaskCancelledMsg();
     }
 

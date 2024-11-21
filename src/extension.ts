@@ -27,6 +27,7 @@ import SmartVscodeViewProvider, { Chat } from './ViewProvider';
 
 export async function activate(context: vscode.ExtensionContext) {
 	const config = new Config();
+	config.version = context.extension.packageJSON.version;
 	const apiScheduler = ApiScheduler.getInstance();
 	const userId: string = "placeholder";
 

@@ -5,4 +5,5 @@ export default class Config {
     public readonly maxIterationCount = 10;
     public readonly testMode = false;
     public readonly testServerPort = 3000;
+    public version = '1.0.0';
 }
