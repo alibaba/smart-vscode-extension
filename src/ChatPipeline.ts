@@ -56,10 +56,6 @@ export default class ChatPipeline {
         let res = await this.backendService.queryCallCount(this.userId);
         this.has_quota = res.has_quota;
         let freeCallCount = res.call_count;
-        // this.backendService.questionCallCount(this.userId).then(res => {
-        //     this.has_quota = res.isfreeQuotaUser;
-        //     this.freeCallCount = res.freeCallCount;
-        // });
         this.maxFreeCallCount = this.has_quota ? this.config.maxFreeCallCount : 0;
         this.remainFreeCallCount = this.maxFreeCallCount - freeCallCount;
     }
@@ -83,7 +79,7 @@ export default class ChatPipeline {
         this.isSendTaskCancelledMsg = false;
         this.userInput = userQuestion;
         this.sessionId = uuid();
-        let enable_free_tongyi_token = this.has_quota && this.remainFreeCallCount > 0;
+        let enable_free_tongyi_token = this.has_quota && this.remainFreeCallCount > 0 && Context.isUsedTongYiModel();
         this.context = new Context(this.userId, this.sessionId, userQuestion, isTest, testAnswer, this.config.version, enable_free_tongyi_token);
         try {
             let actionResponse = await this.backendService.sendUserQuestion(this.context);
@@ -100,7 +96,7 @@ export default class ChatPipeline {
         }
         if (enable_free_tongyi_token) {
             await this.refreshCallCount();
-            chat.sendMsgToUser(`You have ${this.remainFreeCallCount} free calls left.`);
+            chat.sendMsgToUser(`You have ${this.remainFreeCallCount} remaining free uses of the Tongyi model.`);
         }
     }
 

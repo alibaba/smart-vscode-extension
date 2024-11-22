@@ -23,6 +23,7 @@ import { startTestServer } from './Common/HttpServerForTest';
 import CommandsCollector from "./Metadata/CommandCollector";
 import SettingsCollector from "./Metadata/SettingCollector";
 import SmartVscodeViewProvider, { Chat } from './ViewProvider';
+import { NetworkError } from "./Error/SmartVscodeError";
 
 
 export async function activate(context: vscode.ExtensionContext) {
@@ -37,7 +38,11 @@ export async function activate(context: vscode.ExtensionContext) {
 	}
 
 	const pipeline = new ChatPipeline(config, apiScheduler, userId);
-	await pipeline.refreshCallCount();
+	try {
+		await pipeline.refreshCallCount();
+	} catch (error) {
+		console.log(new NetworkError());
+	}
 
 	const themeApis = new ThemeApis(config);
 	const settingApis = new SettingApis();

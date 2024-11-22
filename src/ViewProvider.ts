@@ -19,6 +19,7 @@ import * as vscode from 'vscode';
 import { ChatGPTAPI as ChatGPTAPI3 } from '../chatgpt-4.7.2/index';
 import { ChatGPTAPI as ChatGPTAPI35 } from '../chatgpt-5.1.1';
 import ChatPipeline from "./ChatPipeline";
+import { NetworkError } from "./Error/SmartVscodeError";
 
 type LoginMethod = "GPT3 OpenAI API Key";
 type AuthType = "";
