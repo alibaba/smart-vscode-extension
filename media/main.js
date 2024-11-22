@@ -59,6 +59,7 @@
         const message = event.data;
         const list = document.getElementById("qa-list");
 
+
         switch (message.type) {
             case "showInProgress":
                 if (message.showStopButton) {
@@ -325,6 +326,21 @@
             return;
         } else {
             document.getElementById('chat-button-wrapper')?.classList.add("hidden");
+        }
+
+        if (e.target?.id === "activate-button") {
+            e.preventDefault();
+            vscode.postMessage({
+                type: "openGithub",
+            });
+            return;
+        }
+        if (e.target?.id === "refresh-button") {
+            e.preventDefault();
+            vscode.postMessage({
+                type: "refresh",
+            });
+            return;
         }
 
         if (e.target?.id === "settings-button") {

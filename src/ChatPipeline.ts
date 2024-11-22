@@ -8,7 +8,6 @@ import { TaskResponseEnum } from "./Common/enum";
 import { Context } from "./Context";
 import TaskStopError, { ApiKeyMissingError, ArgumentMissingError, NetworkError } from "./Error/SmartVscodeError";
 import HttpProtocol from "./Protocol/HttpProtocol";
-import Protocol from "./Protocol/Protocol";
 import { Chat } from "./ViewProvider";
 
 
@@ -17,13 +16,21 @@ import { Chat } from "./ViewProvider";
 export default class ChatPipeline {
     public config: Config;
 
-    protected backendService: Protocol;
+    protected backendService: HttpProtocol;
 
     protected apiScheduler: ApiScheduler;
 
     private apiConfirmed: ((value: unknown) => void) | null = null;
 
     private userId: string;
+
+    private has_quota: boolean = true;
+
+    public maxFreeCallCount: number;
+
+    public remainFreeCallCount = 0;
+
+    public starUrl: string = "";
 
     private sessionId: string;
 
@@ -41,9 +48,20 @@ export default class ChatPipeline {
         this.apiScheduler = apiScheduler;
         this.userId = userId;
         this.sessionId = uuid();
+        this.maxFreeCallCount = this.config.maxFreeCallCount;
+        this.starUrl = this.backendService.starUrl;
     }
 
-    public async init() {
+    public async refreshCallCount() {
+        let res = await this.backendService.queryCallCount(this.userId);
+        this.has_quota = res.has_quota;
+        let freeCallCount = res.call_count;
+        // this.backendService.questionCallCount(this.userId).then(res => {
+        //     this.has_quota = res.isfreeQuotaUser;
+        //     this.freeCallCount = res.freeCallCount;
+        // });
+        this.maxFreeCallCount = this.has_quota ? this.config.maxFreeCallCount : 0;
+        this.remainFreeCallCount = this.maxFreeCallCount - freeCallCount;
     }
 
     public async acceptApi() {
@@ -65,7 +83,8 @@ export default class ChatPipeline {
         this.isSendTaskCancelledMsg = false;
         this.userInput = userQuestion;
         this.sessionId = uuid();
-        this.context = new Context(this.userId, this.sessionId, userQuestion, isTest, testAnswer, this.config.version, true);
+        let enable_free_tongyi_token = this.has_quota && this.remainFreeCallCount > 0;
+        this.context = new Context(this.userId, this.sessionId, userQuestion, isTest, testAnswer, this.config.version, enable_free_tongyi_token);
         try {
             let actionResponse = await this.backendService.sendUserQuestion(this.context);
             await this.interactionLoop(actionResponse, chat);
@@ -78,6 +97,10 @@ export default class ChatPipeline {
                 await this.backendService.finish(this.context);
                 throw error;
             }
+        }
+        if (enable_free_tongyi_token) {
+            await this.refreshCallCount();
+            chat.sendMsgToUser(`You have ${this.remainFreeCallCount} free calls left.`);
         }
     }
 

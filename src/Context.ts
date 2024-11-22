@@ -55,7 +55,8 @@ export class Context {
             embeddingModelConfig: this.embeddingModelConfig,
             isTest: this.isTest,
             testAnswer: this.testAnswer,
-            version: this.version
+            version: this.version,
+            enable_free_tongyi_token: this.enable_free_tongyi_token
         };
     }
 

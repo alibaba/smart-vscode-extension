@@ -6,20 +6,24 @@ import Protocol from "./Protocol";
 
 export default class HttpProtocol extends Protocol {
     public url: string;
+    public starUrl: string;
 
     constructor(config: Config) {
         super(config);
-        this.url = this.config.llm4apisServiceBaseUrlChina;
+        this.url = this.getUrl(config.llm4apiServiceBaseIPChina, config.llm4apiServicePort);
+        this.starUrl = this.getUrl(config.llm4apiServiceBaseIPChina, config.llm4apiStarServicePort);
         this.routeByIp();
+    }
+
+    private getUrl(ip: string, port: string) {
+        return `http://${ip}:${port}`;
     }
 
     private async routeByIp() {
         const isDomestic = await this.isDomesticIp();
-        if (isDomestic) {
-            this.url = this.config.llm4apisServiceBaseUrlChina;
-        } else {
-            this.url = this.config.llm4apisServiceBaseUrlGlobal;
-        }
+        let ip = isDomestic ? this.config.llm4apiServiceBaseIPChina : this.config.llm4apiServiceBaseIPGlobal;
+        this.url = this.getUrl(ip, this.config.llm4apiServicePort);
+        this.starUrl = this.getUrl(ip, this.config.llm4apiStarServicePort);
     }
 
     private async isDomesticIp() {
@@ -50,6 +54,10 @@ export default class HttpProtocol extends Protocol {
 
     public cancel(context: Context) {
         return this.post("/cancel", context.toObject());
+    }
+
+    public queryCallCount(userId: string) {
+        return this.post("/queryCallCount", { userId: userId });
     }
 
     // 函数：发送一个HTTP Post请求

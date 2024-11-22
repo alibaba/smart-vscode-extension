@@ -96,6 +96,8 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
 
   private pipeline: ChatPipeline;
 
+  private userId: string = "";
+
   private chat: Chat;
 
   /**
@@ -109,14 +111,13 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
     this.model = vscode.workspace.getConfiguration().get("smartVscode.chatLightModel") as string;
     this.pipeline = pipeline;
     this.chat = new Chat(this);
-
+    this.userId = this.context.globalState.get('userId') as string || "";
     this.setMethod();
     this.setChromeExecutablePath();
     this.setProfilePath();
     this.setProxyServer();
     this.setAuthType();
   }
-
   public resolveWebviewView(
     webviewView: vscode.WebviewView,
     _context: vscode.WebviewViewResolveContext,
@@ -137,6 +138,14 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
 
     webviewView.webview.onDidReceiveMessage(async data => {
       switch (data.type) {
+        case 'openGithub':
+          const url = `${this.pipeline.starUrl}?uid=${this.userId}`;
+          vscode.env.openExternal(vscode.Uri.parse(url));
+          break;
+        case 'refresh':
+          this.pipeline.refreshCallCount();
+          webviewView.webview.html = this.getWebviewHtml(webviewView.webview);
+          break;
         case 'addFreeTextQuestion':
           this.sendApiRequest(data.value, { command: "freeText" });
           // this.sendApiRequestTemp(data.value, { command: "freeText" });
@@ -163,9 +172,9 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
           this.logEvent(data.language === "markdown" ? "code-exported" : "code-opened");
           break;
         case 'clearConversation':
+          webviewView.webview.html = this.getWebviewHtml(webviewView.webview);
           this.messageId = undefined;
           this.conversationId = undefined;
-
           this.logEvent("conversation-cleared");
           break;
         case 'clearBrowser':
@@ -548,7 +557,8 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
     this.inProgress = true;
     this.abortController = new AbortController();
     this.sendMessage({ type: 'showInProgress', inProgress: this.inProgress, showStopButton: this.useGpt3 });
-    this.sendMessage({ type: 'addQuestion', value: prompt, code: options.code, autoScroll: this.autoScroll });
+    // let remainFreeCallCount = Math.max(this.pipeline.remainFreeCallCount - 1, 0);
+    this.sendMessage({ type: 'addQuestion', value: prompt, code: options.code, autoScroll: this.autoScroll, maxFreeCallCount: this.pipeline.maxFreeCallCount, remaining: this.pipeline.remainFreeCallCount });
     this.currentMessageId = this.getRandomId();
 
     try {
@@ -660,7 +670,6 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
         <div id="introduction" class="flex flex-col justify-between h-full justify-center px-6 w-full relative login-screen overflow-auto">
             <div data-license="isc-gnc-hi-there" class="flex items-start text-center features-block my-5">
                 <div class="flex flex-col gap-3.5 flex-1">
-                    <!-- <img src="/Users/pengjiazhen/code/github/smart-vscode-extension/images/ai-logo.png" height="48"/> -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-6 h-6 m-auto">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
                     </svg>
@@ -715,15 +724,30 @@ export default class SmartVscodeViewProvider implements vscode.WebviewViewProvid
                         </table>
                     </div>
                     <div class="mt-4">
-                        <a href="https://help.aliyun.com/zh/model-studio/getting-started/first-api-call-to-qwen?spm=a2c4g.11186623.help-menu-2400256.d_0_1_0.25a41d1c0TzugM&scm=20140722.H_2840915._.OR_help-V_1" ">Get Free Qwen Token</a>
+                        <div class="option-card set-token">
+                            <div>
+                                <span class="icon">🔑</span>
+                                <span>Set your own token</span>
+                            </div>
+                            <button id="settings-button">Set Token</button>
+                        </div>
+                        <div class="option-card activate-token">
+                            <div>
+                                <span class="icon">🔓</span>
+                                <span>Activate shared free Qwen token</span>
+                                <span>(free tongyi calling quota today: ${this.pipeline.remainFreeCallCount}/${this.pipeline.maxFreeCallCount})</span>
+                            </div>
+                            <button id="activate-button">Activate</button>
+                            <button id="refresh-button">Refresh</button>
+                        </div>
+                        
+                        <!-- 
+                        <a href="https://help.aliyun.com/zh/model-studio/getting-started/first-api-call-to-qwen?spm=a2c4g.11186623.help-menu-2400256.d_0_1_0.25a41d1c0TzugM&scm=20140722.H_2840915._.OR_help-V_1" ">Get Your Free Qwen Token</a>
                         <span class="mx-2">|</span>
-                        <a href="https://platform.openai.com/api-keys" >Get ChatGPT Token</a>
+                        <a href="https://platform.openai.com/api-keys" >Get Your ChatGPT Token</a>
+                        -->
                     </div>
                 </div>
-            </div>
-            <div class="notification bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative" role="alert">
-                <strong class="font-bold">Notice:</strong>
-                <span class="block sm:inline">The current version shares some free Qwen tokens, but please note that they may be exhausted at any time.</span>
             </div>
             <div class="flex flex-col gap-4 h-full items-center justify-end text-center">
                 <p class="max-w-sm text-center text-xs text-slate-500">

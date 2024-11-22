@@ -17,4 +17,6 @@ export default abstract class Protocol {
 
     public abstract cancel(context: Context);
 
+    public abstract queryCallCount(userId: string);
+
 }

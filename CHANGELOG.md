@@ -9,3 +9,9 @@
 
 ### 1.0.4
 - Provided free tongyi tokens for users.
+
+### 1.0.5
+- Identify user input into question and task.
+- Limit free tries to 10 each day.
+- Check extension version.
+

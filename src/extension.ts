@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as fs from 'fs';
 import * as path from 'path';
+import { v4 as uuid } from 'uuid';
 import * as vscode from 'vscode';
 import Api from "./Apis/Api";
 import ApiScheduler from './Apis/ApiScheduler';
@@ -24,15 +25,19 @@ import SettingsCollector from "./Metadata/SettingCollector";
 import SmartVscodeViewProvider, { Chat } from './ViewProvider';
 
 
-
 export async function activate(context: vscode.ExtensionContext) {
 	const config = new Config();
 	config.version = context.extension.packageJSON.version;
 	const apiScheduler = ApiScheduler.getInstance();
-	const userId: string = "placeholder";
+
+	let userId: string = context.globalState.get('userId') as string;
+	if (!userId) {
+		userId = uuid();
+		context.globalState.update('userId', userId);
+	}
 
 	const pipeline = new ChatPipeline(config, apiScheduler, userId);
-	await pipeline.init();
+	await pipeline.refreshCallCount();
 
 	const themeApis = new ThemeApis(config);
 	const settingApis = new SettingApis();
