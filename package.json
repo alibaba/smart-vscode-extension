@@ -4,7 +4,7 @@
   "displayName": "Smart Vscode",
   "icon": "images/ai-logo.png",
   "description": "SmartVscode: Controlling VS Code by natural language",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "aiKey": "",
   "preview": false,
   "license": "SEE LICENSE IN LICENSE",

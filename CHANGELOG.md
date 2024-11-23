@@ -15,3 +15,5 @@
 - Limit free tries to 10 each day.
 - Check extension version.
 
+### 1.0.6
+- Fix some minor bugs.

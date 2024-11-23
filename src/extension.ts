@@ -20,10 +20,10 @@ import WindowApis from './Apis/windowApis';
 import ChatPipeline from './ChatPipeline';
 import Config from './Common/Config';
 import { startTestServer } from './Common/HttpServerForTest';
+import { NetworkError } from "./Error/SmartVscodeError";
 import CommandsCollector from "./Metadata/CommandCollector";
 import SettingsCollector from "./Metadata/SettingCollector";
 import SmartVscodeViewProvider, { Chat } from './ViewProvider';
-import { NetworkError } from "./Error/SmartVscodeError";
 
 
 export async function activate(context: vscode.ExtensionContext) {
@@ -38,6 +38,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	}
 
 	const pipeline = new ChatPipeline(config, apiScheduler, userId);
+	await pipeline.routeByIp();
 	try {
 		await pipeline.refreshCallCount();
 	} catch (error) {

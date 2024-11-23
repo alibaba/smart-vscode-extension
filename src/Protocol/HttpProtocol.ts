@@ -12,14 +12,13 @@ export default class HttpProtocol extends Protocol {
         super(config);
         this.url = this.getUrl(config.llm4apiServiceBaseIPChina, config.llm4apiServicePort);
         this.starUrl = this.getUrl(config.llm4apiServiceBaseIPChina, config.llm4apiStarServicePort);
-        this.routeByIp();
     }
 
     private getUrl(ip: string, port: string) {
         return `http://${ip}:${port}`;
     }
 
-    private async routeByIp() {
+    public async routeByIp() {
         const isDomestic = await this.isDomesticIp();
         let ip = isDomestic ? this.config.llm4apiServiceBaseIPChina : this.config.llm4apiServiceBaseIPGlobal;
         this.url = this.getUrl(ip, this.config.llm4apiServicePort);

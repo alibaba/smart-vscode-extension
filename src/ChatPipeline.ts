@@ -49,6 +49,10 @@ export default class ChatPipeline {
         this.userId = userId;
         this.sessionId = uuid();
         this.maxFreeCallCount = this.config.maxFreeCallCount;
+    }
+
+    public async routeByIp() {
+        await this.backendService.routeByIp();
         this.starUrl = this.backendService.starUrl;
     }
 

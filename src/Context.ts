@@ -37,7 +37,11 @@ export class Context {
         this.version = version;
 
     }
-
+    public static isUsedTongYiModel() {
+        const config = vscode.workspace.getConfiguration();
+        const modelType = config.get("smartVscode.modelType");
+        return modelType === "Tongyi";
+    }
 
     public toObject() {
         console.log("Context: ", this);
